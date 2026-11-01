@@ -1,0 +1,44 @@
+{
+  "Passed": true,
+  "Case": "tb_lcd_static_footer",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 0.0,
+  "SourceHashes": {
+    "sim/fixtures/components.txt": "279A8D46C4EB1EC41E62FFDB4AA710F882337D46735949799F885F803CD0407A",
+    "sim/fixtures/core_reference.txt": "B3C92858D6DB73BD9120A348F18A2A52B41573B331B4B14A15F67F5623CCB2AC",
+    "sim/fixtures/lcd_dashboard_33002_reference.v": "53895901B5EEE337F10368D2C4397488BC02E3CF151AA6646AFFC35E336FFFE0",
+    "sim/fixtures/mixer.txt": "E8A4E6EAE38C79942CEAB142FD63F8C923FBBC696F5320C210FFDB7F7B021D0A",
+    "sim/fixtures/sk9822_ring_32503.v": "5F42AAA4A38B68DCF72388767114D421CF47D249DF73361999DEB6A2F6264503",
+    "sim/run.py": "FC7A6D5BACF4FB5A21F12B132269020ADF158F53AC51D005F571E3D80B85B979",
+    "sim/tb_lcd_static_footer.sv": "5C2292F33F4279613B1C4D24D9CDBBABD028EF4AFA12FCE9CED9D29BE02DFB98",
+    "src/lcd_cjk16.mem": "C38DA1AA25DD19309F707FC2DBE06C8DE87B129C4194664F7C8DC3A758DDB359",
+    "src/lcd_cjk16_font.v": "43A480E989D346E87AF65987129BFFCDCECB07A1639F09770FF6E4A68F9C7462",
+    "src/lcd_cjk24.mem": "30BB82223A027FE0FDEC82DFC52BCD67285E50505CF3E78DB4DAACE47A4FA78B",
+    "src/lcd_cjk24_font.v": "E869FAB517FD81B27268BC96D406E070DFC6828F594C705C96DC185C2C3EF853",
+    "src/lcd_dashboard.v": "BEF6775924173DBBFDA939958CF8FF888F8A32560151C828E69511B8B8913388",
+    "src/lcd_footer_text.vh": "ACBE2D620833EECA22EAB6E2B315B275158E1492FD9E11B9797834E0EF8E0C5C",
+    "src/lcd_ui_text.vh": "37478F08459484D3B1F11CFD689683B6D73A71D4A97BEFAAE5AAE99B9FE16AD6"
+  },
+  "Summary": [
+    "PASS LCD_STATIC_FOOTER checks=532995 main_identical_pixels=193920 footer_oracle_pixels=67200 fixed_pages=2 rows_per_page=4 font16 native480x272 no_rotation all12states both_sources five_clock_pipeline"
+  ],
+  "HardwareValidated": false,
+  "ReusedFromUserCode": "0x00033104",
+  "RuntimeExecutedThisRelease": false,
+  "OriginalRuntimeSeconds": 16.664713144302368,
+  "CurrentElaborationComplete": true,
+  "CurrentElaborationSeconds": 0.23400000000037835,
+  "OriginalReportPath": "baseline_33104_evidence/results/validation_tb_lcd_static_footer.json",
+  "OriginalReportSHA256": "9C0D252006D8FF5BF67F913C6F4335F72FABEE9135C3058A9278196D182BBB7A",
+  "OriginalLogPath": "baseline_33104_evidence/results/tb_lcd_static_footer.log",
+  "OriginalLogSHA256": "DD2A58F264C4E6E0CED6AA69BD3F34F3039589A3D97164969CA88F51E47A194B",
+  "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_static_footer_dependency_proof.json",
+  "DependencyProofSHA256": "3DB4E69E6F9F5F64BC1C97A51E4D2D7D6A1855634D4347A30230666319AE86CC"
+}

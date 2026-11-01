@@ -1,0 +1,78 @@
+{
+  "Passed": true,
+  "Case": "tb_ring_calibration",
+  "RuntimeExecutedThisRelease": true,
+  "OldRuntimeReused": false,
+  "Method": "Actual accepted/new meter comparison every cycle; independent signed gate and brightness/release oracle; real SK9822 serial decode",
+  "Candidate": "D:\\高云fpga实时变调与和声系统\\01_当前工程\\audio_harmony_5min_b_20261031",
+  "ExecutionRoot": "D:\\高云fpga实时变调与和声系统\\04_项目文档\\验证记录_和声五分钟与灯环调参_20261031\\ring_cal_check",
+  "SourceHashes": {
+    "src/audio_level_meter.v": "59BE28729428713F9B38FC1E9BE3BEEBB265B82594E5D9C6CF5957F958222940",
+    "src/audio_ring_cal_meter.v": "B1B57A8E1E80ADF39D455DCD97C009A7510DD9CB365E7D8A7A3C2FA27D164C7F",
+    "src/sk9822_ring.v": "72139CC03FC512BC33654D143AE22BE8BF1004B3E00320C8F1367A22B1E7D532",
+    "sim/tb_ring_calibration.sv": "A25D651EAD071F3D28FBB376BA3053D34B3DFE383A8296A01ECAE4AC8A6AEB5F",
+    "sim/run.py": "FC7A6D5BACF4FB5A21F12B132269020ADF158F53AC51D005F571E3D80B85B979"
+  },
+  "InputFreezePath": "RING_CAL_INPUTS.json",
+  "InputFreezeSHA256": "9D5B4333B4663AE7249BF8120FAF453ADFF814D96065F262E559748CBC66E1BB",
+  "ResultFiles": {
+    "sim/results/validation_tb_ring_calibration.json": "296B3398C8ABA018D68D22A427D9508FFFC910BE9CE0D933E3B98E54D9FD55FC",
+    "sim/results/tb_ring_calibration.log": "8B4D688B58B61C745572E4F29455987BB4D8AFFA89E78F8F30342B56C4A9163C",
+    "sim/results/tb_ring_calibration.vvp": "B59B860F939EB866A27B68B70A6EE5616F6ACBA1FBC814239D13F4D0F59AFC48",
+    "sim/results/tb_ring_calibration_compile1.log": "CDD8B9600B95309AEE821BC9D02CB4D843B4F575BB32E0DB9D6C2333B8232022"
+  },
+  "RuntimeSeconds": 3.066728115081787,
+  "Summary": [
+    "PASS RING_CALIBRATION checks=324334 cycle_exact_checks=333920 production_geometry_checks=97733 windows=35352 signed_margin_values=49152 magnitudes=32769 calibrations=8 serial_frames=5 static24_matches_28 stored_baseline no_audio_or_mean_reset clamp64_65535 rgb_quantization_retained"
+  ],
+  "Baselines": [
+    0,
+    32,
+    64,
+    128,
+    512,
+    32768
+  ],
+  "SignedMarginRange": [
+    -4096,
+    4095
+  ],
+  "UniqueMarginValues": 8192,
+  "MarginBaselineCases": 49152,
+  "PCMMagnitudes": 32769,
+  "FastWindows": 35352,
+  "CycleExactChecks": 333920,
+  "ProductionGeometryChecks": 97733,
+  "ExplicitChecks": 324334,
+  "SerialFramesDecoded": 5,
+  "DefaultGeometry": {
+    "WindowSamples": 512,
+    "CalibrationWindows": 128
+  },
+  "FixedMargin24CycleIdenticalTo28": true,
+  "StoredBaselineDoesNotTrackSpeech": true,
+  "MeanTimingAndInvalidGapsPreserved": true,
+  "Clamps": {
+    "Minimum": 64,
+    "Maximum": 65535
+  },
+  "BrightnessAndReleaseUnchanged": true,
+  "ActualSerialIntensity": "level>>1, global8/31, cyanBGR",
+  "EngineIsolation": {
+    "ReviewedOnly": true,
+    "EngineSHA256": "4519DC51E2587554A7D1404F3FD579702DF869DD1CBE976AD253E91C4C56128E",
+    "ControlsSHA256": "917FA63954A3CC133B125BE3EC8E8F614747CEE955744CCB1C7D1BE7CA1FB371",
+    "CalibrationNotInConfigChange": true,
+    "CalibrationNotInStreamHold": true,
+    "CalibrationNotInPCMSelection": true,
+    "CalibrationNotInPAEnable": true,
+    "TuningRotationDoesNotWriteGainTarget": true
+  },
+  "Limits": [
+    "Minimum gate64 remains; first nonzeroRGB needs mean>=gate+32 because brightness quantization is retained",
+    "A very loud startup baseline can remain above reachable input across the entire margin range; reset and calibrate quietly",
+    "These are offline RTL/statistical checks, not real microphone/noise/visible brightness/board-audio acceptance"
+  ],
+  "HardwareValidated": false,
+  "ListeningValidated": false
+}

@@ -1,0 +1,228 @@
+// One volatile raw PCM16 clip. All ports belong to the audio clock domain.
+// DDR requests are 256-bit BL8 transfers, address units are 32-bit DDR words.
+// Metadata is committed only after the final partial/full burst completes.
+module pcm_long_clip_controller #(
+    parameter integer MAX_SAMPLES = 1464844,
+    parameter integer PREROLL_SAMPLES = 8866,
+    parameter integer TAIL_SAMPLES = 8994,
+    parameter integer DRAIN_SAMPLES = 512,
+    // Legacy candidates keep stop/restart semantics. The external-control
+    // candidate enables an exact-cursor pause and a separate restart command.
+    parameter integer ENHANCED_PLAYBACK = 0
+) (
+    input wire clk,rst_n,sample_tick,
+    input wire signed [15:0] mic_pcm,
+    input wire record_toggle,play_toggle,abort_play,
+    input wire play_hold,play_restart,
+    input wire storage_ready,storage_error,
+    output wire req_valid,req_write,
+    output wire [28:0] req_addr,
+    output wire [255:0] req_wdata,
+    input wire req_ready,rsp_valid,
+    input wire [255:0] rsp_rdata,
+    output wire signed [15:0] play_pcm,
+    output reg [3:0] rec_state,
+    output reg [31:0] record_samples,play_samples,
+    output wire [31:0] record_progress,
+    output wire record_valid,record_full,play_active,
+    output wire play_paused,
+    output reg fault
+);
+    localparam WAIT_DDR=0,EMPTY=1,RECORD=2,FLUSH=3,READY=4,
+               PREFETCH=5,PREROLL=6,PLAY=7,TAIL=8,DRAIN=9,ERROR=10,PAUSED=11;
+    reg [3:0] resume_state;
+    reg restart_pending,record_pending;
+    // Logical counts are independent of the 29-bit DDR app-word address.
+    // The app aperture is 2 GiB: one 256-bit block consumes eight app words
+    // and contains sixteen PCM16 samples. Valid MAX_SAMPLES is 1..2^30.
+    localparam integer CAPACITY_VALID=(MAX_SAMPLES>0 && MAX_SAMPLES<=1073741824);
+    localparam [32:0] SAMPLE_LIMIT=MAX_SAMPLES;
+    reg [31:0] captured;
+    reg [255:0] pack,pending_data;
+    reg [3:0] pack_count,lane;
+    reg pending_write,transaction_active,transaction_write;
+    reg [28:0] pending_address,next_write_address;
+    reg [31:0] read_requested;
+    reg [255:0] read_blocks[0:1];
+    reg write_pointer,read_pointer;
+    reg [1:0] block_count;
+    reg [15:0] silence_count;
+    reg clip_committed;
+    wire [32:0] rounded_samples={1'b0,record_samples}+33'd15;
+    wire [31:0] total_blocks={3'd0,rounded_samples[32:4]};
+    wire [34:0] requested_app_address={read_requested,3'b000};
+    wire read_address_ok=(requested_app_address[34:29]==6'd0);
+    wire playback_read=(rec_state==PREFETCH || rec_state==PREROLL || rec_state==PLAY);
+    wire read_request=playback_read && read_requested<total_blocks && block_count<2 && read_address_ok;
+    assign req_valid=storage_ready && !fault && !transaction_active &&
+                     (pending_write || read_request);
+    assign req_write=pending_write;
+    assign req_addr=pending_write ? pending_address : requested_app_address[28:0];
+    assign req_wdata=pending_data;
+    wire request_taken=req_valid && req_ready;
+    wire read_done=rsp_valid && transaction_active && !transaction_write;
+    wire enhanced_command=(ENHANCED_PLAYBACK!=0) &&
+                          (play_toggle || play_restart || record_toggle || abort_play);
+    wire playback_tick=sample_tick && ((ENHANCED_PLAYBACK==0) ||
+                       (!play_hold && !enhanced_command));
+    wire active_state=rec_state>=PREFETCH && rec_state<=DRAIN;
+    wire [32:0] next_play_count={1'b0,play_samples}+33'd1;
+    wire [32:0] next_capture_count={1'b0,captured}+33'd1;
+    wire pop_block=rec_state==PLAY && playback_tick && block_count!=0 &&
+                   (lane==15 || next_play_count=={1'b0,record_samples});
+    wire capture=rec_state==RECORD && sample_tick && !record_toggle && !abort_play &&
+                 ({1'b0,captured}<SAMPLE_LIMIT);
+    wire final_sample=(next_capture_count==SAMPLE_LIMIT);
+    reg [255:0] pack_with_sample;
+    always @* begin
+        pack_with_sample=pack;
+        pack_with_sample[pack_count*16 +:16]=mic_pcm;
+    end
+    assign play_pcm=(rec_state==PLAY && block_count!=0) ?
+                    $signed(read_blocks[read_pointer][lane*16 +:16]) : 16'sd0;
+    assign record_valid=clip_committed && !fault;
+    assign record_progress=(rec_state==RECORD || rec_state==FLUSH) ? captured : record_samples;
+    assign record_full=record_valid && record_samples==MAX_SAMPLES;
+    assign play_paused=(ENHANCED_PLAYBACK!=0) && rec_state==PAUSED;
+    assign play_active=(rec_state>=PREROLL && rec_state<=DRAIN) || play_paused;
+    always @(posedge clk) begin
+        if(!rst_n) begin
+            rec_state<=WAIT_DDR;record_samples<=0;play_samples<=0;captured<=0;
+            pack<=0;pack_count<=0;pending_write<=0;pending_data<=0;
+            pending_address<=0;next_write_address<=0;transaction_active<=0;
+            transaction_write<=0;read_requested<=0;write_pointer<=0;
+            read_pointer<=0;block_count<=0;lane<=0;silence_count<=0;
+            clip_committed<=0;fault<=0;resume_state<=PREFETCH;restart_pending<=0;record_pending<=0;
+        end else if(storage_error || fault || !CAPACITY_VALID) begin
+            rec_state<=ERROR;fault<=1;clip_committed<=0;pending_write<=0;restart_pending<=0;record_pending<=0;
+        end else begin
+            if(request_taken) begin
+                transaction_active<=1;transaction_write<=req_write;
+                if(req_write) pending_write<=0;
+                else read_requested<=read_requested+32'd1;
+            end
+            if(rsp_valid && transaction_active) transaction_active<=0;
+            if(read_done) begin
+                read_blocks[write_pointer]<=rsp_rdata;
+                write_pointer<=~write_pointer;
+            end
+            if(pop_block) begin read_pointer<=~read_pointer;lane<=0;end
+            case({read_done,pop_block})
+                2'b10:block_count<=block_count+1'b1;
+                2'b01:block_count<=block_count-1'b1;
+                default:;
+            endcase
+            case(rec_state)
+                WAIT_DDR:if(storage_ready) rec_state<=EMPTY;
+                EMPTY,READY:begin
+                    if(((ENHANCED_PLAYBACK==0) || !abort_play) &&
+                       (record_toggle || ((ENHANCED_PLAYBACK!=0) && record_pending)) &&
+                       storage_ready && !transaction_active && !pending_write) begin
+                        // Re-record is destructive to the one existing clip, by design.
+                        rec_state<=RECORD;record_samples<=0;captured<=0;play_samples<=0;
+                        clip_committed<=0;pack<=0;pack_count<=0;next_write_address<=0;
+                        block_count<=0;read_pointer<=0;write_pointer<=0;restart_pending<=0;record_pending<=0;
+                    end else if(((ENHANCED_PLAYBACK==0) || !abort_play) &&
+                                (play_toggle || ((ENHANCED_PLAYBACK!=0) && restart_pending)) &&
+                                record_valid && record_samples!=0 && !transaction_active) begin
+                        rec_state<=PREFETCH;play_samples<=0;read_requested<=0;lane<=0;
+                        block_count<=0;read_pointer<=0;write_pointer<=0;silence_count<=0;restart_pending<=0;
+                    end
+                end
+                RECORD:begin
+                    if(record_toggle || abort_play) begin
+                        rec_state<=FLUSH;
+                        if(pack_count!=0) begin
+                            if(pending_write && !request_taken) fault<=1;
+                            else begin
+                                pending_write<=1;pending_data<=pack;
+                                pending_address<=next_write_address;
+                                next_write_address<=next_write_address+29'd8;
+                                pack_count<=0;pack<=0;
+                            end
+                        end
+                    end else if(capture) begin
+                        captured<=next_capture_count[31:0];
+                        pack<=pack_with_sample;pack_count<=pack_count+1'b1;
+                        if(pack_count==15 || final_sample) begin
+                            if(pending_write && !request_taken) fault<=1;
+                            else begin
+                                pending_write<=1;pending_data<=pack_with_sample;
+                                pending_address<=next_write_address;
+                                next_write_address<=next_write_address+29'd8;
+                                pack<=0;pack_count<=0;
+                            end
+                        end
+                        if(final_sample) rec_state<=FLUSH;
+                    end
+                end
+                FLUSH:if(!pending_write && !transaction_active && !request_taken) begin
+                    record_samples<=captured;clip_committed<=(captured!=0);
+                    rec_state<=(captured!=0) ? READY : EMPTY;
+                end
+                PREFETCH:begin
+                    if(block_count==2 || (total_blocks==1 && block_count==1)) begin
+                        rec_state<=PREROLL;silence_count<=0;
+                    end
+                end
+                PREROLL:if(playback_tick) begin
+                    if(silence_count==PREROLL_SAMPLES-1) begin rec_state<=PLAY;silence_count<=0;end
+                    else silence_count<=silence_count+1'b1;
+                end
+                PLAY:if(playback_tick) begin
+                    if(block_count==0 || play_samples>=record_samples) fault<=1;
+                    else begin
+                        play_samples<=next_play_count[31:0];
+                        if(lane!=15) lane<=lane+1'b1;
+                        if(next_play_count=={1'b0,record_samples}) begin
+                            rec_state<=TAIL;silence_count<=0;
+                        end
+                    end
+                end
+                TAIL:if(playback_tick) begin
+                    if(silence_count==TAIL_SAMPLES-1) begin rec_state<=DRAIN;silence_count<=0;end
+                    else silence_count<=silence_count+1'b1;
+                end
+                DRAIN:if(playback_tick) begin
+                    if(silence_count==DRAIN_SAMPLES-1) rec_state<=READY;
+                    else silence_count<=silence_count+1'b1;
+                end
+                PAUSED:if(ENHANCED_PLAYBACK==0)begin rec_state<=ERROR;fault<=1;end
+                default:begin rec_state<=ERROR;fault<=1;end
+            endcase
+            // Stopping/parameter changes retain clip data. Let any outstanding
+            // read finish before another operation; discard its validity on start.
+            if(ENHANCED_PLAYBACK==0)begin
+                if((abort_play || play_toggle || record_toggle) && active_state)
+                    rec_state<=READY;
+            end else begin
+                // A just-stopped playback can still have one old DDR read in
+                // flight. Remember a new command until that response drains,
+                // rather than silently dropping a short button event.
+                if((rec_state==EMPTY || rec_state==READY) && record_toggle &&
+                   (transaction_active || pending_write))begin
+                    record_pending<=1;restart_pending<=0;
+                end else if(rec_state==READY && play_toggle && !record_pending &&
+                            record_valid && transaction_active)begin
+                    restart_pending<=1;
+                end
+                // A restart first ends the old session. Outstanding DDR data
+                // is received normally and discarded by the later fresh start;
+                // its response can never become block zero of the new session.
+                if(abort_play)begin
+                    restart_pending<=0;record_pending<=0;
+                    if(active_state || play_paused)rec_state<=READY;
+                end else if(record_toggle && (active_state || play_paused))begin
+                    rec_state<=READY;restart_pending<=0;record_pending<=0;
+                end else if(play_restart && !record_toggle && !record_pending && record_valid &&
+                   (active_state || play_paused || rec_state==READY))begin
+                    rec_state<=READY;restart_pending<=1;record_pending<=0;
+                end else if(play_toggle && !record_toggle && active_state)begin
+                    resume_state<=rec_state;rec_state<=PAUSED;
+                end else if(play_toggle && !record_toggle && play_paused)begin
+                    rec_state<=resume_state;
+                end
+            end
+        end
+    end
+endmodule

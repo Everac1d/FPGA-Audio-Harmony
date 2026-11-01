@@ -1,0 +1,6 @@
+*** GOWIN Tcl Command Line Console  *** 
+alog error: failed to open log file: 'C:/Users/???/AppData/Local/Packages/sandbox.{796fdcda-4b0c-47fd-a68b-79e9d9844e4c}/AC/GowinSemi/IDE/cache/sh.log'
+PROBE use_cpu_as_gpio
+PASS set_option -use_cpu_as_gpio 1
+PROBE use_sspi_as_gpio
+PASS set_option -use_sspi_as_gpio 1

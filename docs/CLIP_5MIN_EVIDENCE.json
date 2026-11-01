@@ -1,0 +1,50 @@
+{
+  "Passed": true,
+  "Case": "tb_clip_5min",
+  "RuntimeExecutedThisRelease": true,
+  "OldRuntimeReused": false,
+  "Method": "Fresh actual RTL in immutable direct-dependency source/test/runner snapshot; all three SHA256 values rechecked against final candidate after runtime",
+  "Candidate": "D:\\高云fpga实时变调与和声系统\\01_当前工程\\audio_harmony_5min_b_20261031",
+  "ExecutionRoot": "D:\\高云fpga实时变调与和声系统\\04_项目文档\\验证记录_和声五分钟与灯环调参_20261031\\clip_5min_check",
+  "InputFreezePath": "CLIP_5MIN_INPUTS.json",
+  "InputFreezeSHA256": "A2B66196AF5C6A300ABBDA90B1ABF6578E8730EEA62C3109432E4F82A6A7F52B",
+  "SourceHashes": {
+    "src/pcm_long_clip_controller.v": "CD74F7CBB33202D3A4D83E1E4F6879C36A09B6274AF7E991D7CFA4F6B75D7457",
+    "sim/tb_clip_5min.sv": "3058379B2EFC2D0FF0D2FC91D47B7CDDF09266044710DF352E797BA9B5B79EDE",
+    "sim/run.py": "FC7A6D5BACF4FB5A21F12B132269020ADF158F53AC51D005F571E3D80B85B979"
+  },
+  "ResultFiles": {
+    "sim/results/validation_tb_clip_5min.json": "F7F0A8900D58CC3963F44421666FCCBEC06E7C8677398F7C053540CEB4AB01EA",
+    "sim/results/tb_clip_5min.log": "9715CEDD8F3A9B8CAC0E02592B6CAD2D153530B9E10C3CB6F18FD4DB096468D3",
+    "sim/results/tb_clip_5min.vvp": "EDDF255389305E3809BF6A091E0A6E38D2E3DB393CC77E762601C73EEEDFB901",
+    "sim/results/tb_clip_5min_compile1.log": "9FC748EE442AF46A41D22C03DB04A6BB5D5E48C375D0E0512DA3A40430EB72DB"
+  },
+  "CompileSources": [
+    "src/pcm_long_clip_controller.v",
+    "sim/tb_clip_5min.sv"
+  ],
+  "RuntimeSeconds": 359.27302265167236,
+  "Summary": [
+    "MEASURE CLIP_5MIN capture_samples=14648438 blocks=915528 last_app_address=7324216 valid_last_lanes=6 zero_last_lanes=10 bytes=29296876 actual_duration_s=300.00001024",
+    "MEASURE CLIP_5MIN full_bit_exact_samples=14648438 read_blocks=915528",
+    "PASS CLIP_5MIN: max_samples=14648438 full_bit_exact_samples=14648438 total_bit_exact_samples=14648535 full_blocks=915528 final_address=7324216 source_abort_preserved short_overwrite=37 repeat_short=2 accelerated_tick_clocks=2 reduced_roll_only pause3 consumer_hold old21bit_samples old18bit_blocks final6lanes reset"
+  ],
+  "MAXSamples": 14648438,
+  "DurationSeconds": 300.00001024,
+  "LogicalBytes": 29296876,
+  "AllocatedBytes": 29296896,
+  "BL8Blocks": 915528,
+  "LastAppAddress": 7324216,
+  "LastValidLanes": 6,
+  "LastZeroLanes": 10,
+  "FullBitExactSamples": 14648438,
+  "TotalComparedSamples": 14648535,
+  "PauseCount": 3,
+  "ConsumerHoldCount": 1,
+  "SampleTickClocks": 2,
+  "RealDDRPHYValidated": false,
+  "HardwareValidated": false,
+  "LegacyControllerUnchanged": true,
+  "LegacyControllerSHA256": "DC49CAD3C10754E5A272EEF1FE0B3EBD9029B397DD340D6905386F2FBAE5D30D",
+  "SourceScope": "New32bit production controller; unchanged old controller remains byte-identical to28"
+}

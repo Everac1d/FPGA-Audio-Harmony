@@ -1,0 +1,2 @@
+PASS HARMONY_PANEL checks=34 modes3 harmony_default0_0 ordinary_pitch_independent tune_release long_chord_priority signed_margin4096 slow1_fast16 gain_unchanged endpoints reset
+sim/tb_harmony_panel.sv:86: $finish called at 762921000 (1ps)

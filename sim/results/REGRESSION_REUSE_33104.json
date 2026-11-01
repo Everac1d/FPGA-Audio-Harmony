@@ -1,0 +1,349 @@
+{
+  "Passed": true,
+  "BaselineUserCode": "0x00033104",
+  "CandidateUserCode": "0x00033105",
+  "ReuseCount": 34,
+  "ReusedCases": [
+    "tb_algorithm_components",
+    "tb_algorithm_core",
+    "tb_clip_capacity",
+    "tb_clip_controller",
+    "tb_clip_pause",
+    "tb_ddr_bridge",
+    "tb_dual_engine",
+    "tb_dual_lcd",
+    "tb_dual_panel",
+    "tb_dual_status_uart",
+    "tb_dual_voice_core",
+    "tb_dual_voice_spectrum",
+    "tb_dynamic_config",
+    "tb_external_controls",
+    "tb_external_engine",
+    "tb_external_engine_default",
+    "tb_fine_gain",
+    "tb_lcd_dashboard",
+    "tb_lcd_fine_scan",
+    "tb_lcd_snapshot",
+    "tb_lcd_static_footer",
+    "tb_lcd_timing",
+    "tb_mode_ring",
+    "tb_panel_diag_chord",
+    "tb_pcm_voice_conditioner",
+    "tb_pt8211_stereo_tx",
+    "tb_record_engine",
+    "tb_record_engine_default",
+    "tb_record_fault_isolation",
+    "tb_record_keys",
+    "tb_record_status",
+    "tb_record_status_fine",
+    "tb_ring_gate_margin",
+    "tb_six_gain"
+  ],
+  "FreshOldCasesRequired": [
+    "tb_lcd_boot_diagnostics",
+    "tb_record_top_startup"
+  ],
+  "FreshReasons": [
+    {
+      "Case": "tb_lcd_boot_diagnostics",
+      "Reasons": [
+        "ChangedActualTopElaborated",
+        "DependencyChanged:src/audio_record_ddr_top.v",
+        "ElaboratedScopesOrParametersChanged",
+        "RecursiveDependencyClosureChanged",
+        "StaticReadmemAssetSetChanged",
+        "UnreleasedOrMissingDependency:src/audio_harmony_controls.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_core.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_engine.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_lcd_display.v",
+        "UnreleasedOrMissingDependency:src/audio_ring_cal_meter.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk16.mem",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk16_font.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk24.mem",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk24_font.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_dashboard.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_status_snapshot.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_text.vh",
+        "UnreleasedOrMissingDependency:src/pcm_harmony_read_pitch.v",
+        "UnreleasedOrMissingDependency:src/pcm_harmony_voice_mixer.v",
+        "UnreleasedOrMissingDependency:src/pcm_long_clip_controller.v",
+        "UnreleasedOrMissingDependency:src/record_long_status_uart.v"
+      ],
+      "CurrentExecutable": "sim/results/reuse_33104/tb_lcd_boot_diagnostics.vvp"
+    },
+    {
+      "Case": "tb_record_top_startup",
+      "Reasons": [
+        "ChangedActualTopElaborated",
+        "DependencyChanged:src/audio_record_ddr_top.v",
+        "ElaboratedScopesOrParametersChanged",
+        "RecursiveDependencyClosureChanged",
+        "StaticReadmemAssetSetChanged",
+        "UnreleasedOrMissingDependency:src/audio_harmony_controls.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_core.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_engine.v",
+        "UnreleasedOrMissingDependency:src/audio_harmony_lcd_display.v",
+        "UnreleasedOrMissingDependency:src/audio_ring_cal_meter.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk16.mem",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk16_font.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk24.mem",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_cjk24_font.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_dashboard.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_status_snapshot.v",
+        "UnreleasedOrMissingDependency:src/lcd_harmony_text.vh",
+        "UnreleasedOrMissingDependency:src/pcm_harmony_read_pitch.v",
+        "UnreleasedOrMissingDependency:src/pcm_harmony_voice_mixer.v",
+        "UnreleasedOrMissingDependency:src/pcm_long_clip_controller.v",
+        "UnreleasedOrMissingDependency:src/record_long_status_uart.v"
+      ],
+      "CurrentExecutable": "sim/results/reuse_33104/tb_record_top_startup.vvp"
+    }
+  ],
+  "AdditionalNewCasesRequireFreshRuntime": true,
+  "ReusedRuntimeIsExplicit": true,
+  "SourceSnapshotFiles": 74,
+  "Records": [
+    {
+      "Case": "tb_algorithm_components",
+      "DependencyCount": 3,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_algorithm_components_dependency_proof.json",
+      "DependencyProofSHA256": "3F0E7574C0995181DB68C0DDF1C5CE5704D245C28D84AC0E14D0881F33695236",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_algorithm_core",
+      "DependencyCount": 5,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_algorithm_core_dependency_proof.json",
+      "DependencyProofSHA256": "FA349F8283A4D19227EFF2D33838D810FF25CDE54AE33EC94EDB365BE5F13118",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_clip_capacity",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_clip_capacity_dependency_proof.json",
+      "DependencyProofSHA256": "2A567E969FBE4EA49D09C838FC41A1591A6FE1F49D77C59E1AA4A83E53AF6FE7",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_clip_controller",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_clip_controller_dependency_proof.json",
+      "DependencyProofSHA256": "6C56E9441B775E8CEF4F9A9902021CDF7D69CF6D5FDE84948E06CCF5AE1941A4",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_clip_pause",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_clip_pause_dependency_proof.json",
+      "DependencyProofSHA256": "D5BF25B006E2FF8CC88502CE832F5CE791123A1C1009F36F0BDA906E7AFEC789",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_ddr_bridge",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_ddr_bridge_dependency_proof.json",
+      "DependencyProofSHA256": "13253BCEE9AF1B7B0B328583C31A1CBCA659D617E6EF826AC6F8339DAC6F8195",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_engine",
+      "DependencyCount": 21,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_engine_dependency_proof.json",
+      "DependencyProofSHA256": "A5DF804D90E9AEB572C1BED0367C70496402CBC1CB5DF7AD48FB6C5FE7686558",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_lcd",
+      "DependencyCount": 9,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_lcd_dependency_proof.json",
+      "DependencyProofSHA256": "D4DF8FB396A1DD3119ACA6817E209B16D42D9D9A8DAC90853B023E2345FDF54D",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_panel",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_panel_dependency_proof.json",
+      "DependencyProofSHA256": "BC48C978D0161B0418DF45B8DE89C8EB25B442A32A797DAD68DB2B8B8396D85B",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_status_uart",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_status_uart_dependency_proof.json",
+      "DependencyProofSHA256": "465B59E4AB66BC1BC208451E63A8623BA7A53094725A0E3B73BF72CD5FFF21A3",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_voice_core",
+      "DependencyCount": 5,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_voice_core_dependency_proof.json",
+      "DependencyProofSHA256": "078096A82756ECAE2016C2EF781476C19C48F89B17C9872DE9AED756C475F17D",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dual_voice_spectrum",
+      "DependencyCount": 5,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dual_voice_spectrum_dependency_proof.json",
+      "DependencyProofSHA256": "A5F5763336DB7F1D70D7AD41EB10F27471BF0D0541022EAC9985BA15E6D25F06",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_dynamic_config",
+      "DependencyCount": 5,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_dynamic_config_dependency_proof.json",
+      "DependencyProofSHA256": "8F6209AB5013ACD2857C9E2966E59516D7CECE246C26D861847E7DF5587C3369",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_external_controls",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_external_controls_dependency_proof.json",
+      "DependencyProofSHA256": "A081389137E044B0221398DEBD2B6D9D02A511237D0869D03078AE188182E76C",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_external_engine",
+      "DependencyCount": 20,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_external_engine_dependency_proof.json",
+      "DependencyProofSHA256": "481FE995C2438640EBEBF211E7CA2C51361418A746E98A1223DDF7DA699F9A88",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_external_engine_default",
+      "DependencyCount": 21,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_external_engine_default_dependency_proof.json",
+      "DependencyProofSHA256": "A1A2696B670715AC83CA7AD5019A624521CC220156E5BC81E43A55AF77B7F814",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_fine_gain",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_fine_gain_dependency_proof.json",
+      "DependencyProofSHA256": "990D4561982CFE353A73C5DEDCE9FF006330CC9652DC07409851A020407C54DD",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_lcd_dashboard",
+      "DependencyCount": 6,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_dashboard_dependency_proof.json",
+      "DependencyProofSHA256": "096471B3F2BF44E9B93E3DAA431BF47DD0F7BC1FFC8A46067AAD19A6D3047F97",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_lcd_fine_scan",
+      "DependencyCount": 9,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_fine_scan_dependency_proof.json",
+      "DependencyProofSHA256": "97471C948DF84B16533BE2A1376922B2CE00DF0DBF037BD42DA2E2B6BDF90143",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_lcd_snapshot",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_snapshot_dependency_proof.json",
+      "DependencyProofSHA256": "3D4597EF411064417B148258A7A6717655BE9DB0A683803672738064F80493DF",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_lcd_static_footer",
+      "DependencyCount": 7,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_static_footer_dependency_proof.json",
+      "DependencyProofSHA256": "3DB4E69E6F9F5F64BC1C97A51E4D2D7D6A1855634D4347A30230666319AE86CC",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_lcd_timing",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_lcd_timing_dependency_proof.json",
+      "DependencyProofSHA256": "BD534CAED64C4F565BF43B9C2591D067C59575C7BDFD429D644F1535AC6E3C53",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_mode_ring",
+      "DependencyCount": 4,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_mode_ring_dependency_proof.json",
+      "DependencyProofSHA256": "F9DC8539FFCCDF050CEE65FEA9E6F15136D44D9A589621AB51ECE385F264C182",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_panel_diag_chord",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_panel_diag_chord_dependency_proof.json",
+      "DependencyProofSHA256": "0DF54535F6D0A529980FAD1CD5A3788939B2239363DAD301ACBE30FD08D0615E",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_pcm_voice_conditioner",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_pcm_voice_conditioner_dependency_proof.json",
+      "DependencyProofSHA256": "62C94C4D4718FD4A1B1934078A13F78361B4835467F93B2FB307EEB70660EEA8",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_pt8211_stereo_tx",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_pt8211_stereo_tx_dependency_proof.json",
+      "DependencyProofSHA256": "FE923EDF2E2463B0EE970F8C99217630ACD09C2F0EBB47C1BEF18843E58F226E",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_engine",
+      "DependencyCount": 20,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_engine_dependency_proof.json",
+      "DependencyProofSHA256": "3D980C22522F150E6A5B2A58C55EC9F05E3E87E6729763BF1D283B4369680BC4",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_engine_default",
+      "DependencyCount": 20,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_engine_default_dependency_proof.json",
+      "DependencyProofSHA256": "E15B500CF8F50B33DF918C4AE34629FDB2A47F9C3590CA20AD109E6B77E007E8",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_fault_isolation",
+      "DependencyCount": 20,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_fault_isolation_dependency_proof.json",
+      "DependencyProofSHA256": "4C6206087030156116218126F3EDA6A75DE8413BB61FE3100A54A632790FB7F3",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_keys",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_keys_dependency_proof.json",
+      "DependencyProofSHA256": "1A4883FBBCEEEE7D1EBFFE9495433BEFA409C17C3B328F59FF767CEAB2C9C6E3",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_status",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_status_dependency_proof.json",
+      "DependencyProofSHA256": "68C8FF6859EC10423595E89B9BE2958231A2A56E85DE822130459094822A502F",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_record_status_fine",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_record_status_fine_dependency_proof.json",
+      "DependencyProofSHA256": "553225428F078CFC351744EA417D185A74DE8F720A58E5B66D8654D992C04093",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_ring_gate_margin",
+      "DependencyCount": 3,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_ring_gate_margin_dependency_proof.json",
+      "DependencyProofSHA256": "213C41B47B97AA9124FF22E1AF68AB6455966BB65A872BF11C312A37186D8390",
+      "RuntimeExecutedThisRelease": false
+    },
+    {
+      "Case": "tb_six_gain",
+      "DependencyCount": 2,
+      "DependencyProofPath": "sim/results/reuse_33104/tb_six_gain_dependency_proof.json",
+      "DependencyProofSHA256": "E74CC4C84F8338BF5DDA55AC389B90954F0E0BFF2B7915B70B4DA3ED569F4D51",
+      "RuntimeExecutedThisRelease": false
+    }
+  ],
+  "OriginalReleaseManifestSHA256": "24B8CCD0208068F5903C02690F30A4D33CB8853373497A7C60E135D8F16CE864",
+  "OriginalWorkingManifestSHA256": "D94DB947A324A1AB54BF8540F336C6C6CA6BA1E0ABDCEC569DA00EB7E4CBCC8E",
+  "AuditScriptSHA256": "7A5FE22371AC6B5528CA9EF948D6A025A5096F22D15E2B3FD724560BE86D4FB5",
+  "HardwareValidated": false
+}

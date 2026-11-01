@@ -1,0 +1,2 @@
+PASS RECORD_ENGINE RAM_BITS=8 GRAIN_LOG2=6 checks=32965049 raw_captured=351 replay_input_samples=1320 zero_input_samples=7850 isolated_from_mic=1320 full_replays=3 core_outputs=9571 DAC_frames=10470 nonzero_frames=3169 safe_commits=20
+sim/tb_record_engine.sv:238: $finish called at 214426340000 (1ps)

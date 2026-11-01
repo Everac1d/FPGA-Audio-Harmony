@@ -1,0 +1,66 @@
+{
+  "Passed": true,
+  "Case": "tb_harmony_tuned_engine",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 418.8218357563019,
+  "SourceHashes": {
+    "src/audio_harmony_engine_tuned.v": "B6C7C3A4E6F35AA7BC40553E0807A61B5A8011ADF93AFE403B6FCB69BD3524B6",
+    "src/audio_harmony_controls.v": "917FA63954A3CC133B125BE3EC8E8F614747CEE955744CCB1C7D1BE7CA1FB371",
+    "src/audio_external_controls.v": "9C68399FB0CCAD5EDD02BEF08A410336A99696F5DE205E2373E42AE9C5FD9591",
+    "src/audio_record_keys.v": "897DBC1A49D592A656807E73C3BF0E64C1B79FD40CE16DA66B48EBF05A7D469F",
+    "src/audio_test_clock.v": "74C050C7F823EB3BEE182D2AA1D89D2CAEEC3BAB07FF2BC3E45F69F6CEFFD0B6",
+    "src/mic_array_pcm.v": "A1BA22CB0183951436C1E5A0C5B71D811939798BDCD59A92938BCD6808C52B91",
+    "src/mic_i2s_rx.v": "9251E16F2CA695381903037FD9A0E2F68647D55CC601FE4AF3E01A075561C30F",
+    "src/pcm_long_clip_controller.v": "CD74F7CBB33202D3A4D83E1E4F6879C36A09B6274AF7E991D7CFA4F6B75D7457",
+    "src/audio_harmony_core.v": "1E818BF861C77897806AA58967D488E871FF4BCB2C43A8CD697326BF2F1FFABF",
+    "src/pcm_harmony_read_pitch.v": "A2498ABDDF4C249B191670D8084B8F2C79CAF679ABD870452455B7875B053714",
+    "src/pcm_harmony_voice_mixer.v": "9A60BE2F1ECD01C0C8C1037E736D16A5DE6E7CD00620963DD7FE44E04F8EDD82",
+    "src/pcm_crossfade.v": "2BC19A9DBFFD02B15435EE8A2F7E3C49CC21C49FC3D746385C3C6A1FA4267D76",
+    "src/pcm_voice_conditioner.v": "42961D9541F238AD0B68C9ADFF0C8A8C6BA7EFE872B15987754252773CB91E88",
+    "src/pcm_output_queue.v": "BBF18550390E4C3A39B1EC866E5D65E1F44FF6E75B91D20E5ED227E28B818F7D",
+    "src/pcm_monitor_guard.v": "2FA299B4AB91CFFA86C5F1DFC8DF10AB4A3DF03392D90D8C8E0359175E0EC2A1",
+    "src/pt8211_stereo_tx.v": "84C75CA74D7234023050898E71ADC4D4EA890FFC4B70621E45C8B337C30DDD22",
+    "src/audio_ring_cal_meter.v": "B1B57A8E1E80ADF39D455DCD97C009A7510DD9CB365E7D8A7A3C2FA27D164C7F",
+    "src/audio_ring_palette.v": "79A667AB379DFF543C55250F8C9738B4930CAE76D5D755A4D9B5620DB36C7835",
+    "src/sk9822_ring_softlow.v": "80224AA6AF4362AE554E0E378525F6F424F23CDF7CA72F1007BCE15279EFBB79",
+    "src/status_ws2812.v": "A0DC1C880DF0A0E4D63220AD9E707FCD1DD0F791D56462BE6366C9E66C9D6ADE",
+    "src/record_long_status_uart.v": "5FCD0DBE25380C19D75C88476F881E70666E8C82267DBF41E5079EC7B29DE32B",
+    "sim/tb_harmony_tuned_engine.sv": "7E2CC8461CB72E0000003FD48EA01D744B1FD2CB8C9CBE81B64433F93F9D3F88",
+    "sim/run_harmony_tuned_engine.py": "FB5DB5EE77D2514E81239E1EDC1C1DD25755B8CE660E4BFFFEC9C18C8BE5C9AB"
+  },
+  "CompiledSources": [
+    "src/audio_harmony_engine_tuned.v",
+    "src/audio_harmony_controls.v",
+    "src/audio_external_controls.v",
+    "src/audio_record_keys.v",
+    "src/audio_test_clock.v",
+    "src/mic_array_pcm.v",
+    "src/mic_i2s_rx.v",
+    "src/pcm_long_clip_controller.v",
+    "src/audio_harmony_core.v",
+    "src/pcm_harmony_read_pitch.v",
+    "src/pcm_harmony_voice_mixer.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_voice_conditioner.v",
+    "src/pcm_output_queue.v",
+    "src/pcm_monitor_guard.v",
+    "src/pt8211_stereo_tx.v",
+    "src/audio_ring_cal_meter.v",
+    "src/audio_ring_palette.v",
+    "src/sk9822_ring_softlow.v",
+    "src/status_ws2812.v",
+    "src/record_long_status_uart.v"
+  ],
+  "DependencyMethod": "Explicit module/source closure, standalone TB and exact runner; no external fixture or ROM",
+  "Summary": [
+    "PASS HARMONY_TUNED_ENGINE grain=6 dual=1 checks=34273693 clip=2601 raw_inputs=3235 DAC=11584 nonzero=4633 safe_commits=9 pause_resume no_skip config_continue fine_gain unified_harmony0_0 independent_voice_selection second_pitch_commit ring_tune_no_audio_change paused_ring_tune source_fault_isolation"
+  ],
+  "HardwareValidated": false
+}

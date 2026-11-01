@@ -1,0 +1,1051 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_dual_voice_spectrum.sv",
+      "src/audio_effect_core.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_dual_voice_spectrum",
+        "Type": "tb_dual_voice_spectrum",
+        "InstantiationSource": "sim/tb_dual_voice_spectrum.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_dual_voice_spectrum.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "sim/tb_dual_voice_spectrum.sv",
+        "InstantiationLine": 6,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000001000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000010000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000010000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<1000000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "dual_voice",
+        "Type": "dual_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice"
+      },
+      {
+        "Kind": "module",
+        "Instance": "second_algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 49,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000001000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000010000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000010000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<1000000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.ratio_q20"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_dual_voice_spectrum.sv",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002102d2fe9a0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002102cc959b0 .scope module, \"tb_dual_voice_spectrum\" \"tb_dual_voice_spectrum\" 3 2;",
+      "S_000002102d1131b0 .scope module, \"dut\" \"audio_effect_core\" 3 6, 4 6 0, S_000002102cc959b0;",
+      "P_000002102c98bb20 .param/l \"DUAL_VOICE_ENABLE\" 0 4 11, +C4<00000000000000000000000000000001>;",
+      "P_000002102c98bb58 .param/l \"DYNAMIC_CONFIG\" 0 4 10, +C4<00000000000000000000000000000001>;",
+      "P_000002102c98bb90 .param/l \"GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000001101>;",
+      "P_000002102c98bbc8 .param/l \"GUARD_SAMPLES\" 0 4 9, +C4<00000000000000000000000000100000>;",
+      "P_000002102c98bc00 .param/l \"RAM_ADDR_BITS\" 0 4 7, +C4<00000000000000000000000000001110>;",
+      "S_000002102ca1e710 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 4 26, 5 8 0, S_000002102d1131b0;",
+      "P_000002102d2fecc0 .param/l \"DRY_DELAY\" 1 5 27, +C4<00000000000000000001000000100000>;",
+      "P_000002102d2fecf8 .param/l \"DYNAMIC_CONFIG\" 0 5 12, +C4<00000000000000000000000000000001>;",
+      "P_000002102d2fed30 .param/l \"FILL_SAMPLES\" 1 5 26, +C4<00000000000000000010000000100010>;",
+      "P_000002102d2fed68 .param/l \"FRAC_BITS\" 1 5 22, +C4<00000000000000000000000000010100>;",
+      "P_000002102d2feda0 .param/l \"GRAIN\" 1 5 25, +C4<00000000000000000010000000000000>;",
+      "P_000002102d2fedd8 .param/l \"GRAIN_LOG2\" 0 5 9, +C4<00000000000000000000000000001101>;",
+      "P_000002102d2fee10 .param/l \"GRAIN_Q20\" 1 5 28, C4<1000000000000000000000000000000000>;",
+      "P_000002102d2fee48 .param/l \"GUARD_Q20\" 1 5 29, C4<0000000000000000000000000000100000>;",
+      "P_000002102d2fee80 .param/l \"GUARD_SAMPLES\" 0 5 9, +C4<00000000000000000000000000100000>;",
+      "P_000002102d2feeb8 .param/l \"PHASE_BITS\" 1 5 23, +C4<00000000000000000000000000100001>;",
+      "P_000002102d2feef0 .param/l \"POSITION_BITS\" 1 5 24, +C4<00000000000000000000000000100010>;",
+      "P_000002102d2fef28 .param/l \"RAM_ADDR_BITS\" 0 5 9, +C4<00000000000000000000000000001110>;",
+      "S_000002102cd47d20 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 5 46, 5 46 0, S_000002102ca1e710;",
+      "S_000002102cd47eb0 .scope module, \"fade\" \"pcm_crossfade\" 5 116, 6 5 0, S_000002102ca1e710;",
+      "S_000002102cd48040 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 6 23, 6 23 0, S_000002102cd47eb0;",
+      "S_000002102cccdc40 .scope function.vec4.u16, \"interp\" \"interp\" 5 100, 5 100 0, S_000002102ca1e710;",
+      "S_000002102cd08b50 .scope module, \"mixer\" \"pcm_harmony_mixer\" 5 121, 7 5 0, S_000002102ca1e710;",
+      "S_000002102cd08ce0 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 7 19, 7 19 0, S_000002102cd08b50;",
+      "S_000002102cd08e70 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 5 54, 5 54 0, S_000002102ca1e710;",
+      "S_000002102cc822e0 .scope generate, \"dual_voice\" \"dual_voice\" 4 31, 4 31 0, S_000002102d1131b0;",
+      "S_000002102cc82470 .scope module, \"second_algorithm\" \"pcm_dual_read_pitch\" 4 49, 5 8 0, S_000002102cc822e0;",
+      "P_000002102c9c59e0 .param/l \"DRY_DELAY\" 1 5 27, +C4<00000000000000000001000000100000>;",
+      "P_000002102c9c5a18 .param/l \"DYNAMIC_CONFIG\" 0 5 12, +C4<00000000000000000000000000000001>;",
+      "P_000002102c9c5a50 .param/l \"FILL_SAMPLES\" 1 5 26, +C4<00000000000000000010000000100010>;",
+      "P_000002102c9c5a88 .param/l \"FRAC_BITS\" 1 5 22, +C4<00000000000000000000000000010100>;",
+      "P_000002102c9c5ac0 .param/l \"GRAIN\" 1 5 25, +C4<00000000000000000010000000000000>;",
+      "P_000002102c9c5af8 .param/l \"GRAIN_LOG2\" 0 5 9, +C4<00000000000000000000000000001101>;",
+      "P_000002102c9c5b30 .param/l \"GRAIN_Q20\" 1 5 28, C4<1000000000000000000000000000000000>;",
+      "P_000002102c9c5b68 .param/l \"GUARD_Q20\" 1 5 29, C4<0000000000000000000000000000100000>;",
+      "P_000002102c9c5ba0 .param/l \"GUARD_SAMPLES\" 0 5 9, +C4<00000000000000000000000000100000>;",
+      "P_000002102c9c5bd8 .param/l \"PHASE_BITS\" 1 5 23, +C4<00000000000000000000000000100001>;",
+      "P_000002102c9c5c10 .param/l \"POSITION_BITS\" 1 5 24, +C4<00000000000000000000000000100010>;",
+      "P_000002102c9c5c48 .param/l \"RAM_ADDR_BITS\" 0 5 9, +C4<00000000000000000000000000001110>;",
+      "S_000002102cc82600 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 5 46, 5 46 0, S_000002102cc82470;",
+      "S_000002102d3d3800 .scope module, \"fade\" \"pcm_crossfade\" 5 116, 6 5 0, S_000002102cc82470;",
+      "S_000002102d3d3990 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 6 23, 6 23 0, S_000002102d3d3800;",
+      "S_000002102d3d3030 .scope function.vec4.u16, \"interp\" \"interp\" 5 100, 5 100 0, S_000002102cc82470;",
+      "S_000002102d3d2b80 .scope module, \"mixer\" \"pcm_harmony_mixer\" 5 121, 7 5 0, S_000002102cc82470;",
+      "S_000002102d3d3350 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 7 19, 7 19 0, S_000002102d3d2b80;",
+      "S_000002102d3d3670 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 5 54, 5 54 0, S_000002102cc82470;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_dual_voice_spectrum.sv",
+      "src/audio_effect_core.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_dual_voice_spectrum",
+        "Type": "tb_dual_voice_spectrum",
+        "InstantiationSource": "sim/tb_dual_voice_spectrum.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_dual_voice_spectrum.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "sim/tb_dual_voice_spectrum.sv",
+        "InstantiationLine": 6,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000001000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000010000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000010000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<1000000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "dual_voice",
+        "Type": "dual_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice"
+      },
+      {
+        "Kind": "module",
+        "Instance": "second_algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 49,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000001000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000010000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000010000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<1000000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001110>"
+          }
+        ],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_voice_spectrum.dut.dual_voice.second_algorithm.ratio_q20"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_dual_voice_spectrum.sv",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001a553a7c7c0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001a553f6a520 .scope module, \"tb_dual_voice_spectrum\" \"tb_dual_voice_spectrum\" 3 2;",
+      "S_000001a553f6b0b0 .scope module, \"dut\" \"audio_effect_core\" 3 6, 4 6 0, S_000001a553f6a520;",
+      "P_000001a5536c3c70 .param/l \"DUAL_VOICE_ENABLE\" 0 4 11, +C4<00000000000000000000000000000001>;",
+      "P_000001a5536c3ca8 .param/l \"DYNAMIC_CONFIG\" 0 4 10, +C4<00000000000000000000000000000001>;",
+      "P_000001a5536c3ce0 .param/l \"GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000001101>;",
+      "P_000001a5536c3d18 .param/l \"GUARD_SAMPLES\" 0 4 9, +C4<00000000000000000000000000100000>;",
+      "P_000001a5536c3d50 .param/l \"RAM_ADDR_BITS\" 0 4 7, +C4<00000000000000000000000000001110>;",
+      "S_000001a553d3a470 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 4 26, 5 8 0, S_000001a553f6b0b0;",
+      "P_000001a553d3a600 .param/l \"DRY_DELAY\" 1 5 27, +C4<00000000000000000001000000100000>;",
+      "P_000001a553d3a638 .param/l \"DYNAMIC_CONFIG\" 0 5 12, +C4<00000000000000000000000000000001>;",
+      "P_000001a553d3a670 .param/l \"FILL_SAMPLES\" 1 5 26, +C4<00000000000000000010000000100010>;",
+      "P_000001a553d3a6a8 .param/l \"FRAC_BITS\" 1 5 22, +C4<00000000000000000000000000010100>;",
+      "P_000001a553d3a6e0 .param/l \"GRAIN\" 1 5 25, +C4<00000000000000000010000000000000>;",
+      "P_000001a553d3a718 .param/l \"GRAIN_LOG2\" 0 5 9, +C4<00000000000000000000000000001101>;",
+      "P_000001a553d3a750 .param/l \"GRAIN_Q20\" 1 5 28, C4<1000000000000000000000000000000000>;",
+      "P_000001a553d3a788 .param/l \"GUARD_Q20\" 1 5 29, C4<0000000000000000000000000000100000>;",
+      "P_000001a553d3a7c0 .param/l \"GUARD_SAMPLES\" 0 5 9, +C4<00000000000000000000000000100000>;",
+      "P_000001a553d3a7f8 .param/l \"PHASE_BITS\" 1 5 23, +C4<00000000000000000000000000100001>;",
+      "P_000001a553d3a830 .param/l \"POSITION_BITS\" 1 5 24, +C4<00000000000000000000000000100010>;",
+      "P_000001a553d3a868 .param/l \"RAM_ADDR_BITS\" 0 5 9, +C4<00000000000000000000000000001110>;",
+      "S_000001a553c43100 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 5 46, 5 46 0, S_000001a553d3a470;",
+      "S_000001a553c43290 .scope module, \"fade\" \"pcm_crossfade\" 5 116, 6 5 0, S_000001a553d3a470;",
+      "S_000001a553c43420 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 6 23, 6 23 0, S_000001a553c43290;",
+      "S_000001a553b3a370 .scope function.vec4.u16, \"interp\" \"interp\" 5 100, 5 100 0, S_000001a553d3a470;",
+      "S_000001a553b1dbc0 .scope module, \"mixer\" \"pcm_harmony_mixer\" 5 121, 7 5 0, S_000001a553d3a470;",
+      "S_000001a553b1dd50 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 7 19, 7 19 0, S_000001a553b1dbc0;",
+      "S_000001a553b1dee0 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 5 54, 5 54 0, S_000001a553d3a470;",
+      "S_000001a553b1d650 .scope generate, \"dual_voice\" \"dual_voice\" 4 31, 4 31 0, S_000001a553f6b0b0;",
+      "S_000001a553b1d7e0 .scope module, \"second_algorithm\" \"pcm_dual_read_pitch\" 4 49, 5 8 0, S_000001a553b1d650;",
+      "P_000001a553ad4120 .param/l \"DRY_DELAY\" 1 5 27, +C4<00000000000000000001000000100000>;",
+      "P_000001a553ad4158 .param/l \"DYNAMIC_CONFIG\" 0 5 12, +C4<00000000000000000000000000000001>;",
+      "P_000001a553ad4190 .param/l \"FILL_SAMPLES\" 1 5 26, +C4<00000000000000000010000000100010>;",
+      "P_000001a553ad41c8 .param/l \"FRAC_BITS\" 1 5 22, +C4<00000000000000000000000000010100>;",
+      "P_000001a553ad4200 .param/l \"GRAIN\" 1 5 25, +C4<00000000000000000010000000000000>;",
+      "P_000001a553ad4238 .param/l \"GRAIN_LOG2\" 0 5 9, +C4<00000000000000000000000000001101>;",
+      "P_000001a553ad4270 .param/l \"GRAIN_Q20\" 1 5 28, C4<1000000000000000000000000000000000>;",
+      "P_000001a553ad42a8 .param/l \"GUARD_Q20\" 1 5 29, C4<0000000000000000000000000000100000>;",
+      "P_000001a553ad42e0 .param/l \"GUARD_SAMPLES\" 0 5 9, +C4<00000000000000000000000000100000>;",
+      "P_000001a553ad4318 .param/l \"PHASE_BITS\" 1 5 23, +C4<00000000000000000000000000100001>;",
+      "P_000001a553ad4350 .param/l \"POSITION_BITS\" 1 5 24, +C4<00000000000000000000000000100010>;",
+      "P_000001a553ad4388 .param/l \"RAM_ADDR_BITS\" 0 5 9, +C4<00000000000000000000000000001110>;",
+      "S_000001a553ad43d0 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 5 46, 5 46 0, S_000001a553b1d7e0;",
+      "S_000001a553f6c970 .scope module, \"fade\" \"pcm_crossfade\" 5 116, 6 5 0, S_000001a553b1d7e0;",
+      "S_000001a553f6c4c0 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 6 23, 6 23 0, S_000001a553f6c970;",
+      "S_000001a553f6c650 .scope function.vec4.u16, \"interp\" \"interp\" 5 100, 5 100 0, S_000001a553b1d7e0;",
+      "S_000001a553f6c7e0 .scope module, \"mixer\" \"pcm_harmony_mixer\" 5 121, 7 5 0, S_000001a553b1d7e0;",
+      "S_000001a553f6cb00 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 7 19, 7 19 0, S_000001a553f6c7e0;",
+      "S_000001a553f6cc90 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 5 54, 5 54 0, S_000001a553b1d7e0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_dual_voice_spectrum.sv",
+    "src/audio_effect_core.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_dual_voice_spectrum.sv",
+    "src/audio_effect_core.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

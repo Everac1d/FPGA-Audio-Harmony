@@ -1,0 +1,4 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module pcm_long_clip_controller declared here: src\pcm_long_clip_controller.v:4

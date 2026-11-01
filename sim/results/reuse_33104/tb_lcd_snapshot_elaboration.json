@@ -1,0 +1,237 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_lcd_snapshot.sv",
+      "src/lcd_status_snapshot.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_lcd_snapshot",
+        "Type": "tb_lcd_snapshot",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.check"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "lcd_status_snapshot",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/lcd_status_snapshot.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/lcd_status_snapshot.v",
+            "Line": 5,
+            "Value": "+C4<00000000000101100101101000001100>"
+          }
+        ],
+        "Path": "tb_lcd_snapshot.dut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "expect_front",
+        "Type": "expect_front",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 35,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 35,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.expect_front"
+      },
+      {
+        "Kind": "function.vec4.s84",
+        "Instance": "front",
+        "Type": "front",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 27,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 27,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.front"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pulse",
+        "Type": "pulse",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 32,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.pulse"
+      },
+      {
+        "Kind": "task",
+        "Instance": "run_case",
+        "Type": "run_case",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.run_case"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_lcd_snapshot.sv",
+      "src/lcd_status_snapshot.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001f2aa3e55e0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001f2aa8365b0 .scope module, \"tb_lcd_snapshot\" \"tb_lcd_snapshot\" 3 2;",
+      "S_000001f2aa06e420 .scope task, \"check\" \"check\" 3 23, 3 23 0, S_000001f2aa8365b0;",
+      "S_000001f2a9fcf3c0 .scope module, \"dut\" \"lcd_status_snapshot\" 3 15, 4 4 0, S_000001f2aa8365b0;",
+      "P_000001f2aaa80a40 .param/l \"MAX_SAMPLES\" 0 4 5, +C4<00000000000101100101101000001100>;",
+      "S_000001f2aa467d50 .scope task, \"expect_front\" \"expect_front\" 3 35, 3 35 0, S_000001f2aa8365b0;",
+      "S_000001f2aa41d670 .scope function.vec4.s84, \"front\" \"front\" 3 27, 3 27 0, S_000001f2aa8365b0;",
+      "S_000001f2aa41d800 .scope task, \"pulse\" \"pulse\" 3 32, 3 32 0, S_000001f2aa8365b0;",
+      "S_000001f2aa41d990 .scope task, \"run_case\" \"run_case\" 3 43, 3 43 0, S_000001f2aa8365b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_lcd_snapshot.sv",
+      "src/lcd_status_snapshot.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_lcd_snapshot",
+        "Type": "tb_lcd_snapshot",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.check"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "lcd_status_snapshot",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/lcd_status_snapshot.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/lcd_status_snapshot.v",
+            "Line": 5,
+            "Value": "+C4<00000000000101100101101000001100>"
+          }
+        ],
+        "Path": "tb_lcd_snapshot.dut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "expect_front",
+        "Type": "expect_front",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 35,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 35,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.expect_front"
+      },
+      {
+        "Kind": "function.vec4.s84",
+        "Instance": "front",
+        "Type": "front",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 27,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 27,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.front"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pulse",
+        "Type": "pulse",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 32,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.pulse"
+      },
+      {
+        "Kind": "task",
+        "Instance": "run_case",
+        "Type": "run_case",
+        "InstantiationSource": "sim/tb_lcd_snapshot.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_lcd_snapshot.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_lcd_snapshot.run_case"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_lcd_snapshot.sv",
+      "src/lcd_status_snapshot.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002b7e1ebec00 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002b7e2653d90 .scope module, \"tb_lcd_snapshot\" \"tb_lcd_snapshot\" 3 2;",
+      "S_000002b7e2653870 .scope task, \"check\" \"check\" 3 23, 3 23 0, S_000002b7e2653d90;",
+      "S_000002b7e244a860 .scope module, \"dut\" \"lcd_status_snapshot\" 3 15, 4 4 0, S_000002b7e2653d90;",
+      "P_000002b7e25d30b0 .param/l \"MAX_SAMPLES\" 0 4 5, +C4<00000000000101100101101000001100>;",
+      "S_000002b7e2353110 .scope task, \"expect_front\" \"expect_front\" 3 35, 3 35 0, S_000002b7e2653d90;",
+      "S_000002b7e23532a0 .scope function.vec4.s84, \"front\" \"front\" 3 27, 3 27 0, S_000002b7e2653d90;",
+      "S_000002b7e2353430 .scope task, \"pulse\" \"pulse\" 3 32, 3 32 0, S_000002b7e2653d90;",
+      "S_000002b7e21e83d0 .scope task, \"run_case\" \"run_case\" 3 43, 3 43 0, S_000002b7e2653d90;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_lcd_snapshot.sv",
+    "src/lcd_status_snapshot.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_lcd_snapshot.sv",
+    "src/lcd_status_snapshot.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

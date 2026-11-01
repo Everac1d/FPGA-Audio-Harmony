@@ -1,0 +1,45 @@
+{
+  "Passed": true,
+  "UserCode": "0x00033109",
+  "FS": "33_harmony_5min_margin_m1500_B.fs",
+  "FS_SHA256": "8A577D06C4037933807A0D05FB2EB6CA57CD9FA2A9F360C88DE4E5A05C9F2749",
+  "CheckedPhysicalPins": 121,
+  "GlobalSetupViolations": 0,
+  "GlobalHoldViolations": 0,
+  "ClockFmaxMHz": {
+    "clk_50m": 65.208,
+    "ddr_mem400": 2240.143,
+    "ddr_ui100": 108.703
+  },
+  "Slacks": {
+    "SetupMinSlackNs": 0.801,
+    "HoldMinSlackNs": 0.126,
+    "RecoveryMinSlackNs": 4.315,
+    "RemovalMinSlackNs": 0.258
+  },
+  "Resources": {
+    "Logic": "18297/138240",
+    "Register": "12668/139095",
+    "I/O Port": "121/297",
+    "BSRAM": "80/340",
+    "DSP": "27/298"
+  },
+  "ActiveTimingConstraints": 33,
+  "WarningCodes": [
+    "EX3791",
+    "NL0002",
+    "PR1014"
+  ],
+  "WarningsReview": {
+    "EX3073": "Review any unused read-only diagnostic outputs; LCD uses active audio status.",
+    "EX3791": "Bounded key counters, unchanged baseline arithmetic/display widths, native PLL init widths; numerical and UI regressions required.",
+    "PR1014": "Retained generic-routing warning on clk_d. Check PRIMARY/HCLK clock routing and STA; physical DDR remains unvalidated.",
+    "UserCacheLog": "Chinese user-path sh.log may fail; native exit, fresh FS and full build.log plus STA are checked."
+  },
+  "HardwareValidated": false,
+  "DDRPhysicalValidated": false,
+  "ListeningValidated": false,
+  "LCDPanelVerified": false,
+  "BacklightEnabled": true,
+  "CH569IsolationRequired": true
+}

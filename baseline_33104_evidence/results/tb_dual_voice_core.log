@@ -1,0 +1,2 @@
+PASS DUAL_VOICE_CORE independent_fixedpoint_samples=12000 all625pitch_pairs modes012_bit_exact mode3_two_independent_ratios rails symmetric_average job_latching holds=119 history_continuity
+sim/tb_dual_voice_core.sv:94: $finish called at 16306960000 (1ps)

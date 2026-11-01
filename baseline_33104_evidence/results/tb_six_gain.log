@@ -1,0 +1,2 @@
+PASS expanded_gain exhaustive_pcm_gain_pairs=327680 static_samples=327718 smooth_samples=2089 numerical_checks=1315050 all_5_selectable_gains_reserved_unity_fallback_rails_pipeline_slew_hold_tone_source_loss_reset
+sim/tb_six_gain.sv:224: $finish called at 3298196000 (1ps)

@@ -1,0 +1,2 @@
+PASS DUAL_PANEL checks=105 tone_entries=1
+sim/tb_dual_panel.sv:97: $finish called at 89821000 (1ps)

@@ -1,0 +1,4197 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_dual_engine.sv",
+      "sim/tb_external_engine.sv",
+      "src/audio_effect_core.v",
+      "src/audio_external_controls.v",
+      "src/audio_level_meter.v",
+      "src/audio_record_engine.v",
+      "src/audio_ring_palette.v",
+      "src/audio_test_clock.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_clip_controller.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_voice_conditioner.v",
+      "src/pt8211_stereo_tx.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/status_ws2812.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_dual_engine",
+        "Type": "tb_dual_engine",
+        "InstantiationSource": "sim/tb_dual_engine.sv",
+        "InstantiationLine": 3,
+        "DefinitionSource": "sim/tb_dual_engine.sv",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dual_panel",
+        "Type": "tb_external_engine",
+        "InstantiationSource": "sim/tb_dual_engine.sv",
+        "InstantiationLine": 4,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "TEST_DUAL_ENABLE",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_RAM_BITS",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel"
+      },
+      {
+        "Kind": "task",
+        "Instance": "assert_paused",
+        "Type": "assert_paused",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 217,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 217,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.assert_paused"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_config",
+        "Type": "await_config",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 209,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 209,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.await_config"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_second",
+        "Type": "await_second",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 230,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 230,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.await_second"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 56,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 56,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.check"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "check_dual_core",
+        "Type": "check_dual_core",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 44,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.check_dual_core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_record_engine",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EXTERNAL_CONTROLS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POR_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STARTUP_FRAMES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_USER_CODE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 14,
+            "Value": "C4<00000000000000110010010100000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "UART_REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 6,
+            "Value": "+C4<00000000100110001001011010000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "clock_gen",
+        "Type": "audio_test_clock",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 58,
+        "DefinitionSource": "src/audio_test_clock.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.clock_gen"
+      },
+      {
+        "Kind": "module",
+        "Instance": "conditioner",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 182,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.conditioner"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.conditioner.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "core",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 178,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "dual_voice",
+        "Type": "dual_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice"
+      },
+      {
+        "Kind": "module",
+        "Instance": "second_algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 49,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "external_ui",
+        "Type": "external_ui",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui"
+      },
+      {
+        "Kind": "module",
+        "Instance": "keys",
+        "Type": "audio_external_controls",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 82,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GAIN_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_REPLAY_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PITCH_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys"
+      },
+      {
+        "Kind": "module",
+        "Instance": "gain_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 111,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys.gain_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "pitch_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 114,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys.pitch_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "meter",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 232,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000011001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000001000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.meter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.meter.amplitude_curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "microphones",
+        "Type": "mic_array_pcm",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 70,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[0]",
+        "Type": "g_rx[0]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[0]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[0].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[1]",
+        "Type": "g_rx[1]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[1]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[1].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[2]",
+        "Type": "g_rx[2]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[2]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[2].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[3]",
+        "Type": "g_rx[3]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[3]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[3].receiver"
+      },
+      {
+        "Kind": "module",
+        "Instance": "monitor",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 216,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "queue",
+        "Type": "pcm_output_queue",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 186,
+        "DefinitionSource": "src/pcm_output_queue.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ADDR_WIDTH",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 25,
+            "Value": "C4<10000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HEAD_SETUP_CYCLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 26,
+            "Value": "C4<00010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SETUP_WIDTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.queue"
+      },
+      {
+        "Kind": "module",
+        "Instance": "recorder",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 163,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000001011100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001101100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.recorder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reporter",
+        "Type": "record_status_uart",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 262,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000011100001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000110110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000010111110101111000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000100110001001011010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001110001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010010100000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.report_byte"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 239,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000011110100001001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.ring"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring_palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 235,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.ring_palette"
+      },
+      {
+        "Kind": "module",
+        "Instance": "speaker",
+        "Type": "pt8211_stereo_tx",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 220,
+        "DefinitionSource": "src/pt8211_stereo_tx.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.speaker"
+      },
+      {
+        "Kind": "module",
+        "Instance": "status_led",
+        "Type": "status_ws2812",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 260,
+        "DefinitionSource": "src/status_ws2812.v",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.status_led"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "tone_lut",
+        "Type": "tone_lut",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 194,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 194,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.tone_lut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "gain_press",
+        "Type": "gain_press",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.gain_press"
+      },
+      {
+        "Kind": "task",
+        "Instance": "panel_key",
+        "Type": "panel_key",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 68,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 68,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.panel_key"
+      },
+      {
+        "Kind": "task",
+        "Instance": "phase",
+        "Type": "phase",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 75,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 75,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.phase"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_hold",
+        "Type": "pitch_hold",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 74,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 74,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.pitch_hold"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_press",
+        "Type": "pitch_press",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 73,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 73,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.pitch_press"
+      },
+      {
+        "Kind": "function.vec4.s24",
+        "Instance": "source_word",
+        "Type": "source_word",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 106,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 106,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.source_word"
+      },
+      {
+        "Kind": "task",
+        "Instance": "step",
+        "Type": "step",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 59,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 59,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.step"
+      },
+      {
+        "Kind": "task",
+        "Instance": "turn",
+        "Type": "turn",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 79,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 79,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.turn"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_frames",
+        "Type": "wait_frames",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 60,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 60,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.wait_frames"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_state",
+        "Type": "wait_state",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 64,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 64,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.wait_state"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_dual_engine.sv",
+      "sim/tb_external_engine.sv",
+      "src/audio_record_engine.v",
+      "src/audio_test_clock.v",
+      "src/pcm_voice_conditioner.v",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v",
+      "src/audio_external_controls.v",
+      "src/audio_level_meter.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_clip_controller.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/audio_ring_palette.v",
+      "src/pt8211_stereo_tx.v",
+      "src/status_ws2812.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002e47fc4e580 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002e47f614ed0 .scope module, \"tb_dual_engine\" \"tb_dual_engine\" 3 3;",
+      "S_000002e47fa655b0 .scope module, \"dual_panel\" \"tb_external_engine\" 3 4, 4 6 0, S_000002e47f614ed0;",
+      "P_000002e4001f0ad0 .param/l \"TEST_DUAL_ENABLE\" 0 4 9, +C4<00000000000000000000000000000001>;",
+      "P_000002e4001f0b08 .param/l \"TEST_GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000000110>;",
+      "P_000002e4001f0b40 .param/l \"TEST_RAM_BITS\" 0 4 7, +C4<00000000000000000000000000001000>;",
+      "S_000002e4002959e0 .scope task, \"assert_paused\" \"assert_paused\" 4 217, 4 217 0, S_000002e47fa655b0;",
+      "S_000002e400057010 .scope task, \"await_config\" \"await_config\" 4 209, 4 209 0, S_000002e47fa655b0;",
+      "S_000002e47f1edcd0 .scope task, \"await_second\" \"await_second\" 4 230, 4 230 0, S_000002e47fa655b0;",
+      "S_000002e4002b88a0 .scope task, \"check\" \"check\" 4 56, 4 56 0, S_000002e47fa655b0;",
+      "S_000002e4002b8a30 .scope generate, \"check_dual_core\" \"check_dual_core\" 4 44, 4 44 0, S_000002e47fa655b0;",
+      "S_000002e47f697580 .scope module, \"dut\" \"audio_record_engine\" 4 31, 5 3 0, S_000002e47fa655b0;",
+      "P_000002e47f6930a0 .param/l \"DEBOUNCE_CYCLES\" 0 5 4, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f6930d8 .param/l \"DUAL_VOICE_ENABLE\" 0 5 11, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f693110 .param/l \"ENCODER_FILTER_CYCLES\" 0 5 12, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f693148 .param/l \"ENHANCED_PLAYBACK\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f693180 .param/l \"EXTERNAL_CONTROLS\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f6931b8 .param/l \"FINE_GAIN\" 0 5 10, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f6931f0 .param/l \"GRAIN_LOG2\" 0 5 8, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f693228 .param/l \"LONG_DIAG_CYCLES\" 0 5 13, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f693260 .param/l \"LONG_PITCH_CYCLES\" 0 5 13, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f693298 .param/l \"LONG_PRESS_CYCLES\" 0 5 4, +C4<00000000000000000000000000011000>;",
+      "P_000002e47f6932d0 .param/l \"LONG_RESET_CYCLES\" 0 5 12, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f693308 .param/l \"MAX_SAMPLES\" 0 5 7, +C4<00000000000000000001000000000000>;",
+      "P_000002e47f693340 .param/l \"POR_CYCLES\" 0 5 5, +C4<00000000000000000000000000001000>;",
+      "P_000002e47f693378 .param/l \"RAM_ADDR_BITS\" 0 5 8, +C4<00000000000000000000000000001000>;",
+      "P_000002e47f6933b0 .param/l \"STARTUP_FRAMES\" 0 5 5, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f6933e8 .param/l \"STATUS_USER_CODE\" 0 5 14, C4<00000000000000110010010100000011>;",
+      "P_000002e47f693420 .param/l \"UART_REPORT_CYCLES\" 0 5 6, +C4<00000000100110001001011010000000>;",
+      "S_000002e47f6978a0 .scope module, \"clock_gen\" \"audio_test_clock\" 5 58, 6 3 0, S_000002e47f697580;",
+      "S_000002e47f658b50 .scope module, \"conditioner\" \"pcm_voice_conditioner\" 5 182, 7 31 0, S_000002e47f697580;",
+      "P_000002e47f658ce0 .param/l \"CLOSE_Q8\" 1 7 61, C4<00000000000000000100000000000000>;",
+      "P_000002e47f658d18 .param/l \"GATE_CLOSE_THRESHOLD\" 0 7 34, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f658d50 .param/l \"GATE_ENABLE\" 0 7 32, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f658d88 .param/l \"GATE_HOLD_SAMPLES\" 0 7 35, +C4<00000000000000000001000000000000>;",
+      "P_000002e47f658dc0 .param/l \"GATE_OPEN_THRESHOLD\" 0 7 33, +C4<00000000000000000000000010000000>;",
+      "P_000002e47f658df8 .param/l \"HOLD_BITS\" 1 7 59, +C4<00000000000000000000000000001101>;",
+      "P_000002e47f658e30 .param/l \"OPEN_Q8\" 1 7 60, C4<00000000000000001000000000000000>;",
+      "S_000002e47f658e70 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 7 44, 7 44 0, S_000002e47f658b50;",
+      "S_000002e400308830 .scope module, \"core\" \"audio_effect_core\" 5 178, 8 6 0, S_000002e47f697580;",
+      "P_000002e47f5e7b00 .param/l \"DUAL_VOICE_ENABLE\" 0 8 11, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f5e7b38 .param/l \"DYNAMIC_CONFIG\" 0 8 10, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f5e7b70 .param/l \"GRAIN_LOG2\" 0 8 8, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f5e7ba8 .param/l \"GUARD_SAMPLES\" 0 8 9, +C4<00000000000000000000000000100000>;",
+      "P_000002e47f5e7be0 .param/l \"RAM_ADDR_BITS\" 0 8 7, +C4<00000000000000000000000000001000>;",
+      "S_000002e400308510 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 8 26, 9 8 0, S_000002e400308830;",
+      "P_000002e47f5e3410 .param/l \"DRY_DELAY\" 1 9 27, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f5e3448 .param/l \"DYNAMIC_CONFIG\" 0 9 12, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f5e3480 .param/l \"FILL_SAMPLES\" 1 9 26, +C4<00000000000000000000000001100010>;",
+      "P_000002e47f5e34b8 .param/l \"FRAC_BITS\" 1 9 22, +C4<00000000000000000000000000010100>;",
+      "P_000002e47f5e34f0 .param/l \"GRAIN\" 1 9 25, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f5e3528 .param/l \"GRAIN_LOG2\" 0 9 9, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f5e3560 .param/l \"GRAIN_Q20\" 1 9 28, C4<100000000000000000000000000>;",
+      "P_000002e47f5e3598 .param/l \"GUARD_Q20\" 1 9 29, C4<0000000000000000000000100000>;",
+      "P_000002e47f5e35d0 .param/l \"GUARD_SAMPLES\" 0 9 9, +C4<00000000000000000000000000100000>;",
+      "P_000002e47f5e3608 .param/l \"PHASE_BITS\" 1 9 23, +C4<00000000000000000000000000011010>;",
+      "P_000002e47f5e3640 .param/l \"POSITION_BITS\" 1 9 24, +C4<00000000000000000000000000011100>;",
+      "P_000002e47f5e3678 .param/l \"RAM_ADDR_BITS\" 0 9 9, +C4<00000000000000000000000000001000>;",
+      "S_000002e400308380 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 9 46, 9 46 0, S_000002e400308510;",
+      "S_000002e4003086a0 .scope module, \"fade\" \"pcm_crossfade\" 9 116, 10 5 0, S_000002e400308510;",
+      "S_000002e400308b50 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 10 23, 10 23 0, S_000002e4003086a0;",
+      "S_000002e4003089c0 .scope function.vec4.u16, \"interp\" \"interp\" 9 100, 9 100 0, S_000002e400308510;",
+      "S_000002e400308ce0 .scope module, \"mixer\" \"pcm_harmony_mixer\" 9 121, 11 5 0, S_000002e400308510;",
+      "S_000002e400308e70 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 11 19, 11 19 0, S_000002e400308ce0;",
+      "S_000002e400308060 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 9 54, 9 54 0, S_000002e400308510;",
+      "S_000002e4003081f0 .scope generate, \"dual_voice\" \"dual_voice\" 8 31, 8 31 0, S_000002e400308830;",
+      "S_000002e40036f6c0 .scope module, \"second_algorithm\" \"pcm_dual_read_pitch\" 8 49, 9 8 0, S_000002e4003081f0;",
+      "P_000002e47f5c0be0 .param/l \"DRY_DELAY\" 1 9 27, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f5c0c18 .param/l \"DYNAMIC_CONFIG\" 0 9 12, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f5c0c50 .param/l \"FILL_SAMPLES\" 1 9 26, +C4<00000000000000000000000001100010>;",
+      "P_000002e47f5c0c88 .param/l \"FRAC_BITS\" 1 9 22, +C4<00000000000000000000000000010100>;",
+      "P_000002e47f5c0cc0 .param/l \"GRAIN\" 1 9 25, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f5c0cf8 .param/l \"GRAIN_LOG2\" 0 9 9, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f5c0d30 .param/l \"GRAIN_Q20\" 1 9 28, C4<100000000000000000000000000>;",
+      "P_000002e47f5c0d68 .param/l \"GUARD_Q20\" 1 9 29, C4<0000000000000000000000100000>;",
+      "P_000002e47f5c0da0 .param/l \"GUARD_SAMPLES\" 0 9 9, +C4<00000000000000000000000000100000>;",
+      "P_000002e47f5c0dd8 .param/l \"PHASE_BITS\" 1 9 23, +C4<00000000000000000000000000011010>;",
+      "P_000002e47f5c0e10 .param/l \"POSITION_BITS\" 1 9 24, +C4<00000000000000000000000000011100>;",
+      "P_000002e47f5c0e48 .param/l \"RAM_ADDR_BITS\" 0 9 9, +C4<00000000000000000000000000001000>;",
+      "S_000002e400370340 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 9 46, 9 46 0, S_000002e40036f6c0;",
+      "S_000002e40036f9e0 .scope module, \"fade\" \"pcm_crossfade\" 9 116, 10 5 0, S_000002e40036f6c0;",
+      "S_000002e40036fb70 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 10 23, 10 23 0, S_000002e40036f9e0;",
+      "S_000002e40036f850 .scope function.vec4.u16, \"interp\" \"interp\" 9 100, 9 100 0, S_000002e40036f6c0;",
+      "S_000002e4003704d0 .scope module, \"mixer\" \"pcm_harmony_mixer\" 9 121, 11 5 0, S_000002e40036f6c0;",
+      "S_000002e40036f530 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 11 19, 11 19 0, S_000002e4003704d0;",
+      "S_000002e40036f080 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 9 54, 9 54 0, S_000002e40036f6c0;",
+      "S_000002e40036f210 .scope generate, \"external_ui\" \"external_ui\" 5 78, 5 78 0, S_000002e47f697580;",
+      "S_000002e40036f3a0 .scope module, \"keys\" \"audio_external_controls\" 5 82, 12 4 0, S_000002e40036f210;",
+      "P_000002e47f5c0e90 .param/l \"DEBOUNCE_CYCLES\" 0 12 5, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f5c0ec8 .param/l \"DUAL_VOICE_ENABLE\" 0 12 10, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f5c0f00 .param/l \"ENCODER_FILTER_CYCLES\" 0 12 11, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f5c0f38 .param/l \"GAIN_REVERSE\" 0 12 12, +C4<00000000000000000000000000000000>;",
+      "P_000002e47f5c0f70 .param/l \"LONG_DIAG_CYCLES\" 0 12 8, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f5c0fa8 .param/l \"LONG_PITCH_CYCLES\" 0 12 9, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f5c0fe0 .param/l \"LONG_REPLAY_CYCLES\" 0 12 7, +C4<00000000000000000000000000011000>;",
+      "P_000002e47f5c1018 .param/l \"LONG_RESET_CYCLES\" 0 12 6, +C4<00000000000000000000000001100100>;",
+      "P_000002e47f5c1050 .param/l \"PITCH_REVERSE\" 0 12 13, +C4<00000000000000000000000000000000>;",
+      "S_000002e40036fd00 .scope module, \"gain_encoder\" \"audio_panel_encoder\" 12 111, 12 174 0, S_000002e40036f3a0;",
+      "P_000002e400175180 .param/l \"FILTER_CYCLES\" 0 12 175, +C4<00000000000000000000000000000011>;",
+      "P_000002e4001751b8 .param/l \"REVERSE\" 0 12 176, +C4<00000000000000000000000000000000>;",
+      "S_000002e400370660 .scope module, \"pitch_encoder\" \"audio_panel_encoder\" 12 114, 12 174 0, S_000002e40036f3a0;",
+      "P_000002e400175900 .param/l \"FILTER_CYCLES\" 0 12 175, +C4<00000000000000000000000000000011>;",
+      "P_000002e400175938 .param/l \"REVERSE\" 0 12 176, +C4<00000000000000000000000000000000>;",
+      "S_000002e40036fe90 .scope module, \"meter\" \"audio_level_meter\" 5 232, 13 21 0, S_000002e47f697580;",
+      "P_000002e47f594c70 .param/l \"ACC_WIDTH\" 1 13 36, +C4<00000000000000000000000000011001>;",
+      "P_000002e47f594ca8 .param/l \"CALIBRATION_LOG2\" 0 13 24, +C4<00000000000000000000000000000111>;",
+      "P_000002e47f594ce0 .param/l \"CALIBRATION_MARGIN\" 0 13 25, +C4<00000000000000000000000000011000>;",
+      "P_000002e47f594d18 .param/l \"CALIBRATION_WINDOWS\" 1 13 40, +C4<00000000000000000000000010000000>;",
+      "P_000002e47f594d50 .param/l \"CAL_ACC_WIDTH\" 1 13 39, +C4<00000000000000000000000000010111>;",
+      "P_000002e47f594d88 .param/l \"CAL_COUNT_WIDTH\" 1 13 38, +C4<00000000000000000000000000000111>;",
+      "P_000002e47f594dc0 .param/l \"COUNT_WIDTH\" 1 13 35, +C4<00000000000000000000000000001001>;",
+      "P_000002e47f594df8 .param/l \"NOISE_FLOOR\" 0 13 23, +C4<00000000000000000000000001000000>;",
+      "P_000002e47f594e30 .param/l \"WINDOW_LOG2\" 0 13 22, +C4<00000000000000000000000000001001>;",
+      "P_000002e47f594e68 .param/l \"WINDOW_SAMPLES\" 1 13 37, +C4<00000000000000000000001000000000>;",
+      "S_000002e400370020 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 13 61, 13 61 0, S_000002e40036fe90;",
+      "S_000002e4003701b0 .scope module, \"microphones\" \"mic_array_pcm\" 5 70, 14 4 0, S_000002e47f697580;",
+      "S_000002e4003707f0 .scope generate, \"g_rx[0]\" \"g_rx[0]\" 14 22, 14 22 0, S_000002e4003701b0;",
+      "P_000002e4002ed7a0 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000000>;",
+      "S_000002e400370980 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002e4003707f0;",
+      "S_000002e400370b10 .scope generate, \"g_rx[1]\" \"g_rx[1]\" 14 22, 14 22 0, S_000002e4003701b0;",
+      "P_000002e4002ed8e0 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000001>;",
+      "S_000002e400370ca0 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002e400370b10;",
+      "S_000002e400370e30 .scope generate, \"g_rx[2]\" \"g_rx[2]\" 14 22, 14 22 0, S_000002e4003701b0;",
+      "P_000002e4002ed7e0 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000010>;",
+      "S_000002e400383a20 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002e400370e30;",
+      "S_000002e4003846a0 .scope generate, \"g_rx[3]\" \"g_rx[3]\" 14 22, 14 22 0, S_000002e4003701b0;",
+      "P_000002e4002ed560 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000011>;",
+      "S_000002e4003849c0 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002e4003846a0;",
+      "S_000002e400383250 .scope module, \"monitor\" \"pcm_monitor_guard\" 5 216, 16 12 0, S_000002e47f697580;",
+      "P_000002e47f9cdba0 .param/l \"FINE_GAIN\" 0 16 16, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f9cdbd8 .param/l \"PIPELINE_ENABLE\" 0 16 15, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f9cdc10 .param/l \"PROTECTION_ENABLE\" 0 16 13, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f9cdc48 .param/l \"SMOOTH_ENABLE\" 0 16 14, +C4<00000000000000000000000000000001>;",
+      "S_000002e400384ce0 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 16 32, 16 32 0, S_000002e400383250;",
+      "S_000002e400384b50 .scope generate, \"registered_output\" \"registered_output\" 16 109, 16 109 0, S_000002e400383250;",
+      "S_000002e400384e70 .scope module, \"queue\" \"pcm_output_queue\" 5 186, 17 3 0, S_000002e47f697580;",
+      "P_000002e400383570 .param/l \"ADDR_WIDTH\" 0 17 4, +C4<00000000000000000000000000000100>;",
+      "P_000002e4003835a8 .param/l \"DEPTH\" 1 17 24, +C4<00000000000000000000000000010000>;",
+      "P_000002e4003835e0 .param/l \"DEPTH_COUNT\" 1 17 25, C4<10000>;",
+      "P_000002e400383618 .param/l \"HEAD_SETUP_CYCLES\" 0 17 7, +C4<00000000000000000000000000000100>;",
+      "P_000002e400383650 .param/l \"PREFILL_COUNT\" 1 17 26, C4<00010>;",
+      "P_000002e400383688 .param/l \"PREFILL_SAMPLES\" 0 17 5, +C4<00000000000000000000000000000010>;",
+      "P_000002e4003836c0 .param/l \"SETUP_WIDTH\" 1 17 27, +C4<00000000000000000000000000000011>;",
+      "S_000002e400384060 .scope module, \"recorder\" \"pcm_clip_controller\" 5 163, 18 4 0, S_000002e47f697580;",
+      "P_000002e47f1dc2c0 .param/l \"DRAIN\" 1 18 32, +C4<00000000000000000000000000001001>;",
+      "P_000002e47f1dc2f8 .param/l \"DRAIN_SAMPLES\" 0 18 8, +C4<00000000000000000000001000000000>;",
+      "P_000002e47f1dc330 .param/l \"EMPTY\" 1 18 31, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f1dc368 .param/l \"ENHANCED_PLAYBACK\" 0 18 11, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f1dc3a0 .param/l \"ERROR\" 1 18 32, +C4<00000000000000000000000000001010>;",
+      "P_000002e47f1dc3d8 .param/l \"FLUSH\" 1 18 31, +C4<00000000000000000000000000000011>;",
+      "P_000002e47f1dc410 .param/l \"MAX_SAMPLES\" 0 18 5, +C4<00000000000000000001000000000000>;",
+      "P_000002e47f1dc448 .param/l \"PAUSED\" 1 18 32, +C4<00000000000000000000000000001011>;",
+      "P_000002e47f1dc480 .param/l \"PLAY\" 1 18 32, +C4<00000000000000000000000000000111>;",
+      "P_000002e47f1dc4b8 .param/l \"PREFETCH\" 1 18 32, +C4<00000000000000000000000000000101>;",
+      "P_000002e47f1dc4f0 .param/l \"PREROLL\" 1 18 32, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f1dc528 .param/l \"PREROLL_SAMPLES\" 0 18 6, +C4<00000000000000000000001011100010>;",
+      "P_000002e47f1dc560 .param/l \"READY\" 1 18 31, +C4<00000000000000000000000000000100>;",
+      "P_000002e47f1dc598 .param/l \"RECORD\" 1 18 31, +C4<00000000000000000000000000000010>;",
+      "P_000002e47f1dc5d0 .param/l \"TAIL\" 1 18 32, +C4<00000000000000000000000000001000>;",
+      "P_000002e47f1dc608 .param/l \"TAIL_SAMPLES\" 0 18 7, +C4<00000000000000000000001101100010>;",
+      "P_000002e47f1dc640 .param/l \"WAIT_DDR\" 1 18 31, +C4<00000000000000000000000000000000>;",
+      "S_000002e4003833e0 .scope module, \"reporter\" \"record_status_uart\" 5 262, 19 7 0, S_000002e47f697580;",
+      "P_000002e47f166d80 .param/l \"BAUD\" 0 19 9, +C4<00000000000000011100001000000000>;",
+      "P_000002e47f166db8 .param/l \"CLKS_PER_BIT\" 1 19 36, +C4<00000000000000000000000110110010>;",
+      "P_000002e47f166df0 .param/l \"CLK_HZ\" 0 19 8, +C4<00000010111110101111000010000000>;",
+      "P_000002e47f166e28 .param/l \"DATA\" 1 19 37, C4<011>;",
+      "P_000002e47f166e60 .param/l \"DUAL_VOICE_ENABLE\" 0 19 12, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f166e98 .param/l \"FINE_GAIN\" 0 19 11, +C4<00000000000000000000000000000001>;",
+      "P_000002e47f166ed0 .param/l \"IDLE\" 1 19 37, C4<000>;",
+      "P_000002e47f166f08 .param/l \"LOAD\" 1 19 37, C4<001>;",
+      "P_000002e47f166f40 .param/l \"REPORT_CYCLES\" 0 19 10, +C4<00000000100110001001011010000000>;",
+      "P_000002e47f166f78 .param/l \"START\" 1 19 37, C4<010>;",
+      "P_000002e47f166fb0 .param/l \"STATUS_BYTES\" 1 19 120, +C4<00000000000000000000000001110001>;",
+      "P_000002e47f166fe8 .param/l \"STOP\" 1 19 37, C4<100>;",
+      "P_000002e47f167020 .param/l \"USER_CODE\" 0 19 13, C4<00000000000000110010010100000011>;",
+      "S_000002e4003830c0 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 19 57, 19 57 0, S_000002e4003833e0;",
+      "S_000002e400383d40 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 19 53, 19 53 0, S_000002e4003833e0;",
+      "S_000002e400383ed0 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 19 78, 19 78 0, S_000002e4003833e0;",
+      "S_000002e400384830 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 19 121, 19 121 0, S_000002e4003833e0;",
+      "S_000002e400383700 .scope module, \"ring\" \"sk9822_ring\" 5 239, 20 8 0, S_000002e47f697580;",
+      "P_000002e47f167060 .param/l \"HALF_PERIOD_CYCLES\" 0 20 9, +C4<00000000000000000000000000110010>;",
+      "P_000002e47f167098 .param/l \"HALF_WIDTH\" 1 20 20, +C4<00000000000000000000000000000110>;",
+      "P_000002e47f1670d0 .param/l \"LED_COUNT\" 0 20 11, +C4<00000000000000000000000000001100>;",
+      "P_000002e47f167108 .param/l \"REFRESH_CYCLES\" 0 20 10, +C4<00000000000011110100001001000000>;",
+      "P_000002e47f167140 .param/l \"REFRESH_WIDTH\" 1 20 22, +C4<00000000000000000000000000010100>;",
+      "P_000002e47f167178 .param/l \"WORD_WIDTH\" 1 20 24, +C4<00000000000000000000000000000100>;",
+      "S_000002e400384510 .scope module, \"ring_palette\" \"audio_ring_palette\" 5 235, 21 3 0, S_000002e47f697580;",
+      "S_000002e400383890 .scope module, \"speaker\" \"pt8211_stereo_tx\" 5 220, 22 4 0, S_000002e47f697580;",
+      "S_000002e400383bb0 .scope module, \"status_led\" \"status_ws2812\" 5 260, 23 2 0, S_000002e47f697580;",
+      "S_000002e4003841f0 .scope function.vec4.u16, \"tone_lut\" \"tone_lut\" 5 194, 5 194 0, S_000002e47f697580;",
+      "S_000002e4003d7060 .scope task, \"gain_press\" \"gain_press\" 4 72, 4 72 0, S_000002e47fa655b0;",
+      "S_000002e4003d7380 .scope task, \"panel_key\" \"panel_key\" 4 68, 4 68 0, S_000002e47fa655b0;",
+      "S_000002e4003d76a0 .scope task, \"phase\" \"phase\" 4 75, 4 75 0, S_000002e47fa655b0;",
+      "S_000002e4003d7830 .scope task, \"pitch_hold\" \"pitch_hold\" 4 74, 4 74 0, S_000002e47fa655b0;",
+      "S_000002e4003d7b50 .scope task, \"pitch_press\" \"pitch_press\" 4 73, 4 73 0, S_000002e47fa655b0;",
+      "S_000002e4003d7e70 .scope function.vec4.s24, \"source_word\" \"source_word\" 4 106, 4 106 0, S_000002e47fa655b0;",
+      "S_000002e4003d84b0 .scope task, \"step\" \"step\" 4 59, 4 59 0, S_000002e47fa655b0;",
+      "S_000002e4003d8c80 .scope task, \"turn\" \"turn\" 4 79, 4 79 0, S_000002e47fa655b0;",
+      "S_000002e4003d7510 .scope task, \"wait_frames\" \"wait_frames\" 4 60, 4 60 0, S_000002e47fa655b0;",
+      "S_000002e4003d8e10 .scope task, \"wait_state\" \"wait_state\" 4 64, 4 64 0, S_000002e47fa655b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_dual_engine.sv",
+      "sim/tb_external_engine.sv",
+      "src/audio_effect_core.v",
+      "src/audio_external_controls.v",
+      "src/audio_level_meter.v",
+      "src/audio_record_engine.v",
+      "src/audio_ring_palette.v",
+      "src/audio_test_clock.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_clip_controller.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_voice_conditioner.v",
+      "src/pt8211_stereo_tx.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/status_ws2812.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_dual_engine",
+        "Type": "tb_dual_engine",
+        "InstantiationSource": "sim/tb_dual_engine.sv",
+        "InstantiationLine": 3,
+        "DefinitionSource": "sim/tb_dual_engine.sv",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dual_panel",
+        "Type": "tb_external_engine",
+        "InstantiationSource": "sim/tb_dual_engine.sv",
+        "InstantiationLine": 4,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "TEST_DUAL_ENABLE",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_RAM_BITS",
+            "Signed": 0,
+            "Source": "sim/tb_external_engine.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel"
+      },
+      {
+        "Kind": "task",
+        "Instance": "assert_paused",
+        "Type": "assert_paused",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 217,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 217,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.assert_paused"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_config",
+        "Type": "await_config",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 209,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 209,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.await_config"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_second",
+        "Type": "await_second",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 230,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 230,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.await_second"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 56,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 56,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.check"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "check_dual_core",
+        "Type": "check_dual_core",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 44,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.check_dual_core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_record_engine",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EXTERNAL_CONTROLS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POR_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STARTUP_FRAMES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_USER_CODE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 14,
+            "Value": "C4<00000000000000110010010100000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "UART_REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 6,
+            "Value": "+C4<00000000100110001001011010000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "clock_gen",
+        "Type": "audio_test_clock",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 58,
+        "DefinitionSource": "src/audio_test_clock.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.clock_gen"
+      },
+      {
+        "Kind": "module",
+        "Instance": "conditioner",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 182,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.conditioner"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.conditioner.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "core",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 178,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "dual_voice",
+        "Type": "dual_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice"
+      },
+      {
+        "Kind": "module",
+        "Instance": "second_algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 49,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.core.dual_voice.second_algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "external_ui",
+        "Type": "external_ui",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui"
+      },
+      {
+        "Kind": "module",
+        "Instance": "keys",
+        "Type": "audio_external_controls",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 82,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GAIN_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_REPLAY_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000001100100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PITCH_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys"
+      },
+      {
+        "Kind": "module",
+        "Instance": "gain_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 111,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys.gain_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "pitch_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 114,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.external_ui.keys.pitch_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "meter",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 232,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000011001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000001000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.meter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.meter.amplitude_curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "microphones",
+        "Type": "mic_array_pcm",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 70,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[0]",
+        "Type": "g_rx[0]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[0]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[0].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[1]",
+        "Type": "g_rx[1]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[1]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[1].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[2]",
+        "Type": "g_rx[2]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[2]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[2].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[3]",
+        "Type": "g_rx[3]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[3]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.microphones.g_rx[3].receiver"
+      },
+      {
+        "Kind": "module",
+        "Instance": "monitor",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 216,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.monitor.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "queue",
+        "Type": "pcm_output_queue",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 186,
+        "DefinitionSource": "src/pcm_output_queue.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ADDR_WIDTH",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 25,
+            "Value": "C4<10000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HEAD_SETUP_CYCLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 26,
+            "Value": "C4<00010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SETUP_WIDTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.queue"
+      },
+      {
+        "Kind": "module",
+        "Instance": "recorder",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 163,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000001011100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001101100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.recorder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reporter",
+        "Type": "record_status_uart",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 262,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000011100001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000110110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000010111110101111000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000100110001001011010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001110001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010010100000011>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.reporter.report_byte"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 239,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000011110100001001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_dual_engine.dual_panel.dut.ring"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring_palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 235,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.ring_palette"
+      },
+      {
+        "Kind": "module",
+        "Instance": "speaker",
+        "Type": "pt8211_stereo_tx",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 220,
+        "DefinitionSource": "src/pt8211_stereo_tx.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.speaker"
+      },
+      {
+        "Kind": "module",
+        "Instance": "status_led",
+        "Type": "status_ws2812",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 260,
+        "DefinitionSource": "src/status_ws2812.v",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.status_led"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "tone_lut",
+        "Type": "tone_lut",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 194,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 194,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.dut.tone_lut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "gain_press",
+        "Type": "gain_press",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.gain_press"
+      },
+      {
+        "Kind": "task",
+        "Instance": "panel_key",
+        "Type": "panel_key",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 68,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 68,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.panel_key"
+      },
+      {
+        "Kind": "task",
+        "Instance": "phase",
+        "Type": "phase",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 75,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 75,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.phase"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_hold",
+        "Type": "pitch_hold",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 74,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 74,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.pitch_hold"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_press",
+        "Type": "pitch_press",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 73,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 73,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.pitch_press"
+      },
+      {
+        "Kind": "function.vec4.s24",
+        "Instance": "source_word",
+        "Type": "source_word",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 106,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 106,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.source_word"
+      },
+      {
+        "Kind": "task",
+        "Instance": "step",
+        "Type": "step",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 59,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 59,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.step"
+      },
+      {
+        "Kind": "task",
+        "Instance": "turn",
+        "Type": "turn",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 79,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 79,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.turn"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_frames",
+        "Type": "wait_frames",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 60,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 60,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.wait_frames"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_state",
+        "Type": "wait_state",
+        "InstantiationSource": "sim/tb_external_engine.sv",
+        "InstantiationLine": 64,
+        "DefinitionSource": "sim/tb_external_engine.sv",
+        "DefinitionLine": 64,
+        "Parameters": [],
+        "Path": "tb_dual_engine.dual_panel.wait_state"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_dual_engine.sv",
+      "sim/tb_external_engine.sv",
+      "src/audio_record_engine.v",
+      "src/audio_test_clock.v",
+      "src/pcm_voice_conditioner.v",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v",
+      "src/audio_external_controls.v",
+      "src/audio_level_meter.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_clip_controller.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/audio_ring_palette.v",
+      "src/pt8211_stereo_tx.v",
+      "src/status_ws2812.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002108f09ecf0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002108f8a35a0 .scope module, \"tb_dual_engine\" \"tb_dual_engine\" 3 3;",
+      "S_000002108fa019d0 .scope module, \"dual_panel\" \"tb_external_engine\" 3 4, 4 6 0, S_000002108f8a35a0;",
+      "P_000002108f9181d0 .param/l \"TEST_DUAL_ENABLE\" 0 4 9, +C4<00000000000000000000000000000001>;",
+      "P_000002108f918208 .param/l \"TEST_GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000000110>;",
+      "P_000002108f918240 .param/l \"TEST_RAM_BITS\" 0 4 7, +C4<00000000000000000000000000001000>;",
+      "S_000002108f7e2010 .scope task, \"assert_paused\" \"assert_paused\" 4 217, 4 217 0, S_000002108fa019d0;",
+      "S_000002108fa0eac0 .scope task, \"await_config\" \"await_config\" 4 209, 4 209 0, S_000002108fa019d0;",
+      "S_000002108fa0ec50 .scope task, \"await_second\" \"await_second\" 4 230, 4 230 0, S_000002108fa019d0;",
+      "S_000002108f5fa870 .scope task, \"check\" \"check\" 4 56, 4 56 0, S_000002108fa019d0;",
+      "S_000002108f5faa00 .scope generate, \"check_dual_core\" \"check_dual_core\" 4 44, 4 44 0, S_000002108fa019d0;",
+      "S_000002108f5fab90 .scope module, \"dut\" \"audio_record_engine\" 4 31, 5 3 0, S_000002108fa019d0;",
+      "P_000002108f503110 .param/l \"DEBOUNCE_CYCLES\" 0 5 4, +C4<00000000000000000000000000000011>;",
+      "P_000002108f503148 .param/l \"DUAL_VOICE_ENABLE\" 0 5 11, +C4<00000000000000000000000000000001>;",
+      "P_000002108f503180 .param/l \"ENCODER_FILTER_CYCLES\" 0 5 12, +C4<00000000000000000000000000000011>;",
+      "P_000002108f5031b8 .param/l \"ENHANCED_PLAYBACK\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_000002108f5031f0 .param/l \"EXTERNAL_CONTROLS\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_000002108f503228 .param/l \"FINE_GAIN\" 0 5 10, +C4<00000000000000000000000000000001>;",
+      "P_000002108f503260 .param/l \"GRAIN_LOG2\" 0 5 8, +C4<00000000000000000000000000000110>;",
+      "P_000002108f503298 .param/l \"LONG_DIAG_CYCLES\" 0 5 13, +C4<00000000000000000000000001100100>;",
+      "P_000002108f5032d0 .param/l \"LONG_PITCH_CYCLES\" 0 5 13, +C4<00000000000000000000000001100100>;",
+      "P_000002108f503308 .param/l \"LONG_PRESS_CYCLES\" 0 5 4, +C4<00000000000000000000000000011000>;",
+      "P_000002108f503340 .param/l \"LONG_RESET_CYCLES\" 0 5 12, +C4<00000000000000000000000001100100>;",
+      "P_000002108f503378 .param/l \"MAX_SAMPLES\" 0 5 7, +C4<00000000000000000001000000000000>;",
+      "P_000002108f5033b0 .param/l \"POR_CYCLES\" 0 5 5, +C4<00000000000000000000000000001000>;",
+      "P_000002108f5033e8 .param/l \"RAM_ADDR_BITS\" 0 5 8, +C4<00000000000000000000000000001000>;",
+      "P_000002108f503420 .param/l \"STARTUP_FRAMES\" 0 5 5, +C4<00000000000000000000000000000011>;",
+      "P_000002108f503458 .param/l \"STATUS_USER_CODE\" 0 5 14, C4<00000000000000110010010100000011>;",
+      "P_000002108f503490 .param/l \"UART_REPORT_CYCLES\" 0 5 6, +C4<00000000100110001001011010000000>;",
+      "S_000002108f3fc170 .scope module, \"clock_gen\" \"audio_test_clock\" 5 58, 6 3 0, S_000002108f5fab90;",
+      "S_000002108f3fc300 .scope module, \"conditioner\" \"pcm_voice_conditioner\" 5 182, 7 31 0, S_000002108f5fab90;",
+      "P_000002108f3dd4c0 .param/l \"CLOSE_Q8\" 1 7 61, C4<00000000000000000100000000000000>;",
+      "P_000002108f3dd4f8 .param/l \"GATE_CLOSE_THRESHOLD\" 0 7 34, +C4<00000000000000000000000001000000>;",
+      "P_000002108f3dd530 .param/l \"GATE_ENABLE\" 0 7 32, +C4<00000000000000000000000000000001>;",
+      "P_000002108f3dd568 .param/l \"GATE_HOLD_SAMPLES\" 0 7 35, +C4<00000000000000000001000000000000>;",
+      "P_000002108f3dd5a0 .param/l \"GATE_OPEN_THRESHOLD\" 0 7 33, +C4<00000000000000000000000010000000>;",
+      "P_000002108f3dd5d8 .param/l \"HOLD_BITS\" 1 7 59, +C4<00000000000000000000000000001101>;",
+      "P_000002108f3dd610 .param/l \"OPEN_Q8\" 1 7 60, C4<00000000000000001000000000000000>;",
+      "S_000002108f3dd650 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 7 44, 7 44 0, S_000002108f3fc300;",
+      "S_000002108fa1e590 .scope module, \"core\" \"audio_effect_core\" 5 178, 8 6 0, S_000002108f5fab90;",
+      "P_000002108f093f10 .param/l \"DUAL_VOICE_ENABLE\" 0 8 11, +C4<00000000000000000000000000000001>;",
+      "P_000002108f093f48 .param/l \"DYNAMIC_CONFIG\" 0 8 10, +C4<00000000000000000000000000000001>;",
+      "P_000002108f093f80 .param/l \"GRAIN_LOG2\" 0 8 8, +C4<00000000000000000000000000000110>;",
+      "P_000002108f093fb8 .param/l \"GUARD_SAMPLES\" 0 8 9, +C4<00000000000000000000000000100000>;",
+      "P_000002108f093ff0 .param/l \"RAM_ADDR_BITS\" 0 8 7, +C4<00000000000000000000000000001000>;",
+      "S_000002108fa1e400 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 8 26, 9 8 0, S_000002108fa1e590;",
+      "P_000002108f398470 .param/l \"DRY_DELAY\" 1 9 27, +C4<00000000000000000000000001000000>;",
+      "P_000002108f3984a8 .param/l \"DYNAMIC_CONFIG\" 0 9 12, +C4<00000000000000000000000000000001>;",
+      "P_000002108f3984e0 .param/l \"FILL_SAMPLES\" 1 9 26, +C4<00000000000000000000000001100010>;",
+      "P_000002108f398518 .param/l \"FRAC_BITS\" 1 9 22, +C4<00000000000000000000000000010100>;",
+      "P_000002108f398550 .param/l \"GRAIN\" 1 9 25, +C4<00000000000000000000000001000000>;",
+      "P_000002108f398588 .param/l \"GRAIN_LOG2\" 0 9 9, +C4<00000000000000000000000000000110>;",
+      "P_000002108f3985c0 .param/l \"GRAIN_Q20\" 1 9 28, C4<100000000000000000000000000>;",
+      "P_000002108f3985f8 .param/l \"GUARD_Q20\" 1 9 29, C4<0000000000000000000000100000>;",
+      "P_000002108f398630 .param/l \"GUARD_SAMPLES\" 0 9 9, +C4<00000000000000000000000000100000>;",
+      "P_000002108f398668 .param/l \"PHASE_BITS\" 1 9 23, +C4<00000000000000000000000000011010>;",
+      "P_000002108f3986a0 .param/l \"POSITION_BITS\" 1 9 24, +C4<00000000000000000000000000011100>;",
+      "P_000002108f3986d8 .param/l \"RAM_ADDR_BITS\" 0 9 9, +C4<00000000000000000000000000001000>;",
+      "S_000002108fa1ed60 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 9 46, 9 46 0, S_000002108fa1e400;",
+      "S_000002108fa1e0e0 .scope module, \"fade\" \"pcm_crossfade\" 9 116, 10 5 0, S_000002108fa1e400;",
+      "S_000002108fa1e720 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 10 23, 10 23 0, S_000002108fa1e0e0;",
+      "S_000002108fa1e270 .scope function.vec4.u16, \"interp\" \"interp\" 9 100, 9 100 0, S_000002108fa1e400;",
+      "S_000002108fa1e8b0 .scope module, \"mixer\" \"pcm_harmony_mixer\" 9 121, 11 5 0, S_000002108fa1e400;",
+      "S_000002108fa1ebd0 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 11 19, 11 19 0, S_000002108fa1e8b0;",
+      "S_000002108fa1ea40 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 9 54, 9 54 0, S_000002108fa1e400;",
+      "S_000002108fa1df50 .scope generate, \"dual_voice\" \"dual_voice\" 8 31, 8 31 0, S_000002108fa1e590;",
+      "S_000002108fad6b00 .scope module, \"second_algorithm\" \"pcm_dual_read_pitch\" 8 49, 9 8 0, S_000002108fa1df50;",
+      "P_000002108f391ab0 .param/l \"DRY_DELAY\" 1 9 27, +C4<00000000000000000000000001000000>;",
+      "P_000002108f391ae8 .param/l \"DYNAMIC_CONFIG\" 0 9 12, +C4<00000000000000000000000000000001>;",
+      "P_000002108f391b20 .param/l \"FILL_SAMPLES\" 1 9 26, +C4<00000000000000000000000001100010>;",
+      "P_000002108f391b58 .param/l \"FRAC_BITS\" 1 9 22, +C4<00000000000000000000000000010100>;",
+      "P_000002108f391b90 .param/l \"GRAIN\" 1 9 25, +C4<00000000000000000000000001000000>;",
+      "P_000002108f391bc8 .param/l \"GRAIN_LOG2\" 0 9 9, +C4<00000000000000000000000000000110>;",
+      "P_000002108f391c00 .param/l \"GRAIN_Q20\" 1 9 28, C4<100000000000000000000000000>;",
+      "P_000002108f391c38 .param/l \"GUARD_Q20\" 1 9 29, C4<0000000000000000000000100000>;",
+      "P_000002108f391c70 .param/l \"GUARD_SAMPLES\" 0 9 9, +C4<00000000000000000000000000100000>;",
+      "P_000002108f391ca8 .param/l \"PHASE_BITS\" 1 9 23, +C4<00000000000000000000000000011010>;",
+      "P_000002108f391ce0 .param/l \"POSITION_BITS\" 1 9 24, +C4<00000000000000000000000000011100>;",
+      "P_000002108f391d18 .param/l \"RAM_ADDR_BITS\" 0 9 9, +C4<00000000000000000000000000001000>;",
+      "S_000002108fad5520 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 9 46, 9 46 0, S_000002108fad6b00;",
+      "S_000002108fad6c90 .scope module, \"fade\" \"pcm_crossfade\" 9 116, 10 5 0, S_000002108fad6b00;",
+      "S_000002108fad61a0 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 10 23, 10 23 0, S_000002108fad6c90;",
+      "S_000002108fad6330 .scope function.vec4.u16, \"interp\" \"interp\" 9 100, 9 100 0, S_000002108fad6b00;",
+      "S_000002108fad5e80 .scope module, \"mixer\" \"pcm_harmony_mixer\" 9 121, 11 5 0, S_000002108fad6b00;",
+      "S_000002108fad6010 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 11 19, 11 19 0, S_000002108fad5e80;",
+      "S_000002108fad5b60 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 9 54, 9 54 0, S_000002108fad6b00;",
+      "S_000002108fad59d0 .scope generate, \"external_ui\" \"external_ui\" 5 78, 5 78 0, S_000002108f5fab90;",
+      "S_000002108fad6e20 .scope module, \"keys\" \"audio_external_controls\" 5 82, 12 4 0, S_000002108fad59d0;",
+      "P_000002108f330ab0 .param/l \"DEBOUNCE_CYCLES\" 0 12 5, +C4<00000000000000000000000000000011>;",
+      "P_000002108f330ae8 .param/l \"DUAL_VOICE_ENABLE\" 0 12 10, +C4<00000000000000000000000000000001>;",
+      "P_000002108f330b20 .param/l \"ENCODER_FILTER_CYCLES\" 0 12 11, +C4<00000000000000000000000000000011>;",
+      "P_000002108f330b58 .param/l \"GAIN_REVERSE\" 0 12 12, +C4<00000000000000000000000000000000>;",
+      "P_000002108f330b90 .param/l \"LONG_DIAG_CYCLES\" 0 12 8, +C4<00000000000000000000000001100100>;",
+      "P_000002108f330bc8 .param/l \"LONG_PITCH_CYCLES\" 0 12 9, +C4<00000000000000000000000001100100>;",
+      "P_000002108f330c00 .param/l \"LONG_REPLAY_CYCLES\" 0 12 7, +C4<00000000000000000000000000011000>;",
+      "P_000002108f330c38 .param/l \"LONG_RESET_CYCLES\" 0 12 6, +C4<00000000000000000000000001100100>;",
+      "P_000002108f330c70 .param/l \"PITCH_REVERSE\" 0 12 13, +C4<00000000000000000000000000000000>;",
+      "S_000002108fad64c0 .scope module, \"gain_encoder\" \"audio_panel_encoder\" 12 111, 12 174 0, S_000002108fad6e20;",
+      "P_000002108f9d9bc0 .param/l \"FILTER_CYCLES\" 0 12 175, +C4<00000000000000000000000000000011>;",
+      "P_000002108f9d9bf8 .param/l \"REVERSE\" 0 12 176, +C4<00000000000000000000000000000000>;",
+      "S_000002108fad67e0 .scope module, \"pitch_encoder\" \"audio_panel_encoder\" 12 114, 12 174 0, S_000002108fad6e20;",
+      "P_000002108f9d9640 .param/l \"FILTER_CYCLES\" 0 12 175, +C4<00000000000000000000000000000011>;",
+      "P_000002108f9d9678 .param/l \"REVERSE\" 0 12 176, +C4<00000000000000000000000000000000>;",
+      "S_000002108fad5cf0 .scope module, \"meter\" \"audio_level_meter\" 5 232, 13 21 0, S_000002108f5fab90;",
+      "P_000002108f045840 .param/l \"ACC_WIDTH\" 1 13 36, +C4<00000000000000000000000000011001>;",
+      "P_000002108f045878 .param/l \"CALIBRATION_LOG2\" 0 13 24, +C4<00000000000000000000000000000111>;",
+      "P_000002108f0458b0 .param/l \"CALIBRATION_MARGIN\" 0 13 25, +C4<00000000000000000000000000011000>;",
+      "P_000002108f0458e8 .param/l \"CALIBRATION_WINDOWS\" 1 13 40, +C4<00000000000000000000000010000000>;",
+      "P_000002108f045920 .param/l \"CAL_ACC_WIDTH\" 1 13 39, +C4<00000000000000000000000000010111>;",
+      "P_000002108f045958 .param/l \"CAL_COUNT_WIDTH\" 1 13 38, +C4<00000000000000000000000000000111>;",
+      "P_000002108f045990 .param/l \"COUNT_WIDTH\" 1 13 35, +C4<00000000000000000000000000001001>;",
+      "P_000002108f0459c8 .param/l \"NOISE_FLOOR\" 0 13 23, +C4<00000000000000000000000001000000>;",
+      "P_000002108f045a00 .param/l \"WINDOW_LOG2\" 0 13 22, +C4<00000000000000000000000000001001>;",
+      "P_000002108f045a38 .param/l \"WINDOW_SAMPLES\" 1 13 37, +C4<00000000000000000000001000000000>;",
+      "S_000002108fad5390 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 13 61, 13 61 0, S_000002108fad5cf0;",
+      "S_000002108fad6650 .scope module, \"microphones\" \"mic_array_pcm\" 5 70, 14 4 0, S_000002108f5fab90;",
+      "S_000002108fad5070 .scope generate, \"g_rx[0]\" \"g_rx[0]\" 14 22, 14 22 0, S_000002108fad6650;",
+      "P_000002108fa34ed0 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000000>;",
+      "S_000002108fad5200 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002108fad5070;",
+      "S_000002108fad56b0 .scope generate, \"g_rx[1]\" \"g_rx[1]\" 14 22, 14 22 0, S_000002108fad6650;",
+      "P_000002108fa34590 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000001>;",
+      "S_000002108fad5840 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002108fad56b0;",
+      "S_000002108fad6970 .scope generate, \"g_rx[2]\" \"g_rx[2]\" 14 22, 14 22 0, S_000002108fad6650;",
+      "P_000002108fa34d90 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000010>;",
+      "S_000002108faf96c0 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002108fad6970;",
+      "S_000002108fafa1b0 .scope generate, \"g_rx[3]\" \"g_rx[3]\" 14 22, 14 22 0, S_000002108fad6650;",
+      "P_000002108fa34890 .param/l \"lane\" 1 14 22, +C4<00000000000000000000000000000011>;",
+      "S_000002108faf9d00 .scope module, \"receiver\" \"mic_i2s_rx\" 14 23, 15 3 0, S_000002108fafa1b0;",
+      "S_000002108faf9530 .scope module, \"monitor\" \"pcm_monitor_guard\" 5 216, 16 12 0, S_000002108f5fab90;",
+      "P_000002108f5fa0e0 .param/l \"FINE_GAIN\" 0 16 16, +C4<00000000000000000000000000000001>;",
+      "P_000002108f5fa118 .param/l \"PIPELINE_ENABLE\" 0 16 15, +C4<00000000000000000000000000000001>;",
+      "P_000002108f5fa150 .param/l \"PROTECTION_ENABLE\" 0 16 13, +C4<00000000000000000000000000000001>;",
+      "P_000002108f5fa188 .param/l \"SMOOTH_ENABLE\" 0 16 14, +C4<00000000000000000000000000000001>;",
+      "S_000002108faf9850 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 16 32, 16 32 0, S_000002108faf9530;",
+      "S_000002108faf9080 .scope generate, \"registered_output\" \"registered_output\" 16 109, 16 109 0, S_000002108faf9530;",
+      "S_000002108faf93a0 .scope module, \"queue\" \"pcm_output_queue\" 5 186, 17 3 0, S_000002108f5fab90;",
+      "P_000002108faf99e0 .param/l \"ADDR_WIDTH\" 0 17 4, +C4<00000000000000000000000000000100>;",
+      "P_000002108faf9a18 .param/l \"DEPTH\" 1 17 24, +C4<00000000000000000000000000010000>;",
+      "P_000002108faf9a50 .param/l \"DEPTH_COUNT\" 1 17 25, C4<10000>;",
+      "P_000002108faf9a88 .param/l \"HEAD_SETUP_CYCLES\" 0 17 7, +C4<00000000000000000000000000000100>;",
+      "P_000002108faf9ac0 .param/l \"PREFILL_COUNT\" 1 17 26, C4<00010>;",
+      "P_000002108faf9af8 .param/l \"PREFILL_SAMPLES\" 0 17 5, +C4<00000000000000000000000000000010>;",
+      "P_000002108faf9b30 .param/l \"SETUP_WIDTH\" 1 17 27, +C4<00000000000000000000000000000011>;",
+      "S_000002108faf9210 .scope module, \"recorder\" \"pcm_clip_controller\" 5 163, 18 4 0, S_000002108f5fab90;",
+      "P_000002108f0172f0 .param/l \"DRAIN\" 1 18 32, +C4<00000000000000000000000000001001>;",
+      "P_000002108f017328 .param/l \"DRAIN_SAMPLES\" 0 18 8, +C4<00000000000000000000001000000000>;",
+      "P_000002108f017360 .param/l \"EMPTY\" 1 18 31, +C4<00000000000000000000000000000001>;",
+      "P_000002108f017398 .param/l \"ENHANCED_PLAYBACK\" 0 18 11, +C4<00000000000000000000000000000001>;",
+      "P_000002108f0173d0 .param/l \"ERROR\" 1 18 32, +C4<00000000000000000000000000001010>;",
+      "P_000002108f017408 .param/l \"FLUSH\" 1 18 31, +C4<00000000000000000000000000000011>;",
+      "P_000002108f017440 .param/l \"MAX_SAMPLES\" 0 18 5, +C4<00000000000000000001000000000000>;",
+      "P_000002108f017478 .param/l \"PAUSED\" 1 18 32, +C4<00000000000000000000000000001011>;",
+      "P_000002108f0174b0 .param/l \"PLAY\" 1 18 32, +C4<00000000000000000000000000000111>;",
+      "P_000002108f0174e8 .param/l \"PREFETCH\" 1 18 32, +C4<00000000000000000000000000000101>;",
+      "P_000002108f017520 .param/l \"PREROLL\" 1 18 32, +C4<00000000000000000000000000000110>;",
+      "P_000002108f017558 .param/l \"PREROLL_SAMPLES\" 0 18 6, +C4<00000000000000000000001011100010>;",
+      "P_000002108f017590 .param/l \"READY\" 1 18 31, +C4<00000000000000000000000000000100>;",
+      "P_000002108f0175c8 .param/l \"RECORD\" 1 18 31, +C4<00000000000000000000000000000010>;",
+      "P_000002108f017600 .param/l \"TAIL\" 1 18 32, +C4<00000000000000000000000000001000>;",
+      "P_000002108f017638 .param/l \"TAIL_SAMPLES\" 0 18 7, +C4<00000000000000000000001101100010>;",
+      "P_000002108f017670 .param/l \"WAIT_DDR\" 1 18 31, +C4<00000000000000000000000000000000>;",
+      "S_000002108fafae30 .scope module, \"reporter\" \"record_status_uart\" 5 262, 19 7 0, S_000002108f5fab90;",
+      "P_000002108efd2230 .param/l \"BAUD\" 0 19 9, +C4<00000000000000011100001000000000>;",
+      "P_000002108efd2268 .param/l \"CLKS_PER_BIT\" 1 19 36, +C4<00000000000000000000000110110010>;",
+      "P_000002108efd22a0 .param/l \"CLK_HZ\" 0 19 8, +C4<00000010111110101111000010000000>;",
+      "P_000002108efd22d8 .param/l \"DATA\" 1 19 37, C4<011>;",
+      "P_000002108efd2310 .param/l \"DUAL_VOICE_ENABLE\" 0 19 12, +C4<00000000000000000000000000000001>;",
+      "P_000002108efd2348 .param/l \"FINE_GAIN\" 0 19 11, +C4<00000000000000000000000000000001>;",
+      "P_000002108efd2380 .param/l \"IDLE\" 1 19 37, C4<000>;",
+      "P_000002108efd23b8 .param/l \"LOAD\" 1 19 37, C4<001>;",
+      "P_000002108efd23f0 .param/l \"REPORT_CYCLES\" 0 19 10, +C4<00000000100110001001011010000000>;",
+      "P_000002108efd2428 .param/l \"START\" 1 19 37, C4<010>;",
+      "P_000002108efd2460 .param/l \"STATUS_BYTES\" 1 19 120, +C4<00000000000000000000000001110001>;",
+      "P_000002108efd2498 .param/l \"STOP\" 1 19 37, C4<100>;",
+      "P_000002108efd24d0 .param/l \"USER_CODE\" 0 19 13, C4<00000000000000110010010100000011>;",
+      "S_000002108faf9e90 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 19 57, 19 57 0, S_000002108fafae30;",
+      "S_000002108fafa340 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 19 53, 19 53 0, S_000002108fafae30;",
+      "S_000002108fafa980 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 19 78, 19 78 0, S_000002108fafae30;",
+      "S_000002108fafa020 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 19 121, 19 121 0, S_000002108fafae30;",
+      "S_000002108faf9b70 .scope module, \"ring\" \"sk9822_ring\" 5 239, 20 8 0, S_000002108f5fab90;",
+      "P_000002108efd2510 .param/l \"HALF_PERIOD_CYCLES\" 0 20 9, +C4<00000000000000000000000000110010>;",
+      "P_000002108efd2548 .param/l \"HALF_WIDTH\" 1 20 20, +C4<00000000000000000000000000000110>;",
+      "P_000002108efd2580 .param/l \"LED_COUNT\" 0 20 11, +C4<00000000000000000000000000001100>;",
+      "P_000002108efd25b8 .param/l \"REFRESH_CYCLES\" 0 20 10, +C4<00000000000011110100001001000000>;",
+      "P_000002108efd25f0 .param/l \"REFRESH_WIDTH\" 1 20 22, +C4<00000000000000000000000000010100>;",
+      "P_000002108efd2628 .param/l \"WORD_WIDTH\" 1 20 24, +C4<00000000000000000000000000000100>;",
+      "S_000002108fafa4d0 .scope module, \"ring_palette\" \"audio_ring_palette\" 5 235, 21 3 0, S_000002108f5fab90;",
+      "S_000002108fafa660 .scope module, \"speaker\" \"pt8211_stereo_tx\" 5 220, 22 4 0, S_000002108f5fab90;",
+      "S_000002108fafa7f0 .scope module, \"status_led\" \"status_ws2812\" 5 260, 23 2 0, S_000002108f5fab90;",
+      "S_000002108fafab10 .scope function.vec4.u16, \"tone_lut\" \"tone_lut\" 5 194, 5 194 0, S_000002108f5fab90;",
+      "S_000002108fb35ef0 .scope task, \"gain_press\" \"gain_press\" 4 72, 4 72 0, S_000002108fa019d0;",
+      "S_000002108fb366c0 .scope task, \"panel_key\" \"panel_key\" 4 68, 4 68 0, S_000002108fa019d0;",
+      "S_000002108fb36530 .scope task, \"phase\" \"phase\" 4 75, 4 75 0, S_000002108fa019d0;",
+      "S_000002108fb36b70 .scope task, \"pitch_hold\" \"pitch_hold\" 4 74, 4 74 0, S_000002108fa019d0;",
+      "S_000002108fb35590 .scope task, \"pitch_press\" \"pitch_press\" 4 73, 4 73 0, S_000002108fa019d0;",
+      "S_000002108fb350e0 .scope function.vec4.s24, \"source_word\" \"source_word\" 4 106, 4 106 0, S_000002108fa019d0;",
+      "S_000002108fb36850 .scope task, \"step\" \"step\" 4 59, 4 59 0, S_000002108fa019d0;",
+      "S_000002108fb36210 .scope task, \"turn\" \"turn\" 4 79, 4 79 0, S_000002108fa019d0;",
+      "S_000002108fb369e0 .scope task, \"wait_frames\" \"wait_frames\" 4 60, 4 60 0, S_000002108fa019d0;",
+      "S_000002108fb35bd0 .scope task, \"wait_state\" \"wait_state\" 4 64, 4 64 0, S_000002108fa019d0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_dual_engine.sv",
+    "sim/tb_external_engine.sv",
+    "src/audio_effect_core.v",
+    "src/audio_external_controls.v",
+    "src/audio_level_meter.v",
+    "src/audio_record_engine.v",
+    "src/audio_ring_palette.v",
+    "src/audio_test_clock.v",
+    "src/mic_array_pcm.v",
+    "src/mic_i2s_rx.v",
+    "src/pcm_clip_controller.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v",
+    "src/pcm_monitor_guard.v",
+    "src/pcm_output_queue.v",
+    "src/pcm_voice_conditioner.v",
+    "src/pt8211_stereo_tx.v",
+    "src/record_status_uart.v",
+    "src/sk9822_ring.v",
+    "src/status_ws2812.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_dual_engine.sv",
+    "sim/tb_external_engine.sv",
+    "src/audio_effect_core.v",
+    "src/audio_external_controls.v",
+    "src/audio_level_meter.v",
+    "src/audio_record_engine.v",
+    "src/audio_ring_palette.v",
+    "src/audio_test_clock.v",
+    "src/mic_array_pcm.v",
+    "src/mic_i2s_rx.v",
+    "src/pcm_clip_controller.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v",
+    "src/pcm_monitor_guard.v",
+    "src/pcm_output_queue.v",
+    "src/pcm_voice_conditioner.v",
+    "src/pt8211_stereo_tx.v",
+    "src/record_status_uart.v",
+    "src/sk9822_ring.v",
+    "src/status_ws2812.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

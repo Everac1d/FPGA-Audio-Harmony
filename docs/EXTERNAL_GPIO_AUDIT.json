@@ -1,0 +1,69 @@
+{
+  "Stage": "Read-only hardware contract and local EDA option audit; final PNR pin check required",
+  "ReviewedDate": "2026-10-30",
+  "Device": "GW5AST-138B",
+  "Part": "GW5AST-LV138PG484AC1/I0",
+  "NewInputPins": {
+    "button_n[0]": "Y21",
+    "button_n[1]": "AB21",
+    "button_n[2]": "AA20",
+    "button_n[3]": "AA19",
+    "enc_gain_sw_n": "AB20",
+    "enc_gain_dt": "AA21",
+    "enc_gain_clk": "AB22",
+    "enc_pitch_sw_n": "T18",
+    "enc_pitch_dt": "R17",
+    "enc_pitch_clk": "U21"
+  },
+  "MultiplexedConfigurationPins": {
+    "Y21": {
+      "Alternate": "SSPI_CS_N",
+      "RequiredOption": "use_sspi_as_gpio=1"
+    },
+    "U21": {
+      "Alternate": "D05/SI",
+      "RequiredOption": "use_sspi_as_gpio=1"
+    },
+    "AB20": {
+      "Alternate": "DOUT_CSO_B",
+      "RequiredOption": "use_cpu_as_gpio=1"
+    }
+  },
+  "OfficialManual": {
+    "Path": "D:\\Gowin\\Gowin_V1.9.12.04_x64\\Programmer\\doc\\EN\\UG704-1.0.7E_Arora Ⅴ 138K&75K FPGA Product Programming and Configuration Guide.pdf",
+    "SHA256": "6E56F1EE88B74E1E9448824A4B15AEE5EF9418558C838277EDC1F7225F02D2B0",
+    "Version": "UG704-1.0.7E",
+    "PDFPages": [
+      18,
+      19,
+      20
+    ],
+    "PrintedPages": [
+      "10(70)",
+      "11(70)",
+      "12(70)"
+    ],
+    "Table": "Table 3-5 Pin Reuse Options"
+  },
+  "ToolVersion": "Gowin V1.9.12.04 x64",
+  "ToolProbe": {
+    "Script": "sim/results/gpio_option_probe.tcl",
+    "ScriptSHA256": "E2C3C6900CD1F3B8692846510AE0E75B2C6A557925FFB609A0E91ED018351B5E",
+    "Log": "sim/results/gpio_option_probe.log",
+    "LogSHA256": "69DEF9568EE7F38601AEF3DC505753EA921F97976F7BC0F0C0608D52673BDEDA",
+    "BothOptionsAccepted": true,
+    "OpenedProject": false,
+    "CompileOrProgramming": false
+  },
+  "RequiredFinalChecks": [
+    "All 10 external input ports fixed to the requested pins",
+    "AB20 is an input in the final pin report, not reserved DOUT output",
+    "Y21 and U21 assigned as user inputs",
+    "121 physical pins are uniquely constrained",
+    "Native B-version compile and all four STA slack classes pass"
+  ],
+  "HardwareValidated": false,
+  "BoardProgrammed": false,
+  "ReadCOMorJTAG": false,
+  "Note": "Configuration pins become GPIO only after successful configuration; do not operate external contacts during power-up/download. Preserve dedicated JTAG, READY, DONE and RECONFIG_N. MSPI is not the required group for these three pins."
+}

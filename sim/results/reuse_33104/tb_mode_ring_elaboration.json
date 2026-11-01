@@ -1,0 +1,505 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/fixtures/sk9822_ring_32503.v",
+      "sim/tb_mode_ring.sv",
+      "src/audio_ring_palette.v",
+      "src/sk9822_ring.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_mode_ring",
+        "Type": "tb_mode_ring",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 5,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LEDS",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000100000000000>"
+          }
+        ],
+        "Path": "tb_mode_ring"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 38,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 38,
+        "Parameters": [],
+        "Path": "tb_mode_ring.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 47,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 47,
+        "Parameters": [],
+        "Path": "tb_mode_ring.clocks"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000100000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_mode_ring.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "legacy",
+        "Type": "sk9822_ring_baseline_32503",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/fixtures/sk9822_ring_32503.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000100000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_mode_ring.legacy"
+      },
+      {
+        "Kind": "module",
+        "Instance": "palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 27,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_mode_ring.palette"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_frame",
+        "Type": "receive_frame",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_mode_ring.receive_frame"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_mode_ring.sv",
+      "src/sk9822_ring.v",
+      "sim/fixtures/sk9822_ring_32503.v",
+      "src/audio_ring_palette.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002293c3946e0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002293c7e41b0 .scope module, \"tb_mode_ring\" \"tb_mode_ring\" 3 5;",
+      "P_000002293c969150 .param/l \"HALF\" 1 3 6, +C4<00000000000000000000000000000010>;",
+      "P_000002293c969188 .param/l \"LEDS\" 1 3 6, +C4<00000000000000000000000000001100>;",
+      "P_000002293c9691c0 .param/l \"REFRESH\" 1 3 6, +C4<00000000000000000000100000000000>;",
+      "S_000002293ca6e010 .scope task, \"check\" \"check\" 3 38, 3 38 0, S_000002293c7e41b0;",
+      "S_000002293bf6d4a0 .scope task, \"clocks\" \"clocks\" 3 47, 3 47 0, S_000002293c7e41b0;",
+      "S_000002293c3cc760 .scope module, \"dut\" \"sk9822_ring\" 3 31, 4 8 0, S_000002293c7e41b0;",
+      "P_000002293bedb760 .param/l \"HALF_PERIOD_CYCLES\" 0 4 9, +C4<00000000000000000000000000000010>;",
+      "P_000002293bedb798 .param/l \"HALF_WIDTH\" 1 4 20, +C4<00000000000000000000000000000001>;",
+      "P_000002293bedb7d0 .param/l \"LED_COUNT\" 0 4 11, +C4<00000000000000000000000000001100>;",
+      "P_000002293bedb808 .param/l \"REFRESH_CYCLES\" 0 4 10, +C4<00000000000000000000100000000000>;",
+      "P_000002293bedb840 .param/l \"REFRESH_WIDTH\" 1 4 22, +C4<00000000000000000000000000001011>;",
+      "P_000002293bedb878 .param/l \"WORD_WIDTH\" 1 4 24, +C4<00000000000000000000000000000100>;",
+      "S_000002293c3cc8f0 .scope module, \"legacy\" \"sk9822_ring_baseline_32503\" 3 34, 5 8 0, S_000002293c7e41b0;",
+      "P_000002293c369310 .param/l \"HALF_PERIOD_CYCLES\" 0 5 9, +C4<00000000000000000000000000000010>;",
+      "P_000002293c369348 .param/l \"HALF_WIDTH\" 1 5 20, +C4<00000000000000000000000000000001>;",
+      "P_000002293c369380 .param/l \"LED_COUNT\" 0 5 11, +C4<00000000000000000000000000001100>;",
+      "P_000002293c3693b8 .param/l \"REFRESH_CYCLES\" 0 5 10, +C4<00000000000000000000100000000000>;",
+      "P_000002293c3693f0 .param/l \"REFRESH_WIDTH\" 1 5 22, +C4<00000000000000000000000000001011>;",
+      "P_000002293c369428 .param/l \"WORD_WIDTH\" 1 5 24, +C4<00000000000000000000000000000100>;",
+      "S_000002293c3cca80 .scope module, \"palette\" \"audio_ring_palette\" 3 27, 6 3 0, S_000002293c7e41b0;",
+      "S_000002293c3d8750 .scope task, \"receive_frame\" \"receive_frame\" 3 72, 3 72 0, S_000002293c7e41b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/fixtures/sk9822_ring_32503.v",
+      "sim/tb_mode_ring.sv",
+      "src/audio_ring_palette.v",
+      "src/sk9822_ring.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_mode_ring",
+        "Type": "tb_mode_ring",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 5,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LEDS",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH",
+            "Signed": 1,
+            "Source": "sim/tb_mode_ring.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000100000000000>"
+          }
+        ],
+        "Path": "tb_mode_ring"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 38,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 38,
+        "Parameters": [],
+        "Path": "tb_mode_ring.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 47,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 47,
+        "Parameters": [],
+        "Path": "tb_mode_ring.clocks"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000100000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_mode_ring.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "legacy",
+        "Type": "sk9822_ring_baseline_32503",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/fixtures/sk9822_ring_32503.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000100000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "sim/fixtures/sk9822_ring_32503.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_mode_ring.legacy"
+      },
+      {
+        "Kind": "module",
+        "Instance": "palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 27,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_mode_ring.palette"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_frame",
+        "Type": "receive_frame",
+        "InstantiationSource": "sim/tb_mode_ring.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_mode_ring.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_mode_ring.receive_frame"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_mode_ring.sv",
+      "src/sk9822_ring.v",
+      "sim/fixtures/sk9822_ring_32503.v",
+      "src/audio_ring_palette.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001c6c817bbb0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001c6c7d7ae70 .scope module, \"tb_mode_ring\" \"tb_mode_ring\" 3 5;",
+      "P_000001c6c856e710 .param/l \"HALF\" 1 3 6, +C4<00000000000000000000000000000010>;",
+      "P_000001c6c856e748 .param/l \"LEDS\" 1 3 6, +C4<00000000000000000000000000001100>;",
+      "P_000001c6c856e780 .param/l \"REFRESH\" 1 3 6, +C4<00000000000000000000100000000000>;",
+      "S_000001c6c7d7b690 .scope task, \"check\" \"check\" 3 38, 3 38 0, S_000001c6c7d7ae70;",
+      "S_000001c6c863a5f0 .scope task, \"clocks\" \"clocks\" 3 47, 3 47 0, S_000001c6c7d7ae70;",
+      "S_000001c6c863a780 .scope module, \"dut\" \"sk9822_ring\" 3 31, 4 8 0, S_000001c6c7d7ae70;",
+      "P_000001c6c863a910 .param/l \"HALF_PERIOD_CYCLES\" 0 4 9, +C4<00000000000000000000000000000010>;",
+      "P_000001c6c863a948 .param/l \"HALF_WIDTH\" 1 4 20, +C4<00000000000000000000000000000001>;",
+      "P_000001c6c863a980 .param/l \"LED_COUNT\" 0 4 11, +C4<00000000000000000000000000001100>;",
+      "P_000001c6c863a9b8 .param/l \"REFRESH_CYCLES\" 0 4 10, +C4<00000000000000000000100000000000>;",
+      "P_000001c6c863a9f0 .param/l \"REFRESH_WIDTH\" 1 4 22, +C4<00000000000000000000000000001011>;",
+      "P_000001c6c863aa28 .param/l \"WORD_WIDTH\" 1 4 24, +C4<00000000000000000000000000000100>;",
+      "S_000001c6c8439460 .scope module, \"legacy\" \"sk9822_ring_baseline_32503\" 3 34, 5 8 0, S_000001c6c7d7ae70;",
+      "P_000001c6c7d7b820 .param/l \"HALF_PERIOD_CYCLES\" 0 5 9, +C4<00000000000000000000000000000010>;",
+      "P_000001c6c7d7b858 .param/l \"HALF_WIDTH\" 1 5 20, +C4<00000000000000000000000000000001>;",
+      "P_000001c6c7d7b890 .param/l \"LED_COUNT\" 0 5 11, +C4<00000000000000000000000000001100>;",
+      "P_000001c6c7d7b8c8 .param/l \"REFRESH_CYCLES\" 0 5 10, +C4<00000000000000000000100000000000>;",
+      "P_000001c6c7d7b900 .param/l \"REFRESH_WIDTH\" 1 5 22, +C4<00000000000000000000000000001011>;",
+      "P_000001c6c7d7b938 .param/l \"WORD_WIDTH\" 1 5 24, +C4<00000000000000000000000000000100>;",
+      "S_000001c6c84395f0 .scope module, \"palette\" \"audio_ring_palette\" 3 27, 6 3 0, S_000001c6c7d7ae70;",
+      "S_000001c6c8439780 .scope task, \"receive_frame\" \"receive_frame\" 3 72, 3 72 0, S_000001c6c7d7ae70;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/fixtures/sk9822_ring_32503.v",
+    "sim/tb_mode_ring.sv",
+    "src/audio_ring_palette.v",
+    "src/sk9822_ring.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/fixtures/sk9822_ring_32503.v",
+    "sim/tb_mode_ring.sv",
+    "src/audio_ring_palette.v",
+    "src/sk9822_ring.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

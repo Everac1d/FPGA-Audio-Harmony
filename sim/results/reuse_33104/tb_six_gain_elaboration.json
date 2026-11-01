@@ -1,0 +1,1069 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_six_gain.sv",
+      "src/pcm_monitor_guard.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_six_gain",
+        "Type": "tb_six_gain",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_six_gain"
+      },
+      {
+        "Kind": "autofunction.vec4.u32",
+        "Instance": "gain_target",
+        "Type": "gain_target",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_six_gain.gain_target"
+      },
+      {
+        "Kind": "autofunction.vec4.s18",
+        "Instance": "math_sample",
+        "Type": "math_sample",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 67,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 67,
+        "Parameters": [],
+        "Path": "tb_six_gain.math_sample"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "smooth_reset",
+        "Type": "smooth_reset",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 151,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 151,
+        "Parameters": [],
+        "Path": "tb_six_gain.smooth_reset"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "smooth_tick",
+        "Type": "smooth_tick",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 116,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 116,
+        "Parameters": [],
+        "Path": "tb_six_gain.smooth_tick"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "static_tick",
+        "Type": "static_tick",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 93,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 93,
+        "Parameters": [],
+        "Path": "tb_six_gain.static_tick"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_nc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 25,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_nc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_nc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_nc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_np",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 30,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_np"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_np.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_np.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_pc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_pc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_pp",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 20,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_pp"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pp.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pp.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_sc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_six_gain.u_sc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_sp",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_six_gain.u_sp"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sp.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sp.registered_output"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_six_gain.sv",
+      "src/pcm_monitor_guard.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001cb87df5020 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001cb882651b0 .scope module, \"tb_six_gain\" \"tb_six_gain\" 3 5;",
+      "S_000001cb87aade40 .scope autofunction.vec4.u32, \"gain_target\" \"gain_target\" 3 54, 3 54 0, S_000001cb882651b0;",
+      "S_000001cb87a19bf0 .scope autofunction.vec4.s18, \"math_sample\" \"math_sample\" 3 67, 3 67 0, S_000001cb882651b0;",
+      "S_000001cb87a19d80 .scope autotask, \"smooth_reset\" \"smooth_reset\" 3 151, 3 151 0, S_000001cb882651b0;",
+      "S_000001cb87e97580 .scope autotask, \"smooth_tick\" \"smooth_tick\" 3 116, 3 116 0, S_000001cb882651b0;",
+      "S_000001cb87e97710 .scope autotask, \"static_tick\" \"static_tick\" 3 93, 3 93 0, S_000001cb882651b0;",
+      "S_000001cb87e978a0 .scope module, \"u_nc\" \"pcm_monitor_guard\" 3 25, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cc250 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cc288 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cc2c0 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cc2f8 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_000001cb87e930a0 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_000001cb87e978a0;",
+      "S_000001cb87e93230 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb87e978a0;",
+      "S_000001cb87e933c0 .scope module, \"u_np\" \"pcm_monitor_guard\" 3 30, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cd9c0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cd9f8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cda30 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cda68 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_000001cb87e2d2b0 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb87e933c0;",
+      "S_000001cb87e58b50 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_000001cb87e933c0;",
+      "S_000001cb87de1950 .scope module, \"u_pc\" \"pcm_monitor_guard\" 3 15, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cce80 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cceb8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881ccef0 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881ccf28 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_000001cb87de1ae0 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_000001cb87de1950;",
+      "S_000001cb88578200 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb87de1950;",
+      "S_000001cb88578b60 .scope module, \"u_pp\" \"pcm_monitor_guard\" 3 20, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cdab0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cdae8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cdb20 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cdb58 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_000001cb88578cf0 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb88578b60;",
+      "S_000001cb88578e80 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_000001cb88578b60;",
+      "S_000001cb88578390 .scope module, \"u_sc\" \"pcm_monitor_guard\" 3 43, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cd510 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cd548 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cd580 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cd5b8 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000001>;",
+      "S_000001cb88578070 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_000001cb88578390;",
+      "S_000001cb88578520 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb88578390;",
+      "S_000001cb885789d0 .scope module, \"u_sp\" \"pcm_monitor_guard\" 3 48, 4 12 0, S_000001cb882651b0;",
+      "P_000001cb881cde70 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_000001cb881cdea8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cdee0 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_000001cb881cdf18 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000001>;",
+      "S_000001cb885786b0 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_000001cb885789d0;",
+      "S_000001cb88578840 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_000001cb885789d0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_six_gain.sv",
+      "src/pcm_monitor_guard.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_six_gain",
+        "Type": "tb_six_gain",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_six_gain"
+      },
+      {
+        "Kind": "autofunction.vec4.u32",
+        "Instance": "gain_target",
+        "Type": "gain_target",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_six_gain.gain_target"
+      },
+      {
+        "Kind": "autofunction.vec4.s18",
+        "Instance": "math_sample",
+        "Type": "math_sample",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 67,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 67,
+        "Parameters": [],
+        "Path": "tb_six_gain.math_sample"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "smooth_reset",
+        "Type": "smooth_reset",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 151,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 151,
+        "Parameters": [],
+        "Path": "tb_six_gain.smooth_reset"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "smooth_tick",
+        "Type": "smooth_tick",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 116,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 116,
+        "Parameters": [],
+        "Path": "tb_six_gain.smooth_tick"
+      },
+      {
+        "Kind": "autotask",
+        "Instance": "static_tick",
+        "Type": "static_tick",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 93,
+        "DefinitionSource": "sim/tb_six_gain.sv",
+        "DefinitionLine": 93,
+        "Parameters": [],
+        "Path": "tb_six_gain.static_tick"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_nc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 25,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_nc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_nc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_nc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_np",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 30,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_np"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_np.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_np.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_pc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_pc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_pp",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 20,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_six_gain.u_pp"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pp.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_pp.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_sc",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_six_gain.u_sc"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "combinational_reference",
+        "Type": "combinational_reference",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sc.combinational_reference"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sc.gain_target_q8"
+      },
+      {
+        "Kind": "module",
+        "Instance": "u_sp",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "sim/tb_six_gain.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_six_gain.u_sp"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sp.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_six_gain.u_sp.registered_output"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_six_gain.sv",
+      "src/pcm_monitor_guard.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000023a6f1bec70 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000023a6f12d280 .scope module, \"tb_six_gain\" \"tb_six_gain\" 3 5;",
+      "S_0000023a6f9252c0 .scope autofunction.vec4.u32, \"gain_target\" \"gain_target\" 3 54, 3 54 0, S_0000023a6f12d280;",
+      "S_0000023a6f927950 .scope autofunction.vec4.s18, \"math_sample\" \"math_sample\" 3 67, 3 67 0, S_0000023a6f12d280;",
+      "S_0000023a6f719450 .scope autotask, \"smooth_reset\" \"smooth_reset\" 3 151, 3 151 0, S_0000023a6f12d280;",
+      "S_0000023a6f7195e0 .scope autotask, \"smooth_tick\" \"smooth_tick\" 3 116, 3 116 0, S_0000023a6f12d280;",
+      "S_0000023a6f719770 .scope autotask, \"static_tick\" \"static_tick\" 3 93, 3 93 0, S_0000023a6f12d280;",
+      "S_0000023a6f626100 .scope module, \"u_nc\" \"pcm_monitor_guard\" 3 25, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69f6d0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f708 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f740 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f778 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_0000023a6f626290 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_0000023a6f626100;",
+      "S_0000023a6f626420 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f626100;",
+      "S_0000023a6f51c9b0 .scope module, \"u_np\" \"pcm_monitor_guard\" 3 30, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69f130 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f168 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69f1a0 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f1d8 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_0000023a6f4fc1f0 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f51c9b0;",
+      "S_0000023a6f4fc380 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_0000023a6f51c9b0;",
+      "S_0000023a6f4fc510 .scope module, \"u_pc\" \"pcm_monitor_guard\" 3 15, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69e9b0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69e9e8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69ea20 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69ea58 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_0000023a6f4fbe90 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_0000023a6f4fc510;",
+      "S_0000023a6f98e670 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f4fc510;",
+      "S_0000023a6f98efd0 .scope module, \"u_pp\" \"pcm_monitor_guard\" 3 20, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69eaa0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69ead8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69eb10 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69eb48 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000000>;",
+      "S_0000023a6f98f160 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f98efd0;",
+      "S_0000023a6f98ecb0 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_0000023a6f98efd0;",
+      "S_0000023a6f98e800 .scope module, \"u_sc\" \"pcm_monitor_guard\" 3 43, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69f7c0 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f7f8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69f830 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69f868 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000001>;",
+      "S_0000023a6f98e990 .scope generate, \"combinational_reference\" \"combinational_reference\" 4 109, 4 109 0, S_0000023a6f98e800;",
+      "S_0000023a6f98eb20 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f98e800;",
+      "S_0000023a6f98ee40 .scope module, \"u_sp\" \"pcm_monitor_guard\" 3 48, 4 12 0, S_0000023a6f12d280;",
+      "P_0000023a6f69ec80 .param/l \"FINE_GAIN\" 0 4 16, +C4<00000000000000000000000000000000>;",
+      "P_0000023a6f69ecb8 .param/l \"PIPELINE_ENABLE\" 0 4 15, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69ecf0 .param/l \"PROTECTION_ENABLE\" 0 4 13, +C4<00000000000000000000000000000001>;",
+      "P_0000023a6f69ed28 .param/l \"SMOOTH_ENABLE\" 0 4 14, +C4<00000000000000000000000000000001>;",
+      "S_0000023a6f98e350 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 4 32, 4 32 0, S_0000023a6f98ee40;",
+      "S_0000023a6f98e4e0 .scope generate, \"registered_output\" \"registered_output\" 4 109, 4 109 0, S_0000023a6f98ee40;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_six_gain.sv",
+    "src/pcm_monitor_guard.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_six_gain.sv",
+    "src/pcm_monitor_guard.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

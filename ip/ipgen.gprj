@@ -1,0 +1,13 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AST-138B" pn="GW5AST-LV138PG484AC1/I0">gw5ast138b-011</Device>
+    <FileList>
+        <File path="ddr3/record_ddr3_core/record_ddr3_core.v" type="file.verilog" enable="1"/>
+        <File path="pll/record_ddr3_pll/record_ddr3_pll.v" type="file.verilog" enable="1"/>
+        <File path="pll/record_ddr3_pll/record_ddr3_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="pll/pll_init.v" type="file.verilog" enable="1"/>
+    </FileList>
+</Project>

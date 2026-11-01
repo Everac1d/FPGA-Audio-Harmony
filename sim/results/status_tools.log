@@ -1,0 +1,2 @@
+PASS R6_STATUS_TOOLS checks=3195 versions33105_33106_33107_33109 counter32 old21bit_boundaries max5min signed25 gain21 malformed_range_length_protocol_reject no_serial
+PASS R3_STATUS_TOOLS version signed_pitch gain lengths timestamp malformed empty reject

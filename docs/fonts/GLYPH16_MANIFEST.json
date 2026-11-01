@@ -1,0 +1,1387 @@
+{
+  "SubsetName": "FPGA Audio LCD CJK16 Footer Subset",
+  "SourceFamily": "Noto Sans SC",
+  "SourceSHA256": "763146584CF0710223441356B4395E279021B0806C196614377A7A0174AE074A",
+  "FontSize": 16,
+  "Weight": 650,
+  "BinaryThreshold": 112,
+  "GlyphCount": 124,
+  "OriginalSharedGlyphIDs": 123,
+  "NewFooterOnlyChars": [
+    "转"
+  ],
+  "Glyphs": [
+    {
+      "id": 0,
+      "character": " ",
+      "cell_width": 8,
+      "ink_bounds": null
+    },
+    {
+      "id": 1,
+      "character": "0",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 2,
+      "character": "1",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 3,
+      "character": "2",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 4,
+      "character": "3",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 5,
+      "character": "4",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 6,
+      "character": "5",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 7,
+      "character": "6",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 8,
+      "character": "7",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 9,
+      "character": "8",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 10,
+      "character": "9",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 11,
+      "character": "+",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        3,
+        7,
+        11
+      ]
+    },
+    {
+      "id": 12,
+      "character": "-",
+      "cell_width": 8,
+      "ink_bounds": [
+        2,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 13,
+      "character": ".",
+      "cell_width": 8,
+      "ink_bounds": [
+        3,
+        6,
+        5,
+        9
+      ]
+    },
+    {
+      "id": 14,
+      "character": "?",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 15,
+      "character": "/",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        0,
+        7,
+        15
+      ]
+    },
+    {
+      "id": 16,
+      "character": ":",
+      "cell_width": 8,
+      "ink_bounds": [
+        3,
+        3,
+        5,
+        12
+      ]
+    },
+    {
+      "id": 17,
+      "character": "A",
+      "cell_width": 8,
+      "ink_bounds": [
+        0,
+        2,
+        8,
+        14
+      ]
+    },
+    {
+      "id": 18,
+      "character": "B",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 19,
+      "character": "C",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 20,
+      "character": "D",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 21,
+      "character": "E",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 22,
+      "character": "F",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        2,
+        7,
+        14
+      ]
+    },
+    {
+      "id": 23,
+      "character": "音",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 24,
+      "character": "频",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        16
+      ]
+    },
+    {
+      "id": 25,
+      "character": "特",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 26,
+      "character": "效",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 27,
+      "character": "实",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 28,
+      "character": "时",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 29,
+      "character": "录",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 30,
+      "character": "放",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 31,
+      "character": "静",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 32,
+      "character": "麦",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 33,
+      "character": "克",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 34,
+      "character": "风",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 35,
+      "character": "测",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 36,
+      "character": "试",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 37,
+      "character": "未",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 38,
+      "character": "知",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 39,
+      "character": "原",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 40,
+      "character": "声",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 41,
+      "character": "变",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 42,
+      "character": "调",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 43,
+      "character": "和",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 44,
+      "character": "半",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 45,
+      "character": "增",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        14,
+        16
+      ]
+    },
+    {
+      "id": 46,
+      "character": "益",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 47,
+      "character": "倍",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 48,
+      "character": "状",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 49,
+      "character": "态",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 50,
+      "character": "待",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 51,
+      "character": "命",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        16
+      ]
+    },
+    {
+      "id": 52,
+      "character": "运",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 53,
+      "character": "行",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 54,
+      "character": "内",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        14,
+        15
+      ]
+    },
+    {
+      "id": 55,
+      "character": "存",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 56,
+      "character": "机",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 57,
+      "character": "就",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 58,
+      "character": "绪",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 59,
+      "character": "初",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 60,
+      "character": "始",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 61,
+      "character": "化",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        16
+      ]
+    },
+    {
+      "id": 62,
+      "character": "中",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        14,
+        15
+      ]
+    },
+    {
+      "id": 63,
+      "character": "保",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 64,
+      "character": "播",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 65,
+      "character": "准",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 66,
+      "character": "备",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 67,
+      "character": "预",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 68,
+      "character": "热",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        16
+      ]
+    },
+    {
+      "id": 69,
+      "character": "尾",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 70,
+      "character": "输",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 71,
+      "character": "出",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        14,
+        15
+      ]
+    },
+    {
+      "id": 72,
+      "character": "排",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 73,
+      "character": "空",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 74,
+      "character": "储",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 75,
+      "character": "故",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 76,
+      "character": "障",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 77,
+      "character": "总",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 78,
+      "character": "长",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 79,
+      "character": "秒",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 80,
+      "character": "满",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 81,
+      "character": "码",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 82,
+      "character": "按",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 83,
+      "character": "键",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 84,
+      "character": "复",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 85,
+      "character": "位",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 86,
+      "character": "切",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 87,
+      "character": "模",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 88,
+      "character": "式",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        16
+      ]
+    },
+    {
+      "id": 89,
+      "character": "旋",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 90,
+      "character": "结",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 91,
+      "character": "束",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 92,
+      "character": "暂",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 93,
+      "character": "停",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 94,
+      "character": "下",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 95,
+      "character": "归",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 96,
+      "character": "零",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 97,
+      "character": "仍",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 98,
+      "character": "可",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 99,
+      "character": "使",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 100,
+      "character": "用",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        14,
+        14
+      ]
+    },
+    {
+      "id": 101,
+      "character": "记",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 102,
+      "character": "请",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 103,
+      "character": "稍",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 104,
+      "character": "候",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 105,
+      "character": "回",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 106,
+      "character": "正",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 107,
+      "character": "在",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 108,
+      "character": "完",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 109,
+      "character": "成",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 110,
+      "character": "后",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 111,
+      "character": "已",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 112,
+      "character": "继",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        1,
+        15,
+        16
+      ]
+    },
+    {
+      "id": 113,
+      "character": "续",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 114,
+      "character": "重",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 115,
+      "character": "从",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        1,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 116,
+      "character": "头",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 117,
+      "character": "双",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        14
+      ]
+    },
+    {
+      "id": 118,
+      "character": "部",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 119,
+      "character": ">",
+      "cell_width": 8,
+      "ink_bounds": [
+        1,
+        3,
+        7,
+        11
+      ]
+    },
+    {
+      "id": 120,
+      "character": "短",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 121,
+      "character": "选",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        16,
+        15
+      ]
+    },
+    {
+      "id": 122,
+      "character": "择",
+      "cell_width": 16,
+      "ink_bounds": [
+        0,
+        0,
+        15,
+        15
+      ]
+    },
+    {
+      "id": 123,
+      "character": "转",
+      "cell_width": 16,
+      "ink_bounds": [
+        1,
+        0,
+        15,
+        15
+      ]
+    }
+  ],
+  "Rows": 2048,
+  "RowWidth": 16,
+  "ROM_SHA256": "C38DA1AA25DD19309F707FC2DBE06C8DE87B129C4194664F7C8DC3A758DDB359",
+  "FixedPages": {
+    "LIVE_0": "键1切实时/录放 长按2秒复位",
+    "LIVE_1": "键2切原声/变调/和声/双变调",
+    "LIVE_2": "旋1转调增益 按下切麦克风/静音",
+    "LIVE_3": "旋2转调半音 短按归零/选声部 长按2秒归零",
+    "CLIP_0": "键1切实时/录放 长按2秒复位 键2切音效",
+    "CLIP_1": "键3录音/结束 键4播放/暂停/继续",
+    "CLIP_2": "旋1转调增益 旋2转调半音",
+    "CLIP_3": "旋2短按归零/选声部 长按2秒归零 键4长按重播"
+  }
+}

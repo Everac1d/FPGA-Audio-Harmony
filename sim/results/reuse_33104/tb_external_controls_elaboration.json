@@ -1,0 +1,615 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_external_controls.sv",
+      "src/audio_external_controls.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_external_controls",
+        "Type": "tb_external_controls",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_external_controls"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 44,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_external_controls.check"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_external_controls",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 12,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GAIN_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 8,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 9,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_REPLAY_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PITCH_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "gain_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 111,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut.gain_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "pitch_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 114,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut.pitch_encoder"
+      },
+      {
+        "Kind": "task",
+        "Instance": "gain_press",
+        "Type": "gain_press",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 52,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 52,
+        "Parameters": [],
+        "Path": "tb_external_controls.gain_press"
+      },
+      {
+        "Kind": "task",
+        "Instance": "key",
+        "Type": "key",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 48,
+        "Parameters": [],
+        "Path": "tb_external_controls.key"
+      },
+      {
+        "Kind": "task",
+        "Instance": "phase",
+        "Type": "phase",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_external_controls.phase"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_press",
+        "Type": "pitch_press",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 53,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_external_controls.pitch_press"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reverse_dut",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_external_controls.reverse_dut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tick",
+        "Type": "tick",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_external_controls.tick"
+      },
+      {
+        "Kind": "task",
+        "Instance": "turn",
+        "Type": "turn",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 63,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 63,
+        "Parameters": [],
+        "Path": "tb_external_controls.turn"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_external_controls.sv",
+      "src/audio_external_controls.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001eaeaa74ed0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001eaeb0dedf0 .scope module, \"tb_external_controls\" \"tb_external_controls\" 3 2;",
+      "S_000001eaeaef41a0 .scope task, \"check\" \"check\" 3 44, 3 44 0, S_000001eaeb0dedf0;",
+      "S_000001eaeb18a720 .scope module, \"dut\" \"audio_external_controls\" 3 12, 4 4 0, S_000001eaeb0dedf0;",
+      "P_000001eaea6edd20 .param/l \"DEBOUNCE_CYCLES\" 0 4 5, +C4<00000000000000000000000000000100>;",
+      "P_000001eaea6edd58 .param/l \"DUAL_VOICE_ENABLE\" 0 4 10, +C4<00000000000000000000000000000000>;",
+      "P_000001eaea6edd90 .param/l \"ENCODER_FILTER_CYCLES\" 0 4 11, +C4<00000000000000000000000000000011>;",
+      "P_000001eaea6eddc8 .param/l \"GAIN_REVERSE\" 0 4 12, +C4<00000000000000000000000000000000>;",
+      "P_000001eaea6ede00 .param/l \"LONG_DIAG_CYCLES\" 0 4 8, +C4<00000101111101011110000100000000>;",
+      "P_000001eaea6ede38 .param/l \"LONG_PITCH_CYCLES\" 0 4 9, +C4<00000101111101011110000100000000>;",
+      "P_000001eaea6ede70 .param/l \"LONG_REPLAY_CYCLES\" 0 4 7, +C4<00000000000000000000000000010100>;",
+      "P_000001eaea6edea8 .param/l \"LONG_RESET_CYCLES\" 0 4 6, +C4<00000000000000000000000000100000>;",
+      "P_000001eaea6edee0 .param/l \"PITCH_REVERSE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "S_000001eaeb18c350 .scope module, \"gain_encoder\" \"audio_panel_encoder\" 4 111, 4 174 0, S_000001eaeb18a720;",
+      "P_000001eaeb0d4b70 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000011>;",
+      "P_000001eaeb0d4ba8 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000000>;",
+      "S_000001eaeab27180 .scope module, \"pitch_encoder\" \"audio_panel_encoder\" 4 114, 4 174 0, S_000001eaeb18a720;",
+      "P_000001eaeb0d55f0 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000011>;",
+      "P_000001eaeb0d5628 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000000>;",
+      "S_000001eaeab27310 .scope task, \"gain_press\" \"gain_press\" 3 52, 3 52 0, S_000001eaeb0dedf0;",
+      "S_000001eaeab274a0 .scope task, \"key\" \"key\" 3 48, 3 48 0, S_000001eaeb0dedf0;",
+      "S_000001eaeaaaeb00 .scope task, \"phase\" \"phase\" 3 54, 3 54 0, S_000001eaeb0dedf0;",
+      "S_000001eaeaaaec90 .scope task, \"pitch_press\" \"pitch_press\" 3 53, 3 53 0, S_000001eaeb0dedf0;",
+      "S_000001eaeaaaee20 .scope module, \"reverse_dut\" \"audio_panel_encoder\" 3 22, 4 174 0, S_000001eaeb0dedf0;",
+      "P_000001eaeb0d4370 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000001>;",
+      "P_000001eaeb0d43a8 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000001>;",
+      "S_000001eaeaaad350 .scope task, \"tick\" \"tick\" 3 43, 3 43 0, S_000001eaeb0dedf0;",
+      "S_000001eaeaaad4e0 .scope task, \"turn\" \"turn\" 3 63, 3 63 0, S_000001eaeb0dedf0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_external_controls.sv",
+      "src/audio_external_controls.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_external_controls",
+        "Type": "tb_external_controls",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_external_controls"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 44,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_external_controls.check"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_external_controls",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 12,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GAIN_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 8,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 9,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_REPLAY_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PITCH_REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "gain_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 111,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut.gain_encoder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "pitch_encoder",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "src/audio_external_controls.v",
+        "InstantiationLine": 114,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_external_controls.dut.pitch_encoder"
+      },
+      {
+        "Kind": "task",
+        "Instance": "gain_press",
+        "Type": "gain_press",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 52,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 52,
+        "Parameters": [],
+        "Path": "tb_external_controls.gain_press"
+      },
+      {
+        "Kind": "task",
+        "Instance": "key",
+        "Type": "key",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 48,
+        "Parameters": [],
+        "Path": "tb_external_controls.key"
+      },
+      {
+        "Kind": "task",
+        "Instance": "phase",
+        "Type": "phase",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_external_controls.phase"
+      },
+      {
+        "Kind": "task",
+        "Instance": "pitch_press",
+        "Type": "pitch_press",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 53,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_external_controls.pitch_press"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reverse_dut",
+        "Type": "audio_panel_encoder",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/audio_external_controls.v",
+        "DefinitionLine": 174,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 175,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REVERSE",
+            "Signed": 0,
+            "Source": "src/audio_external_controls.v",
+            "Line": 176,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_external_controls.reverse_dut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tick",
+        "Type": "tick",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_external_controls.tick"
+      },
+      {
+        "Kind": "task",
+        "Instance": "turn",
+        "Type": "turn",
+        "InstantiationSource": "sim/tb_external_controls.sv",
+        "InstantiationLine": 63,
+        "DefinitionSource": "sim/tb_external_controls.sv",
+        "DefinitionLine": 63,
+        "Parameters": [],
+        "Path": "tb_external_controls.turn"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_external_controls.sv",
+      "src/audio_external_controls.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002bd28ebc7c0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002bd29364410 .scope module, \"tb_external_controls\" \"tb_external_controls\" 3 2;",
+      "S_000002bd28bf7800 .scope task, \"check\" \"check\" 3 44, 3 44 0, S_000002bd29364410;",
+      "S_000002bd293c1c70 .scope module, \"dut\" \"audio_external_controls\" 3 12, 4 4 0, S_000002bd29364410;",
+      "P_000002bd293c21d0 .param/l \"DEBOUNCE_CYCLES\" 0 4 5, +C4<00000000000000000000000000000100>;",
+      "P_000002bd293c2208 .param/l \"DUAL_VOICE_ENABLE\" 0 4 10, +C4<00000000000000000000000000000000>;",
+      "P_000002bd293c2240 .param/l \"ENCODER_FILTER_CYCLES\" 0 4 11, +C4<00000000000000000000000000000011>;",
+      "P_000002bd293c2278 .param/l \"GAIN_REVERSE\" 0 4 12, +C4<00000000000000000000000000000000>;",
+      "P_000002bd293c22b0 .param/l \"LONG_DIAG_CYCLES\" 0 4 8, +C4<00000101111101011110000100000000>;",
+      "P_000002bd293c22e8 .param/l \"LONG_PITCH_CYCLES\" 0 4 9, +C4<00000101111101011110000100000000>;",
+      "P_000002bd293c2320 .param/l \"LONG_REPLAY_CYCLES\" 0 4 7, +C4<00000000000000000000000000010100>;",
+      "P_000002bd293c2358 .param/l \"LONG_RESET_CYCLES\" 0 4 6, +C4<00000000000000000000000000100000>;",
+      "P_000002bd293c2390 .param/l \"PITCH_REVERSE\" 0 4 13, +C4<00000000000000000000000000000000>;",
+      "S_000002bd2917a660 .scope module, \"gain_encoder\" \"audio_panel_encoder\" 4 111, 4 174 0, S_000002bd293c1c70;",
+      "P_000002bd2934d0b0 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000011>;",
+      "P_000002bd2934d0e8 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000000>;",
+      "S_000002bd29083100 .scope module, \"pitch_encoder\" \"audio_panel_encoder\" 4 114, 4 174 0, S_000002bd293c1c70;",
+      "P_000002bd2934d130 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000011>;",
+      "P_000002bd2934d168 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000000>;",
+      "S_000002bd29083290 .scope task, \"gain_press\" \"gain_press\" 3 52, 3 52 0, S_000002bd29364410;",
+      "S_000002bd29083420 .scope task, \"key\" \"key\" 3 48, 3 48 0, S_000002bd29364410;",
+      "S_000002bd28f5dbc0 .scope task, \"phase\" \"phase\" 3 54, 3 54 0, S_000002bd29364410;",
+      "S_000002bd28f5dd50 .scope task, \"pitch_press\" \"pitch_press\" 3 53, 3 53 0, S_000002bd29364410;",
+      "S_000002bd28f5dee0 .scope module, \"reverse_dut\" \"audio_panel_encoder\" 3 22, 4 174 0, S_000002bd29364410;",
+      "P_000002bd2934c830 .param/l \"FILTER_CYCLES\" 0 4 175, +C4<00000000000000000000000000000001>;",
+      "P_000002bd2934c868 .param/l \"REVERSE\" 0 4 176, +C4<00000000000000000000000000000001>;",
+      "S_000002bd28f5d650 .scope task, \"tick\" \"tick\" 3 43, 3 43 0, S_000002bd29364410;",
+      "S_000002bd28f5d7e0 .scope task, \"turn\" \"turn\" 3 63, 3 63 0, S_000002bd29364410;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_external_controls.sv",
+    "src/audio_external_controls.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_external_controls.sv",
+    "src/audio_external_controls.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

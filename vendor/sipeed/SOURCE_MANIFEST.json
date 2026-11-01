@@ -1,0 +1,96 @@
+{
+  "Repository": "sipeed/TangMega-138K-example",
+  "Commit": "06e7d8b118d345915ab6f257b7c22226f81575cd",
+  "Files": [
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/ddr3_memory_interface/ddr3_memory_interface.ipc",
+      "LocalPath": "vendor/sipeed/ddr3_memory_interface_C_original.ipc",
+      "GitBlobSHA": "82418953764700ffa6f0a84ec016ff44b6faff79",
+      "Length": 863,
+      "SHA256": "50f685396379ddd669464df716ae3a3872a7b2bd9272394a22c8303c5603d1f5",
+      "Bytes": 863,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/gowin_pll/gowin_pll.ipc",
+      "LocalPath": "vendor/sipeed/gowin_pll_C_original.ipc",
+      "GitBlobSHA": "fa4cd2deceb8a3f57d55af7060743780a57596ba",
+      "Length": 4767,
+      "SHA256": "02972f88241779c6488dd481b81fc40a454526a03e7c6e158f1271738c649705",
+      "Bytes": 4767,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/gowin_pll/gowin_pll.v",
+      "LocalPath": "vendor/sipeed/gowin_pll_C_original.v",
+      "GitBlobSHA": "26f6083379cec47a52d6d3a72d3c6fe608f5e17f",
+      "Length": 992,
+      "SHA256": "982ca6387f42086e88b4c858490eb00954a80a3284e0f07d959311d0975d7536",
+      "Bytes": 992,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/gowin_pll/gowin_pll_mod.v",
+      "LocalPath": "vendor/sipeed/gowin_pll_mod_C_original.v",
+      "GitBlobSHA": "95a97941b9087066ea50dfc04b97a4dfd3d89d93",
+      "Length": 6081,
+      "SHA256": "07398632b56749dbe52f6e5d739a526c7ca5e71c4060c7d062a64dada6e1a953",
+      "Bytes": 6081,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/pll_init.v",
+      "LocalPath": "vendor/sipeed/pll_init.v",
+      "GitBlobSHA": "d3aa5706e0c2dbf9fb45254e3f325a0877f9b014",
+      "Length": 6458,
+      "SHA256": "502436115e507453e2c139a073f5b56484421311ef57088ce1a16140347957f5",
+      "Bytes": 6458,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/ddr3_1v4_hs.cst",
+      "LocalPath": "vendor/sipeed/ddr3_1v4_hs_C_original.cst",
+      "GitBlobSHA": "849b7c60bda3814b47a886abb42cfba8bc12edbc",
+      "Length": 8042,
+      "SHA256": "720a125ed63f902ec1885ffa3e2843dfb762926033c75b7586a03f0f8658ccab",
+      "Bytes": 8042,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/ddr3_1v4_hs.sdc",
+      "LocalPath": "vendor/sipeed/ddr3_1v4_hs.sdc",
+      "GitBlobSHA": "736f8fe642d9ce8d3cdd0256c26631ba37028fba",
+      "Length": 574,
+      "SHA256": "39eba69deae4761e8a749780c27df43052813fe2dc220ba535ac93c78c03ec89",
+      "Bytes": 574,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/ddr_memory_test_uart/src/top.v",
+      "LocalPath": "vendor/sipeed/top_reference.v",
+      "GitBlobSHA": "232879304cb4fdf3bd915c667f86dde47188e0f8",
+      "Length": 6923,
+      "SHA256": "d20e78e61f8d61816da78d6644a194453f8cb5c50cbbb5941961f31ea8c16944",
+      "Bytes": 6923,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "ddr_memory/README.md",
+      "LocalPath": "vendor/sipeed/DDR_README.md",
+      "GitBlobSHA": "9c95806d4cc7a68d37f3dacdcc4a8ee6c6cb6c26",
+      "Length": 2438,
+      "SHA256": "e5c2e54f4d61ef4f2bac755d74831eaa25e0533d04fbd88fd7693c49f5e691e2",
+      "Bytes": 2444,
+      "OriginalBytesVerified": true
+    },
+    {
+      "RemotePath": "LICENSE",
+      "LocalPath": "vendor/sipeed/LICENSE",
+      "GitBlobSHA": "f5dac6beebcdc319f419cbcc191dd12062494ca9",
+      "Length": 11368,
+      "SHA256": "1c4998143e95e0216247064ea81ea647bf7408f57ed9d257b4c6baad441bc744",
+      "Bytes": 11368,
+      "OriginalBytesVerified": true
+    }
+  ]
+}

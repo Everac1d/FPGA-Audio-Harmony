@@ -1,0 +1,3321 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_record_engine.sv",
+      "src/audio_effect_core.v",
+      "src/audio_level_meter.v",
+      "src/audio_record_engine.v",
+      "src/audio_record_keys.v",
+      "src/audio_ring_palette.v",
+      "src/audio_test_clock.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_clip_controller.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_voice_conditioner.v",
+      "src/pt8211_stereo_tx.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/status_ws2812.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_record_engine",
+        "Type": "tb_record_engine",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 6,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "TEST_GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "sim/tb_record_engine.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_RAM_BITS",
+            "Signed": 0,
+            "Source": "sim/tb_record_engine.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 34,
+        "Parameters": [],
+        "Path": "tb_record_engine.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "chord",
+        "Type": "chord",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_record_engine.chord"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_record_engine",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000001100001101010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EXTERNAL_CONTROLS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POR_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STARTUP_FRAMES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_USER_CODE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 14,
+            "Value": "C4<00000000000000110010010100000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "UART_REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 6,
+            "Value": "+C4<00000000100110001001011010000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "clock_gen",
+        "Type": "audio_test_clock",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 58,
+        "DefinitionSource": "src/audio_test_clock.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.clock_gen"
+      },
+      {
+        "Kind": "module",
+        "Instance": "conditioner",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 182,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.conditioner"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.conditioner.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "core",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 178,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.core.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "single_voice",
+        "Type": "single_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.single_voice"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "legacy_ui",
+        "Type": "legacy_ui",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.legacy_ui"
+      },
+      {
+        "Kind": "module",
+        "Instance": "keys",
+        "Type": "audio_record_keys",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 97,
+        "DefinitionSource": "src/audio_record_keys.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_keys.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_keys.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000011000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.legacy_ui.keys"
+      },
+      {
+        "Kind": "module",
+        "Instance": "meter",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 232,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000011001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000001000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.meter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.meter.amplitude_curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "microphones",
+        "Type": "mic_array_pcm",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 70,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[0]",
+        "Type": "g_rx[0]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[0]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[0].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[1]",
+        "Type": "g_rx[1]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[1]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[1].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[2]",
+        "Type": "g_rx[2]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[2]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[2].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[3]",
+        "Type": "g_rx[3]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[3]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[3].receiver"
+      },
+      {
+        "Kind": "module",
+        "Instance": "monitor",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 216,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.monitor"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.monitor.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.monitor.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "queue",
+        "Type": "pcm_output_queue",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 186,
+        "DefinitionSource": "src/pcm_output_queue.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ADDR_WIDTH",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 25,
+            "Value": "C4<10000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HEAD_SETUP_CYCLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 26,
+            "Value": "C4<00010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SETUP_WIDTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.queue"
+      },
+      {
+        "Kind": "module",
+        "Instance": "recorder",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 163,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000001011100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001101100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.recorder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reporter",
+        "Type": "record_status_uart",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 262,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000011100001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000110110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000010111110101111000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000100110001001011010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001100111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010010100000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.reporter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.report_byte"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 239,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000011110100001001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.ring"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring_palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 235,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.ring_palette"
+      },
+      {
+        "Kind": "module",
+        "Instance": "speaker",
+        "Type": "pt8211_stereo_tx",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 220,
+        "DefinitionSource": "src/pt8211_stereo_tx.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.speaker"
+      },
+      {
+        "Kind": "module",
+        "Instance": "status_led",
+        "Type": "status_ws2812",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 260,
+        "DefinitionSource": "src/status_ws2812.v",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.status_led"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "tone_lut",
+        "Type": "tone_lut",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 194,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 194,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.tone_lut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "replay",
+        "Type": "replay",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 181,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 181,
+        "Parameters": [],
+        "Path": "tb_record_engine.replay"
+      },
+      {
+        "Kind": "task",
+        "Instance": "solo",
+        "Type": "solo",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 46,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_record_engine.solo"
+      },
+      {
+        "Kind": "function.vec4.s24",
+        "Instance": "source_word",
+        "Type": "source_word",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 80,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 80,
+        "Parameters": [],
+        "Path": "tb_record_engine.source_word"
+      },
+      {
+        "Kind": "task",
+        "Instance": "step",
+        "Type": "step",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 37,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 37,
+        "Parameters": [],
+        "Path": "tb_record_engine.step"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_frames",
+        "Type": "wait_frames",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 38,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 38,
+        "Parameters": [],
+        "Path": "tb_record_engine.wait_frames"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_state",
+        "Type": "wait_state",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 42,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 42,
+        "Parameters": [],
+        "Path": "tb_record_engine.wait_state"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_record_engine.sv",
+      "src/audio_record_engine.v",
+      "src/audio_test_clock.v",
+      "src/pcm_voice_conditioner.v",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v",
+      "src/audio_record_keys.v",
+      "src/audio_level_meter.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_clip_controller.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/audio_ring_palette.v",
+      "src/pt8211_stereo_tx.v",
+      "src/status_ws2812.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000028303a7fe40 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000028303344f90 .scope module, \"tb_record_engine\" \"tb_record_engine\" 3 6;",
+      "P_0000028303a1d890 .param/l \"TEST_GRAIN_LOG2\" 0 3 8, +C4<00000000000000000000000000000110>;",
+      "P_0000028303a1d8c8 .param/l \"TEST_RAM_BITS\" 0 3 7, +C4<00000000000000000000000000001000>;",
+      "S_00000283037931b0 .scope task, \"check\" \"check\" 3 34, 3 34 0, S_0000028303344f90;",
+      "S_0000028303b8ac40 .scope task, \"chord\" \"chord\" 3 51, 3 51 0, S_0000028303344f90;",
+      "S_00000283039f8010 .scope module, \"dut\" \"audio_record_engine\" 3 23, 4 3 0, S_0000028303344f90;",
+      "P_00000283033c7640 .param/l \"DEBOUNCE_CYCLES\" 0 4 4, +C4<00000000000000000000000000000011>;",
+      "P_00000283033c7678 .param/l \"DUAL_VOICE_ENABLE\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_00000283033c76b0 .param/l \"ENCODER_FILTER_CYCLES\" 0 4 12, +C4<00000000000000001100001101010000>;",
+      "P_00000283033c76e8 .param/l \"ENHANCED_PLAYBACK\" 0 4 9, +C4<00000000000000000000000000000000>;",
+      "P_00000283033c7720 .param/l \"EXTERNAL_CONTROLS\" 0 4 9, +C4<00000000000000000000000000000000>;",
+      "P_00000283033c7758 .param/l \"FINE_GAIN\" 0 4 10, +C4<00000000000000000000000000000000>;",
+      "P_00000283033c7790 .param/l \"GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000000110>;",
+      "P_00000283033c77c8 .param/l \"LONG_DIAG_CYCLES\" 0 4 13, +C4<00000101111101011110000100000000>;",
+      "P_00000283033c7800 .param/l \"LONG_PITCH_CYCLES\" 0 4 13, +C4<00000101111101011110000100000000>;",
+      "P_00000283033c7838 .param/l \"LONG_PRESS_CYCLES\" 0 4 4, +C4<00000000000000000000000000011000>;",
+      "P_00000283033c7870 .param/l \"LONG_RESET_CYCLES\" 0 4 12, +C4<00000101111101011110000100000000>;",
+      "P_00000283033c78a8 .param/l \"MAX_SAMPLES\" 0 4 7, +C4<00000000000000000000001000000000>;",
+      "P_00000283033c78e0 .param/l \"POR_CYCLES\" 0 4 5, +C4<00000000000000000000000000001000>;",
+      "P_00000283033c7918 .param/l \"RAM_ADDR_BITS\" 0 4 8, +C4<00000000000000000000000000001000>;",
+      "P_00000283033c7950 .param/l \"STARTUP_FRAMES\" 0 4 5, +C4<00000000000000000000000000000011>;",
+      "P_00000283033c7988 .param/l \"STATUS_USER_CODE\" 0 4 14, C4<00000000000000110010010100000011>;",
+      "P_00000283033c79c0 .param/l \"UART_REPORT_CYCLES\" 0 4 6, +C4<00000000100110001001011010000000>;",
+      "S_0000028303b8c770 .scope module, \"clock_gen\" \"audio_test_clock\" 4 58, 5 3 0, S_00000283039f8010;",
+      "S_0000028303b8c900 .scope module, \"conditioner\" \"pcm_voice_conditioner\" 4 182, 6 31 0, S_00000283039f8010;",
+      "P_000002830339ac50 .param/l \"CLOSE_Q8\" 1 6 61, C4<00000000000000000100000000000000>;",
+      "P_000002830339ac88 .param/l \"GATE_CLOSE_THRESHOLD\" 0 6 34, +C4<00000000000000000000000001000000>;",
+      "P_000002830339acc0 .param/l \"GATE_ENABLE\" 0 6 32, +C4<00000000000000000000000000000001>;",
+      "P_000002830339acf8 .param/l \"GATE_HOLD_SAMPLES\" 0 6 35, +C4<00000000000000000001000000000000>;",
+      "P_000002830339ad30 .param/l \"GATE_OPEN_THRESHOLD\" 0 6 33, +C4<00000000000000000000000010000000>;",
+      "P_000002830339ad68 .param/l \"HOLD_BITS\" 1 6 59, +C4<00000000000000000000000000001101>;",
+      "P_000002830339ada0 .param/l \"OPEN_Q8\" 1 6 60, C4<00000000000000001000000000000000>;",
+      "S_000002830339ade0 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 6 44, 6 44 0, S_0000028303b8c900;",
+      "S_000002830339af70 .scope module, \"core\" \"audio_effect_core\" 4 178, 7 6 0, S_00000283039f8010;",
+      "P_0000028303317bc0 .param/l \"DUAL_VOICE_ENABLE\" 0 7 11, +C4<00000000000000000000000000000000>;",
+      "P_0000028303317bf8 .param/l \"DYNAMIC_CONFIG\" 0 7 10, +C4<00000000000000000000000000000000>;",
+      "P_0000028303317c30 .param/l \"GRAIN_LOG2\" 0 7 8, +C4<00000000000000000000000000000110>;",
+      "P_0000028303317c68 .param/l \"GUARD_SAMPLES\" 0 7 9, +C4<00000000000000000000000000100000>;",
+      "P_0000028303317ca0 .param/l \"RAM_ADDR_BITS\" 0 7 7, +C4<00000000000000000000000000001000>;",
+      "S_00000283033318c0 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 7 26, 8 8 0, S_000002830339af70;",
+      "P_0000028303331a50 .param/l \"DRY_DELAY\" 1 8 27, +C4<00000000000000000000000001000000>;",
+      "P_0000028303331a88 .param/l \"DYNAMIC_CONFIG\" 0 8 12, +C4<00000000000000000000000000000000>;",
+      "P_0000028303331ac0 .param/l \"FILL_SAMPLES\" 1 8 26, +C4<00000000000000000000000001100010>;",
+      "P_0000028303331af8 .param/l \"FRAC_BITS\" 1 8 22, +C4<00000000000000000000000000010100>;",
+      "P_0000028303331b30 .param/l \"GRAIN\" 1 8 25, +C4<00000000000000000000000001000000>;",
+      "P_0000028303331b68 .param/l \"GRAIN_LOG2\" 0 8 9, +C4<00000000000000000000000000000110>;",
+      "P_0000028303331ba0 .param/l \"GRAIN_Q20\" 1 8 28, C4<100000000000000000000000000>;",
+      "P_0000028303331bd8 .param/l \"GUARD_Q20\" 1 8 29, C4<0000000000000000000000100000>;",
+      "P_0000028303331c10 .param/l \"GUARD_SAMPLES\" 0 8 9, +C4<00000000000000000000000000100000>;",
+      "P_0000028303331c48 .param/l \"PHASE_BITS\" 1 8 23, +C4<00000000000000000000000000011010>;",
+      "P_0000028303331c80 .param/l \"POSITION_BITS\" 1 8 24, +C4<00000000000000000000000000011100>;",
+      "P_0000028303331cb8 .param/l \"RAM_ADDR_BITS\" 0 8 9, +C4<00000000000000000000000000001000>;",
+      "S_00000283033134d0 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 8 46, 8 46 0, S_00000283033318c0;",
+      "S_0000028303313660 .scope module, \"fade\" \"pcm_crossfade\" 8 116, 9 5 0, S_00000283033318c0;",
+      "S_00000283033137f0 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 9 23, 9 23 0, S_0000028303313660;",
+      "S_0000028303c006c0 .scope function.vec4.u16, \"interp\" \"interp\" 8 100, 8 100 0, S_00000283033318c0;",
+      "S_0000028303c00b70 .scope module, \"mixer\" \"pcm_harmony_mixer\" 8 121, 10 5 0, S_00000283033318c0;",
+      "S_0000028303c00850 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 10 19, 10 19 0, S_0000028303c00b70;",
+      "S_0000028303c003a0 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 8 54, 8 54 0, S_00000283033318c0;",
+      "S_0000028303c00d00 .scope generate, \"single_voice\" \"single_voice\" 7 31, 7 31 0, S_000002830339af70;",
+      "S_0000028303c00530 .scope generate, \"legacy_ui\" \"legacy_ui\" 4 78, 4 78 0, S_00000283039f8010;",
+      "S_0000028303c00e90 .scope module, \"keys\" \"audio_record_keys\" 4 97, 11 7 0, S_0000028303c00530;",
+      "P_0000028303a1e190 .param/l \"DEBOUNCE_CYCLES\" 0 11 8, +C4<00000000000000000000000000000011>;",
+      "P_0000028303a1e1c8 .param/l \"LONG_PRESS_CYCLES\" 0 11 9, +C4<00000000000000000000000000011000>;",
+      "S_0000028303c00080 .scope module, \"meter\" \"audio_level_meter\" 4 232, 12 21 0, S_00000283039f8010;",
+      "P_00000283032f2cb0 .param/l \"ACC_WIDTH\" 1 12 36, +C4<00000000000000000000000000011001>;",
+      "P_00000283032f2ce8 .param/l \"CALIBRATION_LOG2\" 0 12 24, +C4<00000000000000000000000000000111>;",
+      "P_00000283032f2d20 .param/l \"CALIBRATION_MARGIN\" 0 12 25, +C4<00000000000000000000000000011000>;",
+      "P_00000283032f2d58 .param/l \"CALIBRATION_WINDOWS\" 1 12 40, +C4<00000000000000000000000010000000>;",
+      "P_00000283032f2d90 .param/l \"CAL_ACC_WIDTH\" 1 12 39, +C4<00000000000000000000000000010111>;",
+      "P_00000283032f2dc8 .param/l \"CAL_COUNT_WIDTH\" 1 12 38, +C4<00000000000000000000000000000111>;",
+      "P_00000283032f2e00 .param/l \"COUNT_WIDTH\" 1 12 35, +C4<00000000000000000000000000001001>;",
+      "P_00000283032f2e38 .param/l \"NOISE_FLOOR\" 0 12 23, +C4<00000000000000000000000001000000>;",
+      "P_00000283032f2e70 .param/l \"WINDOW_LOG2\" 0 12 22, +C4<00000000000000000000000000001001>;",
+      "P_00000283032f2ea8 .param/l \"WINDOW_SAMPLES\" 1 12 37, +C4<00000000000000000000001000000000>;",
+      "S_0000028303c009e0 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 12 61, 12 61 0, S_0000028303c00080;",
+      "S_0000028303c00210 .scope module, \"microphones\" \"mic_array_pcm\" 4 70, 13 4 0, S_00000283039f8010;",
+      "S_0000028303c6f090 .scope generate, \"g_rx[0]\" \"g_rx[0]\" 13 22, 13 22 0, S_0000028303c00210;",
+      "P_0000028303bc1a10 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000000>;",
+      "S_0000028303c70350 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000028303c6f090;",
+      "S_0000028303c6f220 .scope generate, \"g_rx[1]\" \"g_rx[1]\" 13 22, 13 22 0, S_0000028303c00210;",
+      "P_0000028303bc1790 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000001>;",
+      "S_0000028303c6fb80 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000028303c6f220;",
+      "S_0000028303c70b20 .scope generate, \"g_rx[2]\" \"g_rx[2]\" 13 22, 13 22 0, S_0000028303c00210;",
+      "P_0000028303bc1310 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000010>;",
+      "S_0000028303c70cb0 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000028303c70b20;",
+      "S_0000028303c6f860 .scope generate, \"g_rx[3]\" \"g_rx[3]\" 13 22, 13 22 0, S_0000028303c00210;",
+      "P_0000028303bc13d0 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000011>;",
+      "S_0000028303c70800 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000028303c6f860;",
+      "S_0000028303c6f9f0 .scope module, \"monitor\" \"pcm_monitor_guard\" 4 216, 15 12 0, S_00000283039f8010;",
+      "P_00000283036fb260 .param/l \"FINE_GAIN\" 0 15 16, +C4<00000000000000000000000000000000>;",
+      "P_00000283036fb298 .param/l \"PIPELINE_ENABLE\" 0 15 15, +C4<00000000000000000000000000000001>;",
+      "P_00000283036fb2d0 .param/l \"PROTECTION_ENABLE\" 0 15 13, +C4<00000000000000000000000000000001>;",
+      "P_00000283036fb308 .param/l \"SMOOTH_ENABLE\" 0 15 14, +C4<00000000000000000000000000000001>;",
+      "S_0000028303c6f540 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 15 32, 15 32 0, S_0000028303c6f9f0;",
+      "S_0000028303c6f6d0 .scope generate, \"registered_output\" \"registered_output\" 15 109, 15 109 0, S_0000028303c6f9f0;",
+      "S_0000028303c6f3b0 .scope module, \"queue\" \"pcm_output_queue\" 4 186, 16 3 0, S_00000283039f8010;",
+      "P_0000028303c6fd10 .param/l \"ADDR_WIDTH\" 0 16 4, +C4<00000000000000000000000000000100>;",
+      "P_0000028303c6fd48 .param/l \"DEPTH\" 1 16 24, +C4<00000000000000000000000000010000>;",
+      "P_0000028303c6fd80 .param/l \"DEPTH_COUNT\" 1 16 25, C4<10000>;",
+      "P_0000028303c6fdb8 .param/l \"HEAD_SETUP_CYCLES\" 0 16 7, +C4<00000000000000000000000000000100>;",
+      "P_0000028303c6fdf0 .param/l \"PREFILL_COUNT\" 1 16 26, C4<00010>;",
+      "P_0000028303c6fe28 .param/l \"PREFILL_SAMPLES\" 0 16 5, +C4<00000000000000000000000000000010>;",
+      "P_0000028303c6fe60 .param/l \"SETUP_WIDTH\" 1 16 27, +C4<00000000000000000000000000000011>;",
+      "S_0000028303c6fea0 .scope module, \"recorder\" \"pcm_clip_controller\" 4 163, 17 4 0, S_00000283039f8010;",
+      "P_00000283032ed440 .param/l \"DRAIN\" 1 17 32, +C4<00000000000000000000000000001001>;",
+      "P_00000283032ed478 .param/l \"DRAIN_SAMPLES\" 0 17 8, +C4<00000000000000000000001000000000>;",
+      "P_00000283032ed4b0 .param/l \"EMPTY\" 1 17 31, +C4<00000000000000000000000000000001>;",
+      "P_00000283032ed4e8 .param/l \"ENHANCED_PLAYBACK\" 0 17 11, +C4<00000000000000000000000000000000>;",
+      "P_00000283032ed520 .param/l \"ERROR\" 1 17 32, +C4<00000000000000000000000000001010>;",
+      "P_00000283032ed558 .param/l \"FLUSH\" 1 17 31, +C4<00000000000000000000000000000011>;",
+      "P_00000283032ed590 .param/l \"MAX_SAMPLES\" 0 17 5, +C4<00000000000000000000001000000000>;",
+      "P_00000283032ed5c8 .param/l \"PAUSED\" 1 17 32, +C4<00000000000000000000000000001011>;",
+      "P_00000283032ed600 .param/l \"PLAY\" 1 17 32, +C4<00000000000000000000000000000111>;",
+      "P_00000283032ed638 .param/l \"PREFETCH\" 1 17 32, +C4<00000000000000000000000000000101>;",
+      "P_00000283032ed670 .param/l \"PREROLL\" 1 17 32, +C4<00000000000000000000000000000110>;",
+      "P_00000283032ed6a8 .param/l \"PREROLL_SAMPLES\" 0 17 6, +C4<00000000000000000000001011100010>;",
+      "P_00000283032ed6e0 .param/l \"READY\" 1 17 31, +C4<00000000000000000000000000000100>;",
+      "P_00000283032ed718 .param/l \"RECORD\" 1 17 31, +C4<00000000000000000000000000000010>;",
+      "P_00000283032ed750 .param/l \"TAIL\" 1 17 32, +C4<00000000000000000000000000001000>;",
+      "P_00000283032ed788 .param/l \"TAIL_SAMPLES\" 0 17 7, +C4<00000000000000000000001101100010>;",
+      "P_00000283032ed7c0 .param/l \"WAIT_DDR\" 1 17 31, +C4<00000000000000000000000000000000>;",
+      "S_0000028303c704e0 .scope module, \"reporter\" \"record_status_uart\" 4 262, 18 7 0, S_00000283039f8010;",
+      "P_00000283032c6d40 .param/l \"BAUD\" 0 18 9, +C4<00000000000000011100001000000000>;",
+      "P_00000283032c6d78 .param/l \"CLKS_PER_BIT\" 1 18 36, +C4<00000000000000000000000110110010>;",
+      "P_00000283032c6db0 .param/l \"CLK_HZ\" 0 18 8, +C4<00000010111110101111000010000000>;",
+      "P_00000283032c6de8 .param/l \"DATA\" 1 18 37, C4<011>;",
+      "P_00000283032c6e20 .param/l \"DUAL_VOICE_ENABLE\" 0 18 12, +C4<00000000000000000000000000000000>;",
+      "P_00000283032c6e58 .param/l \"FINE_GAIN\" 0 18 11, +C4<00000000000000000000000000000000>;",
+      "P_00000283032c6e90 .param/l \"IDLE\" 1 18 37, C4<000>;",
+      "P_00000283032c6ec8 .param/l \"LOAD\" 1 18 37, C4<001>;",
+      "P_00000283032c6f00 .param/l \"REPORT_CYCLES\" 0 18 10, +C4<00000000100110001001011010000000>;",
+      "P_00000283032c6f38 .param/l \"START\" 1 18 37, C4<010>;",
+      "P_00000283032c6f70 .param/l \"STATUS_BYTES\" 1 18 120, +C4<00000000000000000000000001100111>;",
+      "P_00000283032c6fa8 .param/l \"STOP\" 1 18 37, C4<100>;",
+      "P_00000283032c6fe0 .param/l \"USER_CODE\" 0 18 13, C4<00000000000000110010010100000011>;",
+      "S_0000028303c70e40 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 18 57, 18 57 0, S_0000028303c704e0;",
+      "S_0000028303c70030 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 18 53, 18 53 0, S_0000028303c704e0;",
+      "S_0000028303c701c0 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 18 78, 18 78 0, S_0000028303c704e0;",
+      "S_0000028303c70670 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 18 121, 18 121 0, S_0000028303c704e0;",
+      "S_0000028303c70990 .scope module, \"ring\" \"sk9822_ring\" 4 239, 19 8 0, S_00000283039f8010;",
+      "P_00000283032c7020 .param/l \"HALF_PERIOD_CYCLES\" 0 19 9, +C4<00000000000000000000000000110010>;",
+      "P_00000283032c7058 .param/l \"HALF_WIDTH\" 1 19 20, +C4<00000000000000000000000000000110>;",
+      "P_00000283032c7090 .param/l \"LED_COUNT\" 0 19 11, +C4<00000000000000000000000000001100>;",
+      "P_00000283032c70c8 .param/l \"REFRESH_CYCLES\" 0 19 10, +C4<00000000000011110100001001000000>;",
+      "P_00000283032c7100 .param/l \"REFRESH_WIDTH\" 1 19 22, +C4<00000000000000000000000000010100>;",
+      "P_00000283032c7138 .param/l \"WORD_WIDTH\" 1 19 24, +C4<00000000000000000000000000000100>;",
+      "S_0000028303c84390 .scope module, \"ring_palette\" \"audio_ring_palette\" 4 235, 20 3 0, S_00000283039f8010;",
+      "S_0000028303c83710 .scope module, \"speaker\" \"pt8211_stereo_tx\" 4 220, 21 4 0, S_00000283039f8010;",
+      "S_0000028303c83a30 .scope module, \"status_led\" \"status_ws2812\" 4 260, 22 2 0, S_00000283039f8010;",
+      "S_0000028303c84520 .scope function.vec4.u16, \"tone_lut\" \"tone_lut\" 4 194, 4 194 0, S_00000283039f8010;",
+      "S_0000028303c846b0 .scope task, \"replay\" \"replay\" 3 181, 3 181 0, S_0000028303344f90;",
+      "S_0000028303c849d0 .scope task, \"solo\" \"solo\" 3 46, 3 46 0, S_0000028303344f90;",
+      "S_0000028303c833f0 .scope function.vec4.s24, \"source_word\" \"source_word\" 3 80, 3 80 0, S_0000028303344f90;",
+      "S_0000028303c83580 .scope task, \"step\" \"step\" 3 37, 3 37 0, S_0000028303344f90;",
+      "S_0000028303c838a0 .scope task, \"wait_frames\" \"wait_frames\" 3 38, 3 38 0, S_0000028303344f90;",
+      "S_0000028303c84b60 .scope task, \"wait_state\" \"wait_state\" 3 42, 3 42 0, S_0000028303344f90;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_record_engine.sv",
+      "src/audio_effect_core.v",
+      "src/audio_level_meter.v",
+      "src/audio_record_engine.v",
+      "src/audio_record_keys.v",
+      "src/audio_ring_palette.v",
+      "src/audio_test_clock.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_clip_controller.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_harmony_mixer.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_voice_conditioner.v",
+      "src/pt8211_stereo_tx.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/status_ws2812.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_record_engine",
+        "Type": "tb_record_engine",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 6,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "TEST_GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "sim/tb_record_engine.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_RAM_BITS",
+            "Signed": 0,
+            "Source": "sim/tb_record_engine.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 34,
+        "Parameters": [],
+        "Path": "tb_record_engine.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "chord",
+        "Type": "chord",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_record_engine.chord"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "audio_record_engine",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENCODER_FILTER_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000001100001101010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EXTERNAL_CONTROLS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_DIAG_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PITCH_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 13,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_RESET_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 12,
+            "Value": "+C4<00000101111101011110000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POR_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STARTUP_FRAMES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_USER_CODE",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 14,
+            "Value": "C4<00000000000000110010010100000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "UART_REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_engine.v",
+            "Line": 6,
+            "Value": "+C4<00000000100110001001011010000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut"
+      },
+      {
+        "Kind": "module",
+        "Instance": "clock_gen",
+        "Type": "audio_test_clock",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 58,
+        "DefinitionSource": "src/audio_test_clock.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.clock_gen"
+      },
+      {
+        "Kind": "module",
+        "Instance": "conditioner",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 182,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.conditioner"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.conditioner.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "core",
+        "Type": "audio_effect_core",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 178,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/audio_effect_core.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.core"
+      },
+      {
+        "Kind": "module",
+        "Instance": "algorithm",
+        "Type": "pcm_dual_read_pitch",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRY_DELAY",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DYNAMIC_CONFIG",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FILL_SAMPLES",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 26,
+            "Value": "+C4<00000000000000000000000001100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FRAC_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_LOG2",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GRAIN_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 28,
+            "Value": "C4<100000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_Q20",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 29,
+            "Value": "C4<0000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GUARD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PHASE_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000000011010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POSITION_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000011100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RAM_ADDR_BITS",
+            "Signed": 0,
+            "Source": "src/pcm_dual_read_pitch.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.core.algorithm"
+      },
+      {
+        "Kind": "function.vec4.u5",
+        "Instance": "clamp_pitch",
+        "Type": "clamp_pitch",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 46,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.clamp_pitch"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 116,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.fade.round_q15"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "interp",
+        "Type": "interp",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 100,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 100,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.interp"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mixer",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.mixer"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.mixer.saturated_q15"
+      },
+      {
+        "Kind": "function.vec4.s22",
+        "Instance": "ratio_q20",
+        "Type": "ratio_q20",
+        "InstantiationSource": "src/pcm_dual_read_pitch.v",
+        "InstantiationLine": 54,
+        "DefinitionSource": "src/pcm_dual_read_pitch.v",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.algorithm.ratio_q20"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "single_voice",
+        "Type": "single_voice",
+        "InstantiationSource": "src/audio_effect_core.v",
+        "InstantiationLine": 31,
+        "DefinitionSource": "src/audio_effect_core.v",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.core.single_voice"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "legacy_ui",
+        "Type": "legacy_ui",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.legacy_ui"
+      },
+      {
+        "Kind": "module",
+        "Instance": "keys",
+        "Type": "audio_record_keys",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 97,
+        "DefinitionSource": "src/audio_record_keys.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DEBOUNCE_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_keys.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LONG_PRESS_CYCLES",
+            "Signed": 0,
+            "Source": "src/audio_record_keys.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000011000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.legacy_ui.keys"
+      },
+      {
+        "Kind": "module",
+        "Instance": "meter",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 232,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000011001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000001000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.meter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.meter.amplitude_curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "microphones",
+        "Type": "mic_array_pcm",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 70,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[0]",
+        "Type": "g_rx[0]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[0]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[0].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[1]",
+        "Type": "g_rx[1]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[1]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[1].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[2]",
+        "Type": "g_rx[2]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[2]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[2].receiver"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "g_rx[3]",
+        "Type": "g_rx[3]",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 22,
+        "DefinitionSource": "src/mic_array_pcm.v",
+        "DefinitionLine": 22,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "lane",
+            "Signed": 1,
+            "Source": "src/mic_array_pcm.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.microphones.g_rx[3]"
+      },
+      {
+        "Kind": "module",
+        "Instance": "receiver",
+        "Type": "mic_i2s_rx",
+        "InstantiationSource": "src/mic_array_pcm.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/mic_i2s_rx.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.microphones.g_rx[3].receiver"
+      },
+      {
+        "Kind": "module",
+        "Instance": "monitor",
+        "Type": "pcm_monitor_guard",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 216,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 12,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 16,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PIPELINE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 15,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PROTECTION_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 13,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SMOOTH_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_monitor_guard.v",
+            "Line": 14,
+            "Value": "+C4<00000000000000000000000000000001>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.monitor"
+      },
+      {
+        "Kind": "function.vec4.s12",
+        "Instance": "gain_target_q8",
+        "Type": "gain_target_q8",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 32,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.monitor.gain_target_q8"
+      },
+      {
+        "Kind": "generate",
+        "Instance": "registered_output",
+        "Type": "registered_output",
+        "InstantiationSource": "src/pcm_monitor_guard.v",
+        "InstantiationLine": 109,
+        "DefinitionSource": "src/pcm_monitor_guard.v",
+        "DefinitionLine": 109,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.monitor.registered_output"
+      },
+      {
+        "Kind": "module",
+        "Instance": "queue",
+        "Type": "pcm_output_queue",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 186,
+        "DefinitionSource": "src/pcm_output_queue.v",
+        "DefinitionLine": 3,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ADDR_WIDTH",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 4,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DEPTH_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 25,
+            "Value": "C4<10000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HEAD_SETUP_CYCLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_COUNT",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 26,
+            "Value": "C4<00010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFILL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "SETUP_WIDTH",
+            "Signed": 1,
+            "Source": "src/pcm_output_queue.v",
+            "Line": 27,
+            "Value": "+C4<00000000000000000000000000000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.queue"
+      },
+      {
+        "Kind": "module",
+        "Instance": "recorder",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 163,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000000000000001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000001011100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000001101100010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.recorder"
+      },
+      {
+        "Kind": "module",
+        "Instance": "reporter",
+        "Type": "record_status_uart",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 262,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000011100001000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000110110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000010111110101111000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000100110001001011010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001100111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010010100000011>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.reporter"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.reporter.report_byte"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 239,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000110010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000011110100001001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000010100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_record_engine.dut.ring"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring_palette",
+        "Type": "audio_ring_palette",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 235,
+        "DefinitionSource": "src/audio_ring_palette.v",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.ring_palette"
+      },
+      {
+        "Kind": "module",
+        "Instance": "speaker",
+        "Type": "pt8211_stereo_tx",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 220,
+        "DefinitionSource": "src/pt8211_stereo_tx.v",
+        "DefinitionLine": 4,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.speaker"
+      },
+      {
+        "Kind": "module",
+        "Instance": "status_led",
+        "Type": "status_ws2812",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 260,
+        "DefinitionSource": "src/status_ws2812.v",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.status_led"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "tone_lut",
+        "Type": "tone_lut",
+        "InstantiationSource": "src/audio_record_engine.v",
+        "InstantiationLine": 194,
+        "DefinitionSource": "src/audio_record_engine.v",
+        "DefinitionLine": 194,
+        "Parameters": [],
+        "Path": "tb_record_engine.dut.tone_lut"
+      },
+      {
+        "Kind": "task",
+        "Instance": "replay",
+        "Type": "replay",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 181,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 181,
+        "Parameters": [],
+        "Path": "tb_record_engine.replay"
+      },
+      {
+        "Kind": "task",
+        "Instance": "solo",
+        "Type": "solo",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 46,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 46,
+        "Parameters": [],
+        "Path": "tb_record_engine.solo"
+      },
+      {
+        "Kind": "function.vec4.s24",
+        "Instance": "source_word",
+        "Type": "source_word",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 80,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 80,
+        "Parameters": [],
+        "Path": "tb_record_engine.source_word"
+      },
+      {
+        "Kind": "task",
+        "Instance": "step",
+        "Type": "step",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 37,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 37,
+        "Parameters": [],
+        "Path": "tb_record_engine.step"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_frames",
+        "Type": "wait_frames",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 38,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 38,
+        "Parameters": [],
+        "Path": "tb_record_engine.wait_frames"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_state",
+        "Type": "wait_state",
+        "InstantiationSource": "sim/tb_record_engine.sv",
+        "InstantiationLine": 42,
+        "DefinitionSource": "sim/tb_record_engine.sv",
+        "DefinitionLine": 42,
+        "Parameters": [],
+        "Path": "tb_record_engine.wait_state"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_record_engine.sv",
+      "src/audio_record_engine.v",
+      "src/audio_test_clock.v",
+      "src/pcm_voice_conditioner.v",
+      "src/audio_effect_core.v",
+      "src/pcm_dual_read_pitch.v",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v",
+      "src/audio_record_keys.v",
+      "src/audio_level_meter.v",
+      "src/mic_array_pcm.v",
+      "src/mic_i2s_rx.v",
+      "src/pcm_monitor_guard.v",
+      "src/pcm_output_queue.v",
+      "src/pcm_clip_controller.v",
+      "src/record_status_uart.v",
+      "src/sk9822_ring.v",
+      "src/audio_ring_palette.v",
+      "src/pt8211_stereo_tx.v",
+      "src/status_ws2812.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000021b3eccc7c0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000021b3f1efbc0 .scope module, \"tb_record_engine\" \"tb_record_engine\" 3 6;",
+      "P_0000021b3f17e7f0 .param/l \"TEST_GRAIN_LOG2\" 0 3 8, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3f17e828 .param/l \"TEST_RAM_BITS\" 0 3 7, +C4<00000000000000000000000000001000>;",
+      "S_0000021b3f2e6060 .scope task, \"check\" \"check\" 3 34, 3 34 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f159ff0 .scope task, \"chord\" \"chord\" 3 51, 3 51 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f30cac0 .scope module, \"dut\" \"audio_record_engine\" 3 23, 4 3 0, S_0000021b3f1efbc0;",
+      "P_0000021b3f30d630 .param/l \"DEBOUNCE_CYCLES\" 0 4 4, +C4<00000000000000000000000000000011>;",
+      "P_0000021b3f30d668 .param/l \"DUAL_VOICE_ENABLE\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3f30d6a0 .param/l \"ENCODER_FILTER_CYCLES\" 0 4 12, +C4<00000000000000001100001101010000>;",
+      "P_0000021b3f30d6d8 .param/l \"ENHANCED_PLAYBACK\" 0 4 9, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3f30d710 .param/l \"EXTERNAL_CONTROLS\" 0 4 9, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3f30d748 .param/l \"FINE_GAIN\" 0 4 10, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3f30d780 .param/l \"GRAIN_LOG2\" 0 4 8, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3f30d7b8 .param/l \"LONG_DIAG_CYCLES\" 0 4 13, +C4<00000101111101011110000100000000>;",
+      "P_0000021b3f30d7f0 .param/l \"LONG_PITCH_CYCLES\" 0 4 13, +C4<00000101111101011110000100000000>;",
+      "P_0000021b3f30d828 .param/l \"LONG_PRESS_CYCLES\" 0 4 4, +C4<00000000000000000000000000011000>;",
+      "P_0000021b3f30d860 .param/l \"LONG_RESET_CYCLES\" 0 4 12, +C4<00000101111101011110000100000000>;",
+      "P_0000021b3f30d898 .param/l \"MAX_SAMPLES\" 0 4 7, +C4<00000000000000000000001000000000>;",
+      "P_0000021b3f30d8d0 .param/l \"POR_CYCLES\" 0 4 5, +C4<00000000000000000000000000001000>;",
+      "P_0000021b3f30d908 .param/l \"RAM_ADDR_BITS\" 0 4 8, +C4<00000000000000000000000000001000>;",
+      "P_0000021b3f30d940 .param/l \"STARTUP_FRAMES\" 0 4 5, +C4<00000000000000000000000000000011>;",
+      "P_0000021b3f30d978 .param/l \"STATUS_USER_CODE\" 0 4 14, C4<00000000000000110010010100000011>;",
+      "P_0000021b3f30d9b0 .param/l \"UART_REPORT_CYCLES\" 0 4 6, +C4<00000000100110001001011010000000>;",
+      "S_0000021b3ee93100 .scope module, \"clock_gen\" \"audio_test_clock\" 4 58, 5 3 0, S_0000021b3f30cac0;",
+      "S_0000021b3ee93290 .scope module, \"conditioner\" \"pcm_voice_conditioner\" 4 182, 6 31 0, S_0000021b3f30cac0;",
+      "P_0000021b3ee93420 .param/l \"CLOSE_Q8\" 1 6 61, C4<00000000000000000100000000000000>;",
+      "P_0000021b3ee93458 .param/l \"GATE_CLOSE_THRESHOLD\" 0 6 34, +C4<00000000000000000000000001000000>;",
+      "P_0000021b3ee93490 .param/l \"GATE_ENABLE\" 0 6 32, +C4<00000000000000000000000000000001>;",
+      "P_0000021b3ee934c8 .param/l \"GATE_HOLD_SAMPLES\" 0 6 35, +C4<00000000000000000001000000000000>;",
+      "P_0000021b3ee93500 .param/l \"GATE_OPEN_THRESHOLD\" 0 6 33, +C4<00000000000000000000000010000000>;",
+      "P_0000021b3ee93538 .param/l \"HOLD_BITS\" 1 6 59, +C4<00000000000000000000000000001101>;",
+      "P_0000021b3ee93570 .param/l \"OPEN_Q8\" 1 6 60, C4<00000000000000001000000000000000>;",
+      "S_0000021b3ed8a160 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 6 44, 6 44 0, S_0000021b3ee93290;",
+      "S_0000021b3ed8a2f0 .scope module, \"core\" \"audio_effect_core\" 4 178, 7 6 0, S_0000021b3f30cac0;",
+      "P_0000021b3e9b3ca0 .param/l \"DUAL_VOICE_ENABLE\" 0 7 11, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3e9b3cd8 .param/l \"DYNAMIC_CONFIG\" 0 7 10, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3e9b3d10 .param/l \"GRAIN_LOG2\" 0 7 8, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3e9b3d48 .param/l \"GUARD_SAMPLES\" 0 7 9, +C4<00000000000000000000000000100000>;",
+      "P_0000021b3e9b3d80 .param/l \"RAM_ADDR_BITS\" 0 7 7, +C4<00000000000000000000000000001000>;",
+      "S_0000021b3ed8a480 .scope module, \"algorithm\" \"pcm_dual_read_pitch\" 7 26, 8 8 0, S_0000021b3ed8a2f0;",
+      "P_0000021b3ed6d650 .param/l \"DRY_DELAY\" 1 8 27, +C4<00000000000000000000000001000000>;",
+      "P_0000021b3ed6d688 .param/l \"DYNAMIC_CONFIG\" 0 8 12, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3ed6d6c0 .param/l \"FILL_SAMPLES\" 1 8 26, +C4<00000000000000000000000001100010>;",
+      "P_0000021b3ed6d6f8 .param/l \"FRAC_BITS\" 1 8 22, +C4<00000000000000000000000000010100>;",
+      "P_0000021b3ed6d730 .param/l \"GRAIN\" 1 8 25, +C4<00000000000000000000000001000000>;",
+      "P_0000021b3ed6d768 .param/l \"GRAIN_LOG2\" 0 8 9, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3ed6d7a0 .param/l \"GRAIN_Q20\" 1 8 28, C4<100000000000000000000000000>;",
+      "P_0000021b3ed6d7d8 .param/l \"GUARD_Q20\" 1 8 29, C4<0000000000000000000000100000>;",
+      "P_0000021b3ed6d810 .param/l \"GUARD_SAMPLES\" 0 8 9, +C4<00000000000000000000000000100000>;",
+      "P_0000021b3ed6d848 .param/l \"PHASE_BITS\" 1 8 23, +C4<00000000000000000000000000011010>;",
+      "P_0000021b3ed6d880 .param/l \"POSITION_BITS\" 1 8 24, +C4<00000000000000000000000000011100>;",
+      "P_0000021b3ed6d8b8 .param/l \"RAM_ADDR_BITS\" 0 8 9, +C4<00000000000000000000000000001000>;",
+      "S_0000021b3ed6d900 .scope function.vec4.u5, \"clamp_pitch\" \"clamp_pitch\" 8 46, 8 46 0, S_0000021b3ed8a480;",
+      "S_0000021b3ed28600 .scope module, \"fade\" \"pcm_crossfade\" 8 116, 9 5 0, S_0000021b3ed8a480;",
+      "S_0000021b3ed28790 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 9 23, 9 23 0, S_0000021b3ed28600;",
+      "S_0000021b3f34b8a0 .scope function.vec4.u16, \"interp\" \"interp\" 8 100, 8 100 0, S_0000021b3ed8a480;",
+      "S_0000021b3f34ac20 .scope module, \"mixer\" \"pcm_harmony_mixer\" 8 121, 10 5 0, S_0000021b3ed8a480;",
+      "S_0000021b3f34b710 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 10 19, 10 19 0, S_0000021b3f34ac20;",
+      "S_0000021b3f34af40 .scope function.vec4.s22, \"ratio_q20\" \"ratio_q20\" 8 54, 8 54 0, S_0000021b3ed8a480;",
+      "S_0000021b3f34b0d0 .scope generate, \"single_voice\" \"single_voice\" 7 31, 7 31 0, S_0000021b3ed8a2f0;",
+      "S_0000021b3f34b3f0 .scope generate, \"legacy_ui\" \"legacy_ui\" 4 78, 4 78 0, S_0000021b3f30cac0;",
+      "S_0000021b3f34adb0 .scope module, \"keys\" \"audio_record_keys\" 4 97, 11 7 0, S_0000021b3f34b3f0;",
+      "P_0000021b3f17ef70 .param/l \"DEBOUNCE_CYCLES\" 0 11 8, +C4<00000000000000000000000000000011>;",
+      "P_0000021b3f17efa8 .param/l \"LONG_PRESS_CYCLES\" 0 11 9, +C4<00000000000000000000000000011000>;",
+      "S_0000021b3f34b580 .scope module, \"meter\" \"audio_level_meter\" 4 232, 12 21 0, S_0000021b3f30cac0;",
+      "P_0000021b3ed0ba50 .param/l \"ACC_WIDTH\" 1 12 36, +C4<00000000000000000000000000011001>;",
+      "P_0000021b3ed0ba88 .param/l \"CALIBRATION_LOG2\" 0 12 24, +C4<00000000000000000000000000000111>;",
+      "P_0000021b3ed0bac0 .param/l \"CALIBRATION_MARGIN\" 0 12 25, +C4<00000000000000000000000000011000>;",
+      "P_0000021b3ed0baf8 .param/l \"CALIBRATION_WINDOWS\" 1 12 40, +C4<00000000000000000000000010000000>;",
+      "P_0000021b3ed0bb30 .param/l \"CAL_ACC_WIDTH\" 1 12 39, +C4<00000000000000000000000000010111>;",
+      "P_0000021b3ed0bb68 .param/l \"CAL_COUNT_WIDTH\" 1 12 38, +C4<00000000000000000000000000000111>;",
+      "P_0000021b3ed0bba0 .param/l \"COUNT_WIDTH\" 1 12 35, +C4<00000000000000000000000000001001>;",
+      "P_0000021b3ed0bbd8 .param/l \"NOISE_FLOOR\" 0 12 23, +C4<00000000000000000000000001000000>;",
+      "P_0000021b3ed0bc10 .param/l \"WINDOW_LOG2\" 0 12 22, +C4<00000000000000000000000000001001>;",
+      "P_0000021b3ed0bc48 .param/l \"WINDOW_SAMPLES\" 1 12 37, +C4<00000000000000000000001000000000>;",
+      "S_0000021b3f34ba30 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 12 61, 12 61 0, S_0000021b3f34b580;",
+      "S_0000021b3f34b260 .scope module, \"microphones\" \"mic_array_pcm\" 4 70, 13 4 0, S_0000021b3f30cac0;",
+      "S_0000021b3f3a91b0 .scope generate, \"g_rx[0]\" \"g_rx[0]\" 13 22, 13 22 0, S_0000021b3f34b260;",
+      "P_0000021b3f2ef830 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000000>;",
+      "S_0000021b3f3a8080 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000021b3f3a91b0;",
+      "S_0000021b3f3a9340 .scope generate, \"g_rx[1]\" \"g_rx[1]\" 13 22, 13 22 0, S_0000021b3f34b260;",
+      "P_0000021b3f2f5f30 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000001>;",
+      "S_0000021b3f3a9980 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000021b3f3a9340;",
+      "S_0000021b3f3a9e30 .scope generate, \"g_rx[2]\" \"g_rx[2]\" 13 22, 13 22 0, S_0000021b3f34b260;",
+      "P_0000021b3f2f8870 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000010>;",
+      "S_0000021b3f3a89e0 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000021b3f3a9e30;",
+      "S_0000021b3f3a86c0 .scope generate, \"g_rx[3]\" \"g_rx[3]\" 13 22, 13 22 0, S_0000021b3f34b260;",
+      "P_0000021b3f2f8930 .param/l \"lane\" 1 13 22, +C4<00000000000000000000000000000011>;",
+      "S_0000021b3f3a94d0 .scope module, \"receiver\" \"mic_i2s_rx\" 13 23, 14 3 0, S_0000021b3f3a86c0;",
+      "S_0000021b3f3a9b10 .scope module, \"monitor\" \"pcm_monitor_guard\" 4 216, 15 12 0, S_0000021b3f30cac0;",
+      "P_0000021b3ef0fd90 .param/l \"FINE_GAIN\" 0 15 16, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3ef0fdc8 .param/l \"PIPELINE_ENABLE\" 0 15 15, +C4<00000000000000000000000000000001>;",
+      "P_0000021b3ef0fe00 .param/l \"PROTECTION_ENABLE\" 0 15 13, +C4<00000000000000000000000000000001>;",
+      "P_0000021b3ef0fe38 .param/l \"SMOOTH_ENABLE\" 0 15 14, +C4<00000000000000000000000000000001>;",
+      "S_0000021b3f3a8210 .scope function.vec4.s12, \"gain_target_q8\" \"gain_target_q8\" 15 32, 15 32 0, S_0000021b3f3a9b10;",
+      "S_0000021b3f3a8850 .scope generate, \"registered_output\" \"registered_output\" 15 109, 15 109 0, S_0000021b3f3a9b10;",
+      "S_0000021b3f3a83a0 .scope module, \"queue\" \"pcm_output_queue\" 4 186, 16 3 0, S_0000021b3f30cac0;",
+      "P_0000021b3f3a8b70 .param/l \"ADDR_WIDTH\" 0 16 4, +C4<00000000000000000000000000000100>;",
+      "P_0000021b3f3a8ba8 .param/l \"DEPTH\" 1 16 24, +C4<00000000000000000000000000010000>;",
+      "P_0000021b3f3a8be0 .param/l \"DEPTH_COUNT\" 1 16 25, C4<10000>;",
+      "P_0000021b3f3a8c18 .param/l \"HEAD_SETUP_CYCLES\" 0 16 7, +C4<00000000000000000000000000000100>;",
+      "P_0000021b3f3a8c50 .param/l \"PREFILL_COUNT\" 1 16 26, C4<00010>;",
+      "P_0000021b3f3a8c88 .param/l \"PREFILL_SAMPLES\" 0 16 5, +C4<00000000000000000000000000000010>;",
+      "P_0000021b3f3a8cc0 .param/l \"SETUP_WIDTH\" 1 16 27, +C4<00000000000000000000000000000011>;",
+      "S_0000021b3f3a97f0 .scope module, \"recorder\" \"pcm_clip_controller\" 4 163, 17 4 0, S_0000021b3f30cac0;",
+      "P_0000021b3e9acd90 .param/l \"DRAIN\" 1 17 32, +C4<00000000000000000000000000001001>;",
+      "P_0000021b3e9acdc8 .param/l \"DRAIN_SAMPLES\" 0 17 8, +C4<00000000000000000000001000000000>;",
+      "P_0000021b3e9ace00 .param/l \"EMPTY\" 1 17 31, +C4<00000000000000000000000000000001>;",
+      "P_0000021b3e9ace38 .param/l \"ENHANCED_PLAYBACK\" 0 17 11, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3e9ace70 .param/l \"ERROR\" 1 17 32, +C4<00000000000000000000000000001010>;",
+      "P_0000021b3e9acea8 .param/l \"FLUSH\" 1 17 31, +C4<00000000000000000000000000000011>;",
+      "P_0000021b3e9acee0 .param/l \"MAX_SAMPLES\" 0 17 5, +C4<00000000000000000000001000000000>;",
+      "P_0000021b3e9acf18 .param/l \"PAUSED\" 1 17 32, +C4<00000000000000000000000000001011>;",
+      "P_0000021b3e9acf50 .param/l \"PLAY\" 1 17 32, +C4<00000000000000000000000000000111>;",
+      "P_0000021b3e9acf88 .param/l \"PREFETCH\" 1 17 32, +C4<00000000000000000000000000000101>;",
+      "P_0000021b3e9acfc0 .param/l \"PREROLL\" 1 17 32, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3e9acff8 .param/l \"PREROLL_SAMPLES\" 0 17 6, +C4<00000000000000000000001011100010>;",
+      "P_0000021b3e9ad030 .param/l \"READY\" 1 17 31, +C4<00000000000000000000000000000100>;",
+      "P_0000021b3e9ad068 .param/l \"RECORD\" 1 17 31, +C4<00000000000000000000000000000010>;",
+      "P_0000021b3e9ad0a0 .param/l \"TAIL\" 1 17 32, +C4<00000000000000000000000000001000>;",
+      "P_0000021b3e9ad0d8 .param/l \"TAIL_SAMPLES\" 0 17 7, +C4<00000000000000000000001101100010>;",
+      "P_0000021b3e9ad110 .param/l \"WAIT_DDR\" 1 17 31, +C4<00000000000000000000000000000000>;",
+      "S_0000021b3f3a8530 .scope module, \"reporter\" \"record_status_uart\" 4 262, 18 7 0, S_0000021b3f30cac0;",
+      "P_0000021b3e992920 .param/l \"BAUD\" 0 18 9, +C4<00000000000000011100001000000000>;",
+      "P_0000021b3e992958 .param/l \"CLKS_PER_BIT\" 1 18 36, +C4<00000000000000000000000110110010>;",
+      "P_0000021b3e992990 .param/l \"CLK_HZ\" 0 18 8, +C4<00000010111110101111000010000000>;",
+      "P_0000021b3e9929c8 .param/l \"DATA\" 1 18 37, C4<011>;",
+      "P_0000021b3e992a00 .param/l \"DUAL_VOICE_ENABLE\" 0 18 12, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3e992a38 .param/l \"FINE_GAIN\" 0 18 11, +C4<00000000000000000000000000000000>;",
+      "P_0000021b3e992a70 .param/l \"IDLE\" 1 18 37, C4<000>;",
+      "P_0000021b3e992aa8 .param/l \"LOAD\" 1 18 37, C4<001>;",
+      "P_0000021b3e992ae0 .param/l \"REPORT_CYCLES\" 0 18 10, +C4<00000000100110001001011010000000>;",
+      "P_0000021b3e992b18 .param/l \"START\" 1 18 37, C4<010>;",
+      "P_0000021b3e992b50 .param/l \"STATUS_BYTES\" 1 18 120, +C4<00000000000000000000000001100111>;",
+      "P_0000021b3e992b88 .param/l \"STOP\" 1 18 37, C4<100>;",
+      "P_0000021b3e992bc0 .param/l \"USER_CODE\" 0 18 13, C4<00000000000000110010010100000011>;",
+      "S_0000021b3f3a8e90 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 18 57, 18 57 0, S_0000021b3f3a8530;",
+      "S_0000021b3f3a8d00 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 18 53, 18 53 0, S_0000021b3f3a8530;",
+      "S_0000021b3f3a9660 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 18 78, 18 78 0, S_0000021b3f3a8530;",
+      "S_0000021b3f3a9ca0 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 18 121, 18 121 0, S_0000021b3f3a8530;",
+      "S_0000021b3f3a9020 .scope module, \"ring\" \"sk9822_ring\" 4 239, 19 8 0, S_0000021b3f30cac0;",
+      "P_0000021b3ecc0e20 .param/l \"HALF_PERIOD_CYCLES\" 0 19 9, +C4<00000000000000000000000000110010>;",
+      "P_0000021b3ecc0e58 .param/l \"HALF_WIDTH\" 1 19 20, +C4<00000000000000000000000000000110>;",
+      "P_0000021b3ecc0e90 .param/l \"LED_COUNT\" 0 19 11, +C4<00000000000000000000000000001100>;",
+      "P_0000021b3ecc0ec8 .param/l \"REFRESH_CYCLES\" 0 19 10, +C4<00000000000011110100001001000000>;",
+      "P_0000021b3ecc0f00 .param/l \"REFRESH_WIDTH\" 1 19 22, +C4<00000000000000000000000000010100>;",
+      "P_0000021b3ecc0f38 .param/l \"WORD_WIDTH\" 1 19 24, +C4<00000000000000000000000000000100>;",
+      "S_0000021b3f3dbd40 .scope module, \"ring_palette\" \"audio_ring_palette\" 4 235, 20 3 0, S_0000021b3f30cac0;",
+      "S_0000021b3f3daf30 .scope module, \"speaker\" \"pt8211_stereo_tx\" 4 220, 21 4 0, S_0000021b3f30cac0;",
+      "S_0000021b3f3da5d0 .scope module, \"status_led\" \"status_ws2812\" 4 260, 22 2 0, S_0000021b3f30cac0;",
+      "S_0000021b3f3db3e0 .scope function.vec4.u16, \"tone_lut\" \"tone_lut\" 4 194, 4 194 0, S_0000021b3f30cac0;",
+      "S_0000021b3f3dada0 .scope task, \"replay\" \"replay\" 3 181, 3 181 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f3dbbb0 .scope task, \"solo\" \"solo\" 3 46, 3 46 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f3db250 .scope function.vec4.s24, \"source_word\" \"source_word\" 3 80, 3 80 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f3da760 .scope task, \"step\" \"step\" 3 37, 3 37 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f3dbed0 .scope task, \"wait_frames\" \"wait_frames\" 3 38, 3 38 0, S_0000021b3f1efbc0;",
+      "S_0000021b3f3dba20 .scope task, \"wait_state\" \"wait_state\" 3 42, 3 42 0, S_0000021b3f1efbc0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_record_engine.sv",
+    "src/audio_effect_core.v",
+    "src/audio_level_meter.v",
+    "src/audio_record_engine.v",
+    "src/audio_record_keys.v",
+    "src/audio_ring_palette.v",
+    "src/audio_test_clock.v",
+    "src/mic_array_pcm.v",
+    "src/mic_i2s_rx.v",
+    "src/pcm_clip_controller.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v",
+    "src/pcm_monitor_guard.v",
+    "src/pcm_output_queue.v",
+    "src/pcm_voice_conditioner.v",
+    "src/pt8211_stereo_tx.v",
+    "src/record_status_uart.v",
+    "src/sk9822_ring.v",
+    "src/status_ws2812.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_record_engine.sv",
+    "src/audio_effect_core.v",
+    "src/audio_level_meter.v",
+    "src/audio_record_engine.v",
+    "src/audio_record_keys.v",
+    "src/audio_ring_palette.v",
+    "src/audio_test_clock.v",
+    "src/mic_array_pcm.v",
+    "src/mic_i2s_rx.v",
+    "src/pcm_clip_controller.v",
+    "src/pcm_crossfade.v",
+    "src/pcm_dual_read_pitch.v",
+    "src/pcm_harmony_mixer.v",
+    "src/pcm_monitor_guard.v",
+    "src/pcm_output_queue.v",
+    "src/pcm_voice_conditioner.v",
+    "src/pt8211_stereo_tx.v",
+    "src/record_status_uart.v",
+    "src/sk9822_ring.v",
+    "src/status_ws2812.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

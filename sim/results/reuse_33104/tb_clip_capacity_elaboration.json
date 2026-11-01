@@ -1,0 +1,659 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_clip_capacity.sv",
+      "src/pcm_clip_controller.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_clip_capacity",
+        "Type": "tb_clip_capacity",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 5,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BLOCKS",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000010110010110100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAPACITY",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000101100101101000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LAST_ADDRESS",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000010110010110100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POST",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PRE",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000111>"
+          }
+        ],
+        "Path": "tb_clip_capacity"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_ready",
+        "Type": "await_ready",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 137,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 137,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.await_ready"
+      },
+      {
+        "Kind": "task",
+        "Instance": "command",
+        "Type": "command",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 129,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 129,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.command"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 40,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000101100101101000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_clip_capacity.dut"
+      },
+      {
+        "Kind": "autofunction.vec4.u16",
+        "Instance": "expected_sample",
+        "Type": "expected_sample",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 22,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 22,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.expected_sample"
+      },
+      {
+        "Kind": "task",
+        "Instance": "finish_play",
+        "Type": "finish_play",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 163,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 163,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.finish_play"
+      },
+      {
+        "Kind": "task",
+        "Instance": "start_play",
+        "Type": "start_play",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 155,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 155,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.start_play"
+      },
+      {
+        "Kind": "task",
+        "Instance": "start_record",
+        "Type": "start_record",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 148,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 148,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.start_record"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_clip_capacity.sv",
+      "src/pcm_clip_controller.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001d6c639e6f0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001d6c645c520 .scope module, \"tb_clip_capacity\" \"tb_clip_capacity\" 3 5;",
+      "P_000001d6c5d365d0 .param/l \"BLOCKS\" 1 3 7, +C4<00000000000000010110010110100001>;",
+      "P_000001d6c5d36608 .param/l \"CAPACITY\" 1 3 6, +C4<00000000000101100101101000001100>;",
+      "P_000001d6c5d36640 .param/l \"DRAIN\" 1 3 9, +C4<00000000000000000000000000000011>;",
+      "P_000001d6c5d36678 .param/l \"LAST_ADDRESS\" 1 3 8, +C4<00000000000010110010110100000000>;",
+      "P_000001d6c5d366b0 .param/l \"POST\" 1 3 9, +C4<00000000000000000000000000001001>;",
+      "P_000001d6c5d366e8 .param/l \"PRE\" 1 3 9, +C4<00000000000000000000000000000111>;",
+      "S_000001d6c5d659b0 .scope task, \"await_ready\" \"await_ready\" 3 137, 3 137 0, S_000001d6c645c520;",
+      "S_000001d6c61b31b0 .scope task, \"command\" \"command\" 3 129, 3 129 0, S_000001d6c645c520;",
+      "S_000001d6c6458290 .scope module, \"dut\" \"pcm_clip_controller\" 3 40, 4 4 0, S_000001d6c645c520;",
+      "P_000001d6c6459df0 .param/l \"DRAIN\" 1 4 32, +C4<00000000000000000000000000001001>;",
+      "P_000001d6c6459e28 .param/l \"DRAIN_SAMPLES\" 0 4 8, +C4<00000000000000000000000000000011>;",
+      "P_000001d6c6459e60 .param/l \"EMPTY\" 1 4 31, +C4<00000000000000000000000000000001>;",
+      "P_000001d6c6459e98 .param/l \"ENHANCED_PLAYBACK\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_000001d6c6459ed0 .param/l \"ERROR\" 1 4 32, +C4<00000000000000000000000000001010>;",
+      "P_000001d6c6459f08 .param/l \"FLUSH\" 1 4 31, +C4<00000000000000000000000000000011>;",
+      "P_000001d6c6459f40 .param/l \"MAX_SAMPLES\" 0 4 5, +C4<00000000000101100101101000001100>;",
+      "P_000001d6c6459f78 .param/l \"PAUSED\" 1 4 32, +C4<00000000000000000000000000001011>;",
+      "P_000001d6c6459fb0 .param/l \"PLAY\" 1 4 32, +C4<00000000000000000000000000000111>;",
+      "P_000001d6c6459fe8 .param/l \"PREFETCH\" 1 4 32, +C4<00000000000000000000000000000101>;",
+      "P_000001d6c645a020 .param/l \"PREROLL\" 1 4 32, +C4<00000000000000000000000000000110>;",
+      "P_000001d6c645a058 .param/l \"PREROLL_SAMPLES\" 0 4 6, +C4<00000000000000000000000000000111>;",
+      "P_000001d6c645a090 .param/l \"READY\" 1 4 31, +C4<00000000000000000000000000000100>;",
+      "P_000001d6c645a0c8 .param/l \"RECORD\" 1 4 31, +C4<00000000000000000000000000000010>;",
+      "P_000001d6c645a100 .param/l \"TAIL\" 1 4 32, +C4<00000000000000000000000000001000>;",
+      "P_000001d6c645a138 .param/l \"TAIL_SAMPLES\" 0 4 7, +C4<00000000000000000000000000001001>;",
+      "P_000001d6c645a170 .param/l \"WAIT_DDR\" 1 4 31, +C4<00000000000000000000000000000000>;",
+      "S_000001d6c5ddfb70 .scope autofunction.vec4.u16, \"expected_sample\" \"expected_sample\" 3 22, 3 22 0, S_000001d6c645c520;",
+      "S_000001d6c5de7fd0 .scope task, \"finish_play\" \"finish_play\" 3 163, 3 163 0, S_000001d6c645c520;",
+      "S_000001d6c59ae760 .scope task, \"start_play\" \"start_play\" 3 155, 3 155 0, S_000001d6c645c520;",
+      "S_000001d6c5d9da30 .scope task, \"start_record\" \"start_record\" 3 148, 3 148 0, S_000001d6c645c520;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_clip_capacity.sv",
+      "src/pcm_clip_controller.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_clip_capacity",
+        "Type": "tb_clip_capacity",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 5,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BLOCKS",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 7,
+            "Value": "+C4<00000000000000010110010110100001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAPACITY",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 6,
+            "Value": "+C4<00000000000101100101101000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LAST_ADDRESS",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 8,
+            "Value": "+C4<00000000000010110010110100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "POST",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PRE",
+            "Signed": 1,
+            "Source": "sim/tb_clip_capacity.sv",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000111>"
+          }
+        ],
+        "Path": "tb_clip_capacity"
+      },
+      {
+        "Kind": "task",
+        "Instance": "await_ready",
+        "Type": "await_ready",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 137,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 137,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.await_ready"
+      },
+      {
+        "Kind": "task",
+        "Instance": "command",
+        "Type": "command",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 129,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 129,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.command"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "pcm_clip_controller",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 40,
+        "DefinitionSource": "src/pcm_clip_controller.v",
+        "DefinitionLine": 4,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "DRAIN",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DRAIN_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "EMPTY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ENHANCED_PLAYBACK",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "ERROR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FLUSH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "MAX_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 5,
+            "Value": "+C4<00000000000101100101101000001100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PAUSED",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PLAY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREFETCH",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "PREROLL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 6,
+            "Value": "+C4<00000000000000000000000000000111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "READY",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "RECORD",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TAIL_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000000001001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WAIT_DDR",
+            "Signed": 1,
+            "Source": "src/pcm_clip_controller.v",
+            "Line": 31,
+            "Value": "+C4<00000000000000000000000000000000>"
+          }
+        ],
+        "Path": "tb_clip_capacity.dut"
+      },
+      {
+        "Kind": "autofunction.vec4.u16",
+        "Instance": "expected_sample",
+        "Type": "expected_sample",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 22,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 22,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.expected_sample"
+      },
+      {
+        "Kind": "task",
+        "Instance": "finish_play",
+        "Type": "finish_play",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 163,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 163,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.finish_play"
+      },
+      {
+        "Kind": "task",
+        "Instance": "start_play",
+        "Type": "start_play",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 155,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 155,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.start_play"
+      },
+      {
+        "Kind": "task",
+        "Instance": "start_record",
+        "Type": "start_record",
+        "InstantiationSource": "sim/tb_clip_capacity.sv",
+        "InstantiationLine": 148,
+        "DefinitionSource": "sim/tb_clip_capacity.sv",
+        "DefinitionLine": 148,
+        "Parameters": [],
+        "Path": "tb_clip_capacity.start_record"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_clip_capacity.sv",
+      "src/pcm_clip_controller.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000027e12bcbbb0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000027e130c8580 .scope module, \"tb_clip_capacity\" \"tb_clip_capacity\" 3 5;",
+      "P_0000027e129054d0 .param/l \"BLOCKS\" 1 3 7, +C4<00000000000000010110010110100001>;",
+      "P_0000027e12905508 .param/l \"CAPACITY\" 1 3 6, +C4<00000000000101100101101000001100>;",
+      "P_0000027e12905540 .param/l \"DRAIN\" 1 3 9, +C4<00000000000000000000000000000011>;",
+      "P_0000027e12905578 .param/l \"LAST_ADDRESS\" 1 3 8, +C4<00000000000010110010110100000000>;",
+      "P_0000027e129055b0 .param/l \"POST\" 1 3 9, +C4<00000000000000000000000000001001>;",
+      "P_0000027e129055e8 .param/l \"PRE\" 1 3 9, +C4<00000000000000000000000000000111>;",
+      "S_0000027e1309a590 .scope task, \"await_ready\" \"await_ready\" 3 137, 3 137 0, S_0000027e130c8580;",
+      "S_0000027e1305d7e0 .scope task, \"command\" \"command\" 3 129, 3 129 0, S_0000027e130c8580;",
+      "S_0000027e12e8a860 .scope module, \"dut\" \"pcm_clip_controller\" 3 40, 4 4 0, S_0000027e130c8580;",
+      "P_0000027e12d93100 .param/l \"DRAIN\" 1 4 32, +C4<00000000000000000000000000001001>;",
+      "P_0000027e12d93138 .param/l \"DRAIN_SAMPLES\" 0 4 8, +C4<00000000000000000000000000000011>;",
+      "P_0000027e12d93170 .param/l \"EMPTY\" 1 4 31, +C4<00000000000000000000000000000001>;",
+      "P_0000027e12d931a8 .param/l \"ENHANCED_PLAYBACK\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_0000027e12d931e0 .param/l \"ERROR\" 1 4 32, +C4<00000000000000000000000000001010>;",
+      "P_0000027e12d93218 .param/l \"FLUSH\" 1 4 31, +C4<00000000000000000000000000000011>;",
+      "P_0000027e12d93250 .param/l \"MAX_SAMPLES\" 0 4 5, +C4<00000000000101100101101000001100>;",
+      "P_0000027e12d93288 .param/l \"PAUSED\" 1 4 32, +C4<00000000000000000000000000001011>;",
+      "P_0000027e12d932c0 .param/l \"PLAY\" 1 4 32, +C4<00000000000000000000000000000111>;",
+      "P_0000027e12d932f8 .param/l \"PREFETCH\" 1 4 32, +C4<00000000000000000000000000000101>;",
+      "P_0000027e12d93330 .param/l \"PREROLL\" 1 4 32, +C4<00000000000000000000000000000110>;",
+      "P_0000027e12d93368 .param/l \"PREROLL_SAMPLES\" 0 4 6, +C4<00000000000000000000000000000111>;",
+      "P_0000027e12d933a0 .param/l \"READY\" 1 4 31, +C4<00000000000000000000000000000100>;",
+      "P_0000027e12d933d8 .param/l \"RECORD\" 1 4 31, +C4<00000000000000000000000000000010>;",
+      "P_0000027e12d93410 .param/l \"TAIL\" 1 4 32, +C4<00000000000000000000000000001000>;",
+      "P_0000027e12d93448 .param/l \"TAIL_SAMPLES\" 0 4 7, +C4<00000000000000000000000000001001>;",
+      "P_0000027e12d93480 .param/l \"WAIT_DDR\" 1 4 31, +C4<00000000000000000000000000000000>;",
+      "S_0000027e12c23850 .scope autofunction.vec4.u16, \"expected_sample\" \"expected_sample\" 3 22, 3 22 0, S_0000027e130c8580;",
+      "S_0000027e12c6ca40 .scope task, \"finish_play\" \"finish_play\" 3 163, 3 163 0, S_0000027e130c8580;",
+      "S_0000027e12c6cbd0 .scope task, \"start_play\" \"start_play\" 3 155, 3 155 0, S_0000027e130c8580;",
+      "S_0000027e12c6cd60 .scope task, \"start_record\" \"start_record\" 3 148, 3 148 0, S_0000027e130c8580;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_clip_capacity.sv",
+    "src/pcm_clip_controller.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_clip_capacity.sv",
+    "src/pcm_clip_controller.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

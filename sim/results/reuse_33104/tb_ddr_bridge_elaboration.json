@@ -1,0 +1,513 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_ddr_bridge.sv",
+      "src/ddr_audio_bridge.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_ddr_bridge",
+        "Type": "tb_ddr_bridge",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 3,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "ddr_audio_bridge",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BOOT",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "BOOT_TIMEOUT_CYCLES",
+            "Signed": 0,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000011111010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FAULT",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<1000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_READ_CMD",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_READ_DATA",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_WRITE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TIMEOUT_CYCLES",
+            "Signed": 0,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000011001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_READ_CMD",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_READ_DATA",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_WRITE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0101>"
+          }
+        ],
+        "Path": "tb_ddr_bridge.dut"
+      },
+      {
+        "Kind": "function.vec4.s29",
+        "Instance": "test_address",
+        "Type": "test_address",
+        "InstantiationSource": "src/ddr_audio_bridge.v",
+        "InstantiationLine": 171,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 171,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.dut.test_address"
+      },
+      {
+        "Kind": "function.vec4.s256",
+        "Instance": "test_pattern",
+        "Type": "test_pattern",
+        "InstantiationSource": "src/ddr_audio_bridge.v",
+        "InstantiationLine": 175,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 175,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.dut.test_pattern"
+      },
+      {
+        "Kind": "function.vec4.s256",
+        "Instance": "expected_pattern",
+        "Type": "expected_pattern",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.expected_pattern"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "mem_index",
+        "Type": "mem_index",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 48,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.mem_index"
+      },
+      {
+        "Kind": "task",
+        "Instance": "restart",
+        "Type": "restart",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 140,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 140,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.restart"
+      },
+      {
+        "Kind": "function.vec4.s29",
+        "Instance": "test_location",
+        "Type": "test_location",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.test_location"
+      },
+      {
+        "Kind": "task",
+        "Instance": "transact",
+        "Type": "transact",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 179,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 179,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.transact"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_error",
+        "Type": "wait_error",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 162,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 162,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.wait_error"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_ready",
+        "Type": "wait_ready",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 153,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 153,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.wait_ready"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_ddr_bridge.sv",
+      "src/ddr_audio_bridge.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000023a0e060ca0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000023a0d9258b0 .scope module, \"tb_ddr_bridge\" \"tb_ddr_bridge\" 3 3;",
+      "S_0000023a0dd931b0 .scope module, \"dut\" \"ddr_audio_bridge\" 3 26, 4 6 0, S_0000023a0d9258b0;",
+      "P_0000023a0d5de690 .param/l \"BOOT\" 1 4 162, C4<0000>;",
+      "P_0000023a0d5de6c8 .param/l \"BOOT_TIMEOUT_CYCLES\" 0 4 8, +C4<00000000000000000000011111010000>;",
+      "P_0000023a0d5de700 .param/l \"FAULT\" 1 4 163, C4<1000>;",
+      "P_0000023a0d5de738 .param/l \"IDLE\" 1 4 163, C4<0100>;",
+      "P_0000023a0d5de770 .param/l \"TEST_READ_CMD\" 1 4 162, C4<0010>;",
+      "P_0000023a0d5de7a8 .param/l \"TEST_READ_DATA\" 1 4 162, C4<0011>;",
+      "P_0000023a0d5de7e0 .param/l \"TEST_WRITE\" 1 4 162, C4<0001>;",
+      "P_0000023a0d5de818 .param/l \"TIMEOUT_CYCLES\" 0 4 7, +C4<00000000000000000000000011001000>;",
+      "P_0000023a0d5de850 .param/l \"USER_READ_CMD\" 1 4 163, C4<0110>;",
+      "P_0000023a0d5de888 .param/l \"USER_READ_DATA\" 1 4 163, C4<0111>;",
+      "P_0000023a0d5de8c0 .param/l \"USER_WRITE\" 1 4 163, C4<0101>;",
+      "S_0000023a0df73b10 .scope function.vec4.s29, \"test_address\" \"test_address\" 4 171, 4 171 0, S_0000023a0dd931b0;",
+      "S_0000023a0e018420 .scope function.vec4.s256, \"test_pattern\" \"test_pattern\" 4 175, 4 175 0, S_0000023a0dd931b0;",
+      "S_0000023a0d548f20 .scope function.vec4.s256, \"expected_pattern\" \"expected_pattern\" 3 54, 3 54 0, S_0000023a0d9258b0;",
+      "S_0000023a0d9c7d20 .scope function.vec4.u32, \"mem_index\" \"mem_index\" 3 48, 3 48 0, S_0000023a0d9258b0;",
+      "S_0000023a0d9c7eb0 .scope task, \"restart\" \"restart\" 3 140, 3 140 0, S_0000023a0d9258b0;",
+      "S_0000023a0d9c8040 .scope function.vec4.s29, \"test_location\" \"test_location\" 3 51, 3 51 0, S_0000023a0d9258b0;",
+      "S_0000023a0d95d930 .scope task, \"transact\" \"transact\" 3 179, 3 179 0, S_0000023a0d9258b0;",
+      "S_0000023a0d95dac0 .scope task, \"wait_error\" \"wait_error\" 3 162, 3 162 0, S_0000023a0d9258b0;",
+      "S_0000023a0d95dc50 .scope task, \"wait_ready\" \"wait_ready\" 3 153, 3 153 0, S_0000023a0d9258b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_ddr_bridge.sv",
+      "src/ddr_audio_bridge.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_ddr_bridge",
+        "Type": "tb_ddr_bridge",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 3,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 3,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "ddr_audio_bridge",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 26,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 6,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BOOT",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "BOOT_TIMEOUT_CYCLES",
+            "Signed": 0,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000011111010000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FAULT",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<1000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_READ_CMD",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_READ_DATA",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TEST_WRITE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 162,
+            "Value": "C4<0001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "TIMEOUT_CYCLES",
+            "Signed": 0,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 7,
+            "Value": "+C4<00000000000000000000000011001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_READ_CMD",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0110>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_READ_DATA",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_WRITE",
+            "Signed": 1,
+            "Source": "src/ddr_audio_bridge.v",
+            "Line": 163,
+            "Value": "C4<0101>"
+          }
+        ],
+        "Path": "tb_ddr_bridge.dut"
+      },
+      {
+        "Kind": "function.vec4.s29",
+        "Instance": "test_address",
+        "Type": "test_address",
+        "InstantiationSource": "src/ddr_audio_bridge.v",
+        "InstantiationLine": 171,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 171,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.dut.test_address"
+      },
+      {
+        "Kind": "function.vec4.s256",
+        "Instance": "test_pattern",
+        "Type": "test_pattern",
+        "InstantiationSource": "src/ddr_audio_bridge.v",
+        "InstantiationLine": 175,
+        "DefinitionSource": "src/ddr_audio_bridge.v",
+        "DefinitionLine": 175,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.dut.test_pattern"
+      },
+      {
+        "Kind": "function.vec4.s256",
+        "Instance": "expected_pattern",
+        "Type": "expected_pattern",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 54,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 54,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.expected_pattern"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "mem_index",
+        "Type": "mem_index",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 48,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 48,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.mem_index"
+      },
+      {
+        "Kind": "task",
+        "Instance": "restart",
+        "Type": "restart",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 140,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 140,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.restart"
+      },
+      {
+        "Kind": "function.vec4.s29",
+        "Instance": "test_location",
+        "Type": "test_location",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.test_location"
+      },
+      {
+        "Kind": "task",
+        "Instance": "transact",
+        "Type": "transact",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 179,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 179,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.transact"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_error",
+        "Type": "wait_error",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 162,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 162,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.wait_error"
+      },
+      {
+        "Kind": "task",
+        "Instance": "wait_ready",
+        "Type": "wait_ready",
+        "InstantiationSource": "sim/tb_ddr_bridge.sv",
+        "InstantiationLine": 153,
+        "DefinitionSource": "sim/tb_ddr_bridge.sv",
+        "DefinitionLine": 153,
+        "Parameters": [],
+        "Path": "tb_ddr_bridge.wait_ready"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_ddr_bridge.sv",
+      "src/ddr_audio_bridge.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000013a6cd7e9f0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000013a6d589430 .scope module, \"tb_ddr_bridge\" \"tb_ddr_bridge\" 3 3;",
+      "S_0000013a6cce9240 .scope module, \"dut\" \"ddr_audio_bridge\" 3 26, 4 6 0, S_0000013a6d589430;",
+      "P_0000013a6cce7fc0 .param/l \"BOOT\" 1 4 162, C4<0000>;",
+      "P_0000013a6cce7ff8 .param/l \"BOOT_TIMEOUT_CYCLES\" 0 4 8, +C4<00000000000000000000011111010000>;",
+      "P_0000013a6cce8030 .param/l \"FAULT\" 1 4 163, C4<1000>;",
+      "P_0000013a6cce8068 .param/l \"IDLE\" 1 4 163, C4<0100>;",
+      "P_0000013a6cce80a0 .param/l \"TEST_READ_CMD\" 1 4 162, C4<0010>;",
+      "P_0000013a6cce80d8 .param/l \"TEST_READ_DATA\" 1 4 162, C4<0011>;",
+      "P_0000013a6cce8110 .param/l \"TEST_WRITE\" 1 4 162, C4<0001>;",
+      "P_0000013a6cce8148 .param/l \"TIMEOUT_CYCLES\" 0 4 7, +C4<00000000000000000000000011001000>;",
+      "P_0000013a6cce8180 .param/l \"USER_READ_CMD\" 1 4 163, C4<0110>;",
+      "P_0000013a6cce81b8 .param/l \"USER_READ_DATA\" 1 4 163, C4<0111>;",
+      "P_0000013a6cce81f0 .param/l \"USER_WRITE\" 1 4 163, C4<0101>;",
+      "S_0000013a6d3da860 .scope function.vec4.s29, \"test_address\" \"test_address\" 4 171, 4 171 0, S_0000013a6cce9240;",
+      "S_0000013a6d3da9f0 .scope function.vec4.s256, \"test_pattern\" \"test_pattern\" 4 175, 4 175 0, S_0000013a6cce9240;",
+      "S_0000013a6d3dab80 .scope function.vec4.s256, \"expected_pattern\" \"expected_pattern\" 3 54, 3 54 0, S_0000013a6d589430;",
+      "S_0000013a6d2e3110 .scope function.vec4.u32, \"mem_index\" \"mem_index\" 3 48, 3 48 0, S_0000013a6d589430;",
+      "S_0000013a6d2e32a0 .scope task, \"restart\" \"restart\" 3 140, 3 140 0, S_0000013a6d589430;",
+      "S_0000013a6d2e3430 .scope function.vec4.s29, \"test_location\" \"test_location\" 3 51, 3 51 0, S_0000013a6d589430;",
+      "S_0000013a6d1d98d0 .scope task, \"transact\" \"transact\" 3 179, 3 179 0, S_0000013a6d589430;",
+      "S_0000013a6d1d9a60 .scope task, \"wait_error\" \"wait_error\" 3 162, 3 162 0, S_0000013a6d589430;",
+      "S_0000013a6d1d9bf0 .scope task, \"wait_ready\" \"wait_ready\" 3 153, 3 153 0, S_0000013a6d589430;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_ddr_bridge.sv",
+    "src/ddr_audio_bridge.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_ddr_bridge.sv",
+    "src/ddr_audio_bridge.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

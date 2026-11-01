@@ -1,0 +1,29 @@
+{
+  "Passed": true,
+  "Case": "tb_long_status_uart",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 0,
+  "SourceHashes": {
+    "src/record_long_status_uart.v": "5FCD0DBE25380C19D75C88476F881E70666E8C82267DBF41E5079EC7B29DE32B",
+    "sim/tb_long_status_uart.sv": "98A0CCFB4A5CDBA1F6FE3E6FAA1A6A7AA50629D9138E7A0CF2B2650A155F938C"
+  },
+  "SourceSet": "Explicit complete RTL/test dependencies; unrelated project edits were not compiled",
+  "RunnerSHA256": "A0F6C219D9CF8836DCCE728E1EA4C04FDFE619A2A5DF78665806B0E719556CAE",
+  "Summary": [
+    "PASS LONG_STATUS_UART checks=3389 bytes=843 debug_bytes=843 pairs_each=3 R6_bytes=117 D3_bytes=164 versions33105_33106 atomic_all_fields counts_above21bit full32bit_raw negative_pitch_second reset"
+  ],
+  "HardwareValidated": false,
+  "SharedCurrentExecutionFrom": "0x00033105",
+  "RuntimeExecutedForThisProject": false,
+  "RuntimeExecutedThisRelease": false,
+  "OriginalRuntimeSeconds": 0.14501166343688965,
+  "OriginalSharedReportPath": "baseline_33105_evidence/validation_tb_long_status_uart.json",
+  "OriginalSharedReportSHA256": "4E91660F78129766294E1FE61A1C23B5146FB0B9201817B6DDECBF7D76BCD2B8"
+}

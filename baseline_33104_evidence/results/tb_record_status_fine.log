@@ -1,0 +1,2 @@
+PASS tb_record_status_fine checks=1617 bytes=804
+sim/tb_record_status_fine.sv:102: $finish called at 429746000 (1ps)

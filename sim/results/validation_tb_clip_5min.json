@@ -1,0 +1,30 @@
+{
+  "Passed": true,
+  "Case": "tb_clip_5min",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 0,
+  "SourceHashes": {
+    "src/pcm_long_clip_controller.v": "CD74F7CBB33202D3A4D83E1E4F6879C36A09B6274AF7E991D7CFA4F6B75D7457",
+    "sim/tb_clip_5min.sv": "3058379B2EFC2D0FF0D2FC91D47B7CDDF09266044710DF352E797BA9B5B79EDE",
+    "sim/run.py": "FC7A6D5BACF4FB5A21F12B132269020ADF158F53AC51D005F571E3D80B85B979"
+  },
+  "Summary": [
+    "MEASURE CLIP_5MIN capture_samples=14648438 blocks=915528 last_app_address=7324216 valid_last_lanes=6 zero_last_lanes=10 bytes=29296876 actual_duration_s=300.00001024",
+    "MEASURE CLIP_5MIN full_bit_exact_samples=14648438 read_blocks=915528",
+    "PASS CLIP_5MIN: max_samples=14648438 full_bit_exact_samples=14648438 total_bit_exact_samples=14648535 full_blocks=915528 final_address=7324216 source_abort_preserved short_overwrite=37 repeat_short=2 accelerated_tick_clocks=2 reduced_roll_only pause3 consumer_hold old21bit_samples old18bit_blocks final6lanes reset"
+  ],
+  "HardwareValidated": false,
+  "SharedCurrentExecutionFrom": "0x00033105",
+  "RuntimeExecutedForThisProject": false,
+  "RuntimeExecutedThisRelease": false,
+  "OriginalRuntimeSeconds": 359.27302265167236,
+  "OriginalSharedReportPath": "baseline_33105_evidence/validation_tb_clip_5min.json",
+  "OriginalSharedReportSHA256": "F7F0A8900D58CC3963F44421666FCCBEC06E7C8677398F7C053540CEB4AB01EA"
+}

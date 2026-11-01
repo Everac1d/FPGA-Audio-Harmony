@@ -1,0 +1,889 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_ring_gate_margin.sv",
+      "src/audio_level_meter.v",
+      "src/sk9822_ring.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_ring_gate_margin",
+        "Type": "tb_ring_gate_margin",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin"
+      },
+      {
+        "Kind": "task",
+        "Instance": "boundary_case",
+        "Type": "boundary_case",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 118,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 118,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.boundary_case"
+      },
+      {
+        "Kind": "task",
+        "Instance": "calibrate",
+        "Type": "calibrate",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.calibrate"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 24,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 24,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "checked_window",
+        "Type": "checked_window",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 57,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.checked_window"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 29,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 29,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.clocks"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "curve",
+        "Type": "curve",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 32,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "original",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.original"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.original.amplitude_curve"
+      },
+      {
+        "Kind": "task",
+        "Instance": "raw_window",
+        "Type": "raw_window",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.raw_window"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "release_level",
+        "Type": "release_level",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.release_level"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.ring"
+      },
+      {
+        "Kind": "task",
+        "Instance": "serial_frame",
+        "Type": "serial_frame",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 93,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 93,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.serial_frame"
+      },
+      {
+        "Kind": "module",
+        "Instance": "tuned",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 18,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.tuned"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.tuned.amplitude_curve"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_ring_gate_margin.sv",
+      "src/audio_level_meter.v",
+      "src/sk9822_ring.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_00000182045b65d0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000018204a063d0 .scope module, \"tb_ring_gate_margin\" \"tb_ring_gate_margin\" 3 5;",
+      "S_0000018204bfedf0 .scope task, \"boundary_case\" \"boundary_case\" 3 118, 3 118 0, S_0000018204a063d0;",
+      "S_000001820433d3a0 .scope task, \"calibrate\" \"calibrate\" 3 72, 3 72 0, S_0000018204a063d0;",
+      "S_00000182042ac760 .scope task, \"check\" \"check\" 3 24, 3 24 0, S_0000018204a063d0;",
+      "S_00000182042ac8f0 .scope task, \"checked_window\" \"checked_window\" 3 57, 3 57 0, S_0000018204a063d0;",
+      "S_0000018204648a50 .scope task, \"clocks\" \"clocks\" 3 29, 3 29 0, S_0000018204a063d0;",
+      "S_0000018204648be0 .scope function.vec4.u32, \"curve\" \"curve\" 3 32, 3 32 0, S_0000018204a063d0;",
+      "S_0000018204648d70 .scope module, \"original\" \"audio_level_meter\" 3 15, 4 21 0, S_0000018204a063d0;",
+      "P_00000182045ee660 .param/l \"ACC_WIDTH\" 1 4 36, +C4<00000000000000000000000000010010>;",
+      "P_00000182045ee698 .param/l \"CALIBRATION_LOG2\" 0 4 24, +C4<00000000000000000000000000000010>;",
+      "P_00000182045ee6d0 .param/l \"CALIBRATION_MARGIN\" 0 4 25, +C4<00000000000000000000000000100000>;",
+      "P_00000182045ee708 .param/l \"CALIBRATION_WINDOWS\" 1 4 40, +C4<00000000000000000000000000000100>;",
+      "P_00000182045ee740 .param/l \"CAL_ACC_WIDTH\" 1 4 39, +C4<00000000000000000000000000010010>;",
+      "P_00000182045ee778 .param/l \"CAL_COUNT_WIDTH\" 1 4 38, +C4<00000000000000000000000000000010>;",
+      "P_00000182045ee7b0 .param/l \"COUNT_WIDTH\" 1 4 35, +C4<00000000000000000000000000000010>;",
+      "P_00000182045ee7e8 .param/l \"NOISE_FLOOR\" 0 4 23, +C4<00000000000000000000000001000000>;",
+      "P_00000182045ee820 .param/l \"WINDOW_LOG2\" 0 4 22, +C4<00000000000000000000000000000010>;",
+      "P_00000182045ee858 .param/l \"WINDOW_SAMPLES\" 1 4 37, +C4<00000000000000000000000000000100>;",
+      "S_00000182045ee8a0 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 4 61, 4 61 0, S_0000018204648d70;",
+      "S_0000018204610d70 .scope task, \"raw_window\" \"raw_window\" 3 51, 3 51 0, S_0000018204a063d0;",
+      "S_00000182045a2f00 .scope function.vec4.u32, \"release_level\" \"release_level\" 3 43, 3 43 0, S_0000018204a063d0;",
+      "S_00000182045a3090 .scope module, \"ring\" \"sk9822_ring\" 3 21, 5 8 0, S_0000018204a063d0;",
+      "P_00000182045871f0 .param/l \"HALF_PERIOD_CYCLES\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_0000018204587228 .param/l \"HALF_WIDTH\" 1 5 20, +C4<00000000000000000000000000000001>;",
+      "P_0000018204587260 .param/l \"LED_COUNT\" 0 5 11, +C4<00000000000000000000000000000001>;",
+      "P_0000018204587298 .param/l \"REFRESH_CYCLES\" 0 5 10, +C4<00000000000000000000000100000000>;",
+      "P_00000182045872d0 .param/l \"REFRESH_WIDTH\" 1 5 22, +C4<00000000000000000000000000001000>;",
+      "P_0000018204587308 .param/l \"WORD_WIDTH\" 1 5 24, +C4<00000000000000000000000000000010>;",
+      "S_00000182045a3220 .scope task, \"serial_frame\" \"serial_frame\" 3 93, 3 93 0, S_0000018204a063d0;",
+      "S_0000018204cc4390 .scope module, \"tuned\" \"audio_level_meter\" 3 18, 4 21 0, S_0000018204a063d0;",
+      "P_0000018204582b00 .param/l \"ACC_WIDTH\" 1 4 36, +C4<00000000000000000000000000010010>;",
+      "P_0000018204582b38 .param/l \"CALIBRATION_LOG2\" 0 4 24, +C4<00000000000000000000000000000010>;",
+      "P_0000018204582b70 .param/l \"CALIBRATION_MARGIN\" 0 4 25, +C4<00000000000000000000000000011000>;",
+      "P_0000018204582ba8 .param/l \"CALIBRATION_WINDOWS\" 1 4 40, +C4<00000000000000000000000000000100>;",
+      "P_0000018204582be0 .param/l \"CAL_ACC_WIDTH\" 1 4 39, +C4<00000000000000000000000000010010>;",
+      "P_0000018204582c18 .param/l \"CAL_COUNT_WIDTH\" 1 4 38, +C4<00000000000000000000000000000010>;",
+      "P_0000018204582c50 .param/l \"COUNT_WIDTH\" 1 4 35, +C4<00000000000000000000000000000010>;",
+      "P_0000018204582c88 .param/l \"NOISE_FLOOR\" 0 4 23, +C4<00000000000000000000000001000000>;",
+      "P_0000018204582cc0 .param/l \"WINDOW_LOG2\" 0 4 22, +C4<00000000000000000000000000000010>;",
+      "P_0000018204582cf8 .param/l \"WINDOW_SAMPLES\" 1 4 37, +C4<00000000000000000000000000000100>;",
+      "S_0000018204cc4840 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 4 61, 4 61 0, S_0000018204cc4390;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_ring_gate_margin.sv",
+      "src/audio_level_meter.v",
+      "src/sk9822_ring.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_ring_gate_margin",
+        "Type": "tb_ring_gate_margin",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 5,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin"
+      },
+      {
+        "Kind": "task",
+        "Instance": "boundary_case",
+        "Type": "boundary_case",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 118,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 118,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.boundary_case"
+      },
+      {
+        "Kind": "task",
+        "Instance": "calibrate",
+        "Type": "calibrate",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 72,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 72,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.calibrate"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 24,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 24,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "checked_window",
+        "Type": "checked_window",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 57,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.checked_window"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 29,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 29,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.clocks"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "curve",
+        "Type": "curve",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 32,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 32,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.curve"
+      },
+      {
+        "Kind": "module",
+        "Instance": "original",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 15,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.original"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.original.amplitude_curve"
+      },
+      {
+        "Kind": "task",
+        "Instance": "raw_window",
+        "Type": "raw_window",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 51,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 51,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.raw_window"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "release_level",
+        "Type": "release_level",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 43,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 43,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.release_level"
+      },
+      {
+        "Kind": "module",
+        "Instance": "ring",
+        "Type": "sk9822_ring",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/sk9822_ring.v",
+        "DefinitionLine": 8,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "HALF_PERIOD_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HALF_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 20,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LED_COUNT",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_CYCLES",
+            "Signed": 0,
+            "Source": "src/sk9822_ring.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000000000100000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REFRESH_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WORD_WIDTH",
+            "Signed": 1,
+            "Source": "src/sk9822_ring.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.ring"
+      },
+      {
+        "Kind": "task",
+        "Instance": "serial_frame",
+        "Type": "serial_frame",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 93,
+        "DefinitionSource": "sim/tb_ring_gate_margin.sv",
+        "DefinitionLine": 93,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.serial_frame"
+      },
+      {
+        "Kind": "module",
+        "Instance": "tuned",
+        "Type": "audio_level_meter",
+        "InstantiationSource": "sim/tb_ring_gate_margin.sv",
+        "InstantiationLine": 18,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 21,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 24,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_MARGIN",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 25,
+            "Value": "+C4<00000000000000000000000000011000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CALIBRATION_WINDOWS",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 40,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_ACC_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 39,
+            "Value": "+C4<00000000000000000000000000010010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CAL_COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 38,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "COUNT_WIDTH",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "NOISE_FLOOR",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 23,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_LOG2",
+            "Signed": 0,
+            "Source": "src/audio_level_meter.v",
+            "Line": 22,
+            "Value": "+C4<00000000000000000000000000000010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "WINDOW_SAMPLES",
+            "Signed": 1,
+            "Source": "src/audio_level_meter.v",
+            "Line": 37,
+            "Value": "+C4<00000000000000000000000000000100>"
+          }
+        ],
+        "Path": "tb_ring_gate_margin.tuned"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "amplitude_curve",
+        "Type": "amplitude_curve",
+        "InstantiationSource": "src/audio_level_meter.v",
+        "InstantiationLine": 61,
+        "DefinitionSource": "src/audio_level_meter.v",
+        "DefinitionLine": 61,
+        "Parameters": [],
+        "Path": "tb_ring_gate_margin.tuned.amplitude_curve"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_ring_gate_margin.sv",
+      "src/audio_level_meter.v",
+      "src/sk9822_ring.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_00000180d7eef9f0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_00000180d83d8d10 .scope module, \"tb_ring_gate_margin\" \"tb_ring_gate_margin\" 3 5;",
+      "S_00000180d7c1d080 .scope task, \"boundary_case\" \"boundary_case\" 3 118, 3 118 0, S_00000180d83d8d10;",
+      "S_00000180d8388730 .scope task, \"calibrate\" \"calibrate\" 3 72, 3 72 0, S_00000180d83d8d10;",
+      "S_00000180d83888c0 .scope task, \"check\" \"check\" 3 24, 3 24 0, S_00000180d83d8d10;",
+      "S_00000180d81ab470 .scope task, \"checked_window\" \"checked_window\" 3 57, 3 57 0, S_00000180d83d8d10;",
+      "S_00000180d81ab600 .scope task, \"clocks\" \"clocks\" 3 29, 3 29 0, S_00000180d83d8d10;",
+      "S_00000180d81ab790 .scope function.vec4.u32, \"curve\" \"curve\" 3 32, 3 32 0, S_00000180d83d8d10;",
+      "S_00000180d80ab020 .scope module, \"original\" \"audio_level_meter\" 3 15, 4 21 0, S_00000180d83d8d10;",
+      "P_00000180d80ab1b0 .param/l \"ACC_WIDTH\" 1 4 36, +C4<00000000000000000000000000010010>;",
+      "P_00000180d80ab1e8 .param/l \"CALIBRATION_LOG2\" 0 4 24, +C4<00000000000000000000000000000010>;",
+      "P_00000180d80ab220 .param/l \"CALIBRATION_MARGIN\" 0 4 25, +C4<00000000000000000000000000100000>;",
+      "P_00000180d80ab258 .param/l \"CALIBRATION_WINDOWS\" 1 4 40, +C4<00000000000000000000000000000100>;",
+      "P_00000180d80ab290 .param/l \"CAL_ACC_WIDTH\" 1 4 39, +C4<00000000000000000000000000010010>;",
+      "P_00000180d80ab2c8 .param/l \"CAL_COUNT_WIDTH\" 1 4 38, +C4<00000000000000000000000000000010>;",
+      "P_00000180d80ab300 .param/l \"COUNT_WIDTH\" 1 4 35, +C4<00000000000000000000000000000010>;",
+      "P_00000180d80ab338 .param/l \"NOISE_FLOOR\" 0 4 23, +C4<00000000000000000000000001000000>;",
+      "P_00000180d80ab370 .param/l \"WINDOW_LOG2\" 0 4 22, +C4<00000000000000000000000000000010>;",
+      "P_00000180d80ab3a8 .param/l \"WINDOW_SAMPLES\" 1 4 37, +C4<00000000000000000000000000000100>;",
+      "S_00000180d7f90900 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 4 61, 4 61 0, S_00000180d80ab020;",
+      "S_00000180d7f90390 .scope task, \"raw_window\" \"raw_window\" 3 51, 3 51 0, S_00000180d83d8d10;",
+      "S_00000180d7f90520 .scope function.vec4.u32, \"release_level\" \"release_level\" 3 43, 3 43 0, S_00000180d83d8d10;",
+      "S_00000180d7f906b0 .scope module, \"ring\" \"sk9822_ring\" 3 21, 5 8 0, S_00000180d83d8d10;",
+      "P_00000180d7c1d210 .param/l \"HALF_PERIOD_CYCLES\" 0 5 9, +C4<00000000000000000000000000000001>;",
+      "P_00000180d7c1d248 .param/l \"HALF_WIDTH\" 1 5 20, +C4<00000000000000000000000000000001>;",
+      "P_00000180d7c1d280 .param/l \"LED_COUNT\" 0 5 11, +C4<00000000000000000000000000000001>;",
+      "P_00000180d7c1d2b8 .param/l \"REFRESH_CYCLES\" 0 5 10, +C4<00000000000000000000000100000000>;",
+      "P_00000180d7c1d2f0 .param/l \"REFRESH_WIDTH\" 1 5 22, +C4<00000000000000000000000000001000>;",
+      "P_00000180d7c1d328 .param/l \"WORD_WIDTH\" 1 5 24, +C4<00000000000000000000000000000010>;",
+      "S_00000180d7f4b430 .scope task, \"serial_frame\" \"serial_frame\" 3 93, 3 93 0, S_00000180d83d8d10;",
+      "S_00000180d7f4b5c0 .scope module, \"tuned\" \"audio_level_meter\" 3 18, 4 21 0, S_00000180d83d8d10;",
+      "P_00000180d7f46f50 .param/l \"ACC_WIDTH\" 1 4 36, +C4<00000000000000000000000000010010>;",
+      "P_00000180d7f46f88 .param/l \"CALIBRATION_LOG2\" 0 4 24, +C4<00000000000000000000000000000010>;",
+      "P_00000180d7f46fc0 .param/l \"CALIBRATION_MARGIN\" 0 4 25, +C4<00000000000000000000000000011000>;",
+      "P_00000180d7f46ff8 .param/l \"CALIBRATION_WINDOWS\" 1 4 40, +C4<00000000000000000000000000000100>;",
+      "P_00000180d7f47030 .param/l \"CAL_ACC_WIDTH\" 1 4 39, +C4<00000000000000000000000000010010>;",
+      "P_00000180d7f47068 .param/l \"CAL_COUNT_WIDTH\" 1 4 38, +C4<00000000000000000000000000000010>;",
+      "P_00000180d7f470a0 .param/l \"COUNT_WIDTH\" 1 4 35, +C4<00000000000000000000000000000010>;",
+      "P_00000180d7f470d8 .param/l \"NOISE_FLOOR\" 0 4 23, +C4<00000000000000000000000001000000>;",
+      "P_00000180d7f47110 .param/l \"WINDOW_LOG2\" 0 4 22, +C4<00000000000000000000000000000010>;",
+      "P_00000180d7f47148 .param/l \"WINDOW_SAMPLES\" 1 4 37, +C4<00000000000000000000000000000100>;",
+      "S_00000180d83d7380 .scope function.vec4.s8, \"amplitude_curve\" \"amplitude_curve\" 4 61, 4 61 0, S_00000180d7f4b5c0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_ring_gate_margin.sv",
+    "src/audio_level_meter.v",
+    "src/sk9822_ring.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_ring_gate_margin.sv",
+    "src/audio_level_meter.v",
+    "src/sk9822_ring.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

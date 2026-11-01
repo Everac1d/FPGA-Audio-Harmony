@@ -1,0 +1,2 @@
+PASS LONG_STATUS_UART checks=3389 bytes=843 debug_bytes=843 pairs_each=3 R6_bytes=117 D3_bytes=164 versions33105_33106 atomic_all_fields counts_above21bit full32bit_raw negative_pitch_second reset
+sim/tb_long_status_uart.sv:116: $finish called at 445736000 (1ps)

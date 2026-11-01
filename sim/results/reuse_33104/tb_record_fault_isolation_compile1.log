@@ -1,0 +1,58 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module audio_effect_core declared here: src\audio_effect_core.v:6
+       :   -- module audio_external_controls declared here: src\audio_external_controls.v:4
+       :   -- module audio_harmony_controls declared here: src\audio_harmony_controls.v:4
+       :   -- module audio_harmony_core declared here: src\audio_harmony_core.v:6
+       :   -- module audio_harmony_engine declared here: src\audio_harmony_engine.v:3
+       :   -- module audio_harmony_lcd_display declared here: src\audio_harmony_lcd_display.v:2
+       :   -- module audio_lcd_display declared here: src\audio_lcd_display.v:2
+       :   -- module audio_lcd_dual_display declared here: src\audio_lcd_dual_display.v:2
+       :   -- module audio_level_meter declared here: src\audio_level_meter.v:21
+       :   -- module audio_panel_encoder declared here: src\audio_external_controls.v:174
+       :   -- module audio_record_ddr_top declared here: src\audio_record_ddr_top.v:2
+       :   -- module audio_record_engine declared here: src\audio_record_engine.v:3
+       :   -- module audio_record_keys declared here: src\audio_record_keys.v:7
+       :   -- module audio_ring_cal_meter declared here: src\audio_ring_cal_meter.v:22
+       :   -- module audio_ring_palette declared here: src\audio_ring_palette.v:3
+       :   -- module audio_test_clock declared here: src\audio_test_clock.v:3
+       :   -- module ddr_audio_bridge declared here: src\ddr_audio_bridge.v:6
+       :   -- module lcd_cjk16_font declared here: src\lcd_cjk16_font.v:3
+       :   -- module lcd_cjk24_font declared here: src\lcd_cjk24_font.v:5
+       :   -- module lcd_dashboard declared here: src\lcd_dashboard.v:5
+       :   -- module lcd_dual_dashboard declared here: src\lcd_dual_dashboard.v:5
+       :   -- module lcd_dual_status_snapshot declared here: src\lcd_dual_status_snapshot.v:4
+       :   -- module lcd_font5x7 declared here: src\lcd_font5x7.v:3
+       :   -- module lcd_harmony_cjk16_font declared here: src\lcd_harmony_cjk16_font.v:2
+       :   -- module lcd_harmony_cjk24_font declared here: src\lcd_harmony_cjk24_font.v:2
+       :   -- module lcd_harmony_dashboard declared here: src\lcd_harmony_dashboard.v:5
+       :   -- module lcd_harmony_status_snapshot declared here: src\lcd_harmony_status_snapshot.v:4
+       :   -- module lcd_rgb_timing declared here: src\lcd_rgb_timing.v:4
+       :   -- module lcd_status_snapshot declared here: src\lcd_status_snapshot.v:4
+       :   -- module mic_array_pcm declared here: src\mic_array_pcm.v:4
+       :   -- module mic_i2s_rx declared here: src\mic_i2s_rx.v:3
+       :   -- module pcm_clip_controller declared here: src\pcm_clip_controller.v:4
+       :   -- module pcm_crossfade declared here: src\pcm_crossfade.v:5
+       :   -- module pcm_dual_read_pitch declared here: src\pcm_dual_read_pitch.v:8
+       :   -- module pcm_harmony_mixer declared here: src\pcm_harmony_mixer.v:5
+       :   -- module pcm_harmony_read_pitch declared here: src\pcm_harmony_read_pitch.v:9
+       :   -- module pcm_harmony_voice_mixer declared here: src\pcm_harmony_voice_mixer.v:5
+       :   -- module pcm_long_clip_controller declared here: src\pcm_long_clip_controller.v:4
+       :   -- module pcm_monitor_guard declared here: src\pcm_monitor_guard.v:12
+       :   -- module pcm_output_queue declared here: src\pcm_output_queue.v:3
+       :   -- module pcm_voice_conditioner declared here: src\pcm_voice_conditioner.v:31
+       :   -- module pt8211_stereo_tx declared here: src\pt8211_stereo_tx.v:4
+       :   -- module record_long_status_uart declared here: src\record_long_status_uart.v:2
+       :   -- module record_status_uart declared here: src\record_status_uart.v:7
+       :   -- module sk9822_ring declared here: src\sk9822_ring.v:8
+       :   -- module status_ws2812 declared here: src\status_ws2812.v:2
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 5 (button_n) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 6 (enc_gain_sw_n) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 7 (enc_gain_clk) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 8 (enc_gain_dt) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 9 (enc_pitch_sw_n) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 10 (enc_pitch_clk) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Instantiating module audio_record_engine with dangling input port 11 (enc_pitch_dt) floating.
+sim/tb_record_fault_isolation.sv:21: warning: Port 45 (gain_index) of module audio_record_engine expects 5 bit(s), given 3.
+sim/tb_record_fault_isolation.sv:21:        : Padding 2 high bits of the port.

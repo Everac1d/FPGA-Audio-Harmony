@@ -1,0 +1,3 @@
+MEASURE MODE_RING palette_cases=2048 frames=2051 legacy_cyan_clock_samples=524031
+PASS MODE_RING checks=1942297 all_levels=256 masks=8 leds=12 atomic_color_level=1 legacy_cyan_equivalent=1
+sim/tb_mode_ring.sv:172: $finish called at 84006151000 (1ps)

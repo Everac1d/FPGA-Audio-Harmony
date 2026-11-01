@@ -1,0 +1,11 @@
+sim/tb_ring_calibration_lcd.sv:3: warning: timescale for tb_ring_calibration_lcd inherited from another file.
+./sim/tb_harmony_lcd.sv:1: ...: The inherited timescale is here.
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module audio_harmony_lcd_display declared here: src/audio_harmony_lcd_display.v:2
+       :   -- module lcd_harmony_cjk16_font declared here: src/lcd_harmony_cjk16_font.v:2
+       :   -- module lcd_harmony_cjk24_font declared here: src/lcd_harmony_cjk24_font.v:2
+       :   -- module lcd_harmony_dashboard declared here: src/lcd_harmony_dashboard.v:5
+       :   -- module lcd_harmony_status_snapshot declared here: src/lcd_harmony_status_snapshot.v:4
+       :   -- module lcd_rgb_timing declared here: src/lcd_rgb_timing.v:4

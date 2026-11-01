@@ -1,0 +1,2 @@
+PASS RING_GATE_MARGIN checks=131628 windows=32908 magnitudes=32769 serial_frames=10 margin=32_to_24 floor=64 curve_release_unchanged=1
+sim/tb_ring_gate_margin.sv:155: $finish called at 5332911000 (1ps)

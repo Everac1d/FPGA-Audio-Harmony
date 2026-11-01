@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project><Template>FPGA</Template><Version>5</Version>
+<Device name="GW5AST-138B" pn="GW5AST-LV138PG484AC1/I0">gw5ast138b-011</Device>
+<FileList>
+<File path="src/audio_record_ddr_top.v" type="file.verilog" enable="1"/>
+<File path="src/audio_record_engine.v" type="file.verilog" enable="1"/>
+<File path="src/audio_record_keys.v" type="file.verilog" enable="1"/>
+<File path="src/audio_external_controls.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_clip_controller.v" type="file.verilog" enable="1"/>
+<File path="src/ddr_audio_bridge.v" type="file.verilog" enable="1"/>
+<File path="src/record_status_uart.v" type="file.verilog" enable="1"/>
+<File path="src/audio_test_clock.v" type="file.verilog" enable="1"/>
+<File path="src/mic_array_pcm.v" type="file.verilog" enable="1"/>
+<File path="src/mic_i2s_rx.v" type="file.verilog" enable="1"/>
+<File path="src/audio_effect_core.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_dual_read_pitch.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_crossfade.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_harmony_mixer.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_voice_conditioner.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_output_queue.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_monitor_guard.v" type="file.verilog" enable="1"/>
+<File path="src/pt8211_stereo_tx.v" type="file.verilog" enable="1"/>
+<File path="src/audio_level_meter.v" type="file.verilog" enable="1"/>
+<File path="src/audio_ring_palette.v" type="file.verilog" enable="1"/>
+<File path="src/sk9822_ring.v" type="file.verilog" enable="1"/>
+<File path="src/status_ws2812.v" type="file.verilog" enable="1"/>
+<File path="ip/record_ddr3_memory.v" type="file.verilog" enable="1"/>
+<File path="ip/ddr3/record_ddr3_core/record_ddr3_core.v" type="file.verilog" enable="1"/>
+<File path="ip/pll/record_ddr3_pll/record_ddr3_pll.v" type="file.verilog" enable="1"/>
+<File path="ip/pll/record_ddr3_pll/record_ddr3_pll_mod.v" type="file.verilog" enable="1"/>
+<File path="ip/pll/pll_init.v" type="file.verilog" enable="1"/>
+<File path="constraints/audio_record_ddr.cst" type="file.cst" enable="1"/>
+<File path="constraints/audio_speaker.sdc" type="file.sdc" enable="1"/>
+<File path="src/audio_lcd_display.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_rgb_timing.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_status_snapshot.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_dashboard.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_font5x7.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_cjk24_font.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_cjk16_font.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_dual_status_snapshot.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_dual_dashboard.v" type="file.verilog" enable="1"/>
+<File path="src/audio_lcd_dual_display.v" type="file.verilog" enable="1"/>
+<File path="src/audio_harmony_controls.v" type="file.verilog" enable="1"/>
+<File path="src/audio_harmony_core.v" type="file.verilog" enable="1"/>
+<File path="src/audio_harmony_engine.v" type="file.verilog" enable="1"/>
+<File path="src/audio_harmony_lcd_display.v" type="file.verilog" enable="1"/>
+<File path="src/audio_ring_cal_meter.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_harmony_cjk16_font.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_harmony_cjk24_font.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_harmony_dashboard.v" type="file.verilog" enable="1"/>
+<File path="src/lcd_harmony_status_snapshot.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_harmony_read_pitch.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_harmony_voice_mixer.v" type="file.verilog" enable="1"/>
+<File path="src/pcm_long_clip_controller.v" type="file.verilog" enable="1"/>
+<File path="src/record_long_status_uart.v" type="file.verilog" enable="1"/>
+<File path="src/audio_harmony_engine_tuned.v" type="file.verilog" enable="1"/>
+<File path="src/sk9822_ring_softlow.v" type="file.verilog" enable="1"/>
+</FileList></Project>

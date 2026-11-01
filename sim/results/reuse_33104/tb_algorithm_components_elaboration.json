@@ -1,0 +1,175 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_algorithm_components.sv",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_algorithm_components",
+        "Type": "tb_algorithm_components",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_algorithm_components.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_algorithm_components"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 10,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.fade.round_q15"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mix",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 11,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.mix"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.mix.saturated_q15"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_algorithm_components.sv",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002147fa86560 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002147f77b7d0 .scope module, \"tb_algorithm_components\" \"tb_algorithm_components\" 3 2;",
+      "S_00000214002181a0 .scope module, \"fade\" \"pcm_crossfade\" 3 10, 4 5 0, S_000002147f77b7d0;",
+      "S_000002147f80e360 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 4 23, 4 23 0, S_00000214002181a0;",
+      "S_000002147fb28a50 .scope module, \"mix\" \"pcm_harmony_mixer\" 3 11, 5 5 0, S_000002147f77b7d0;",
+      "S_000002147fb28be0 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 5 19, 5 19 0, S_000002147fb28a50;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_algorithm_components.sv",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_algorithm_components",
+        "Type": "tb_algorithm_components",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_algorithm_components.sv",
+        "DefinitionLine": 2,
+        "Parameters": [],
+        "Path": "tb_algorithm_components"
+      },
+      {
+        "Kind": "module",
+        "Instance": "fade",
+        "Type": "pcm_crossfade",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 10,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.fade"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "round_q15",
+        "Type": "round_q15",
+        "InstantiationSource": "src/pcm_crossfade.v",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_crossfade.v",
+        "DefinitionLine": 23,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.fade.round_q15"
+      },
+      {
+        "Kind": "module",
+        "Instance": "mix",
+        "Type": "pcm_harmony_mixer",
+        "InstantiationSource": "sim/tb_algorithm_components.sv",
+        "InstantiationLine": 11,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 5,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.mix"
+      },
+      {
+        "Kind": "function.vec4.u16",
+        "Instance": "saturated_q15",
+        "Type": "saturated_q15",
+        "InstantiationSource": "src/pcm_harmony_mixer.v",
+        "InstantiationLine": 19,
+        "DefinitionSource": "src/pcm_harmony_mixer.v",
+        "DefinitionLine": 19,
+        "Parameters": [],
+        "Path": "tb_algorithm_components.mix.saturated_q15"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_algorithm_components.sv",
+      "src/pcm_crossfade.v",
+      "src/pcm_harmony_mixer.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000001af9351bbb0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000001af939de970 .scope module, \"tb_algorithm_components\" \"tb_algorithm_components\" 3 2;",
+      "S_000001af939de200 .scope module, \"fade\" \"pcm_crossfade\" 3 10, 4 5 0, S_000001af939de970;",
+      "S_000001af937fa460 .scope function.vec4.u16, \"round_q15\" \"round_q15\" 4 23, 4 23 0, S_000001af939de200;",
+      "S_000001af937fa5f0 .scope module, \"mix\" \"pcm_harmony_mixer\" 3 11, 5 5 0, S_000001af939de970;",
+      "S_000001af937fa780 .scope function.vec4.u16, \"saturated_q15\" \"saturated_q15\" 5 19, 5 19 0, S_000001af937fa5f0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_algorithm_components.sv",
+    "src/pcm_crossfade.v",
+    "src/pcm_harmony_mixer.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_algorithm_components.sv",
+    "src/pcm_crossfade.v",
+    "src/pcm_harmony_mixer.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

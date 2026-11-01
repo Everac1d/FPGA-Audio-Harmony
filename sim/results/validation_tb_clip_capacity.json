@@ -1,0 +1,44 @@
+{
+  "Passed": true,
+  "Case": "tb_clip_capacity",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 0.0,
+  "SourceHashes": {
+    "sim/fixtures/components.txt": "279A8D46C4EB1EC41E62FFDB4AA710F882337D46735949799F885F803CD0407A",
+    "sim/fixtures/core_reference.txt": "B3C92858D6DB73BD9120A348F18A2A52B41573B331B4B14A15F67F5623CCB2AC",
+    "sim/fixtures/lcd_dashboard_33002_reference.v": "53895901B5EEE337F10368D2C4397488BC02E3CF151AA6646AFFC35E336FFFE0",
+    "sim/fixtures/mixer.txt": "E8A4E6EAE38C79942CEAB142FD63F8C923FBBC696F5320C210FFDB7F7B021D0A",
+    "sim/fixtures/sk9822_ring_32503.v": "5F42AAA4A38B68DCF72388767114D421CF47D249DF73361999DEB6A2F6264503",
+    "sim/run.py": "FC7A6D5BACF4FB5A21F12B132269020ADF158F53AC51D005F571E3D80B85B979",
+    "sim/tb_clip_capacity.sv": "D76599899C9430ECC49F8FA49D113D483F8255062608FDFE50ECDB5F85557115",
+    "src/lcd_cjk16.mem": "C38DA1AA25DD19309F707FC2DBE06C8DE87B129C4194664F7C8DC3A758DDB359",
+    "src/lcd_cjk24.mem": "30BB82223A027FE0FDEC82DFC52BCD67285E50505CF3E78DB4DAACE47A4FA78B",
+    "src/lcd_footer_text.vh": "ACBE2D620833EECA22EAB6E2B315B275158E1492FD9E11B9797834E0EF8E0C5C",
+    "src/lcd_ui_text.vh": "37478F08459484D3B1F11CFD689683B6D73A71D4A97BEFAAE5AAE99B9FE16AD6",
+    "src/pcm_clip_controller.v": "DC49CAD3C10754E5A272EEF1FE0B3EBD9029B397DD340D6905386F2FBAE5D30D"
+  },
+  "Summary": [
+    "MEASURE CLIP_CAPACITY capture_samples=1464844 blocks=91553 last_app_address=732416 valid_last_lanes=12 zero_last_lanes=4 bytes=2929688 actual_duration_s=30.00000512",
+    "MEASURE CLIP_CAPACITY full_bit_exact_samples=1464844 read_blocks=91553",
+    "PASS CLIP_CAPACITY: max_samples=1464844 full_bit_exact_samples=1464844 total_bit_exact_samples=1464941 full_blocks=91553 final_address=732416 source_abort_preserved short_overwrite=37 repeat_short=2 accelerated_tick_clocks=16 reduced_roll_only"
+  ],
+  "HardwareValidated": false,
+  "ReusedFromUserCode": "0x00033104",
+  "RuntimeExecutedThisRelease": false,
+  "OriginalRuntimeSeconds": 208.81313753128052,
+  "CurrentElaborationComplete": true,
+  "CurrentElaborationSeconds": 0.18800000000010186,
+  "OriginalReportPath": "baseline_33104_evidence/results/validation_tb_clip_capacity.json",
+  "OriginalReportSHA256": "F889DAADEBC15FFB582FDE6E1FA53CC0F8C68B1DAFCA9C6B6CFADB7ACEED2B88",
+  "OriginalLogPath": "baseline_33104_evidence/results/tb_clip_capacity.log",
+  "OriginalLogSHA256": "EE55F32B7886B9624CE8FF2FEE843C2D4FCDC5F8FD84A713FB1DEC75AD94B68B",
+  "DependencyProofPath": "sim/results/reuse_33104/tb_clip_capacity_dependency_proof.json",
+  "DependencyProofSHA256": "2A567E969FBE4EA49D09C838FC41A1591A6FE1F49D77C59E1AA4A83E53AF6FE7"
+}

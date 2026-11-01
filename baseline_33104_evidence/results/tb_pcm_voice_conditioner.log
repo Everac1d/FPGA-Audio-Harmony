@@ -1,0 +1,16 @@
+PASS reset midstream, latency, hold-on-invalid and no X
+PASS 512 consecutive versus irregular valid-gap samples: exact parity
+DC +20000 final=0 PCM
+DC -30000 final=0 PCM
+RESPONSE Hz=100.0 measured=-2.7058 dB analytic=-2.7004 dB
+RESPONSE Hz=300.0 measured=-0.4642 dB analytic=-0.4643 dB
+RESPONSE Hz=1000.0 measured=-0.3707 dB analytic=-0.3701 dB
+RESPONSE Hz=3000.0 measured=-2.2968 dB analytic=-2.2965 dB
+RESPONSE Hz=6000.0 measured=-6.6372 dB analytic=-6.6368 dB
+RESPONSE Hz=10000.0 measured=-11.8268 dB analytic=-11.8265 dB
+RESPONSE Hz=18000.0 measured=-17.7964 dB analytic=-17.7960 dB
+PASS subthreshold 40-PCM sine remains muted
+PASS 64-sample attack, 100-Hz nonchatter, >=4096 hold, 256-sample release
+PASS signed rails, both saturation polarities, alternating full-scale input
+ALL pcm_voice_conditioner TESTS PASSED (316139 clock cycles)
+sim/tb_pcm_voice_conditioner.sv:227: $finish called at 6322772000 (1ps)

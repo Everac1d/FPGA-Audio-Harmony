@@ -1,0 +1,30 @@
+{
+  "Passed": true,
+  "Case": "tb_ring_softlow",
+  "CompileExitCodes": [
+    0
+  ],
+  "CompileArtifactsComplete": [
+    true
+  ],
+  "ExecutableComplete": true,
+  "RuntimeExitCode": 0,
+  "Seconds": 0,
+  "SourceHashes": {
+    "src/sk9822_ring_softlow.v": "80224AA6AF4362AE554E0E378525F6F424F23CDF7CA72F1007BCE15279EFBB79",
+    "src/sk9822_ring.v": "72139CC03FC512BC33654D143AE22BE8BF1004B3E00320C8F1367A22B1E7D532",
+    "src/audio_ring_cal_meter.v": "B1B57A8E1E80ADF39D455DCD97C009A7510DD9CB365E7D8A7A3C2FA27D164C7F",
+    "sim/tb_ring_softlow.sv": "2AC47AE69484830C9D33E54F5EC7CECC4922FFD226EA7AD332D9E1CC2F9D9D8C",
+    "sim/run_ring_softlow.py": "3B4BF3778E1751B63DA09C5ABB1E5D2EC3906C5AD04DBA1BDA9577594F14E1C8"
+  },
+  "Summary": [
+    "PASS RING_SOFTLOW checks=3553917 frames=2051 decoded_bits=918848 legacy_high_bits=689024 meter_cycles=7985 calibrations=6 all256x8_masks atomic_midframe reset min_half monotonic fixed_minus2000_gate610"
+  ],
+  "HardwareValidated": false,
+  "SharedCurrentExecutionFrom": "0x00033107",
+  "RuntimeExecutedForThisProject": false,
+  "RuntimeExecutedThisRelease": false,
+  "OriginalRuntimeSeconds": 9.80313515663147,
+  "OriginalSharedReportPath": "baseline_33107_evidence/validation_tb_ring_softlow.json",
+  "OriginalSharedReportSHA256": "2175A4A805961B8FE1BF650D10193101C0AF75CA870F98AA5D4241FD48FB00FF"
+}

@@ -1,0 +1,2 @@
+PASS COMPONENTS: crossfade_vectors=143076 mixer_vectors=40000 all32769weights signed_rails unity_invariance pipeline_reset
+sim/tb_algorithm_components.sv:59: $finish called at 2862000000 (1ps)

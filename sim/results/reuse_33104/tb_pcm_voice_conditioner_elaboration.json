@@ -1,0 +1,911 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_pcm_voice_conditioner.sv",
+      "src/pcm_voice_conditioner.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_pcm_voice_conditioner",
+        "Type": "tb_pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 2,
+        "Parameters": [
+          {
+            "Kind": "real",
+            "Name": "FS",
+            "Signed": 1,
+            "Source": "sim/tb_pcm_voice_conditioner.sv",
+            "Line": 3,
+            "Value": "Cr<m5f5e100000000000gfd1>"
+          },
+          {
+            "Kind": "real",
+            "Name": "PI",
+            "Signed": 1,
+            "Source": "sim/tb_pcm_voice_conditioner.sv",
+            "Line": 4,
+            "Value": "Cr<m6487ed5110b46000gfc3>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner"
+      },
+      {
+        "Kind": "module",
+        "Instance": "bypass",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 12,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.bypass"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.bypass.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 11,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.dut"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.dut.count_bits"
+      },
+      {
+        "Kind": "task",
+        "Instance": "flush",
+        "Type": "flush",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 84,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 84,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.flush"
+      },
+      {
+        "Kind": "module",
+        "Instance": "parity_a",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.parity_a"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.parity_a.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "parity_b",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.parity_b"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.parity_b.count_bits"
+      },
+      {
+        "Kind": "task",
+        "Instance": "reset_main",
+        "Type": "reset_main",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 75,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 75,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.reset_main"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tick",
+        "Type": "tick",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 69,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 69,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.tick"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tone",
+        "Type": "tone",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 87,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 87,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.tone"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_pcm_voice_conditioner.sv",
+      "src/pcm_voice_conditioner.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000021a68a3ee10 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_0000021a684059b0 .scope module, \"tb_pcm_voice_conditioner\" \"tb_pcm_voice_conditioner\" 3 2;",
+      "P_0000021a689873e0 .param/real \"FS\" 1 3 3, Cr<m5f5e100000000000gfd1>; value=48828.1",
+      "P_0000021a68987418 .param/real \"PI\" 1 3 4, Cr<m6487ed5110b46000gfc3>; value=3.14159",
+      "S_0000021a688525a0 .scope module, \"bypass\" \"pcm_voice_conditioner\" 3 12, 4 31 0, S_0000021a684059b0;",
+      "P_0000021a68a34750 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000021a68a34788 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000021a68a347c0 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000000>;",
+      "P_0000021a68a347f8 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000021a68a34830 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000021a68a34868 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000021a68a348a0 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000021a67fec720 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000021a688525a0;",
+      "S_0000021a68b64be0 .scope module, \"dut\" \"pcm_voice_conditioner\" 3 11, 4 31 0, S_0000021a684059b0;",
+      "P_0000021a67feaeb0 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000021a67feaee8 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000021a67feaf20 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000021a67feaf58 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000021a67feaf90 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000021a67feafc8 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000021a67feb000 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000021a6807e7c0 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000021a68b64be0;",
+      "S_0000021a68b3d490 .scope task, \"flush\" \"flush\" 3 84, 3 84 0, S_0000021a684059b0;",
+      "S_0000021a68b629b0 .scope module, \"parity_a\" \"pcm_voice_conditioner\" 3 21, 4 31 0, S_0000021a684059b0;",
+      "P_0000021a68b62b40 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000021a68b62b78 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000021a68b62bb0 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000021a68b62be8 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000021a68b62c20 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000021a68b62c58 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000021a68b62c90 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000021a68448b50 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000021a68b629b0;",
+      "S_0000021a68448ce0 .scope module, \"parity_b\" \"pcm_voice_conditioner\" 3 23, 4 31 0, S_0000021a684059b0;",
+      "P_0000021a68448e70 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000021a68448ea8 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000021a68448ee0 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000021a68448f18 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000021a68448f50 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000021a68448f88 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000021a68448fc0 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000021a683d1ee0 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000021a68448ce0;",
+      "S_0000021a68bb39f0 .scope task, \"reset_main\" \"reset_main\" 3 75, 3 75 0, S_0000021a684059b0;",
+      "S_0000021a68bb3ea0 .scope task, \"tick\" \"tick\" 3 69, 3 69 0, S_0000021a684059b0;",
+      "S_0000021a68bb3090 .scope task, \"tone\" \"tone\" 3 87, 3 87 0, S_0000021a684059b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_pcm_voice_conditioner.sv",
+      "src/pcm_voice_conditioner.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_pcm_voice_conditioner",
+        "Type": "tb_pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 2,
+        "Parameters": [
+          {
+            "Kind": "real",
+            "Name": "FS",
+            "Signed": 1,
+            "Source": "sim/tb_pcm_voice_conditioner.sv",
+            "Line": 3,
+            "Value": "Cr<m5f5e100000000000gfd1>"
+          },
+          {
+            "Kind": "real",
+            "Name": "PI",
+            "Signed": 1,
+            "Source": "sim/tb_pcm_voice_conditioner.sv",
+            "Line": 4,
+            "Value": "Cr<m6487ed5110b46000gfc3>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner"
+      },
+      {
+        "Kind": "module",
+        "Instance": "bypass",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 12,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.bypass"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.bypass.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 11,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.dut"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.dut.count_bits"
+      },
+      {
+        "Kind": "task",
+        "Instance": "flush",
+        "Type": "flush",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 84,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 84,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.flush"
+      },
+      {
+        "Kind": "module",
+        "Instance": "parity_a",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.parity_a"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.parity_a.count_bits"
+      },
+      {
+        "Kind": "module",
+        "Instance": "parity_b",
+        "Type": "pcm_voice_conditioner",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 23,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 31,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLOSE_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 61,
+            "Value": "C4<00000000000000000100000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_CLOSE_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 34,
+            "Value": "+C4<00000000000000000000000001000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_ENABLE",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 32,
+            "Value": "+C4<00000000000000000000000000000001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_HOLD_SAMPLES",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 35,
+            "Value": "+C4<00000000000000000001000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "GATE_OPEN_THRESHOLD",
+            "Signed": 0,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 33,
+            "Value": "+C4<00000000000000000000000010000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "HOLD_BITS",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 59,
+            "Value": "+C4<00000000000000000000000000001101>"
+          },
+          {
+            "Kind": "l",
+            "Name": "OPEN_Q8",
+            "Signed": 1,
+            "Source": "src/pcm_voice_conditioner.v",
+            "Line": 60,
+            "Value": "C4<00000000000000001000000000000000>"
+          }
+        ],
+        "Path": "tb_pcm_voice_conditioner.parity_b"
+      },
+      {
+        "Kind": "function.vec4.u32",
+        "Instance": "count_bits",
+        "Type": "count_bits",
+        "InstantiationSource": "src/pcm_voice_conditioner.v",
+        "InstantiationLine": 44,
+        "DefinitionSource": "src/pcm_voice_conditioner.v",
+        "DefinitionLine": 44,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.parity_b.count_bits"
+      },
+      {
+        "Kind": "task",
+        "Instance": "reset_main",
+        "Type": "reset_main",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 75,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 75,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.reset_main"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tick",
+        "Type": "tick",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 69,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 69,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.tick"
+      },
+      {
+        "Kind": "task",
+        "Instance": "tone",
+        "Type": "tone",
+        "InstantiationSource": "sim/tb_pcm_voice_conditioner.sv",
+        "InstantiationLine": 87,
+        "DefinitionSource": "sim/tb_pcm_voice_conditioner.sv",
+        "DefinitionLine": 87,
+        "Parameters": [],
+        "Path": "tb_pcm_voice_conditioner.tone"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_pcm_voice_conditioner.sv",
+      "src/pcm_voice_conditioner.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000016747edd370 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_00000167477eb6e0 .scope module, \"tb_pcm_voice_conditioner\" \"tb_pcm_voice_conditioner\" 3 2;",
+      "P_0000016747edb120 .param/real \"FS\" 1 3 3, Cr<m5f5e100000000000gfd1>; value=48828.1",
+      "P_0000016747edb158 .param/real \"PI\" 1 3 4, Cr<m6487ed5110b46000gfc3>; value=3.14159",
+      "S_0000016747f767f0 .scope module, \"bypass\" \"pcm_voice_conditioner\" 3 12, 4 31 0, S_00000167477eb6e0;",
+      "P_0000016747f102a0 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000016747f102d8 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000016747f10310 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000000>;",
+      "P_0000016747f10348 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000016747f10380 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000016747f103b8 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000016747f103f0 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000016747f5c2f0 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000016747f767f0;",
+      "S_0000016747f77e70 .scope module, \"dut\" \"pcm_voice_conditioner\" 3 11, 4 31 0, S_00000167477eb6e0;",
+      "P_0000016747f78000 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000016747f78038 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000016747f78070 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000016747f780a8 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000016747f780e0 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000016747f78118 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000016747f78150 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000016747c13110 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000016747f77e70;",
+      "S_0000016747c132a0 .scope task, \"flush\" \"flush\" 3 84, 3 84 0, S_00000167477eb6e0;",
+      "S_0000016747c13430 .scope module, \"parity_a\" \"pcm_voice_conditioner\" 3 21, 4 31 0, S_00000167477eb6e0;",
+      "P_0000016747aed4c0 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000016747aed4f8 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000016747aed530 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000016747aed568 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000016747aed5a0 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000016747aed5d8 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000016747aed610 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000016747aed650 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000016747c13430;",
+      "S_0000016747aed7e0 .scope module, \"parity_b\" \"pcm_voice_conditioner\" 3 23, 4 31 0, S_00000167477eb6e0;",
+      "P_0000016747aecf50 .param/l \"CLOSE_Q8\" 1 4 61, C4<00000000000000000100000000000000>;",
+      "P_0000016747aecf88 .param/l \"GATE_CLOSE_THRESHOLD\" 0 4 34, +C4<00000000000000000000000001000000>;",
+      "P_0000016747aecfc0 .param/l \"GATE_ENABLE\" 0 4 32, +C4<00000000000000000000000000000001>;",
+      "P_0000016747aecff8 .param/l \"GATE_HOLD_SAMPLES\" 0 4 35, +C4<00000000000000000001000000000000>;",
+      "P_0000016747aed030 .param/l \"GATE_OPEN_THRESHOLD\" 0 4 33, +C4<00000000000000000000000010000000>;",
+      "P_0000016747aed068 .param/l \"HOLD_BITS\" 1 4 59, +C4<00000000000000000000000000001101>;",
+      "P_0000016747aed0a0 .param/l \"OPEN_Q8\" 1 4 60, C4<00000000000000001000000000000000>;",
+      "S_0000016747fc3210 .scope function.vec4.u32, \"count_bits\" \"count_bits\" 4 44, 4 44 0, S_0000016747aed7e0;",
+      "S_0000016747fc33a0 .scope task, \"reset_main\" \"reset_main\" 3 75, 3 75 0, S_00000167477eb6e0;",
+      "S_0000016747fc3080 .scope task, \"tick\" \"tick\" 3 69, 3 69 0, S_00000167477eb6e0;",
+      "S_0000016747fc36c0 .scope task, \"tone\" \"tone\" 3 87, 3 87 0, S_00000167477eb6e0;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_pcm_voice_conditioner.sv",
+    "src/pcm_voice_conditioner.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_pcm_voice_conditioner.sv",
+    "src/pcm_voice_conditioner.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

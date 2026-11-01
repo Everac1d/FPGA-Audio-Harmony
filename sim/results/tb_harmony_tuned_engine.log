@@ -1,0 +1,2 @@
+PASS HARMONY_TUNED_ENGINE grain=6 dual=1 checks=34273693 clip=2601 raw_inputs=3235 DAC=11584 nonzero=4633 safe_commits=9 pause_resume no_skip config_continue fine_gain unified_harmony0_0 independent_voice_selection second_pitch_commit ring_tune_no_audio_change paused_ring_tune source_fault_isolation
+sim/tb_harmony_tuned_engine.sv:316: $finish called at 237240680000 (1ps)

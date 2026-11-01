@@ -1,0 +1,2 @@
+PASS DUAL_VOICE_SPECTRUM production_grain8192 sample_rate48828_125 input440Hz pitches4_7 actual_RTL_samples=44768 captured=32768 two_voice_mix_exact
+sim/tb_dual_voice_spectrum.sv:29: $finish called at 28652400000 (1ps)

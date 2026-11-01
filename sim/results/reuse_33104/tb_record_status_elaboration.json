@@ -1,0 +1,563 @@
+{
+  "Current": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_record_status.sv",
+      "src/record_status_uart.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_record_status",
+        "Type": "tb_record_status",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 2,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLKS",
+            "Signed": 1,
+            "Source": "sim/tb_record_status.sv",
+            "Line": 3,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT",
+            "Signed": 1,
+            "Source": "sim/tb_record_status.sv",
+            "Line": 3,
+            "Value": "+C4<00000000000000000001001110001000>"
+          }
+        ],
+        "Path": "tb_record_status"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 28,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 28,
+        "Parameters": [],
+        "Path": "tb_record_status.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_record_status.clocks"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "record_status_uart",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000001111101000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000111110100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000001001110001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001100111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010100100000001>"
+          }
+        ],
+        "Path": "tb_record_status.dut"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.report_byte"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_byte",
+        "Type": "receive_byte",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 34,
+        "Parameters": [],
+        "Path": "tb_record_status.receive_byte"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_line",
+        "Type": "receive_line",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 45,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 45,
+        "Parameters": [],
+        "Path": "tb_record_status.receive_line"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_record_status.sv",
+      "src/record_status_uart.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_000002428f0358b0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_000002428f4831b0 .scope module, \"tb_record_status\" \"tb_record_status\" 3 2;",
+      "P_000002428f5b7460 .param/l \"CLKS\" 1 3 3, +C4<00000000000000000000000000000100>;",
+      "P_000002428f5b7498 .param/l \"REPORT\" 1 3 3, +C4<00000000000000000001001110001000>;",
+      "S_000002428ec4e6d0 .scope task, \"check\" \"check\" 3 28, 3 28 0, S_000002428f4831b0;",
+      "S_000002428ebbbab0 .scope task, \"clocks\" \"clocks\" 3 31, 3 31 0, S_000002428f4831b0;",
+      "S_000002428f6eece0 .scope module, \"dut\" \"record_status_uart\" 3 21, 4 7 0, S_000002428f4831b0;",
+      "P_000002428f6f6d10 .param/l \"BAUD\" 0 4 9, +C4<00000000000000000000001111101000>;",
+      "P_000002428f6f6d48 .param/l \"CLKS_PER_BIT\" 1 4 36, +C4<00000000000000000000000000000100>;",
+      "P_000002428f6f6d80 .param/l \"CLK_HZ\" 0 4 8, +C4<00000000000000000000111110100000>;",
+      "P_000002428f6f6db8 .param/l \"DATA\" 1 4 37, C4<011>;",
+      "P_000002428f6f6df0 .param/l \"DUAL_VOICE_ENABLE\" 0 4 12, +C4<00000000000000000000000000000000>;",
+      "P_000002428f6f6e28 .param/l \"FINE_GAIN\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_000002428f6f6e60 .param/l \"IDLE\" 1 4 37, C4<000>;",
+      "P_000002428f6f6e98 .param/l \"LOAD\" 1 4 37, C4<001>;",
+      "P_000002428f6f6ed0 .param/l \"REPORT_CYCLES\" 0 4 10, +C4<00000000000000000001001110001000>;",
+      "P_000002428f6f6f08 .param/l \"START\" 1 4 37, C4<010>;",
+      "P_000002428f6f6f40 .param/l \"STATUS_BYTES\" 1 4 120, +C4<00000000000000000000000001100111>;",
+      "P_000002428f6f6f78 .param/l \"STOP\" 1 4 37, C4<100>;",
+      "P_000002428f6f6fb0 .param/l \"USER_CODE\" 0 4 13, C4<00000000000000110010100100000001>;",
+      "S_000002428f6f6ff0 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 4 57, 4 57 0, S_000002428f6eece0;",
+      "S_000002428f6eee70 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 4 53, 4 53 0, S_000002428f6eece0;",
+      "S_000002428f6ec160 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 4 78, 4 78 0, S_000002428f6eece0;",
+      "S_000002428f0b7cc0 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 4 121, 4 121 0, S_000002428f6eece0;",
+      "S_000002428f06dd30 .scope task, \"receive_byte\" \"receive_byte\" 3 34, 3 34 0, S_000002428f4831b0;",
+      "S_000002428f06dec0 .scope task, \"receive_line\" \"receive_line\" 3 45, 3 45 0, S_000002428f4831b0;"
+    ]
+  },
+  "Original": {
+    "CompilerStamp": "\"13.0 (stable)\" \"(v13_0)\"",
+    "Dependencies": [
+      "sim/tb_record_status.sv",
+      "src/record_status_uart.v"
+    ],
+    "Scopes": [
+      {
+        "Kind": "module",
+        "Instance": "tb_record_status",
+        "Type": "tb_record_status",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 2,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 2,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "CLKS",
+            "Signed": 1,
+            "Source": "sim/tb_record_status.sv",
+            "Line": 3,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT",
+            "Signed": 1,
+            "Source": "sim/tb_record_status.sv",
+            "Line": 3,
+            "Value": "+C4<00000000000000000001001110001000>"
+          }
+        ],
+        "Path": "tb_record_status"
+      },
+      {
+        "Kind": "task",
+        "Instance": "check",
+        "Type": "check",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 28,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 28,
+        "Parameters": [],
+        "Path": "tb_record_status.check"
+      },
+      {
+        "Kind": "task",
+        "Instance": "clocks",
+        "Type": "clocks",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 31,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 31,
+        "Parameters": [],
+        "Path": "tb_record_status.clocks"
+      },
+      {
+        "Kind": "module",
+        "Instance": "dut",
+        "Type": "record_status_uart",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 21,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 7,
+        "Parameters": [
+          {
+            "Kind": "l",
+            "Name": "BAUD",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 9,
+            "Value": "+C4<00000000000000000000001111101000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLKS_PER_BIT",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 36,
+            "Value": "+C4<00000000000000000000000000000100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "CLK_HZ",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 8,
+            "Value": "+C4<00000000000000000000111110100000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DATA",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<011>"
+          },
+          {
+            "Kind": "l",
+            "Name": "DUAL_VOICE_ENABLE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 12,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "FINE_GAIN",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 11,
+            "Value": "+C4<00000000000000000000000000000000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "IDLE",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "LOAD",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<001>"
+          },
+          {
+            "Kind": "l",
+            "Name": "REPORT_CYCLES",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 10,
+            "Value": "+C4<00000000000000000001001110001000>"
+          },
+          {
+            "Kind": "l",
+            "Name": "START",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<010>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STATUS_BYTES",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 120,
+            "Value": "+C4<00000000000000000000000001100111>"
+          },
+          {
+            "Kind": "l",
+            "Name": "STOP",
+            "Signed": 1,
+            "Source": "src/record_status_uart.v",
+            "Line": 37,
+            "Value": "C4<100>"
+          },
+          {
+            "Kind": "l",
+            "Name": "USER_CODE",
+            "Signed": 0,
+            "Source": "src/record_status_uart.v",
+            "Line": 13,
+            "Value": "C4<00000000000000110010100100000001>"
+          }
+        ],
+        "Path": "tb_record_status.dut"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "failure_byte",
+        "Type": "failure_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 57,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 57,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.failure_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "hex_ascii",
+        "Type": "hex_ascii",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 53,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 53,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.hex_ascii"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "legacy_report_byte",
+        "Type": "legacy_report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 78,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 78,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.legacy_report_byte"
+      },
+      {
+        "Kind": "function.vec4.s8",
+        "Instance": "report_byte",
+        "Type": "report_byte",
+        "InstantiationSource": "src/record_status_uart.v",
+        "InstantiationLine": 121,
+        "DefinitionSource": "src/record_status_uart.v",
+        "DefinitionLine": 121,
+        "Parameters": [],
+        "Path": "tb_record_status.dut.report_byte"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_byte",
+        "Type": "receive_byte",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 34,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 34,
+        "Parameters": [],
+        "Path": "tb_record_status.receive_byte"
+      },
+      {
+        "Kind": "task",
+        "Instance": "receive_line",
+        "Type": "receive_line",
+        "InstantiationSource": "sim/tb_record_status.sv",
+        "InstantiationLine": 45,
+        "DefinitionSource": "sim/tb_record_status.sv",
+        "DefinitionLine": 45,
+        "Parameters": [],
+        "Path": "tb_record_status.receive_line"
+      }
+    ],
+    "FilenameTable": [
+      "N/A",
+      "<interactive>",
+      "-",
+      "sim/tb_record_status.sv",
+      "src/record_status_uart.v"
+    ],
+    "RawScopeAndParameters": [
+      "S_0000015866b3e1d0 .scope package, \"$unit\" \"$unit\" 2 1;",
+      "S_00000158667b0190 .scope module, \"tb_record_status\" \"tb_record_status\" 3 2;",
+      "P_0000015866bb97c0 .param/l \"CLKS\" 1 3 3, +C4<00000000000000000000000000000100>;",
+      "P_0000015866bb97f8 .param/l \"REPORT\" 1 3 3, +C4<00000000000000000001001110001000>;",
+      "S_00000158667b2200 .scope task, \"check\" \"check\" 3 28, 3 28 0, S_00000158667b0190;",
+      "S_00000158667b2390 .scope task, \"clocks\" \"clocks\" 3 31, 3 31 0, S_00000158667b0190;",
+      "S_0000015866dfa860 .scope module, \"dut\" \"record_status_uart\" 3 21, 4 7 0, S_00000158667b0190;",
+      "P_0000015866dfa9f0 .param/l \"BAUD\" 0 4 9, +C4<00000000000000000000001111101000>;",
+      "P_0000015866dfaa28 .param/l \"CLKS_PER_BIT\" 1 4 36, +C4<00000000000000000000000000000100>;",
+      "P_0000015866dfaa60 .param/l \"CLK_HZ\" 0 4 8, +C4<00000000000000000000111110100000>;",
+      "P_0000015866dfaa98 .param/l \"DATA\" 1 4 37, C4<011>;",
+      "P_0000015866dfaad0 .param/l \"DUAL_VOICE_ENABLE\" 0 4 12, +C4<00000000000000000000000000000000>;",
+      "P_0000015866dfab08 .param/l \"FINE_GAIN\" 0 4 11, +C4<00000000000000000000000000000000>;",
+      "P_0000015866dfab40 .param/l \"IDLE\" 1 4 37, C4<000>;",
+      "P_0000015866dfab78 .param/l \"LOAD\" 1 4 37, C4<001>;",
+      "P_0000015866dfabb0 .param/l \"REPORT_CYCLES\" 0 4 10, +C4<00000000000000000001001110001000>;",
+      "P_0000015866dfabe8 .param/l \"START\" 1 4 37, C4<010>;",
+      "P_0000015866dfac20 .param/l \"STATUS_BYTES\" 1 4 120, +C4<00000000000000000000000001100111>;",
+      "P_0000015866dfac58 .param/l \"STOP\" 1 4 37, C4<100>;",
+      "P_0000015866dfac90 .param/l \"USER_CODE\" 0 4 13, C4<00000000000000110010100100000001>;",
+      "S_0000015866d04300 .scope function.vec4.s8, \"failure_byte\" \"failure_byte\" 4 57, 4 57 0, S_0000015866dfa860;",
+      "S_0000015866bfd140 .scope function.vec4.s8, \"hex_ascii\" \"hex_ascii\" 4 53, 4 53 0, S_0000015866dfa860;",
+      "S_0000015866bfd2d0 .scope function.vec4.s8, \"legacy_report_byte\" \"legacy_report_byte\" 4 78, 4 78 0, S_0000015866dfa860;",
+      "S_0000015866bfd460 .scope function.vec4.s8, \"report_byte\" \"report_byte\" 4 121, 4 121 0, S_0000015866dfa860;",
+      "S_0000015866bdeda0 .scope task, \"receive_byte\" \"receive_byte\" 3 34, 3 34 0, S_00000158667b0190;",
+      "S_0000015866bde620 .scope task, \"receive_line\" \"receive_line\" 3 45, 3 45 0, S_00000158667b0190;"
+    ]
+  },
+  "CurrentDependencyClosure": [
+    "sim/tb_record_status.sv",
+    "src/record_status_uart.v"
+  ],
+  "OriginalDependencyClosure": [
+    "sim/tb_record_status.sv",
+    "src/record_status_uart.v"
+  ],
+  "Note": "Filename indices resolved to source paths; scopes/parameters and recursive includes drive dependencies, not the complete filename table"
+}

@@ -1,0 +1,4 @@
+MEASURE CLIP_5MIN capture_samples=14648438 blocks=915528 last_app_address=7324216 valid_last_lanes=6 zero_last_lanes=10 bytes=29296876 actual_duration_s=300.00001024
+MEASURE CLIP_5MIN full_bit_exact_samples=14648438 read_blocks=915528
+PASS CLIP_5MIN: max_samples=14648438 full_bit_exact_samples=14648438 total_bit_exact_samples=14648535 full_blocks=915528 final_address=7324216 source_abort_preserved short_overwrite=37 repeat_short=2 accelerated_tick_clocks=2 reduced_roll_only pause3 consumer_hold old21bit_samples old18bit_blocks final6lanes reset
+sim/tb_clip_5min.sv:249: $finish called at 1171887200000 (1ps)
