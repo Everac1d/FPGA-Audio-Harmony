@@ -1,8 +1,12 @@
 {
-  "Date": "2026-11-01",
+  "Date": "2026-11-03",
   "UserCode": "0x00033109",
-  "ReportedNormal": false,
-  "Parent31": "0x00033107",
+  "ReportedNormal": true,
+  "ReportScope": "ContinuousFiveMinuteRecordingAndCompletePlayback",
+  "FiveMinuteRecordingCompleted": true,
+  "CompletePlaybackCompleted": true,
+  "EvidenceSource": "UserExplicitConfirmation",
+  "Statement": "实板已完成连续录满五分钟及完整回放。该结果来自实际操作反馈，不代表声学指标的仪器测量。",
   "RequestedMargin": -1500,
   "AssistantHardwareActions": false
 }

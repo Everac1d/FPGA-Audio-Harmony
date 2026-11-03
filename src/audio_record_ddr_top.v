@@ -1,6 +1,6 @@
 // 硬件：GW5AST-LV138PG484AC1/I0 B版与Tang Mega NEO Dock 31004底板。
 module audio_record_ddr_top #(
-    // 用户已确认学校配发的面板与此开发板兼容。
+    // 已确认外接面板与此开发板兼容。
     parameter integer LCD_BACKLIGHT_ENABLE=1,
     parameter integer LCD_TEST_PATTERN=0,
     parameter integer RING_TUNE_ENABLE=0
