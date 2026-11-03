@@ -1,2 +1,0 @@
-PASS CLIP_CONTROLLER bit_exact_samples=140 repeated_playback partial_padding full_stop overwrite reset fault
-sim/tb_clip_controller.sv:75: $finish called at 269231000 (1ps)

@@ -1,24 +1,24 @@
-// New display-only meter; signed runtime margin never touches audio PCM.
-// Display-only 512-sample mean absolute PCM amplitude; never modifies audio.
-// Keep quiet for two seconds after reset. The first 128 complete windows
-// (~1.34 s at 48.828125 kHz) measure baseline, with the display held dark.
-// Gate=max(NOISE_FLOOR,2*baseline+CALIBRATION_MARGIN), clamped to 65535.
-// The default margin24 matches the accepted28 external-panel instance.
-// Optional signed runtime adjustment leaves the brightness curve unchanged.
-// Broad, piecewise-linear excess-amplitude -> brightness anchors:
-// 0:0,128:8,512:32,1024:56,2048:96,4096:144,8192:200,16384:255.
-// Values above 16384 saturate. Interpolation uses constant shifts/products.
-// Attack takes one 10.49 ms window; release removes max(level/8,8) per
-// window, clamped to target. Full brightness decays to dark within 0.26 s.
-// -32768 is handled as unsigned magnitude 32768. Run a separate meter for
-// each candidate audio source so switching source does not mix calibrations.
-// Window accumulation/calibration and debug mean retain their sample timing.
-// Brightness alone is pipelined: a window completed at edge N captures its
-// mean/floor/calibration snapshot; N+1 computes excess, N+2 maps the curve,
-// and N+3 updates level. This 3-clk delay (60 ns at 50 MHz) breaks the former
-// PCM -> absolute value -> sum -> floor -> curve -> release timing path.
-// Pipeline slots advance on clk, independently of pcm_valid; consecutive valid
-// samples and back-to-back windows are supported, and reset flushes all slots.
+// 新增的显示专用电平计；有符号运行时余量不影响音频PCM。
+// 仅用于显示的512样本PCM幅度绝对值均值，绝不修改音频。
+// 复位后保持安静两秒；最初128个完整窗口
+// 在48.828125kHz下约为1.34秒，用于测量基线，期间保持灯环熄灭。
+// 门限=max(NOISE_FLOOR,2*baseline+CALIBRATION_MARGIN)，上限为65535。
+// 默认余量24与已验收的28号外接面板实例一致。
+// 可选的有符号运行时调整保持亮度曲线不变。
+// 超出门限的幅度到亮度采用较宽范围的分段线性锚点：
+// 幅度:亮度为0:0、128:8、512:32、1024:56、2048:96、4096:144、8192:200、16384:255。
+// 超过16384时饱和；插值使用常数移位与乘积。
+// 上升响应占一个10.49毫秒窗口；衰减时每个窗口减少max(level/8,8)，
+// 并限制到目标值；满亮度在0.26秒内衰减至熄灭。
+// -32768按无符号幅度32768处理；每个候选音源
+// 使用独立电平计，防止切换音源时混用校准结果。
+// 窗口累加、校准及调试均值保留原采样时序。
+// 仅对亮度计算进行流水处理：窗口在边沿N完成并锁存
+// 均值、下限及校准快照；N+1计算超出量，N+2映射曲线，
+// N+3更新亮度；此3时钟周期延迟（50MHz下为60纳秒）截断原有
+// PCM -> 绝对值 -> 求和 -> 下限 -> 曲线 -> 衰减时序路径。
+// 流水线各级随clk推进，独立于pcm_valid；支持连续有效
+// 样本及连续窗口，复位会清空所有流水级。
 module audio_ring_cal_meter #(
     parameter integer WINDOW_LOG2 = 9,
     parameter integer NOISE_FLOOR = 64,

@@ -1,2 +1,0 @@
-PASS LCD_FINE_SCAN checks=1651653 exact_pixels=261120 fine_gain=1.9 signed_pitch=-1 paused_progress=216/432 three_complete_frames
-sim/tb_lcd_fine_scan.sv:54: $finish called at 67109971000 (1ps)

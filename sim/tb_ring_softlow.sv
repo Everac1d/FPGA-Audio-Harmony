@@ -82,7 +82,7 @@ module tb_ring_softlow;
             for(k=0;k<16;k=k+1)sample((k%2)?-base:base);
             repeat(5)@(negedge clk);
             check(fixed_gate==gate,"negative static gate and saturation");
-            // Speech after calibration changes mean and brightness, not the stored baseline.
+            // 校准后的语音改变均值和亮度，但不改变已保存的基线。
             for(k=0;k<48;k=k+1)sample((k%2)?-32768:32767);
             repeat(5)@(negedge clk);check(fixed_gate==gate,"speech does not change stored gate");
             for(k=0;k<192;k=k+1)sample(0);
@@ -91,7 +91,7 @@ module tb_ring_softlow;
         end
     endtask
     initial begin
-        // All 256 levels and all eight masks are decoded from actual 12-LED serial frames.
+        // 从实际的 12 灯串行帧解码全部 256 个电平和全部八种掩码。
         for(v=0;v<256;v=v+1)begin
             current=expected_global(v)*(v/2);
             check(current>=previous,"effective light monotonic");
@@ -101,7 +101,7 @@ module tb_ring_softlow;
             previous=current;
             for(m=0;m<8;m=m+1)frame(v,m,1);
         end
-        // Asynchronous reset in a partially transmitted pixel clears both pins and state.
+        // 灯珠数据发送到一半时异步复位，应同时清除两个引脚和内部状态。
         @(negedge clk);rst_n=0;level=2;mask=7;repeat(2)@(negedge clk);rst_n=1;
         repeat(85)@(posedge ck);
         #2;rst_n=0;#1;

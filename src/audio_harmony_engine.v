@@ -1,5 +1,5 @@
-// Audio/UI integration on the unchanged 50MHz / 1024 sample timebase.
-// All controls and LCD-ready status ports below are synchronous to clk.
+// 音频与界面集成，沿用50MHz / 1024采样时基。
+// 以下所有控制端口及供LCD使用的状态端口均与clk同步。
 module audio_harmony_engine #(
     parameter integer DEBOUNCE_CYCLES=1000000,LONG_PRESS_CYCLES=40000000,
     parameter integer POR_CYCLES=65535,STARTUP_FRAMES=4883,
@@ -118,14 +118,14 @@ module audio_harmony_engine #(
         ((DUAL_VOICE_ENABLE!=0)&&(ui_algorithm==2'd2)&&(active_pitch_second!=ui_pitch_second));
     wire switching=config_change||pending_record||pending_play||pending_restart;
     assign display_switching=switching;
-    // Storage is a dependency of clip playback only. A failed/not-yet-ready
-    // DDR controller must not disable the independent live microphone/tone UI.
+    // 只有录音片段回放依赖存储；故障或尚未就绪的
+    // DDR控制器不得禁用独立的实时麦克风与测试音界面。
     wire clip_unavailable=active_source && (!ddr_ready || storage_fault);
     wire[1:0] sound_request=(switching||clip_unavailable) ? 2'd0 :
         (active_source ? ((play_active&&!play_paused) ? 2'd1:2'd0) : active_live_mode);
-    // Preserve the complete playback stream while silent: DDR cursor, pitch
-    // history, conditioner state and output FIFO all stop at the same sample
-    // boundary. In-flight arithmetic and DDR responses can finish normally.
+    // 静音时保留完整回放数据流：DDR游标、变调
+    // 历史、调理器状态及输出FIFO均停在同一采样
+    // 边界；已经开始的运算与DDR响应可正常完成。
     wire stream_hold=(ENHANCED_PLAYBACK!=0) && active_source &&
         (active_mode!=1 || play_paused || clip_play || clip_record || clip_abort || clip_restart);
     wire fade_zero;reg amplifier_frame_ready;
@@ -140,8 +140,8 @@ module audio_harmony_engine #(
             if(key_play)pending_play<=1;
             if(key_restart)pending_restart<=1;
             if(frame_ce && fade_zero)active_mode<=sound_request;
-            // Wait until TX has completed the last enabled frame before reset/
-            // source/config changes. Clip validity is independent of core reset.
+            // 等待TX完成最后一个已使能的帧，再执行复位、
+            // 音源切换或配置变更；录音片段有效性独立于内核复位。
             if(frame_ce && fade_zero && active_mode==0 && !amplifier_frame_ready)begin
                 if(config_change)begin
                     active_source<=ui_source;active_live_mode<=ui_live;
@@ -199,7 +199,7 @@ module audio_harmony_engine #(
         .underflow_count(underflow),.overflow_count(overflow));
     reg[23:0] phase=0;
     always @(posedge clk)if(!run_n)phase<=0;else if(frame_ce)phase<=phase+24'd343597;
-    // Same approximately 1kHz low-level diagnostic, independent of the clip.
+    // 沿用约1kHz的低幅度诊断音，与录音片段无关。
     function signed[15:0] tone_lut;
         input[5:0] a;reg[4:0] i;reg[15:0] m;
         begin i=a[4]?(5'd16-{1'b0,a[3:0]}):{1'b0,a[3:0]};
@@ -214,8 +214,8 @@ module audio_harmony_engine #(
     wire source_ready=mic_ready && ((active_mode==1&&raw_ready)||active_mode==2) && !clip_unavailable;
     wire playback_ready=mic_ready && ((active_mode==1&&head_valid)||active_mode==2) && !clip_unavailable;
     wire signed[15:0] monitor_in=active_mode==2 ? tone_lut(phase[23:18]) : queue_head;
-    // Match the 22402 baseline: latch the target on a frame boundary before
-    // the monitor's own per-frame gain slew observes it.
+    // 与22402基线一致：先在帧边界锁存目标值，
+    // 再由监听模块自身的逐帧增益渐变逻辑读取。
     reg [4:0] monitor_gain_index=0;
     always @(posedge clk)begin
         if(!run_n)monitor_gain_index<=0;
@@ -234,8 +234,8 @@ module audio_harmony_engine #(
         else if(!run_n)amplifier_frame_ready<=0;
         else if(frame_ce)amplifier_frame_ready<=playback_ready;
     end
-    // Faults suppress the next complete TX frame. Do not truncate the frame
-    // already latched by the PT8211 serializer with a combinational PA mute.
+    // 故障抑制下一个完整TX帧；不得通过组合逻辑功放静音
+    // 截断PT8211串行发送器已经锁存的帧。
     assign PA_EN=!rst_n||!run_n||!mic_ready||!amplifier_frame_ready;
     wire[7:0] meter_level;wire[15:0] display_mean,display_floor;
     audio_ring_cal_meter #(.CALIBRATION_MARGIN(24),.LIVE_CALIBRATION(RING_TUNE_ENABLE)) meter(.clk(clk),.rst_n(run_n),.pcm(central_pcm),.pcm_valid(rx_valid),.calibration_margin(ring_calibration_margin),
@@ -255,8 +255,8 @@ module audio_harmony_engine #(
     end
     reg[23:0] color;
     always @* begin
-        // Record is steady red; a storage fault flashes red only in clip mode.
-        // Live status remains visible even when the recorder is unavailable.
+        // 录音时红灯常亮；存储故障仅在录放模式下闪红灯。
+        // 即使录音模块不可用，仍显示实时模式状态。
         if(active_source && storage_fault)color=fault_blink_count[24]?24'h000000:24'h002000;
         else if(active_source && !ddr_ready)color=24'h101000;
         else if(rec_state==2 || rec_state==3)color=24'h002000;

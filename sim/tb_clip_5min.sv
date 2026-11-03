@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-// Capacity/address/PCM test: the REAL five-minute sample limit is used.
-// Only sample spacing and zero-roll durations are accelerated. This does not
-// measure real audio timing, DSP tail length, DDR PHY behavior, or board sound.
+// 容量、地址及 PCM 测试：使用实际的五分钟样本上限。
+// 仅加快样本间隔和零样本预热时长；此测试不用于
+// 测量实际音频时序、DSP 拖尾长度、DDR 物理层行为或板端音质。
 module tb_clip_5min #(
     parameter integer CAPACITY=14648438
 );
@@ -132,8 +132,8 @@ module tb_clip_5min #(
     end
     task command(input integer which);
         begin
-            // No extra negedge delay: a fast-tick stop must preserve exact
-            // requested length, and enhanced commands suppress that tick.
+            // 不额外等待下降沿：快速采样节拍下停止时必须精确保留
+            // 请求的长度，增强命令会抑制该次采样节拍。
             if(clk!==0)@(negedge clk);
             record_toggle=(which==0);play_toggle=(which==1);abort_play=(which==2);play_restart=(which==3);
             @(negedge clk);record_toggle=0;play_toggle=0;abort_play=0;play_restart=0;
@@ -222,16 +222,16 @@ module tb_clip_5min #(
             $fatal(1,"five-minute read coverage mismatch reads=%0d max_addr=%0d",reads_completed-full_reads_before,highest_read_address);
         $display("MEASURE CLIP_5MIN full_bit_exact_samples=%0d read_blocks=%0d",checked_index,reads_completed-full_reads_before);
 
-        // A source/configuration abort retains the full recording, including
-        // its committed length, even when a prefetch is still in flight.
+        // 因音源或配置引起的中止应保留完整录音，包括
+        // 已提交的录音长度，即使预取仍未完成也应如此。
         start_play;
         while(checked_index<23) @(negedge clk);
         command(2);check_playback=0;abort_length=checked_index;await_ready;
         if(!record_valid || !record_full || record_samples!=CAPACITY || abort_length<23 || abort_length>=CAPACITY)
             $fatal(1,"source abort deleted/changed full recording");
 
-        // Short destructive overwrite must hide the old five-minute tail and
-        // zero the partial last block; the new clip is replayed twice exactly.
+        // 短录音破坏性覆盖必须隐藏旧的五分钟录音尾部，并
+        // 将最后一个不完整块补零；新录音须精确回放两次。
         short_writes_before=writes_completed;
         start_record(32'h1982fa5d);
         while(capture_index<37) @(negedge clk);

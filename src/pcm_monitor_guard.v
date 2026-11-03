@@ -1,14 +1,14 @@
-// Output-side protection only. Raw microphone/core PCM remains unchanged.
-// Continuous three-clock preparation for TX; frame states advance once/frame.
-// At this board's frame boundary the queue head has settled >100 clocks earlier.
-// Input at edge N appears at the output after N+2 (three registered stages).
-// PIPELINE_ENABLE=0 retains the combinational reference for legacy regression.
-// Gain Q8 slews 1/256 per frame. Envelope Q8 fades over 256 frames (5.243 ms).
-// Legacy targets: H0=1, H2=1.5, H4=2, H5=2.5, H6=3 times.
-// FINE_GAIN uses tenths 10..30, rounded to the nearest Q8 unit. Other codes
-// conservatively map to unity; endpoint 1x and 3x remain exactly representable.
-// Soft knee: |x|<=8192 unchanged; above knee use 8192+(|x|-8192)/4.
-// This bounds overload energy; it is not acoustic echo/feedback cancellation.
+// 仅对输出侧进行保护，原始麦克风及核心 PCM 数据保持不变。
+// 持续进行三级时钟流水准备以供发送器使用；帧状态每帧推进一次。
+// 本板到达帧边界时，队首数据已提前超过 100 个时钟周期稳定。
+// 时钟沿 N 输入的数据在时钟沿 N+2 后出现在输出端（三级寄存器）。
+// PIPELINE_ENABLE=0 时保留组合参考实现，供原有回归测试使用。
+// Q8 增益每帧渐变 1/256；Q8 包络在 256 帧（5.243 毫秒）内完成淡化。
+// 原有目标增益：H0=1 倍，H2=1.5 倍，H4=2 倍，H5=2.5 倍，H6=3 倍。
+// FINE_GAIN 以十分之一倍为单位，范围 10..30，舍入至最近的 Q8 单位。其他编码
+// 保守映射到单位增益；端点 1 倍和 3 倍仍可精确表示。
+// 软拐点：|x|<=8192 时保持不变；超过拐点时采用 8192+(|x|-8192)/4。
+// 此处理限制过载能量，不执行声学回声或反馈抵消。
 module pcm_monitor_guard #(
     parameter integer PROTECTION_ENABLE = 1,
     parameter integer SMOOTH_ENABLE = 1,
@@ -27,14 +27,14 @@ module pcm_monitor_guard #(
     output wire [8:0] fade_level
 );
     reg [8:0] envelope = 0;
-    // Retain the established gain register width; 3x = 768 in Q8.
+    // 保留既有增益寄存器位宽；Q8 格式中的三倍增益为 768。
     reg [11:0] gain_q8 = 12'd256;
     function [11:0] gain_target_q8;
         input [4:0] index;
         begin
             if(FINE_GAIN!=0)begin
-                // round(index * 256 / 10); a constant LUT keeps the 50MHz
-                // target-gain path short without a synthesized divider.
+                // round(index * 256 / 10)；通过常量查找表缩短 50 MHz
+                // 目标增益路径，避免综合出除法器。
                 case(index)
                     5'd10:gain_target_q8=12'd256;
                     5'd11:gain_target_q8=12'd282;
@@ -90,11 +90,11 @@ module pcm_monitor_guard #(
     reg signed [31:0] product, scaled, magnitude, shaped, faded;
     reg signed [31:0] gain_value;
     always @* begin
-        // Tone has fixed gain, but shares mode fades. Explicit signed operands.
+        // 测试音使用固定增益，但共用模式切换淡化；操作数显式声明为有符号数。
         gain_value = (active_mode == 2) ? 32'sd256 :
                      (SMOOTH_ENABLE ? $signed({20'd0,gain_q8}) : $signed({20'd0,requested_gain}));
         product = $signed(pcm_in) * gain_value;
-        scaled = product / 32'sd256; // truncate toward zero on both polarities
+        scaled = product / 32'sd256; // 正负数均向零截断
         magnitude = (scaled < 0) ? -scaled : scaled;
         shaped = magnitude;
         if (PROTECTION_ENABLE && active_mode == 1 && magnitude > 8192)

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Compare the complete fine-gain frontend against the actual direct-renderer
-// raster. No forced audio state, Python reconstruction, or panel model.
+// 将完整精细增益前端与实际直接渲染器的
+// 光栅进行比较，不强制音频状态、不使用 Python 重建或面板模型。
 module tb_lcd_fine_scan;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0;

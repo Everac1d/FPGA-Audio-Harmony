@@ -1,8 +1,8 @@
-// Three public effects: exact original, one shifted voice, two-voice harmony.
-// The two histories accept the same samples, also outside harmony. A harmony
-// voice at zero semitones reads the fixed aligned dry tap; it does not retain
-// an old granular read-head phase. Both zero voices therefore stay identical.
-// Each voice retains the verified +17-clk pipeline and startup envelope.
+// 对外提供三种音效：完全原声、单声部变调、双声部和声。
+// 两组历史数据始终接收相同样本，在和声模式之外也如此；和声
+// 声部为零半音时读取固定对齐的原声抽头，不保留
+// 旧的粒度读头相位，因此两个零半音声部始终相同。
+// 每个声部均保留已验证的+17时钟周期流水线与启动包络。
 module audio_harmony_core #(
     parameter integer RAM_ADDR_BITS=14,
     parameter integer GRAIN_LOG2=13,

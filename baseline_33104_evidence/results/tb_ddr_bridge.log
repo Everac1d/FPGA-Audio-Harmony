@@ -1,2 +1,0 @@
-PASS DDR_BRIDGE: selftest16 mailbox64_joint_write native_delayed_full_strobes clip_address_range91553 opposite_ready long_backpressure calibration_drop index5_singlebit_multilane full545bit_snapshot corruption cmd_timeout data_timeout read_timeout bad_end boot_timeout stopped_ui_clock ui_reset recovery diagnostic_codes1_8 coherent_state first_fault_sticky
-sim/tb_ddr_bridge.sv:273: $finish called at 96100000 (1ps)

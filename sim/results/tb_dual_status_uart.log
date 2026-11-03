@@ -1,2 +1,0 @@
-PASS DUAL_STATUS_UART checks=1672 bytes=831 pairs=3 R5_bytes=113 D3_bytes=164 atomic_Q_C negative_pitch_second reset
-sim/tb_dual_status_uart.sv:91: $finish called at 440816000 (1ps)

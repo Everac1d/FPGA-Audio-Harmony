@@ -1,4 +1,4 @@
-// Read-only LCD frontend. No connection to audio enables, resets or DDR ports.
+// 只读LCD前端，不连接音频使能、复位或DDR端口。
 module audio_lcd_display #(
     parameter integer BACKLIGHT_ENABLE=0,
     parameter integer TEST_PATTERN=0,

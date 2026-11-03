@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Reuse only the deterministic physical-DDR stub from this existing test.
-// -s tb_lcd_boot_diagnostics prunes the other, independent test top.
+// 仅复用此已有测试中确定性的物理 DDR 桩模块。
+// -s tb_lcd_boot_diagnostics 会裁剪另一个独立测试顶层。
 `include "sim/tb_record_top_startup.sv"
 module tb_lcd_boot_diagnostics;
     reg clk=0;always #10 clk=~clk;
@@ -17,8 +17,8 @@ module tb_lcd_boot_diagnostics;
     wire LCD_CLK,LCD_HSYNC,LCD_VSYNC,LCD_DE,LCD_BL;
     wire [5:0] LCD_R,LCD_G,LCD_B;
     audio_record_ddr_top dut(.*);
-    // Preserve the real 65536-clock board POR and real LCD scan/backlight.
-    // Only microphone startup is shortened; no DUT register is forced.
+    // 保留实际的 65536 时钟板级上电复位，以及实际 LCD 扫描和背光。
+    // 仅缩短麦克风启动时间，不强制修改被测模块寄存器。
     defparam dut.u_audio.POR_CYCLES=8;
     defparam dut.u_audio.STARTUP_FRAMES=3;
     defparam dut.u_audio.MAX_SAMPLES=128;
@@ -42,8 +42,8 @@ module tb_lcd_boot_diagnostics;
         begin repeat(n)begin @(posedge clk);#2;end end
     endtask
 
-    // All protocol expectations below come from external clock/control/RGB
-    // pins and independent frame coordinates, not from internal scan counters.
+    // 下面所有协议期望均来自外部时钟、控制和 RGB
+    // 引脚和独立帧坐标，而非内部扫描计数器。
     always @(posedge clk)begin
         #2;
         if(!dut.board_run_n)begin
@@ -125,8 +125,8 @@ module tb_lcd_boot_diagnostics;
     initial begin
         clocks(4);
         boot(0);
-        // The microphone is ready about 3 frames after the real board POR.
-        // These points straddle the unchanged, real 50ms backlight delay.
+        // 实际板级上电复位完成后，麦克风约在 3 帧后就绪。
+        // 这些检查点跨越保持不变的实际 50 毫秒背光延时。
         clocks(2490000);check(LCD_BL===0,"backlight stays low before its 50ms delay");
         clocks(10050);check(LCD_BL===1,"backlight is enabled after its 50ms delay");
         check(completed_frames>=2 && normal_nonzero>100000,"normal dashboard has nonzero visible content over complete frames");

@@ -13,7 +13,7 @@ module tb_pcm_voice_conditioner;
         .clk(clk), .rst_n(rst_n), .in_valid(in_valid), .pcm_in(pcm_in),
         .out_valid(bypass_valid), .pcm_out(bypass_out));
 
-    // Independent identical streams: one contiguous, one with arbitrary gaps.
+    // 两路独立但内容相同的数据流：一路连续，一路带任意间隙。
     reg parity_reset_n = 0, a_valid = 0, b_valid = 0;
     reg signed [15:0] a_in = 0, b_in = 0;
     wire a_out_valid, b_out_valid;
@@ -103,7 +103,7 @@ module tb_pcm_voice_conditioner;
             $fatal(1, "tone output count %0d", measured_count);
         omega = 2.0 * PI * frequency / FS;
         pole = 253.0 / 256.0;
-        // Independent z-domain transfer function; not a copy of RTL recurrence.
+        // 使用独立的 z 域传递函数，不复制 RTL 递推实现。
         hp = pole * $sqrt((2.0 - 2.0 * $cos(omega)) /
                          (1.0 + pole*pole - 2.0*pole*$cos(omega)));
         lp = 0.25 / (1.25 - $cos(omega));
@@ -120,7 +120,7 @@ module tb_pcm_voice_conditioner;
     integer negative_saturations, positive_saturations;
     initial begin
         reset_main();
-        // Explicit mixed valids and reset while all pipeline stages are busy.
+        // 明确覆盖混合有效信号，以及所有流水级忙碌时的复位。
         for (n = 0; n < 35; n = n + 1) tick((n * 1901) - 30000, (n % 5) != 1);
         reset_main();
         repeat (16) tick(0, 1);
@@ -128,7 +128,7 @@ module tb_pcm_voice_conditioner;
         if (pcm_out !== 0 || bypass_out !== 0) $fatal(1, "stale audio after reset");
         $display("PASS reset midstream, latency, hold-on-invalid and no X");
 
-        // A finite input sequence must be identical with and without valid gaps.
+        // 同一个有限输入序列，在有效信号有间隙和无间隙时的结果必须一致。
         @(negedge clk); parity_reset_n = 1;
         i = 0; j = 0;
         for (n = 0; n < 4096; n = n + 1) begin

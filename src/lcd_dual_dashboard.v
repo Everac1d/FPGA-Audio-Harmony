@@ -1,10 +1,10 @@
-// 480x272 Chinese direct-scan UI, RGB666, all registers on clk_50m.
-// Latency FIVE clk cycles: geometry -> formatted row -> token -> ROM -> color.
-// A Chinese glyph occupies two 12px half-cells; Latin/digits occupy one.
-// Main fields keep 24px text. Four fixed footer rows use true 16px text.
+// 480×272 中文直接扫描界面，采用 RGB666，所有寄存器均使用 clk_50m。
+// 延迟为五个时钟周期：几何定位 → 格式化文本行 → 字符编码 → ROM → 颜色。
+// 一个汉字占两个 12 像素半字格；拉丁字母和数字占一个。
+// 主字段保持 24 像素文字；页脚固定四行，使用原生 16 像素文字。
 module lcd_dual_dashboard #(
-    // Fine panel gain is in tenths: 10..30 = 1.0..3.0. Default retains
-    // the legacy H0/H2/H4/H5/H6 interface for independent baseline tests.
+    // 面板精细增益以十分之一倍为单位：10..30 对应 1.0..3.0 倍。默认保留
+    // 原有 H0/H2/H4/H5/H6 接口，供独立基准测试使用。
     parameter integer FINE_GAIN=0
 )(
     input wire clk,
@@ -203,8 +203,8 @@ module lcd_dual_dashboard #(
             endcase
         end
     endfunction
-    // Format each cell at a CONSTANT elaboration index. This removes all
-    // index offsets and wide string shifts from the pixel-address path.
+    // 每个字格均在展开阶段使用常量索引格式化，以从像素地址路径中移除
+    // 所有索引偏移与宽字符串移位运算。
     wire [332:0] display_row0,display_row1,display_row2,display_row3;
     wire [332:0] display_row4;
     genvar cell_number;
@@ -266,7 +266,7 @@ module lcd_dual_dashboard #(
         4:row_word=display_row4;default:row_word=0;
         endcase end
     endfunction
-    // Verification and character decoding use the same formatted rows.
+    // 验证与字符解码使用相同的格式化文本行。
     function [8:0] line_token;
         input integer line,index;
         begin
@@ -274,8 +274,8 @@ module lcd_dual_dashboard #(
             else line_token=cell_at(row_word(line[3:0]),index[5:0]);
         end
     endfunction
-    // Only the frame-atomic source bit selects these two complete pages.
-    // No timer, rotating help page or recorder-state-dependent hint exists.
+    // 仅由按帧原子更新的输入源位选择这两个完整页面。
+    // 不使用定时器、轮换帮助页或依赖录音状态的提示。
     function [503:0] footer_row_word;
         input [3:0] line;
         begin case(line)

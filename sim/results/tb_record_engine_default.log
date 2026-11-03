@@ -1,2 +1,0 @@
-PASS RECORD_ENGINE_DEFAULT RAM_BITS=14 GRAIN_LOG2=13 checks=62426510 raw_captured=351 replay_input_samples=351 zero_input_samples=18627 isolated_from_mic=351 full_harmony_replays=1 core_outputs=18978 DAC_frames=19430 nonzero_frames=2235 safe_commits=4
-sim/tb_record_engine_default.sv:212: $finish called at 397927160000 (1ps)

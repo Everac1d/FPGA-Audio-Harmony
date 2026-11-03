@@ -1,2 +1,0 @@
-PASS CLIP_PAUSE checks=1402 exact257samples all_prefetch_preroll_play_tail_drain_pause holds lane15 final_lane restart_ddr_inflight pending_record_play_cancel overwrite one_sample reset fault
-sim/tb_clip_pause.sv:170: $finish called at 1578711000 (1ps)

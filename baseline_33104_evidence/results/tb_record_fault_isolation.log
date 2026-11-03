@@ -1,2 +1,0 @@
-PASS RECORD_FAULT_ISOLATION checks=9570999 DAC_frames=4008 nonzero_frames=2740 muted_frames=1268 live_input_samples=2026 DDR_requests=8 boot_fault live_fault tone_fault clip_fault source_escape controls frame_safe_PA
-sim/tb_record_fault_isolation.sv:213: $finish called at 82084980000 (1ps)

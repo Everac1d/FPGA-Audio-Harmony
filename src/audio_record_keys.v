@@ -1,9 +1,9 @@
-// Two-key UI for the 22402-derived record/live candidate. All signals use clk.
-// No command is dispatched until every key in the current gesture is released.
-// This also permits adding the second key after a long first-key hold without
-// accidentally applying a solo command. A chord suppresses both solo commands.
-// A long chord requires BOTH debounced keys low for LONG_PRESS_CYCLES clocks.
-// Short chords only play/stop in record mode; long chords toggle the source.
+// 基于22402的录放与实时候选方案双键界面，所有信号均使用clk。
+// 当前操作的所有按键均释放后，才会发出命令。
+// 这也允许在长按第一个键之后再加入第二个键，
+// 避免误触发单键命令；组合操作会抑制两个单键命令。
+// 长按组合要求消抖后的两个按键同时保持低电平达LONG_PRESS_CYCLES个时钟。
+// 短按组合仅在录放模式下播放或停止；长按组合切换音源。
 module audio_record_keys #(
     parameter integer DEBOUNCE_CYCLES = 1000000,
     parameter integer LONG_PRESS_CYCLES = 40000000

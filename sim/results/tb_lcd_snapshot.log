@@ -1,2 +1,0 @@
-PASS LCD_SNAPSHOT checks=15809 cases=109 busy_input_changes frame_atomic_publication sequential_division centiseconds saturation zero_division signed_pitch25 gain21 paused_progress reset
-sim/tb_lcd_snapshot.sv:109: $finish called at 311960000 (1ps)

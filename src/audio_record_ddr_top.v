@@ -1,6 +1,6 @@
-// GW5AST-LV138PG484AC1/I0 B + Tang Mega NEO Dock 31004.
+// 硬件：GW5AST-LV138PG484AC1/I0 B版与Tang Mega NEO Dock 31004底板。
 module audio_record_ddr_top #(
-    // User confirmed the school-supplied panel is compatible with this board.
+    // 用户已确认学校配发的面板与此开发板兼容。
     parameter integer LCD_BACKLIGHT_ENABLE=1,
     parameter integer LCD_TEST_PATTERN=0,
     parameter integer RING_TUNE_ENABLE=0
@@ -19,8 +19,8 @@ module audio_record_ddr_top #(
     output wire LCD_CLK,LCD_HSYNC,LCD_VSYNC,LCD_DE,LCD_BL,
     output wire [5:0] LCD_R,LCD_G,LCD_B
 );
-    // The external reset gesture is stretched independently of the subsystem
-    // being reset, so its own UI reset cannot shorten the global reset pulse.
+    // 外接复位操作的脉冲展宽独立于被复位的子系统，
+    // 因此界面自身复位不会缩短全局复位脉冲。
     wire external_reset_request;
     reg [7:0] external_reset_count=0;
     always @(posedge clk or negedge rst_n)begin
@@ -32,8 +32,8 @@ module audio_record_ddr_top #(
     (* ASYNC_REG="TRUE" *) reg board_reset_meta=0,board_reset_sync=0;
     reg [15:0] board_por=0;
     reg board_run_n=0;
-    // Display-only diagnostic selection. Hold KEY2 while releasing KEY1 to
-    // latch color bars; a normal KEY1 reset returns to the dashboard.
+    // 仅用于显示的诊断选择：按住KEY2并释放KEY1以
+    // 锁存彩条；正常按KEY1复位可返回仪表界面。
     (* ASYNC_REG="TRUE" *) reg lcd_key_gain_meta=1,lcd_key_gain_sync=1;
     reg lcd_test_mode=0;
     always @(posedge clk or negedge system_rst_n)begin
@@ -58,9 +58,9 @@ module audio_record_ddr_top #(
             else board_por<=board_por+1'b1;
         end
     end
-    // The live baseline does not use DDR. Keep its 400 MHz PHY/PLL in reset
-    // until clip mode is first requested, then keep refreshing until KEY1.
-    // Returning to live must never discard an already saved recording.
+    // 实时基线不使用DDR；首次请求录放模式前，保持其400MHz PHY/PLL复位，
+    // 随后持续刷新存储器，直到按下KEY1复位。
+    // 返回实时模式不得丢弃已经保存的录音。
     wire audio_source;
     reg storage_started=0;
     always @(posedge clk or negedge system_rst_n)begin
@@ -117,8 +117,8 @@ module audio_record_ddr_top #(
         .ring_noise_floor(lcd_ring_floor),.ring_mean_level(lcd_ring_mean),
         .mic_sd(mic_sd),.mic_bclk(mic_bclk),.mic_ws(mic_ws),.HP_BCK(HP_BCK),.HP_WS(HP_WS),
         .HP_DIN(HP_DIN),.PA_EN(PA_EN),.WS2812(WS2812),.uart_tx(uart_tx),.led_ck(led_ck),.led_da(led_da),
-        // The wrapper's 3s timeout is diagnostic only. The bridge owns the
-        // 5s startup deadline and verifies memory before granting ready.
+        // 封装模块的3秒超时仅用于诊断；桥接模块负责
+        // 5秒启动期限，并在存储器验证通过后才置就绪。
         .ddr_ready(bridge_ready),.ddr_error(bridge_error),
         .ddr_diag({bridge_error_code,bridge_debug_state,memory_debug}),
         .ddr_failure(bridge_failure),

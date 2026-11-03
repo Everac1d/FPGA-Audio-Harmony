@@ -1,2 +1,0 @@
-PASS RECORD_TOP_STARTUP checks=1367 soft_cycles=449 cycles=120928 saved_samples=42 on_demand_DDR selftest16 soft_timeout_no_hard_fault late_calibration_empty clip_retained reset top_diag
-sim/tb_record_top_startup.sv:88: $finish called at 2418551000 (1ps)

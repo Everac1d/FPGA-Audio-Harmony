@@ -64,8 +64,8 @@ module tb_dynamic_config;
    for(n=0;n<6000;n=n+1)begin
      random_state=random_state^(random_state<<13);random_state=random_state^(random_state>>17);random_state=random_state^(random_state<<5);
      x=$signed(random_state[15:0]);m=(n/19)%4;
-     // Every integral semitone is exercised after fill and repeatedly across
-     // every effect. Also retain out-of-range clamp checks at both ends.
+     // 填充后测试每一个整数半音，并在
+     // 每一种音效下重复测试，并保留两个端点的越界钳位检查。
      p=(n%29)-14;
      if(p>=-12 && p<=12)pitches_seen[p+12]=1;
      modes_seen[m]=1;
@@ -76,8 +76,8 @@ module tb_dynamic_config;
      @(negedge clk);valid=0;
      gap=32+(random_state[4:0]);
      if((n%101)==0)begin gap=gap+2048;holds=holds+1;end
-     // A busy job must remain coherent even if its public controls change in
-     // an idle input slot; only accepted sample parameters may affect it.
+     // 即使外部控制在
+     // 输入空闲时隙变化，忙碌任务仍须保持一致，只受接收时的样本参数影响。
      mode=3-m;pitch=-p;
      repeat(gap-2)@(negedge clk);
    end

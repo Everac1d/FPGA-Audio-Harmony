@@ -1,4 +1,4 @@
-// Generated harmony UI tokens, 8-bit glyph IDs plus bit8 right half.
+// 自动生成的和声界面字符编码，包含 8 位字形编号及表示右半字形的位 8。
 // RING: 灯环
 localparam integer HN_RING=4;
 localparam [332:0] HT_RING={9'd124,9'd380,9'd125,9'd381,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0,9'd0};

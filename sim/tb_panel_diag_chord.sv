@@ -55,17 +55,17 @@ module tb_panel_diag_chord;
         turn_pitch();turn_pitch();check(pitch==2,"pitch changed for reset suppression oracle");
         pitch_press();check(pitch==0 && live==1,"single pitch press resets pitch only");
         turn_pitch();turn_pitch();
-        // Short overlap owns both releases and leaves live/pitch unchanged.
+        // 短时重叠操作接管两次释放事件，并保持实时状态和音高不变。
         old_entries=tone_entries;gain_sw=0;pitch_sw=0;tick(16);
         gain_sw=1;tick(12);check(live==1 && pitch==2,"short chord first release swallowed");
         pitch_sw=1;tick(12);check(live==1 && pitch==2 && tone_entries==old_entries,"short chord no action");
-        // The order in which the two shafts are pressed is unrestricted; only
-        // the common continuously held interval contributes to the 2s count.
+        // 两个旋钮轴的按下顺序不受限制；
+        // 只有两者共同持续按住的区间计入 2 秒时长。
         gain_sw=0;tick(DIAG+20);pitch_sw=0;tick(16);
         check(live==1,"first shaft alone cannot qualify chord");
         pitch_sw=1;tick(12);gain_sw=1;tick(12);
         check(live==1 && pitch==2 && tone_entries==old_entries,"long first hold plus short overlap rejected");
-        // Qualify while live, release gain first, and leave pitch held longer.
+        // 在实时模式满足触发时长，先释放增益旋钮，再继续按住变调旋钮。
         gain_sw=0;tick(14);pitch_sw=0;tick(DIAG+20);
         check(live==1 && pitch==2 && dut.diag_qualified,"qualified chord waits for every release");
         gain_sw=1;tick(DIAG+15);check(live==1 && pitch==2,"first release never starts tone");
@@ -74,44 +74,44 @@ module tb_panel_diag_chord;
         tick(100);check(tone_entries==old_entries+1,"no repeat once fully released");
         gain_press();check(live==0,"tone exit uses gain press to safe mute");
         gain_press();check(live==1,"next ordinary press enables microphone");
-        // Qualify with opposite press/release order.
+        // 反转按下和释放顺序，再次检查满足触发条件的情况。
         old_entries=tone_entries;pitch_sw=0;tick(20);gain_sw=0;tick(DIAG+20);
         pitch_sw=1;tick(12);check(live==1 && pitch==2,"opposite first release swallowed");
         gain_sw=1;tick(12);check(live==2 && pitch==2 && tone_entries==old_entries+1,"opposite last release works");
         gain_press();
-        // A cancelled early release cannot accumulate time after repressing.
+        // 提前释放取消后，再次按下不得继续累计先前时间。
         gain_sw=0;pitch_sw=0;tick(16);gain_sw=1;tick(12);
         gain_sw=0;tick(DIAG+50);pitch_sw=1;tick(12);gain_sw=1;tick(12);
         check(live==0 && pitch==2,"short broken overlap stays cancelled until both up");
-        // Contact chatter below debounce cannot create either a chord or a press.
+        // 短于消抖时长的触点抖动不得产生组合操作或单次按键。
         repeat(6)begin gain_sw=0;pitch_sw=0;tick(1);gain_sw=1;pitch_sw=1;tick(1);end
         tick(12);check(live==0 && pitch==2,"sub-debounce simultaneous chatter ignored");
-        // A source switch cancels an already qualified chord and consumes its
-        // trailing releases, including when the source is switched back first.
+        // 切换音源会取消已达到时长要求的组合操作，并消耗其
+        // 后续释放事件，包括先切回原音源的情况。
         old_entries=tone_entries;gain_sw=0;pitch_sw=0;tick(DIAG+20);
         key(0,12);check(source==1 && live==0,"source switch cancels qualified chord");
         key(0,12);check(source==0 && live==0,"return live does not revive held chord");
         gain_sw=1;tick(12);pitch_sw=1;tick(12);
         check(live==0 && pitch==2 && tone_entries==old_entries,"cancelled chord releases cannot unmute or reset pitch");
-        // A chord begun in record mode remains invalid even if live is selected
-        // before the shafts are released.
+        // 在录放模式开始的组合操作仍然无效，即使随后选择实时模式，
+        // 只要旋钮轴尚未释放，此结论始终成立。
         key(0,12);gain_sw=0;pitch_sw=0;tick(DIAG+30);
         key(0,12);pitch_sw=1;tick(12);gain_sw=1;tick(12);
         check(source==0 && live==0 && pitch==2 && tone_entries==old_entries,"record-origin chord never enters tone");
-        // Source switch on the same edge as final release has explicit priority.
+        // 切换音源与最终释放位于同一边沿时，明确由音源切换优先。
         gain_sw=0;pitch_sw=0;tick(DIAG+20);
         button_n[0]=0;tick(12);button_n[0]=1;gain_sw=1;pitch_sw=1;tick(12);
         check(source==1 && live==0 && tone_entries==old_entries,"simultaneous source/final release prioritizes source");
-        // Reset interrupts a pending qualified gesture; no deferred entry survives.
+        // 复位打断已达到时长但待释放的操作，不得残留延迟进入请求。
         key(0,12);gain_sw=0;pitch_sw=0;tick(DIAG+20);
         rst_n=0;tick(6);gain_sw=1;pitch_sw=1;rst_n=1;tick(12);
         check(source==0 && live==0 && pitch==0 && tone_entries==old_entries,"reset flushes chord state");
-        // Holding both through reset requires a fresh full debounced overlap.
+        // 复位期间持续按住两键时，必须重新满足完整的消抖后重叠时长。
         gain_sw=0;pitch_sw=0;rst_n=0;tick(6);rst_n=1;tick(20);
         check(!dut.diag_qualified && live==0,"held startup cannot qualify early");
         tick(DIAG+10);check(live==0 && dut.diag_qualified,"held startup still requires final release");
         gain_sw=1;pitch_sw=1;tick(12);check(live==2,"fresh full startup overlap may enter diagnostic");
-        // Physical diagnostic duration remains 2 seconds in the production default.
+        // 正式版默认的实际诊断时长保持为 2 秒。
         check(dut.LONG_DIAG_CYCLES==DIAG,"test explicitly scales diagnostic duration only");
         $display("PASS PANEL_DIAG_CHORD checks=%0d tone_entries=%0d source_events=%0d reset_events=%0d",checks,tone_entries,source_events,reset_events);
         $finish;

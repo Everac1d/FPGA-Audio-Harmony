@@ -1,8 +1,8 @@
-// Active unified CST: original audio pins followed by DDR3 pins.
-// Tang Mega NEO 138K B, Dock 31004, Mic Array via J32 FPC.
-// User verified on 2026-10-12: Mic VIN->P1 5V and GND->P1 GND, ~0 ohm.
-// This requires the ordinary FFC to connect pin n to pin n.
-// J32 pin8 CK -> IO7 Y11; pin7 WS -> IO6 W10; pin6 D3 -> IO5 AB11.
+// 当前启用的统一 CST：先列原有音频引脚，再列 DDR3 引脚。
+// 开发板为 Tang Mega NEO 138K B，底板版本 31004，麦克风阵列通过 J32 FPC 连接。
+// 用户于 2026-10-12 确认：麦克风 VIN 接 P1 的 5V，GND 接 P1 的 GND，实测约 0 欧姆。
+// 此接法要求普通 FFC 的第 n 脚与第 n 脚直连。
+// J32 接线：第 8 脚 CK 接 IO7 Y11；第 7 脚 WS 接 IO6 W10；第 6 脚 D3 接 IO5 AB11。
 
 IO_LOC "clk" V22;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
@@ -44,15 +44,15 @@ IO_PORT "led_ck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
 IO_LOC "led_da" AA9;
 IO_PORT "led_da" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
 
-// DDR3 physical pins and hard-resource locations.
+// DDR3 物理引脚与硬件资源位置。
 IO_LOC  "memory_bank[2]"   M6;
 IO_PORT "memory_bank[2]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "memory_bank[1]"   P2;
 IO_PORT "memory_bank[1]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "memory_bank[0]"   P5;
 IO_PORT "memory_bank[0]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
-//IO_LOC  "memory_addr[15]"  R1;
-//IO_PORT "memory_addr[15]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
+//未启用的参考约束：IO_LOC  "memory_addr[15]"  R1;
+//未启用的参考约束：IO_PORT "memory_addr[15]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "memory_addr[14]"  D1;
 IO_PORT "memory_addr[14]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "memory_addr[13]"  K1;
@@ -183,7 +183,7 @@ INS_LOC "u_memory/u_pll/u_pll_0/PLL_inst" PLL_L[0];
 INS_LOC "u_memory/u_ddr3/gw3_top/u_ddr_phy_top/u_dll" DDRDLLM_BL;
 INS_LOC "u_memory/u_ddr3/gw3_top/u_ddr_phy_top/fclkdiv" LEFTSIDE[4];
 
-// LCD candidate: isolate CH569 HSPI first; backlight held LOW by default.
+// LCD 候选接法：先隔离 CH569 HSPI；背光默认保持低电平。
 IO_LOC "LCD_DE" L14;
 IO_PORT "LCD_DE" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
 IO_LOC "LCD_VSYNC" L15;
@@ -231,7 +231,7 @@ IO_PORT "LCD_R[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
 IO_LOC "LCD_R[5]" K21;
 IO_PORT "LCD_R[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
 
-// External panel: 3.3V active-low contacts, shared GND; rotary phases are inputs.
+// 外接面板：触点使用 3.3V、低电平有效并共地；旋钮各相信号为输入。
 IO_LOC "button_n[0]" Y21;
 IO_PORT "button_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
 IO_LOC "button_n[1]" AB21;

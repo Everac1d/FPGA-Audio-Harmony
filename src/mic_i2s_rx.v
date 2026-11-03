@@ -1,5 +1,5 @@
-// Standard I2S microphone: 24 signed data bits in a 32-BCLK slot.
-// Slot position 0 is the I2S delay bit; positions 1..24 are MSB..LSB.
+// 标准 I2S 麦克风：每个 32 个 BCLK 的时隙中包含 24 位有符号数据。
+// 时隙位置 0 是 I2S 延迟位；位置 1..24 依次对应最高位至最低位。
 module mic_i2s_rx (
     input wire clk,
     input wire rst_n,
@@ -11,8 +11,8 @@ module mic_i2s_rx (
     output reg left_valid = 1'b0,
     output reg right_valid = 1'b0
 );
-    // The data is asynchronous to the 50 MHz system clock, even though its
-    // bit clock is generated locally. Sample well after the BCLK rising edge.
+    // 尽管位时钟由本地生成，数据相对于 50 MHz 系统时钟仍然是异步的。
+    // 在 BCLK 上升沿之后留出充分时间再进行采样。
     (* syn_preserve = 1, ASYNC_REG = "TRUE" *) reg sd_meta = 1'b0;
     (* syn_preserve = 1, ASYNC_REG = "TRUE" *) reg sd_sync = 1'b0;
     reg [23:0] shift_data = 24'd0;

@@ -68,7 +68,7 @@ module tb_clip_controller;
  reset();if(committed||len!=0)$fatal(1,"reset validity");
  command(0);command(0);wait_ready();if(committed||len!=0)$fatal(1,"zero capture");
  command(0);for(i=0;i<9;i=i+1)sample(i);command(2);wait_ready();if(len!=9)$fatal(1,"abort recording lost data");
- // Never hide an unbounded DDR stall by dropping/duplicating PCM.
+ // 绝不能通过丢弃或重复 PCM 掩盖无限期 DDR 停顿。
  command(0);blocked=1;for(i=0;i<50;i=i+1)sample(i);repeat(5)step();
  if(!fault||committed||state!=10)$fatal(1,"write stall not faulted");
  reset();storage_error=1;repeat(3)step();if(!fault||state!=10)$fatal(1,"storage error");

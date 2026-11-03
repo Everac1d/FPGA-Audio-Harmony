@@ -1,2 +1,0 @@
-PASS LCD_TIMING checks=6269376 frames=2 total_pixels_per_frame=150150 active_pixels_per_frame=130560 pixel_period_ns=120 setup_ns=60 default_backlight=OFF
-sim/tb_lcd_timing.sv:75: $finish called at 36036052000 (1ps)

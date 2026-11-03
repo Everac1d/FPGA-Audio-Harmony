@@ -1,9 +1,9 @@
-// R3 status plus D3 first-DDR-failure packet for UserCode 00032503.
-// All inputs already belong to clk. One atomic snapshot per complete line.
-// 50 MHz / rounded 115200 = 434 clocks per bit, 8 data bits, no parity, 1 stop.
-// R3 is 103 bytes; D3 is 164 bytes, both including CRLF. One atomic pair.
-// D3 V=00032503 J=x B=xxxxxxxx W=<64 hex expected> R=<64 hex actual>\r\n
-// N is the original 5-bit two's-complement code, zero extended to two hex digits.
+// UserCode 00032503对应的R3状态报文与D3首次DDR故障报文。
+// 所有输入已位于clk域，每个完整报文行使用一次原子快照。
+// 50MHz按115200波特率取整，每位434个时钟；8数据位、无校验、1停止位。
+// R3为103字节，D3为164字节，均包含回车换行，组成一个原子报文对。
+// D3报文格式：V=00032503 J=x B=xxxxxxxx W=<64位十六进制期望值> R=<64位十六进制实际值>\r\n
+// N为原始5位二进制补码，补零扩展后显示为两位十六进制数。
 module record_status_uart #(
     parameter integer CLK_HZ = 50000000,
     parameter integer BAUD = 115200,
@@ -115,8 +115,8 @@ module record_status_uart #(
     endfunction
 
 
-    // R4 adds a second H digit. H=0A..1E is the gain in tenths, not a
-    // legacy gain index. All other fields and the atomic D3 packet are kept.
+    // R4为H增加第二位；H=0A..1E表示以0.1倍为单位的增益，
+    // 不再表示旧增益索引；其他字段与原子的D3报文均保留。
     localparam integer STATUS_BYTES=(DUAL_VOICE_ENABLE!=0) ? 113 : ((FINE_GAIN!=0) ? 104 : 103);
     function [7:0] report_byte;
         input [8:0] index;
@@ -149,8 +149,8 @@ module record_status_uart #(
             snap_live<=0;snap_algorithm<=0;snap_pitch<=0;snap_pitch_second<=0;snap_pitch_voice<=0;snap_gain<=0;snap_state<=0;
             snap_record<=0;snap_play<=0;snap_underflow<=0;snap_overflow<=0;snap_diag<=0;snap_failure<=0;
         end else begin
-            // Saturate while busy: an unusually short report period cannot
-            // overwrite the active packet or accumulate an unbounded backlog.
+            // 忙时采用饱和处理，避免过短的上报周期
+            // 覆盖正在发送的报文或造成无限积压。
             if (report_timer < REPORT_CYCLES-1) report_timer<=report_timer+1'b1;
             case(state)
                 IDLE: begin

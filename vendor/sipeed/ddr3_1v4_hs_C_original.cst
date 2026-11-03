@@ -1,11 +1,11 @@
-//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
-//All rights reserved. 
-//File Title: Physical Constraints file
-//Tool Version: V1.9.12.02_SP1 (64-bit))
-//Part Number: GW5AST-LV138PG484AC1/I0
-//Device: GW5AST-138
-//Device Version: C
-//Created Time: Fri 04 03 19:15:49 2026
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.（高云半导体版权所有）
+//All rights reserved.（保留所有权利。） 
+//文件说明：物理约束文件
+//工具版本： V1.9.12.02_SP1 (64-bit))
+//器件完整型号： GW5AST-LV138PG484AC1/I0
+//器件： GW5AST-138
+//器件版本： C
+//生成时间： Fri 04 03 19:15:49 2026
 
 IO_LOC  "ddr_bank[2]"   M6;
 IO_PORT "ddr_bank[2]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
@@ -14,8 +14,8 @@ IO_PORT "ddr_bank[1]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "ddr_bank[0]"   P5;
 IO_PORT "ddr_bank[0]"   IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 
-//IO_LOC  "ddr_addr[15]"  R1;
-//IO_PORT "ddr_addr[15]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
+//未启用的参考约束：IO_LOC  "ddr_addr[15]"  R1;
+//未启用的参考约束：IO_PORT "ddr_addr[15]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "ddr_addr[14]"  D1;
 IO_PORT "ddr_addr[14]"  IO_TYPE=SSTL15 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=1.5;
 IO_LOC  "ddr_addr[13]"  K1;

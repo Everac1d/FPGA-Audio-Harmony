@@ -1,7 +1,7 @@
-// FPGA Audio LCD CJK24 Subset; bitmap derivative of OFL Noto Sans SC.
-// See docs/fonts/FONT_SOURCE_AND_LICENSE.md and docs/fonts/OFL.txt.
-// Synchronous inferred ROM: 128 glyph slots x 32 rows x 24 bits.
-// Glyph IDs and initialization bytes are generated, not hand indexed.
+// FPGA 音频 LCD 的 24 像素中日韩字形子集；位图衍生自 OFL Noto Sans SC。
+// 字体来源与许可见 docs/fonts/FONT_SOURCE_AND_LICENSE.md 和 docs/fonts/OFL.txt。
+// 同步推断 ROM：128 个字形槽，每槽 32 行，每行 24 位。
+// 字形编号与初始化字节由工具生成，不使用手工索引。
 module lcd_cjk24_font(
     input wire clk,
     input wire [7:0] glyph,

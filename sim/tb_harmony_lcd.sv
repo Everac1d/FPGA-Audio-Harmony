@@ -251,8 +251,8 @@ module tb_harmony_lcd #(parameter integer TEST_RING_TUNE=0);
             pair_cases=pair_cases+1;
         end
         for(g=10;g<=30;g=g+1)begin gain_index=g;#1;check_dual_line();end
-        // Exactly two complete source-selected pages remain invariant across
-        // every algorithm, recorder state, editor selection, fault and time.
+        // 恰有两个由音源选择的完整页面，在
+        // 各算法、录音状态、编辑项、故障和时间下均保持不变。
         for(src=0;src<2;src=src+1)for(state=0;state<12;state=state+1)
             for(selection=0;selection<2;selection=selection+1)for(g=0;g<3;g=g+1)begin
                 source=src;rec_state=state;pitch_voice=selection;algorithm_mode=g;

@@ -59,7 +59,7 @@ module tb_record_status;
         clocks(3);check(uart_tx===1,"reset idle high");@(negedge clk);rst_n=1;
         fork
             begin
-                // Mutate every field while the first line is still on the wire.
+                // 第一行仍在串行发送时改变所有字段。
                 @(negedge uart_tx);clocks(40);@(negedge clk);
                 source=0;live_mode=0;algorithm_mode=1;pitch_semitones=4;gain_index=2;rec_state=2;
                 record_samples=1;play_samples=0;ddr_ready=0;storage_error=1;record_full=0;mic_ready=0;
@@ -82,7 +82,7 @@ module tb_record_status;
                 check(failure_line===expected_failure,"second failure snapshot reflects zeros after update");
             end
         join
-        // Reset during a byte must force idle high and discard the partial line.
+        // 字节发送期间复位必须强制空闲高电平，并丢弃未完成行。
         @(negedge uart_tx);clocks(3);@(negedge clk);rst_n=0;#1;
         check(uart_tx===1,"reset during transmission immediately idle");
         source=1;live_mode=3;algorithm_mode=3;pitch_semitones=-4;gain_index=7;rec_state=15;

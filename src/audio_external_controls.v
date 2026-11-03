@@ -1,6 +1,6 @@
-// External panel A: four active-low buttons and two quadrature encoders.
-// All asynchronous contacts are synchronized and filtered in the 50MHz domain.
-// No contact is used as a clock. Button commands are dispatched on release.
+// 外接面板A：四个低电平有效按键与两个正交编码器。
+// 所有异步触点均在50MHz时钟域内同步并滤波。
+// 触点不作为时钟；按键释放时才发出命令。
 module audio_external_controls #(
     parameter integer DEBOUNCE_CYCLES=1000000,
     parameter integer LONG_RESET_CYCLES=100000000,
@@ -18,7 +18,7 @@ module audio_external_controls #(
     input wire enc_pitch_sw_n,enc_pitch_clk,enc_pitch_dt,
     output reg record_source,
     output reg [1:0] live_mode,
-    // Tenths of unity: 10=1.0x .. 30=3.0x.
+    // 增益以0.1倍为单位：10=1.0倍，30=3.0倍。
     output reg [4:0] gain_index,
     output reg [1:0] algorithm_mode,
     output wire signed [4:0] pitch_semitones,
@@ -27,8 +27,8 @@ module audio_external_controls #(
     output reg record_toggle,play_toggle,play_restart,source_changed,reset_request
 );
     wire [5:0] contacts={enc_pitch_sw_n,enc_gain_sw_n,button_n};
-    // Normal effects keep their own pitch. Entering/leaving dual voice never
-    // overwrites any of the three pitch settings or the selected dual voice.
+    // 普通音效独立保留其音调；进入或退出双声部模式时，
+    // 不会覆盖三组音调设置，也不会改变选中的双声部。
     reg signed [4:0] normal_pitch,dual_first;
     wire dual_selected=(DUAL_VOICE_ENABLE!=0) && algorithm_mode==2'd3;
     assign pitch_semitones=dual_selected ? dual_first : normal_pitch;
@@ -53,9 +53,9 @@ module audio_external_controls #(
         end
     end
     wire [5:0] released=contact_stable & ~contact_previous;
-    // A diagnostic chord owns both SW releases, even if it is too short or
-    // cancelled. Require continuous debounced overlap, then wait until BOTH
-    // shafts have been released. A source change cancels until both are up.
+    // 诊断组合操作会接管两个SW开关的释放事件，即使按压时间过短
+    // 或操作已取消也如此；要求消抖后持续同时按住，再等待两个
+    // 旋钮均释放；切换音源后取消操作，直至两个旋钮均松开。
     wire diag_both_down=!contact_stable[4] && !contact_stable[5];
     wire diag_both_up=contact_stable[4] && contact_stable[5];
     reg diag_session,diag_qualified,diag_cancelled;
@@ -166,11 +166,11 @@ module audio_external_controls #(
     end
 endmodule
 
-// One output event per complete 11 -> 01 -> 00 -> 10 -> 11 cycle.
-// The reverse sequence decrements. Reversals cancel partial travel; a diagonal
-// transition discards the partial cycle and waits for the 11 anchor again.
-// The common 4-edge/full-pulse mechanical encoder is expected. REVERSE changes
-// the electrical direction without changing the panel parameter semantics.
+// 每完成一次11 -> 01 -> 00 -> 10 -> 11周期，输出一个事件。
+// 反向序列产生减量；中途反转会取消未完成行程，对角
+// 跳变会丢弃未完成周期，并重新等待11基准状态。
+// 适用于常见的每完整脉冲四边沿机械编码器；REVERSE只改变
+// 电气方向，不改变面板参数的操作含义。
 module audio_panel_encoder #(
     parameter integer FILTER_CYCLES=50000,
     parameter integer REVERSE=0
@@ -202,8 +202,8 @@ module audio_panel_encoder #(
         end else begin
             phase_meta<={contact_clk,contact_dt};phase_sync<=phase_meta;
             step_up<=0;step_down<=0;
-            // Filter the whole phase pair so two independently delayed contacts
-            // cannot manufacture a legal transition out of an illegal jump.
+            // 对整组双相输入进行滤波，防止两个独立延迟的触点
+            // 将非法跳变错误地转换成合法状态变化。
             if(phase_sync!=candidate)begin
                 candidate<=phase_sync;filter_count<=1;
                 if(FILTER_CYCLES<=1)begin stable<=phase_sync;filtered_once<=1;end
@@ -214,8 +214,8 @@ module audio_panel_encoder #(
                 else filter_count<=filter_count+1'b1;
             end else filter_count<=0;
             if(!decoder_initialized && filtered_once)begin
-                // Learn the real phase after reset. A held/partly turned shaft
-                // must reach 11 before a new complete cycle can count.
+                // 复位后先识别实际相位；被按住或转动到中间位置的旋钮
+                // 必须先到达11状态，才可对新的完整周期计数。
                 previous<=stable;travel<=0;armed<=(stable==2'b11);decoder_initialized<=1;
             end else if(decoder_initialized && stable!=previous)begin
                 previous<=stable;

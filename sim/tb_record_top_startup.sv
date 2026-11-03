@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-// Real top/bridge/audio with only the physical DDR wrapper replaced.
-// Verifies on-demand start, soft timeout recovery, strict selftest, clip
-// retention across source switch and full reset. Not a physical PHY model.
+// 使用真实顶层、桥接和音频模块，仅替换物理 DDR 封装。
+// 验证按需启动、软超时恢复、严格自检，以及
+// 在音源切换时保留及全局复位时清除录音；此模型不模拟物理层。
 module tb_record_top_startup;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0,key_gain_n=1;
@@ -90,9 +90,9 @@ module tb_record_top_startup;
     initial begin #3000000;$fatal(1,"timeout RECORD_TOP_STARTUP");end
 endmodule
 
-// Test-only DDR app-port wrapper: deterministic soft timeout then successful
-// calibration, with an ideal BL8 memory response. The production GPRJ never
-// includes this file and uses the actual B-version encrypted IP wrapper.
+// 仅用于测试的 DDR 应用端口封装：先确定性软超时，再
+// 校准成功，并提供理想 BL8 存储响应；正式 GPRJ 从不
+// 包含此文件，而是使用实际 B 版加密 IP 封装。
 module record_ddr3_memory(
     input clk50,rst_n,
     output reg ui_clk=0,

@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-// Numeric oracle uses signed integer arithmetic, independent of DUT signals.
-// Every signed PCM16 value is tested at all five selectable gain targets, with and
-// without protection, for both combinational and three-stage implementations.
+// 数值参考模型使用有符号整数运算，独立于被测模块信号。
+// 遍历全部有符号 PCM16 值及五个可选增益目标，同时覆盖启用和
+// 关闭保护两种情况，并同时检查组合实现和三级流水实现。
 module tb_six_gain;
     reg clk = 0;
     always #5 clk = ~clk;
@@ -62,8 +62,8 @@ module tb_six_gain;
         end
     endfunction
 
-    // Division of signed integers truncates toward zero. Saturation is after
-    // the soft knee and before the mode fade, including protected 3x rails.
+    // 有符号整数除法向零截断；饱和处理位于
+    // 软拐点处理之后、模式淡变之前，包含启用保护时的 3 倍正负极限。
     function automatic [17:0] math_sample(
         input integer sample, input integer gain, input integer envelope,
         input integer mode, input integer ready, input integer protect);
@@ -74,7 +74,7 @@ module tb_six_gain;
             clip_flag = ready && mode == 1 && (amplified > 32767 || amplified < -32768);
             limit_flag = ready && mode == 1 && protect && absolute > 8192;
             compressed = limit_flag ? 8192 + (absolute - 8192) / 4 : absolute;
-            // The shaping calculation itself is independent of ready.
+            // 整形计算本身不依赖 ready。
             if (protect && mode == 1 && absolute > 8192)
                 compressed = 8192 + (absolute - 8192) / 4;
             if (amplified < 0) compressed = -compressed;
@@ -168,20 +168,20 @@ module tb_six_gain;
         active_indices[0]=0;active_indices[1]=2;active_indices[2]=4;active_indices[3]=5;active_indices[4]=6;
         repeat(4) @(posedge clk);
         @(negedge clk); rst_n=1;
-        // Start scoreboards with silence so the unscored release edge is zero.
+        // 以静音启动参考比对，使不计入检查的释放边沿为零。
         source_ready=0;
         for(index=0; index<5; index=index+1)
             for(sample=-32768; sample<=32767; sample=sample+1)
                 static_tick(active_indices[index],sample,1,1);
-        // Tone must stay at unity at every gain index and both rails.
+        // 任意增益索引及正负极限处，测试音均必须保持 1 倍增益。
         for(index=0; index<5; index=index+1) begin
             static_tick(active_indices[index],-32768,2,1);
             static_tick(active_indices[index],32767,2,1);
             static_tick(active_indices[index],8193,2,1);
             static_tick(active_indices[index],32767,1,0);
         end
-        // Reserved H1/H3/H7 must never retain old gain values. Check both
-        // polarities, tiny samples and diagnostic tone against unity fallback.
+        // 保留的 H1/H3/H7 不得保留旧增益值；检查两种
+        // 极性、小幅样本和诊断测试音是否均回退到 1 倍增益。
         for(index=1;index<8;index=index+2) begin
             if(index!=5) begin
                 static_tick(index,-32768,1,1); static_tick(index,32767,1,1);
@@ -192,27 +192,27 @@ module tb_six_gain;
         static_tick(0,0,1,0); static_tick(0,0,1,0); static_tick(0,0,1,0);
 
         smooth_reset();
-        // 1x -> 3x: exactly 512 frame events, despite clock-only holds.
+        // 1 倍到 3 倍：即使其间仅时钟运行、帧事件暂停，也恰需 512 次帧事件。
         for(k=0;k<512;k=k+1)
             smooth_tick(6,(k[0] ? -32768 : 32767),1,1,1,1);
         if(model_gain != 768 || model_envelope != 256) $fatal(1,"1x->3x endpoint");
         repeat(20) smooth_tick(0,32767,1,1,1,0);
         if(model_gain != 768) $fatal(1,"gain advanced without frame_ce");
-        // 3x -> 1x also takes exactly 512 frame events.
+        // 3 倍到 1 倍同样恰需 512 次帧事件。
         for(k=0;k<512;k=k+1) smooth_tick(0,-32768,1,1,1,1);
         if(model_gain != 256) $fatal(1,"3x->1x endpoint");
-        // A source loss kills output immediately through the same 3 stages,
-        // and clears the envelope at its next frame event.
+        // 音源失效通过相同的三级流水线立即关闭输出，
+        // 并在下一次帧事件清除包络。
         repeat(5) smooth_tick(6,32767,1,1,0,0);
         smooth_tick(6,32767,1,1,0,1);
         if(model_envelope != 0) $fatal(1,"source loss fade reset");
         repeat(256) smooth_tick(6,32767,1,1,1,1);
-        // Mode changes must fade to zero, then tone uses fixed unity gain.
+        // 模式切换必须先淡出到零，随后测试音使用固定 1 倍增益。
         repeat(256) smooth_tick(6,-32768,1,2,1,1);
         if(model_envelope != 0 || !switch_ready) $fatal(1,"mode fade endpoint");
         repeat(256) smooth_tick(6,-32768,2,2,1,1);
         repeat(10) smooth_tick(6,32767,2,2,1,1);
-        // Mute/source loss and reset while a nonzero sample is in flight.
+        // 覆盖非零样本处理中途发生的静音、音源失效和复位。
         smooth_tick(6,32767,0,0,0,1);
         smooth_tick(6,32767,1,1,1,1);
         smooth_reset();

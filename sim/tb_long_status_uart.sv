@@ -74,8 +74,8 @@ module tb_long_status_uart;
         clocks(3);check(uart_tx===1,"reset idle high");@(negedge clk);rst_n=1;
         fork
             begin
-                // Changing BOTH new fields while R6 is being sent must not
-                // affect its suffix, or the following atomically paired D3.
+                // 发送 R6 时同时改变两个新增字段，不得
+                // 影响该行后缀或随后与之原子配对的 D3。
                 @(negedge uart_tx);clocks(40);@(negedge clk);
                 source=0;live_mode=0;algorithm_mode=2;pitch_semitones=4;pitch_second=-12;pitch_voice=1;
                 gain_index=11;rec_state=11;record_samples=32'h00800000;play_samples=32'h007FFFFF;

@@ -1,6 +1,6 @@
-// External panel A: four active-low buttons and two quadrature encoders.
-// All asynchronous contacts are synchronized and filtered in the 50MHz domain.
-// No contact is used as a clock. Button commands are dispatched on release.
+// 外接面板A：四个低电平有效按键与两个正交编码器。
+// 所有异步触点均在50MHz时钟域内同步并滤波。
+// 触点不作为时钟；按键释放时才发出命令。
 module audio_harmony_controls #(
     parameter integer DEBOUNCE_CYCLES=1000000,
     parameter integer LONG_RESET_CYCLES=100000000,
@@ -20,7 +20,7 @@ module audio_harmony_controls #(
     input wire enc_pitch_sw_n,enc_pitch_clk,enc_pitch_dt,
     output reg record_source,
     output reg [1:0] live_mode,
-    // Tenths of unity: 10=1.0x .. 30=3.0x.
+    // 增益以0.1倍为单位：10=1.0倍，30=3.0倍。
     output reg [4:0] gain_index,
     output reg [1:0] algorithm_mode,
     output wire signed [4:0] pitch_semitones,
@@ -31,8 +31,8 @@ module audio_harmony_controls #(
     output reg record_toggle,play_toggle,play_restart,source_changed,reset_request
 );
     wire [5:0] contacts={enc_pitch_sw_n,enc_gain_sw_n,button_n};
-    // Normal effects keep their own pitch. Entering/leaving dual voice never
-    // overwrites any of the three pitch settings or the selected dual voice.
+    // 普通音效独立保留其音调；进入或退出双声部模式时，
+    // 不会覆盖三组音调设置，也不会改变选中的双声部。
     reg signed [4:0] normal_pitch,dual_first;
     wire dual_selected=(DUAL_VOICE_ENABLE!=0) &&
         ((UNIFIED_HARMONY!=0) ? algorithm_mode==2'd2 : algorithm_mode==2'd3);
@@ -58,9 +58,9 @@ module audio_harmony_controls #(
         end
     end
     wire [5:0] released=contact_stable & ~contact_previous;
-    // A diagnostic chord owns both SW releases, even if it is too short or
-    // cancelled. Require continuous debounced overlap, then wait until BOTH
-    // shafts have been released. A source change cancels until both are up.
+    // 诊断组合操作会接管两个SW开关的释放事件，即使按压时间过短
+    // 或操作已取消也如此；要求消抖后持续同时按住，再等待两个
+    // 旋钮均释放；切换音源后取消操作，直至两个旋钮均松开。
     wire diag_both_down=!contact_stable[4] && !contact_stable[5];
     wire diag_both_up=contact_stable[4] && contact_stable[5];
     reg diag_session,diag_qualified,diag_cancelled;
@@ -96,9 +96,9 @@ module audio_harmony_controls #(
             reset_held<=0;replay_held<=0;reset_long<=0;replay_long<=0;
             pitch_held<=0;pitch_long<=0;gain_held<=0;gain_long<=0;gain_cancelled<=0;
         end else begin
-            // A source switch owns any gain-shaft press already in progress.
-            // Its eventual release must not re-enter tuning or mute the new
-            // source; the next complete press is available normally.
+            // 音源切换会接管当前正在进行的增益旋钮按压。
+            // 随后释放旋钮时不得重新进入调参，也不得将新音源
+            // 静音；下一次完整按压可正常使用。
             if(RING_TUNE_ENABLE!=0 && released[0] && !contact_stable[4])gain_cancelled<=1;
             else if(contact_stable[4])gain_cancelled<=0;
             if(contact_stable[0])begin reset_held<=0;reset_long<=0;end
@@ -130,9 +130,9 @@ module audio_harmony_controls #(
     audio_panel_encoder #(.FILTER_CYCLES(ENCODER_FILTER_CYCLES),.REVERSE(PITCH_REVERSE)) pitch_encoder(
         .clk(clk),.rst_n(rst_n),.contact_clk(enc_pitch_clk),.contact_dt(enc_pitch_dt),
         .step_up(pitch_up),.step_down(pitch_down));
-    // Only display calibration is accelerated. The gain and pitch controls
-    // retain their original fixed increments. First and second fast events
-    // remain fine; the third same-direction event may use a 16-unit step.
+    // 只有显示校准支持加速；增益与音调控制
+    // 仍保留原来的固定步进；前两次快速事件
+    // 仍使用细步进，第三次同方向事件可使用16单位步进。
     reg [31:0] ring_event_age;
     reg [1:0] ring_fast_chain;
     reg ring_last_up;

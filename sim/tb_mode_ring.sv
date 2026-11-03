@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Decode only the serial pins. The 32503 copy below is a read-only behavioral
-// reference for legacy cyan brightness, clock, framing and refresh behavior.
+// 仅解码串行引脚；下面的 32503 副本是只读行为
+// 参考，用于检查旧版青色亮度、时钟、帧格式及刷新行为。
 `include "sim/fixtures/sk9822_ring_32503.v"
 module tb_mode_ring;
     localparam integer HALF=2, REFRESH=2048, LEDS=12;
@@ -48,9 +48,9 @@ module tb_mode_ring;
         begin repeat(n)begin @(posedge clk);#1;end end
     endtask
 
-    // The clock schedule must remain bit-for-bit identical to the old module
-    // regardless of selected color. Cyan data is also compared every cycle,
-    // including idle time and every one of the 256 level inputs.
+    // 时钟时序必须与旧模块
+    // 逐位保持一致，与所选颜色无关；青色数据还逐周期比较，
+    // 包括空闲时段以及全部 256 个电平输入。
     always @(posedge clk)begin
         #1;
         if(rst_n)begin
@@ -61,8 +61,8 @@ module tb_mode_ring;
             end
         end
     end
-    // Serial data changes are legal on falling clock edges only, including
-    // start/end boundaries; while the LED clock is high it must stay stable.
+    // 串行数据只能在时钟下降沿变化，包括
+    // 开始和结束边界；LED 时钟为高时必须保持稳定。
     always @(led_da)begin
         if(rst_n && led_ck===1'b1)begin
             $display("FAIL LED data changed while clock high");$fatal(1);
@@ -99,9 +99,9 @@ module tb_mode_ring;
                     check(word_value[15:8]===(expected_mask[1]?expected_intensity[7:0]:8'd0),"G channel and original level/2 response");
                     check(word_value[7:0]===(expected_mask[2]?expected_intensity[7:0]:8'd0),"R channel and original level/2 response");
                 end
-                // Change both the actual functional palette and the meter
-                // input after the first pixel, not an internal DUT register.
-                // All 12 pixels of this frame must still use the old pair.
+                // 同时改变实际功能调色板和电平表的
+                // 输入；在第一个灯珠后改变输入，而非修改被测模块内部寄存器。
+                // 本帧全部 12 个灯珠仍须使用原先的一组参数。
                 if(change_midframe && word_number==1)begin
                     @(negedge clk);active_algorithm_mode=2;level=173;
                 end
@@ -111,10 +111,10 @@ module tb_mode_ring;
     endtask
 
     initial begin
-        // Exhaust the externally documented functional combinations, including
-        // all four algorithm codes and storage faults while still in live mode.
-        // Expected values are the specified visible RGB colors, independent of
-        // the LED driver's BGR serialization implementation.
+        // 遍历对外说明的全部功能组合，包括
+        // 在实时模式下覆盖全部四种算法编码以及存储故障。
+        // 期望值采用规定的可见 RGB 颜色，独立于
+        // LED 驱动器的 BGR 串行化实现。
         for(s=0;s<2;s=s+1)for(a=0;a<4;a=a+1)for(m=0;m<4;m=m+1)
         for(t=0;t<16;t=t+1)for(d=0;d<2;d=d+1)for(f=0;f<2;f=f+1)begin
             active_source=s;active_algorithm_mode=a;active_mode=m;rec_state=t;
@@ -137,9 +137,9 @@ module tb_mode_ring;
         clocks(4);check(led_ck===0 && led_da===0,"reset holds both pins low");
         @(negedge clk);rst_n=1;
 
-        // Start with cyan so the full exhaustive cyan sweep also has an old
-        // module comparison from the same initial reset. Then cover the other
-        // seven RGB masks, all 256 input levels and every pixel in every frame.
+        // 先使用青色，使完整的青色遍历也能与旧版
+        // 模块从相同初始复位开始比较，随后覆盖其余
+        // 七种 RGB 掩码、全部 256 个输入电平及每帧的每个灯珠。
         for(mask_order=0;mask_order<8;mask_order=mask_order+1)begin
             if(mask_order==0)mask_index=3;
             else if(mask_order<=3)mask_index=mask_order-1;
@@ -158,8 +158,8 @@ module tb_mode_ring;
         receive_frame(3'b011,8'd80,1);
         receive_frame(3'b110,8'd173,0);
 
-        // Reset in the middle of serial transmission, asynchronously between
-        // audio clock edges. No partial old frame may survive the reset.
+        // 在串行发送中途复位，并在
+        // 音频时钟沿之间异步发生；复位后不得残留旧帧的任何部分。
         @(posedge led_ck);#1;
         @(posedge led_ck);#3;rst_n=0;#1;
         check(led_ck===0 && led_da===0,"asynchronous reset immediately idles both pins");

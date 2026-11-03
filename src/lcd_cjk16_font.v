@@ -1,5 +1,5 @@
-// Independent 16px footer subset of the same OFL Noto Sans SC source.
-// Main 24px font, glyph IDs and ROM stay unchanged.
+// 同一 OFL Noto Sans SC 字体源的独立 16 像素页脚子集。
+// 主界面的 24 像素字体、字形编号和 ROM 保持不变。
 module lcd_cjk16_font(
     input wire clk,
     input wire [7:0] glyph,

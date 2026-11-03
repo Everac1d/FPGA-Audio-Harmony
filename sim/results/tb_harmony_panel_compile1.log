@@ -1,6 +1,0 @@
-warning: Some design elements have no explicit time unit and/or
-       : time precision. This may cause confusing timing results.
-       : Affected design elements are:
-       :   -- module audio_external_controls declared here: src/audio_external_controls.v:4
-       :   -- module audio_harmony_controls declared here: src/audio_harmony_controls.v:4
-       :   -- module audio_panel_encoder declared here: src/audio_external_controls.v:174

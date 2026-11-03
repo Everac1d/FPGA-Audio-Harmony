@@ -1,2 +1,0 @@
-PASS EXTERNAL_CONTROLS checks=163 rec=2 play=1 restart=1 source=2 reset=1
-sim/tb_external_controls.sv:141: $finish called at 143561000 (1ps)

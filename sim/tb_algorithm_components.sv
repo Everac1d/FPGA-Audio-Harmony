@@ -51,7 +51,7 @@ module tb_algorithm_components;
         @(negedge clk);valid=0;mvalid=0;
         repeat(8) @(negedge clk);
         if(fade_out!=fade_in || mix_out!=mix_in) $fatal(1,"component output count");
-        // Flush pending transactions, then confirm no stale valid escapes.
+        // 清空待处理事务，再确认没有过期有效信号泄漏。
         valid=1;mvalid=1;@(negedge clk);rst_n=0;valid=0;mvalid=0;
         repeat(2) @(negedge clk);rst_n=1;
         repeat(8) @(negedge clk);

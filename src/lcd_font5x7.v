@@ -1,5 +1,5 @@
-// Original compact 5x7 ASCII font. No external ROM/init file is required.
-// Bit 34 is the upper-left pixel; blank eighth row/sixth column is spacing.
+// 原创紧凑型 5×7 ASCII 字体，无需外部 ROM 或初始化文件。
+// 位 34 对应左上角像素；空白的第八行和第六列用作字间距。
 module lcd_font5x7(
     input wire [7:0] character,
     input wire [2:0] row,column,

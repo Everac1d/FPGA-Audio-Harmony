@@ -1,2 +1,0 @@
-PASS LCD_STATIC_FOOTER checks=532995 main_identical_pixels=193920 footer_oracle_pixels=67200 fixed_pages=2 rows_per_page=4 font16 native480x272 no_rotation all12states both_sources five_clock_pipeline
-sim/tb_lcd_static_footer.sv:99: $finish called at 26120151000 (1ps)

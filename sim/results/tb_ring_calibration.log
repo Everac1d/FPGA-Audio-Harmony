@@ -1,2 +1,0 @@
-PASS RING_CALIBRATION checks=324334 cycle_exact_checks=333920 production_geometry_checks=97733 windows=35352 signed_margin_values=49152 magnitudes=32769 calibrations=8 serial_frames=5 static24_matches_28 stored_baseline no_audio_or_mean_reset clamp64_65535 rgb_quantization_retained
-sim/tb_ring_calibration.sv:183: $finish called at 8633952000 (1ps)

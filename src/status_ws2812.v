@@ -1,4 +1,4 @@
-// One onboard WS2812, GRB, refreshed at 100 Hz at a 50 MHz clock.
+// 板载单颗WS2812，颜色顺序GRB，在50MHz时钟下以100Hz刷新。
 module status_ws2812 (
     input wire clk,
     input wire rst_n,

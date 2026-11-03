@@ -1,7 +1,7 @@
-// Tang Mega NEO 138K B, Dock 31004, Mic Array via J32 FPC.
-// User verified on 2026-10-12: Mic VIN->P1 5V and GND->P1 GND, ~0 ohm.
-// This requires the ordinary FFC to connect pin n to pin n.
-// J32 pin8 CK -> IO7 Y11; pin7 WS -> IO6 W10; pin6 D3 -> IO5 AB11.
+// 开发板为 Tang Mega NEO 138K B，底板版本 31004，麦克风阵列通过 J32 FPC 连接。
+// 用户于 2026-10-12 确认：麦克风 VIN 接 P1 的 5V，GND 接 P1 的 GND，实测约 0 欧姆。
+// 此接法要求普通 FFC 的第 n 脚与第 n 脚直连。
+// J32 接线：第 8 脚 CK 接 IO7 Y11；第 7 脚 WS 接 IO6 W10；第 6 脚 D3 接 IO5 AB11。
 
 IO_LOC "clk" V22;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;

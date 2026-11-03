@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-// Behavioral app-port model. Does not claim DDR PHY/calibration validation.
+// 应用端口行为模型，不代表完成了 DDR 物理层或校准验证。
 module tb_ddr_bridge;
     reg clk=0,ui_clk=0,ui_clock_running=1;
     always #10 clk=~clk;
@@ -24,7 +24,7 @@ module tb_ddr_bridge;
     reg [3:0] corrupt_index=5;
     reg [255:0] corrupt_mask=256'd1<<73;
     ddr_audio_bridge #(.TIMEOUT_CYCLES(200),.BOOT_TIMEOUT_CYCLES(2000)) dut(.*);
-    // Full low 4MB, including every address bit used by the 30-second clip.
+    // 覆盖低地址完整 4 MB，包含 30 秒录音使用的每一位地址。
     reg [255:0] memory[0:131071];
     reg [31:0] random_state=32'h39c5ab17;
     reg pending_read=0;
@@ -32,10 +32,10 @@ module tb_ddr_bridge;
     integer read_delay=0,commands=0,writes=0,reads=0,responses=0,requests=0;
     integer joint_writes=0,cmd_only_ready_cycles=0,data_only_ready_cycles=0;
     integer external_commands=0,external_writes=0,cmd_delayed_full_accepts=0,data_delayed_full_accepts=0;
-    // Model the native IP's one-cycle app enable/data registers and delayed
-    // internal full qualification. Using !external_ready as full simplifies
-    // the native Almost_Full registers, but deliberately preserves acceptance
-    // in the cycle after ready falls; it is not ordinary valid && ready.
+    // 对原生 IP 的单周期应用使能、数据寄存器及延迟的
+    // 内部满标志判定；使用 !external_ready 作为满标志，简化了
+    // 原生 Almost_Full 寄存器，但特意保留
+    // 在 ready 下降后的周期仍可接收；这并非普通的 valid && ready 握手。
     reg app_en_d=0,write_en_d=0;
     reg [2:0] app_cmd_d;
     reg [28:0] app_addr_d;
@@ -106,9 +106,9 @@ module tb_ddr_bridge;
                 data_queue[data_tail]=write_data_d;data_tail=data_tail+1;
                 joint_writes<=joint_writes+1;
             end
-            // Execute commands in order, pairing writes with the oldest data.
-            // Queueing avoids overwriting a previous payload at a back-to-back
-            // pipeline boundary and also exposes duplicate native enables.
+            // 按顺序执行命令，将写命令与最早的数据配对。
+            // 排队可避免连续事务在流水线边界覆盖前一次载荷，
+            // 也能暴露原生使能重复的问题。
             if(!pending_read && command_head<command_tail)begin
                 if(command_queue[command_head]==0)begin
                     if(data_head<data_tail)begin
@@ -169,7 +169,7 @@ module tb_ddr_bridge;
             if(!error || ready || req_ready) $fatal(1,"error did not remain latched");
             if(error_code!==expected_code[3:0]) $fatal(1,"wrong cause code got=%0d expected=%0d",error_code,expected_code);
             if(expected_code!=7 && failure_snapshot!==0)$fatal(1,"non-mismatch error populated mismatch snapshot");
-            // Cause must retain the first error even after a different failure.
+            // 即使随后出现不同故障，原因字段也必须保留首次错误。
             calib_done=0;repeat(10) @(negedge clk);
             if(error_code!==expected_code[3:0]) $fatal(1,"first cause overwritten");
             if(ui_clock_running && debug_state!==4'd8 && expected_code!=2)
@@ -196,8 +196,8 @@ module tb_ddr_bridge;
     reg [544:0] first_failure;
     initial begin
         restart;
-        // Each ready can remain high while the other is low. No command or
-        // data may escape until the controller offers a common write beat.
+        // 任一 ready 可在另一个为低时保持高电平；
+        // 在控制器提供共同写节拍前，命令和数据均不得发出。
         opposite_ready=1;repeat(40)@(negedge ui_clk);
         if(commands!=0 || writes!=0 || ready || error)$fatal(1,"opposite ready levels must not accept half writes");
         opposite_ready=0;stall_cmd=1;repeat(40)@(negedge ui_clk);
@@ -208,8 +208,8 @@ module tb_ddr_bridge;
         if(cmd_only_ready_cycles<10 || data_only_ready_cycles<10)$fatal(1,"opposite-ready write coverage missing");
         for(i=0;i<32;i=i+1) begin
             payload={8{32'hca570000+i}} ^ (256'd1<<(i*7));
-            // Spread 64 transactions across the entire 91,553-block clip
-            // range, explicitly including first and final partial blocks.
+            // 将 64 个事务分散到整个包含 91,553 个块的录音
+            // 范围内，明确包含首块及最后一个不完整块。
             block_index=(i==0)?0:((i==1)?91552:((i*3191+85741)%91553));
             transact(1,block_index*8,payload,result);
             transact(0,block_index*8,0,result);
@@ -222,7 +222,7 @@ module tb_ddr_bridge;
             $fatal(1,"native delayed-full model duplicated/dropped command or write enables");
         if(cmd_delayed_full_accepts==0 || data_delayed_full_accepts==0)
             $fatal(1,"native acceptance after external ready fell was not exercised");
-        // Random ready waveforms are deterministic/reproducible.
+        // 随机 ready 波形应确定且可复现。
         repeat(12) @(negedge clk);
         if(debug_state!==4'd4 || error_code!==0) $fatal(1,"ready diagnostic snapshot invalid");
         calib_done=0;wait_error(4);
@@ -231,8 +231,8 @@ module tb_ddr_bridge;
         restart;corrupt_read=1;wait_error(7);
         first_failure={4'd5,test_location(5),expected_pattern(5),expected_pattern(5)^(256'd1<<73)};
         if(failure_snapshot!==first_failure)$fatal(1,"index5 single-bit first mismatch metadata differs");
-        // Later input activity and calibration loss must not replace any of
-        // the captured 545 bits or the first error cause.
+        // 后续输入活动和校准丢失不得替换
+        // 已捕获的 545 位数据或首次错误原因。
         corrupt_index=9;corrupt_mask=~256'd0;rd_data=~rd_data;calib_done=1;
         repeat(30)@(negedge clk);
         if(failure_snapshot!==first_failure || error_code!=7)$fatal(1,"first mismatch snapshot changed after fault");
@@ -248,23 +248,23 @@ module tb_ddr_bridge;
         @(negedge clk);req_valid=0;
         wait_error(5);
         restart;bad_end=1;wait_error(6);
-        // No ui clock activity is required for the audio-domain boot watchdog.
+        // 音频域启动看门狗不需要 UI 时钟活动。
         @(negedge clk);rst_n=0;ui_rst_n=0;calib_done=0;ui_clock_running=0;
         repeat(8) @(negedge clk);rst_n=1;wait_error(1);
         restart;wait_ready;
-        // A running system whose user clock stops must time out in the audio
-        // domain; no returning UI edge is needed to make the audio fail closed.
+        // 运行中的系统若用户时钟停止，必须在音频
+        // 域内超时；音频进入故障静音不应依赖 UI 时钟恢复边沿。
         @(negedge clk);ui_clock_running=0;req_valid=1;req_write=0;req_addr=0;
         @(negedge clk);req_valid=0;wait_error(3);
         restart;wait_ready;
-        // User-domain reset loss is fatal after readiness, even if calibration
-        // later returns; global reset is the only recovery operation.
+        // 就绪后用户域复位丢失属于致命故障，即使校准
+        // 随后恢复也不例外；全局复位是唯一恢复方式。
         @(negedge clk);ui_rst_n=0;wait_error(4);
         restart;wait_ready;
-        // An unexpected ready loss without a UI error flag has its own code.
+        // 没有 UI 错误标志的意外就绪丢失使用独立错误码。
         force dut.u_ready=1'b0;wait_error(2);release dut.u_ready;
         restart;wait_ready;
-        // Illegal FSM encoding is distinct from bus timeout/corruption.
+        // 非法状态机编码应与总线超时或数据损坏区分。
         @(negedge ui_clk);force dut.state=4'hf;
         @(negedge ui_clk);release dut.state;wait_error(8);
         restart;wait_ready;

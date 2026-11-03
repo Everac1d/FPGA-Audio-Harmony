@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-// Capacity/address/PCM test: the REAL shipping 30-second sample limit is used.
-// Only sample spacing and zero-roll durations are accelerated. This does not
-// measure real audio timing, DSP tail length, DDR PHY behavior, or board sound.
+// 容量、地址及 PCM 测试：使用实际交付的 30 秒样本上限。
+// 仅加快样本间隔和零样本预热时长；此测试不用于
+// 测量实际音频时序、DSP 拖尾长度、DDR 物理层行为或板端音质。
 module tb_clip_capacity;
     localparam integer CAPACITY=1464844;
     localparam integer BLOCKS=(CAPACITY+15)/16;
@@ -197,16 +197,16 @@ module tb_clip_capacity;
             $fatal(1,"30-second read coverage mismatch reads=%0d max_addr=%0d",reads_completed-full_reads_before,highest_read_address);
         $display("MEASURE CLIP_CAPACITY full_bit_exact_samples=%0d read_blocks=%0d",checked_index,reads_completed-full_reads_before);
 
-        // A source/configuration abort retains the full recording, including
-        // its committed length, even when a prefetch is still in flight.
+        // 因音源或配置引起的中止应保留完整录音，包括
+        // 已提交的录音长度，即使预取仍未完成也应如此。
         start_play;
         while(checked_index<23) @(negedge clk);
         command(2);check_playback=0;abort_length=checked_index;await_ready;
         if(!record_valid || !record_full || record_samples!=CAPACITY || abort_length<23 || abort_length>=CAPACITY)
             $fatal(1,"source abort deleted/changed full recording");
 
-        // Short destructive overwrite must hide the old 30-second tail and
-        // zero the partial last block; the new clip is replayed twice exactly.
+        // 短录音破坏性覆盖必须隐藏旧的 30 秒录音尾部，并
+        // 将最后一个不完整块补零；新录音须精确回放两次。
         short_writes_before=writes_completed;
         start_record(32'h1982fa5d);
         while(capture_index<37) @(negedge clk);

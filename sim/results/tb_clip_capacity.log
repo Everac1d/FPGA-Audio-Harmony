@@ -1,4 +1,0 @@
-MEASURE CLIP_CAPACITY capture_samples=1464844 blocks=91553 last_app_address=732416 valid_last_lanes=12 zero_last_lanes=4 bytes=2929688 actual_duration_s=30.00000512
-MEASURE CLIP_CAPACITY full_bit_exact_samples=1464844 read_blocks=91553
-PASS CLIP_CAPACITY: max_samples=1464844 full_bit_exact_samples=1464844 total_bit_exact_samples=1464941 full_blocks=91553 final_address=732416 source_abort_preserved short_overwrite=37 repeat_short=2 accelerated_tick_clocks=16 reduced_roll_only
-sim/tb_clip_capacity.sv:222: $finish called at 937565240000 (1ps)

@@ -1,13 +1,13 @@
-// One volatile raw PCM16 clip. All ports belong to the audio clock domain.
-// DDR requests are 256-bit BL8 transfers, address units are 32-bit DDR words.
-// Metadata is committed only after the final partial/full burst completes.
+// 保存一段易失性的原始 PCM16 录音；所有端口均属于音频时钟域。
+// DDR 请求采用 256 位 BL8 传输，地址以 32 位 DDR 字为单位。
+// 仅在最后一次部分或完整突发传输完成后提交元数据。
 module pcm_clip_controller #(
     parameter integer MAX_SAMPLES = 1464844,
     parameter integer PREROLL_SAMPLES = 8866,
     parameter integer TAIL_SAMPLES = 8994,
     parameter integer DRAIN_SAMPLES = 512,
-    // Legacy candidates keep stop/restart semantics. The external-control
-    // candidate enables an exact-cursor pause and a separate restart command.
+    // 原有候选实现保留停止／重新开始语义；外部控制
+    // 候选实现支持在精确播放位置暂停，并提供独立的重新开始命令。
     parameter integer ENHANCED_PLAYBACK = 0
 ) (
     input wire clk,rst_n,sample_tick,
@@ -107,7 +107,7 @@ module pcm_clip_controller #(
                     if(((ENHANCED_PLAYBACK==0) || !abort_play) &&
                        (record_toggle || ((ENHANCED_PLAYBACK!=0) && record_pending)) &&
                        storage_ready && !transaction_active && !pending_write) begin
-                        // Re-record is destructive to the one existing clip, by design.
+                        // 按设计，重新录音会覆盖唯一一段已有录音。
                         rec_state<=RECORD;record_samples<=0;captured<=0;play_samples<=0;
                         clip_committed<=0;pack<=0;pack_count<=0;next_write_address<=0;
                         block_count<=0;read_pointer<=0;write_pointer<=0;restart_pending<=0;record_pending<=0;
@@ -179,15 +179,15 @@ module pcm_clip_controller #(
                 PAUSED:if(ENHANCED_PLAYBACK==0)begin rec_state<=ERROR;fault<=1;end
                 default:begin rec_state<=ERROR;fault<=1;end
             endcase
-            // Stopping/parameter changes retain clip data. Let any outstanding
-            // read finish before another operation; discard its validity on start.
+            // 停止或修改参数时保留录音数据。开始另一操作前，等待尚未完成的
+            // 读取结束；新操作启动时丢弃旧读取结果的有效标志。
             if(ENHANCED_PLAYBACK==0)begin
                 if((abort_play || play_toggle || record_toggle) && active_state)
                     rec_state<=READY;
             end else begin
-                // A just-stopped playback can still have one old DDR read in
-                // flight. Remember a new command until that response drains,
-                // rather than silently dropping a short button event.
+                // 刚停止播放时，仍可能有一次旧 DDR 读取尚未完成。
+                // 因此应记住新命令，直至旧响应接收完毕，
+                // 避免无提示地丢失短按事件。
                 if((rec_state==EMPTY || rec_state==READY) && record_toggle &&
                    (transaction_active || pending_write))begin
                     record_pending<=1;restart_pending<=0;
@@ -195,9 +195,9 @@ module pcm_clip_controller #(
                             record_valid && transaction_active)begin
                     restart_pending<=1;
                 end
-                // A restart first ends the old session. Outstanding DDR data
-                // is received normally and discarded by the later fresh start;
-                // its response can never become block zero of the new session.
+                // 重新开始时先结束旧会话。尚未返回的 DDR 数据
+                // 正常接收，再由后续新会话的启动流程丢弃；
+                // 旧响应绝不能成为新会话的第零块数据。
                 if(abort_play)begin
                     restart_pending<=0;record_pending<=0;
                     if(active_state || play_paused)rec_state<=READY;

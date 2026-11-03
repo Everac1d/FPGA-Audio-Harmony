@@ -1,2 +1,0 @@
-PASS tb_record_status checks=1611 bytes=801
-sim/tb_record_status.sv:102: $finish called at 428516000 (1ps)

@@ -1,12 +1,12 @@
-//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
-//All rights reserved.
-//File Title: IP file
-//Tool Version: V1.9.12.04 (64-bit)
-//IP Version: 1.0
-//Part Number: GW5AST-LV138PG484AC1/I0
-//Device: GW5AST-138
-//Device Version: B
-//Created Time: Sun Oct 25 11:10:07 2026
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.（高云半导体版权所有）
+//All rights reserved.（保留所有权利。）
+//文件说明：IP 文件
+//工具版本： V1.9.12.04 (64-bit)
+//IP 版本： 1.0
+//器件完整型号： GW5AST-LV138PG484AC1/I0
+//器件： GW5AST-138
+//器件版本： B
+//生成时间： Sun Oct 25 11:10:07 2026
 
 module Record_DDR3_PLL_MOD (lock, clkout0, clkout1, clkout2, clkin, reset, icpsel, lpfres, lpfcap, enclk0, enclk1, enclk2);
 
@@ -180,4 +180,4 @@ defparam PLL_inst.DYN_DT3_SEL = "FALSE";
 defparam PLL_inst.DYN_ICP_SEL = "TRUE";
 defparam PLL_inst.DYN_LPF_SEL = "TRUE";
 
-endmodule //Record_DDR3_PLL_MOD
+endmodule //模块结束：Record_DDR3_PLL_MOD

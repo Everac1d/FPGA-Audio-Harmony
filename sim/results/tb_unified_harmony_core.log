@@ -1,2 +1,0 @@
-PASS UNIFIED_HARMONY_CORE independent_samples=32900 static_samples=32900 all625pairs old_zero_pitch_equiv=20000 unity_exact=10150 normal01_exact=5199 nonzero_dual28_exact=4720 zero_zero=816 zero_after_different_phase=16 invalid3_silent=2601 holds=119 valid17 no_skip history_preserved
-sim/tb_unified_harmony_core.sv:194: $finish called at 29668220000 (1ps)

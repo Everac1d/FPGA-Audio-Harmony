@@ -93,9 +93,9 @@ module tb_lcd_dashboard;
                 check(dut.line_token(1,27)==G_U002E,"fine gain always has decimal point");
             end
         end
-        // Invalid fine gain mirrors the monitor's conservative unity fallback.
+        // 无效精细增益应与监听模块一致，保守回退到 1 倍增益。
         gain_index=31;#1;expect_digit(1,26,1);expect_digit(1,28,0);
-        // Legacy rendering remains opt-in compatible with the original five codes.
+        // 旧版渲染仍可按需启用，并兼容原来的五种编码。
         for(state_index=0;state_index<5;state_index=state_index+1)begin
             case(state_index)0:legacy_gain_index=0;1:legacy_gain_index=2;
             2:legacy_gain_index=4;3:legacy_gain_index=5;4:legacy_gain_index=6;endcase

@@ -71,8 +71,8 @@ module tb_lcd_static_footer;
     initial begin
         $readmemh("src/lcd_cjk16.mem",font_rows);
         #1;
-        // Every recorder condition and fault leaves the complete source page
-        // unchanged. Main fields remain free to show the actual status.
+        // 全部录音状态和故障均保持完整的音源页面
+        // 不变；主字段仍可显示实际状态。
         for(mode=0;mode<2;mode=mode+1)begin
             source=mode;
             for(state=0;state<12;state=state+1)begin

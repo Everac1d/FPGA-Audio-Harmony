@@ -1,2 +1,0 @@
-PASS tb_record_keys checks=4792 rec=3 play=2 source=2
-sim/tb_record_keys.sv:120: $finish called at 11976000 (1ps)

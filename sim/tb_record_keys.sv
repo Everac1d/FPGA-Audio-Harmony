@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-// Deliberately small debounce/hold thresholds; DUT clocks retain full ordering.
+// 刻意缩小消抖和按住阈值；被测模块时钟仍保持完整先后顺序。
 module tb_record_keys;
     localparam integer DB=3, LP=12;
     reg clk=0; always #5 clk=~clk;
@@ -38,7 +38,7 @@ module tb_record_keys;
         begin
             keys(0,0);clocks(long_press ? (LP+DB+8) : (DB+5));
             if(mode_first_release) keys(1,0);else keys(0,1);
-            // First release must never dispatch a command.
+            // 首次释放绝不能发出命令。
             clocks(DB+7);
             check(!source_changed && !record_toggle && !play_toggle,"partial chord release dispatched");
             keys(1,1);settle;
@@ -67,7 +67,7 @@ module tb_record_keys;
         expected_pitch[4]=-8;expected_pitch[5]=-12;expected_pitch[6]=0;
         clocks(4);@(negedge clk);rst_n=1;settle;
         check(!record_source&&live_mode==0&&gain_index==0&&algorithm_mode==0&&pitch_semitones==0,"reset defaults");
-        // Sub-debounce contact noise must have no effect, even after synchronization.
+        // 短于消抖时间的触点噪声即使经过同步也不得产生影响。
         keys(0,1);clocks(1);keys(1,1);clocks(2);keys(0,1);clocks(1);keys(1,1);settle;
         check(live_mode==0&&algorithm_mode==0,"press bounce generated command");
         solo(0,0);check(live_mode==1,"live short mode 1");
@@ -78,8 +78,8 @@ module tb_record_keys;
         for(i=1;i<=3;i=i+1) begin solo(0,1);check(algorithm_mode==(i%3)&&live_mode==0,"algorithm cycle without short mode");end
         old_play=play_pulses;chord(0,1);
         check(!record_source&&play_pulses==old_play&&live_mode==0&&gain_index==0,"live short chord must be inert");
-        // Held gestures, including a first key long before second arrives,
-        // cannot emit the solo long action before all keys have been released.
+        // 持续按住的操作，包括第一键远早于第二键按下的情况，
+        // 在全部按键释放前均不得发出单键长按动作。
         keys(0,1);clocks(LP*3+DB+8);
         check(algorithm_mode==0&&live_mode==0,"single long dispatched before release");
         keys(0,0);clocks(DB+5);keys(1,0);settle;
@@ -95,24 +95,24 @@ module tb_record_keys;
         solo(0,1);check(algorithm_mode==1&&rec_pulses==old_rec+2,"record long only changes effect");
         solo(1,0);check(gain_index==2,"record short gain retained");
         solo(1,1);check(pitch_semitones==4,"record long pitch retained");
-        // Exact classification boundaries using observed debounced low cycles.
+        // 根据观测到的消抖后低电平周期，检查精确的分类边界。
         keys(1,0);wait(dut.gain_stable==0);clocks(LP-DB-3);keys(1,1);settle;
         check(gain_index==4&&pitch_semitones==4,"one below long threshold classified short");
         keys(1,0);wait(dut.gain_stable==0);clocks(LP-DB-2);keys(1,1);settle;
         check(gain_index==4&&pitch_semitones==8,"exact long threshold classified long");
-        // Release bounce does not prematurely finish a gesture.
+        // 释放抖动不得提前结束一次操作。
         old_rec=rec_pulses;
         keys(0,1);clocks(DB+3);keys(1,1);clocks(1);keys(0,1);clocks(2);
         check(rec_pulses==old_rec,"release bounce dispatched record");
         keys(1,1);settle;check(rec_pulses==old_rec+1,"release bounce lost short record");
-        // Long holds only dispatch once on release, with no extra short action.
+        // 长按仅在释放时发出一次命令，不附加短按动作。
         old_source=source_pulses;old_play=play_pulses;old_rec=rec_pulses;
         keys(0,0);clocks(LP*20);
         check(source_pulses==old_source&&play_pulses==old_play&&rec_pulses==old_rec,"held chord repeated or dispatched early");
         keys(1,1);settle;clocks(LP*3);
         check(!record_source&&source_pulses==old_source+1&&play_pulses==old_play&&rec_pulses==old_rec,"long chord release dispatch count");
         check(live_mode==0&&algorithm_mode==1&&gain_index==4&&pitch_semitones==8,"source switch failed preserve effects/reset mute");
-        // Reset while keys held cancels pending gestures and restores defaults.
+        // 按住按键时复位应取消待处理操作并恢复默认值。
         keys(0,0);settle;@(negedge clk);rst_n=0;clocks(3);keys(1,1);clocks(3);
         @(negedge clk);rst_n=1;settle;
         check(!record_source&&live_mode==0&&gain_index==0&&algorithm_mode==0&&pitch_semitones==0,"reset cancellation/defaults");

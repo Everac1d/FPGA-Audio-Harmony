@@ -5,8 +5,8 @@ module top(
     output                      uart_tx,
 
     output                      led_V13,
-    output [15-1:0]             ddr_addr,       //ROW_WIDTH=15
-    output [3-1:0]              ddr_bank,       //BANK_WIDTH=3
+    output [15-1:0]             ddr_addr,       //参考参数 ROW_WIDTH=15
+    output [3-1:0]              ddr_bank,       //参考参数 BANK_WIDTH=3
     output                      ddr_cs,
     output                      ddr_ras,
     output                      ddr_cas,
@@ -16,21 +16,21 @@ module top(
     output                      ddr_cke,
     output                      ddr_odt,
     output                      ddr_reset_n,
-    output [4-1:0]              ddr_dm,         //DM_WIDTH=2
-    inout  [32-1:0]             ddr_dq,         //DQ_WIDTH=16
-    inout  [4-1:0]              ddr_dqs,        //DQS_WIDTH=2
-    inout  [4-1:0]              ddr_dqs_n       //DQS_WIDTH=2
+    output [4-1:0]              ddr_dm,         //参考参数 DM_WIDTH=2
+    inout  [32-1:0]             ddr_dq,         //参考参数 DQ_WIDTH=16
+    inout  [4-1:0]              ddr_dqs,        //参考参数 DQS_WIDTH=2
+    inout  [4-1:0]              ddr_dqs_n       //参考参数 DQS_WIDTH=2
 );
 
 	localparam DRAM_NUM = 2'd2;
 
     wire                        app_wdf_wren;
-    wire [16*DRAM_NUM-1:0]      app_wdf_mask;    //APP_MASK_WIDTH=16
+    wire [16*DRAM_NUM-1:0]      app_wdf_mask;    //参考参数 APP_MASK_WIDTH=16
     wire                        app_wdf_end; 
-    wire [128*DRAM_NUM-1:0]     app_wdf_data;    //APP_DATA_WIDTH=128
+    wire [128*DRAM_NUM-1:0]     app_wdf_data;    //参考参数 APP_DATA_WIDTH=128
     wire                        app_en;
     wire [2:0]                  app_cmd;
-    wire [29-1:0]               app_addr;        //ADDR_WIDTH=28
+    wire [29-1:0]               app_addr;        //参考参数 ADDR_WIDTH=28
     wire                        app_sre_req;
     wire                        app_ref_req;
     wire                        app_burst;
@@ -40,7 +40,7 @@ module top(
     wire                        app_rdy;
     wire                        app_rd_data_valid; 
     wire                        app_rd_data_end;
-    wire [128*DRAM_NUM-1:0]     app_rd_data;     //APP_DATA_WIDTH=128
+    wire [128*DRAM_NUM-1:0]     app_rd_data;     //参考参数 APP_DATA_WIDTH=128
 
     wire                        pll_lock;
     wire                        memory_clk;
@@ -110,15 +110,15 @@ module top(
         .clkin(clk), 
         .init_clk(clk),
         .reset(!rstni),
-        .enclk0(1'b1),      //input enclk0
-        .enclk1(1'b1),      //input enclk1
-        .enclk2(pll_stop)   //input enclk2
+        .enclk0(1'b1),      //输入 enclk0
+        .enclk1(1'b1),      //输入 enclk1
+        .enclk2(pll_stop)   //输入 enclk2
     );
 
     ddr3_test1 #(
-        .ADDR_WIDTH(29) ,                   //ADDR_WIDTH=28
-        .APP_DATA_WIDTH(128*DRAM_NUM) ,     //APP_DATA_WIDTH=128
-        .APP_MASK_WIDTH (16*DRAM_NUM),      //APP_MASK_WIDTH=16
+        .ADDR_WIDTH(29) ,                   //参考参数 ADDR_WIDTH=28
+        .APP_DATA_WIDTH(128*DRAM_NUM) ,     //参考参数 APP_DATA_WIDTH=128
+        .APP_MASK_WIDTH (16*DRAM_NUM),      //参考参数 APP_MASK_WIDTH=16
         .USER_REFRESH("OFF")
         )u_rd(
         .clk                (clk_x1),
@@ -145,8 +145,8 @@ module top(
         .memory_clk      (memory_clk),
         .pll_stop        (pll_stop),
         .clk             (clk),
-        .rst_n           (rstni),   //rst_n
-        //.app_burst_number(0),
+        .rst_n           (rstni),   //复位信号：rst_n
+        //未启用的参考连接：.app_burst_number(0),
         .cmd_ready       (app_rdy),
         .cmd             (app_cmd),
         .cmd_en          (app_en),
@@ -166,12 +166,12 @@ module top(
         .init_calib_complete(init_calib_complete),
         .clk_out         (clk_x1),
         .pll_lock        (pll_lock), 
-        //.pll_lock        (1'b1), 
-        //`ifdef ECC
-        //.ecc_err         (ecc_err),
-        //`endif
+        //未启用的参考连接：.pll_lock        (1'b1), 
+        //保留的条件编译示例：`ifdef ECC
+        //未启用的参考连接：.ecc_err         (ecc_err),
+        //保留的条件编译示例：`endif
         .burst           (app_burst),
-        // mem interface
+        // 存储器接口
         .ddr_rst         (ddr_rst),
         .O_ddr_addr      (ddr_addr),
         .O_ddr_ba        (ddr_bank),

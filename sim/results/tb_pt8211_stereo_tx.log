@@ -1,3 +1,0 @@
-PASS PT8211_STEREO: frames=54 payload_bits=1751 padding_bits=1776 frame_ce=53 resets=2 stable_checks=10580
-PASS PT8211_STEREO_COVERAGE: distinct_left_right, left_only, right_only, signed_boundaries, midframe_input_changes, reset_padding
-sim/tb_pt8211_stereo_tx.sv:175: $finish called at 282391000 (1ps)

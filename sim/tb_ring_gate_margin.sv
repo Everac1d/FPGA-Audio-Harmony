@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-// Real meter comparison: same PCM and independent default/tuned calibration.
-// Only window/calibration lengths are shortened; curve, pipeline and release
-// equations use the production RTL. The actual SK9822 serial frame is decoded.
+// 真实电平表比较：输入相同 PCM，默认与调参校准独立进行。
+// 仅缩短窗口及校准长度；曲线、流水线和衰减
+// 公式使用正式 RTL，并解码实际的 SK9822 串行帧。
 module tb_ring_gate_margin;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0,pcm_valid=0;
@@ -94,7 +94,7 @@ module tb_ring_gate_margin;
         integer word_number,bit_number;
         reg [31:0] word_value;
         begin
-            // Await a fresh frame so its latched level is the settled meter.
+            // 等待新帧，使其锁存电平对应已经稳定的电平表输出。
             @(negedge clk);while(ring.busy)@(negedge clk);
             while(!ring.busy)@(negedge clk);
             for(word_number=0;word_number<3;word_number=word_number+1)begin
@@ -139,8 +139,8 @@ module tb_ring_gate_margin;
         calibrate(16);check(old_floor==64 && new_floor==64,"low baseline cannot lower gate below 64");
         boundary_case(32);boundary_case(64);boundary_case(128);
         calibrate(64);
-        // Exhaust all reachable PCM magnitudes against an independent curve
-        // and release oracle; margin is the only behavioral difference.
+        // 遍历全部可达到的 PCM 幅度，与独立曲线
+        // 以及独立衰减参考模型进行比较；余量是唯一的行为差异。
         for(amplitude=0;amplitude<=32768;amplitude=amplitude+1)begin
             checked_window((amplitude==32768)?-32768:amplitude);swept=swept+1;
         end

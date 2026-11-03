@@ -1,7 +1,7 @@
-// Complementary smoothstep Crossfade. All ports synchronous to clk.
-// triangle_q15: unsigned 0..32768. Weight w=t*t*(3-2*t), 1-w.
-// No equal-power boost: identical inputs remain bit-exact, including rails.
-// One input per clock is supported. Output latency is 4 clock edges.
+// 使用互补平滑阶跃窗进行交叉淡化；所有端口均与 clk 同步。
+// triangle_q15 为无符号数，范围 0..32768；权重为 w=t*t*(3-2*t) 与 1-w。
+// 不进行等功率增益提升：相同输入保持逐位一致，包括满幅值。
+// 支持每个时钟输入一个样本；输出延迟为四个时钟沿。
 module pcm_crossfade (
     input wire clk, rst_n, in_valid,
     input wire signed [15:0] head_a, head_b,

@@ -1,6 +1,6 @@
-// One clock domain. Capture atomically in vertical blank, calculate over 132
-// clocks, then publish the entire snapshot at the NEXT frame boundary.
-// No combinational divider or audio backpressure; all time values are floor(cs).
+// 仅使用一个时钟域。在垂直消隐期原子采集状态，经 132 个时钟周期计算，
+// 随后在下一帧边界一次性发布完整快照。
+// 不使用组合除法器，也不对音频施加反压；所有时间值均向下取整为厘秒。
 module lcd_dual_status_snapshot #(
     parameter integer MAX_SAMPLES=1464844
 )(
@@ -44,7 +44,7 @@ module lcd_dual_status_snapshot #(
     wire [20:0] safe_total=record_samples>MAX_SAMPLES ? MAX_SAMPLES : record_samples;
     wire [20:0] safe_play=play_samples>safe_total ? safe_total : play_samples;
     reg stage_recording,stage_playback;
-    // Four restoring divisions; 32 iterations each. Payload never leaves clk.
+    // 执行四次恢复余数除法，每次迭代 32 轮。数据始终位于 clk 时钟域。
     always @(posedge clk) begin
         if(!rst_n)begin
             front_status<=0;stage_status<=0;stage_rec<=0;stage_total<=0;stage_play<=0;

@@ -1,10 +1,10 @@
-// Sipeed 6+1 Mic Array: twelve SK9822 LEDs, clock/data on the verified FPC.
-// Frame: 32 zero start bits, LED_COUNT x {111,global[4:0],B,G,R},
-// then 32 one end bits, all MSB first. Default global brightness is 8/31;
-// RGB is capped at 127 by level/2. The RGB mask selects the lit channels;
-// level and mask are latched together once per frame. Brightness scaling,
-// sound-level input, refresh timing and the serializer are unchanged.
-// 50 MHz / (2*50) = 500 kHz LED clock, refreshed every 20 ms by default.
+// Sipeed 6+1麦克风阵列：十二颗SK9822 LED，通过已验证的FPC传送时钟与数据。
+// 帧格式：32个零起始位，LED_COUNT组{111,global[4:0],B,G,R}，
+// 然后为32个一结束位，均高位先发；默认全局亮度为8/31；
+// RGB通过level/2限制到127；RGB掩码选择点亮的通道；
+// 每帧共同锁存一次level与掩码；亮度缩放、
+// 音量输入、刷新时序及串行发送器均保持不变。
+// LED时钟为50MHz / (2*50) = 500kHz，默认每20毫秒刷新一次。
 module sk9822_ring_softlow #(
     parameter integer HALF_PERIOD_CYCLES = 50,
     parameter integer REFRESH_CYCLES = 1000000,
@@ -29,8 +29,8 @@ module sk9822_ring_softlow #(
     reg [31:0] shift_word;
     reg [31:0] frame_pixel;
     reg busy;
-    // Dim quiet levels to half the original minimum; recover original global 8 at level64.
-    // Global brightness is captured with all RGB channels atomically per frame.
+    // 将小音量亮度降至原最低亮度的一半；level达到64时恢复原全局亮度8。
+    // 每帧原子锁存全局亮度与所有RGB通道。
     wire [4:0] global_brightness = (level < 8'd64) ? (5'd4 + {3'd0,level[5:4]}) : 5'd8;
     wire [7:0] intensity = {1'b0,level[7:1]};
     wire [7:0] blue = color_mask_rgb[0] ? intensity : 8'd0;
@@ -66,7 +66,7 @@ module sk9822_ring_softlow #(
             end else if (half_count == HALF_PERIOD_CYCLES-1) begin
                 half_count <= {HALF_WIDTH{1'b0}};
                 if (!led_ck) begin
-                    // Data was set at the preceding falling clock edge.
+                    // 数据已在前一个时钟下降沿设置。
                     led_ck <= 1'b1;
                 end else begin
                     led_ck <= 1'b0;

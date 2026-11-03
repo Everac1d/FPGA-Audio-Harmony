@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-// Independent Q20/granular and fixed-dry model, plus frozen 28 RTL comparisons.
+// 独立的 Q20 粒化变调和固定原声模型，并与冻结的 28 版 RTL 比较。
 module tb_unified_harmony_core;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0,valid=0;
@@ -114,8 +114,8 @@ module tb_unified_harmony_core;
             compatibility[tail]=compat;unity[tail]=(startup==32768);phase_difference[tail]=different;
             tail=tail+1;
             @(negedge clk);valid=0;
-            // Public controls change while a job is busy. The accepted sample
-            // must still use the original public effect and per-voice routing.
+            // 任务忙碌期间改变外部控制；已接收的样本
+            // 仍须使用接收时的外部音效设置和各声部路由。
             mode=3-mm;pitch=-pp;pitch2=-qq;legacy_pitch=12;
             repeat(idle_clocks-2)@(negedge clk);
         end
@@ -159,7 +159,7 @@ module tb_unified_harmony_core;
         end
     end
     initial begin
-        // Fresh 0/p and p/0 are equivalent to the original dry+shifted harmony.
+        // 重新启动后的 0/p 和 p/0 等价于原先的原声加变调和声。
         for(orientation=0;orientation<2;orientation=orientation+1)begin
             for(q=-12;q<=12;q=q+1)begin
                 reset_session;
@@ -171,7 +171,7 @@ module tb_unified_harmony_core;
                 repeat(40)@(negedge clk);if(head!=tail)$fatal(1,"compat pending output");
             end
         end
-        // Static mode0/1/illegal3 must ignore all later public changes.
+        // 固定模式 0、1 及非法模式 3 必须忽略随后所有外部控制变化。
         for(m=0;m<4;m=m+1)if(m!=2)begin
             reset_session;
             for(n=0;n<300;n=n+1)send_sample((n%2)?32767:-32768,n==0?m:(n%4),n==0?-7:(n%25)-12,n==0?5:12-(n%25),32,0);

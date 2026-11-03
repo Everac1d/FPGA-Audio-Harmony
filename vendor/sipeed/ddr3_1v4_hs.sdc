@@ -1,8 +1,8 @@
-//Copyright (C)2014-2026 GOWIN Semiconductor Corporation.
-//All rights reserved.
-//File Title: Timing Constraints file
-//Tool Version: V1.9.12.02_SP1 (64-bit) 
-//Created Time: 2026-04-03 19:16:13
+//Copyright (C)2014-2026 GOWIN Semiconductor Corporation.（高云半导体版权所有）
+//All rights reserved.（保留所有权利。）
+//文件说明：时序约束文件
+//工具版本： V1.9.12.02_SP1 (64-bit) 
+//生成时间： 2026-04-03 19:16:13
 
 create_clock -name clk400 -period 2.5 -waveform {0 1.25} [get_nets {memory_clk}]
 create_clock -name clk100 -period 10 -waveform {0 5} [get_ports {clk}]

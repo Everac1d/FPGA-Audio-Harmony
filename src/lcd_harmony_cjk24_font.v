@@ -1,4 +1,4 @@
-// Separate 256-slot OFL Noto subset; original LCD font resources unchanged.
+// 独立的 256 槽 OFL Noto 子集，原有 LCD 字体资源保持不变。
 module lcd_harmony_cjk24_font(input wire clk,input wire [7:0] glyph,
     input wire [4:0] row,column,output wire pixel);
     (* rom_style="block", syn_romstyle="block_rom" *) reg [23:0] rows[0:8191];

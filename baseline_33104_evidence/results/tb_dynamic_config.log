@@ -1,2 +1,0 @@
-PASS DYNAMIC_CONFIG independent_fixedpoint_samples=6000 mode_changes=316 long_idle_holds=60 all25semitones clamp invalidmode rails history_continuity no_skip no_reset
-sim/tb_dynamic_config.sv:89: $finish called at 8182500000 (1ps)

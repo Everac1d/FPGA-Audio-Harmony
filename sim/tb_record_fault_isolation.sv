@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Fault injection at storage ports, with real microphone I2S and PT8211 decode.
-// DSP, conditioner, UI and serialized audio stay real; no PCM output is forced.
+// 在存储端口注入故障，同时使用真实麦克风 I2S 和 PT8211 解码。
+// DSP、调理器、界面及串行音频均使用真实实现，不强制 PCM 输出。
 module tb_record_fault_isolation;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0,key_mode_n=1,key_gain_n=1;
@@ -69,7 +69,7 @@ module tb_record_fault_isolation;
             check(dut.color==24'h200000,"live status green unaffected by recorder fault");end
     endtask
 
-    // Small variable-latency memory model, independent of the tested audio path.
+    // 小容量可变延时存储模型，独立于被测音频路径。
     reg memory_busy=0,job_write;reg [28:0] job_addr;reg [255:0] job_data;
     reg [3:0] latency=0;reg [255:0] memory[0:7];
     assign req_ready=ddr_ready&&!ddr_error&&!memory_busy;
@@ -170,7 +170,7 @@ module tb_record_fault_isolation;
         solo(0,0);expect_live_audio(1);
         solo(0,0);case_id=2;wait_frames(600);
         check(dut.active_mode==2&&!PA_EN&&phase_nonzero[2]>100,"test tone works before DDR ready");
-        // Inject after a frame starts. The tone must not fade or reset.
+        // 在帧开始后注入故障；测试音不得淡出或复位。
         wait_frames(1);repeat(200)@(negedge clk);ddr_error=1;
         before_audio=phase_nonzero[2];wait_frames(80);
         check(storage_fault&&rec_state==10&&!PA_EN&&dut.active_mode==2,"tone unaffected by DDR error");
@@ -178,7 +178,7 @@ module tb_record_fault_isolation;
         solo(1,0);solo(0,1);solo(1,1);wait_frames(330);
         check(gain_index==2&&active_algorithm_mode==1&&active_pitch_semitones==4,"gain/effect/pitch keys work after storage fault");
 
-        // A fault present at boot must still permit live microphone playback.
+        // 上电时即存在故障也必须仍允许实时麦克风播放。
         reset_board();check(storage_fault&&rec_state==10,"boot fault reported");
         solo(0,0);expect_live_audio(3);
         before_audio=phase_nonzero[3];ddr_ready=1;wait_frames(80);
@@ -192,7 +192,7 @@ module tb_record_fault_isolation;
         chord(1);wait_frames(8);check(!active_source&&dut.active_mode==0,"source keys escape faulted recorder");
         solo(0,0);expect_live_audio(5);
 
-        // A genuine recording/playback is interrupted mid-frame by storage loss.
+        // 在帧中途通过存储失效打断真实录音或回放。
         ddr_error=0;ddr_ready=1;reset_board();case_id=6;
         chord(1);wait_frames(8);solo(0,0);wait_state(2,10);
         wait_frames(64);solo(0,0);wait_state(4,20);
@@ -203,8 +203,8 @@ module tb_record_fault_isolation;
         wait_frames(1);repeat(200)@(negedge clk);ddr_ready=0;ddr_error=1;
         #1;check(!PA_EN,"storage fault preserves PA through the already latched stereo frame");
         wait_frames(2);check(PA_EN&&storage_fault&&!record_valid,"next complete frame mutes failed clip and invalidates it");
-        // Fault mutes new TX frames immediately, but the existing 256-frame
-        // envelope still drains before source/configuration may safely commit.
+        // 故障立即使新发送帧静音，但现有的 256 帧
+        // 包络仍须先衰减完毕，音源或配置才可安全提交。
         wait_frames(8);chord(1);wait_source(0,300);wait_frames(2);
         check(!active_source&&dut.active_mode==0,"live source recoverable after playback fault");
         solo(0,0);expect_live_audio(7);

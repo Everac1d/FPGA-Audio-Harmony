@@ -1,33 +1,33 @@
-// Voice-band monitor conditioner; all logic uses clk (50 MHz in this project).
-// This reduces DC, out-of-band hiss and quiet background noise. It does not
-// identify acoustic feedback, repair corrupt PCM, or perform echo cancellation.
+// 语音频段监听调理器；所有逻辑均使用 clk（本工程为 50 MHz）。
+// 用于减小直流分量、带外嘶声与微弱背景噪声；不负责
+// 识别声学反馈、修复损坏的 PCM 数据或消除回声。
 //
-// Each valid PCM16 sample advances these equations exactly once, irrespective
-// of the number of idle clk cycles between samples. State is signed Q8:
-//   d[n] = d[n-1] + floor(3 * (256*x[n] - d[n-1]) / 256)
+// 每个有效 PCM16 样本恰好推进下列方程一次，
+// 与样本间空闲时钟周期数无关。状态采用有符号 Q8 格式：
+//   状态递推公式：d[n] = d[n-1] + floor(3 * (256*x[n] - d[n-1]) / 256)
 //   h[n] = 256*x[n] - d[n]
-//   p[n] = p[n-1] + floor((h[n] - p[n-1]) / 2)
-//   q[n] = q[n-1] + floor((p[n] - q[n-1]) / 2)
-// Arithmetic right shifts implement floor, including for negative operands.
-// HP pole 253/256: approximately 91.6 Hz at 48828.125 samples/s. Two LP
-// poles 1/2 have a combined -3 dB frequency of approximately 3567 Hz.
-// Fractional state avoids repeated PCM16 truncation and DC-estimator stalling.
+//   状态递推公式：p[n] = p[n-1] + floor((h[n] - p[n-1]) / 2)
+//   状态递推公式：q[n] = q[n-1] + floor((p[n] - q[n-1]) / 2)
+// 使用算术右移实现向下取整，负数操作数同样如此。
+// 高通极点为 253/256：采样率为 48828.125 样本／秒时约对应 91.6 Hz。两个低通
+// 极点均为 1/2，级联后的 −3 dB 频率约为 3567 Hz。
+// 小数状态可避免反复截断为 PCM16，以及直流估计器停滞。
 //
-// Gate detector is the peak of abs(q[n]) and its previous value decayed by
-// ceil(envelope/256). Opening requires >= OPEN; once open, > CLOSE reloads a
-// sample-counted hold. Below CLOSE for HOLD_SAMPLES then starts the release.
-// This peak detector, hysteresis and hold bridge ordinary waveform crossings.
-// Q8 gain rises by 4 per sample (64-sample attack), falls by 1 (256 release),
-// and is bounded 0..256. Thresholds are PCM16 units, not Q8 units.
+// 门限检测值取 abs(q[n]) 与前次检测值衰减后的较大值；衰减量为
+// ceil(envelope/256)。达到 OPEN 时开启；开启后若高于 CLOSE，则重新加载
+// 按样本计数的保持期。低于 CLOSE 达 HOLD_SAMPLES 个样本后开始释放。
+// 峰值检测、滞回和保持机制用于跨越普通波形的门限交越。
+// Q8 增益每个样本上升 4（64 个样本完成起音）、下降 1（256 个样本完成释放），
+// 范围限制为 0..256。门限以 PCM16 为单位，而非 Q8 单位。
 //
-// Pipeline: HP -> LP1 -> LP2 -> gate -> output. A sample accepted at rising
-// edge N produces out_valid/pcm_out immediately after edge N+4. Consecutive
-// in_valid cycles are supported. Invalid slots advance through the pipeline;
-// each stage's sample state holds on its invalid slots. pcm_out holds whenever
-// out_valid is low. Synchronous active-low reset flushes every stage and all
-// scalar history, including the gate. There is no RAM and no generated clock.
-// Final Q16 product rounds to nearest PCM integer, ties away from zero, then
-// saturates to [-32768,32767]. Wide signed product prevents rail wraparound.
+// 流水线：高通 → 低通一级 → 低通二级 → 门限控制 → 输出。若样本在上升沿
+// N 被接收，则在上升沿 N+4 后立即产生 out_valid/pcm_out。支持连续
+// 多个周期的 in_valid。无效时隙仍沿流水线推进；
+// 各级遇到无效时隙时保持其样本状态。当 out_valid 为低时，
+// pcm_out 保持不变。同步低有效复位清空所有流水级及全部
+// 标量历史状态，包括门限控制状态。不使用 RAM 或派生时钟。
+// 最终 Q16 乘积舍入至最近的 PCM 整数，恰好居中时向远离零的方向舍入，随后
+// 饱和至 [-32768,32767]；使用宽位有符号乘积防止满幅回绕。
 module pcm_voice_conditioner #(
     parameter integer GATE_ENABLE = 1,
     parameter integer GATE_OPEN_THRESHOLD = 128,
@@ -55,7 +55,7 @@ module pcm_voice_conditioner #(
         end
     endfunction
 
-    // Supported parameters: 0 <= CLOSE < OPEN <= 32768; HOLD >= 1.
+    // 支持的参数范围：0 <= CLOSE < OPEN <= 32768；HOLD >= 1。
     localparam integer HOLD_BITS = count_bits(GATE_HOLD_SAMPLES + 1);
     localparam [31:0] OPEN_Q8 = GATE_OPEN_THRESHOLD * 256;
     localparam [31:0] CLOSE_Q8 = GATE_CLOSE_THRESHOLD * 256;
@@ -69,8 +69,8 @@ module pcm_voice_conditioner #(
     reg [HOLD_BITS-1:0] hold_count;
     reg [8:0] gain_q8;
 
-    // Each filter stage contains a bounded number of add/subtract operations.
-    // Input is explicitly sign extended before shifting to Q8.
+    // 每个滤波级仅包含有限次数的加减运算。
+    // 输入先显式进行符号扩展，再移位转换为 Q8。
     wire signed [31:0] input_q8 = $signed({{16{pcm_in[15]}}, pcm_in}) <<< 8;
     wire signed [31:0] dc_error = input_q8 - dc_q8;
     wire signed [31:0] dc_step = (dc_error + (dc_error <<< 1)) >>> 8;
@@ -113,7 +113,7 @@ module pcm_voice_conditioner #(
         end
     end
 
-    // 32-bit Q8 * positive 10-bit signed Q8 -> 42-bit signed Q16.
+    // 32 位 Q8 × 正值的 10 位有符号 Q8 → 42 位有符号 Q16。
     wire signed [41:0] product_q16 = scale_sample_q8 * $signed({1'b0, scale_gain_q8});
     wire signed [41:0] rounded_pcm = product_q16[41] ?
         -(((-product_q16) + 42'sd32768) >>> 16) :

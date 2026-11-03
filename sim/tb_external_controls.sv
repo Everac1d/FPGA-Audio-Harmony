@@ -78,7 +78,7 @@ module tb_external_controls;
         key(1,12);check(algorithm==1,"pitch effect");
         key(1,70);check(algorithm==2,"held effect dispatched only once on release");
         key(1,12);check(algorithm==0,"effect wrap");
-        // Raw 1-clock contact chatter is shorter than the button filter.
+        // 原始触点仅持续一个时钟的抖动短于按键滤波时长。
         repeat(5)begin button_n[0]=0;tick(1);button_n[0]=1;tick(1);end
         tick(15);check(source_count==0 && source==0,"short button chatter ignored");
         button_n[0]=0;tick(12);
@@ -90,7 +90,7 @@ module tb_external_controls;
         key(2,90);check(rec_count==2,"held record command occurs once");
         key(3,12);check(play_count==1 && restart_count==0,"short replay command");
         key(3,45);check(play_count==1 && restart_count==1,"long replay suppresses short");
-        // Full detents in both directions, including all numeric gain endpoints.
+        // 检查两个方向的完整卡点，包括全部数字增益端点。
         for(n=11;n<=30;n=n+1)begin turn(0,1,10);check(gain==n,"gain up 0.1 detent");end
         repeat(5)begin turn(0,1,10);check(gain==30,"gain upper saturation");end
         for(n=29;n>=10;n=n-1)begin turn(0,-1,10);check(gain==n,"gain down 0.1 detent");end
@@ -100,39 +100,39 @@ module tb_external_controls;
         for(n=11;n>=-12;n=n-1)begin turn(1,-1,10);check($signed(pitch)==n,"pitch down 1 semitone detent");end
         repeat(4)begin turn(1,-1,10);check(pitch== -12,"pitch lower saturation");end
         pitch_press();check(pitch==0,"pitch press returns zero");
-        // A partially turned contact bouncing backwards is not a detent.
+        // 旋转未完成时触点反向抖动不算一个完整卡点。
         phase(0,2'b01,10);phase(0,2'b11,10);phase(0,2'b01,10);phase(0,2'b11,10);
         check(gain==10,"partial travel cancels");
-        // Diagonal jumps cannot contribute part of a later complete detent.
+        // 对角跳变不得作为随后完整卡点的一部分。
         phase(0,2'b00,10);phase(0,2'b10,10);phase(0,2'b11,10);
         check(gain==10,"illegal jump discarded until anchor");
         turn(0,1,10);check(gain==11,"decoder recovers after illegal jump");
-        // Contact bounce on valid edges produces one completed cycle only.
+        // 有效边沿上的触点抖动只能产生一个完整周期。
         phase(0,2'b01,10);phase(0,2'b11,10);phase(0,2'b01,10);
         phase(0,2'b00,10);phase(0,2'b01,10);phase(0,2'b00,10);
         phase(0,2'b10,10);phase(0,2'b00,10);phase(0,2'b10,10);
         phase(0,2'b11,10);tick(5);check(gain==12,"quadrature edge bounce cancels");
-        // Brief impulses are rejected before the quadrature state machine.
+        // 短脉冲在进入正交状态机前即被滤除。
         phase(0,2'b01,1);phase(0,2'b11,10);
         check(gain==12,"sub-filter phase glitch ignored");
-        // Rapid but valid turns, still longer than synchronization/filter budget.
+        // 测试快速但有效的旋转，其持续时间仍长于同步和滤波所需时间。
         for(n=0;n<20;n=n+1)begin
             turn(1,1,6);check(pitch==1,"rapid positive turn");
             turn(1,-1,6);check(pitch==0,"rapid negative turn");
         end
         turn(2,1,6);check(reverse_down_count==1 && reverse_up_count==0,"direction reversal parameter");
         turn(2,-1,6);check(reverse_down_count==1 && reverse_up_count==1,"reverse decoder return");
-        // Source changes preserve the selected effect, pitch and gain.
+        // 切换音源保留已选音效、音高和增益。
         key(1,12);turn(1,1,10);key(0,12);
         check(source==0 && live==0 && gain==12 && pitch==1 && algorithm==1,"source change retains parameters");
-        // Long reset does nothing while held, then emits only reset on release.
+        // 长按复位在按住期间不动作，仅在释放时发出复位。
         button_n[0]=0;tick(80);
         check(reset_count==0 && source_count==2,"long reset waits for release");
         button_n[0]=1;tick(12);
         check(reset_count==1 && source_count==2 && source==0,"long reset suppresses mode toggle");
         rst_n=0;tick(5);rst_n=1;tick(12);
         check(source==0 && live==0 && gain==10 && pitch==0 && algorithm==0,"reset returns defaults");
-        // Reset in the middle of a turn discards partial mechanical movement.
+        // 旋转中途复位应丢弃未完成的机械转动。
         phase(0,2'b01,10);rst_n=0;tick(5);rst_n=1;tick(12);
         phase(0,2'b00,10);phase(0,2'b10,10);phase(0,2'b11,10);
         check(gain==10,"reset cancels partial turn");

@@ -1,4 +1,4 @@
-// Five-minute raw PCM status: R6 is117 bytes, D3 is164, one atomic281-byte pair.
+// 五分钟原始PCM状态：R6为117字节，D3为164字节，组成原子的281字节报文对。
 module record_long_status_uart #(
     parameter integer CLK_HZ=50000000,BAUD=115200,REPORT_CYCLES=25000000,
     parameter [31:0] USER_CODE=32'h00033105
@@ -150,8 +150,8 @@ module record_long_status_uart #(
             snap_live<=0;snap_algorithm<=0;snap_pitch<=0;snap_pitch_second<=0;snap_pitch_voice<=0;snap_gain<=0;snap_state<=0;
             snap_record<=0;snap_play<=0;snap_underflow<=0;snap_overflow<=0;snap_diag<=0;snap_failure<=0;
         end else begin
-            // Saturate while busy: an unusually short report period cannot
-            // overwrite the active packet or accumulate an unbounded backlog.
+            // 忙时采用饱和处理，避免过短的上报周期
+            // 覆盖正在发送的报文或造成无限积压。
             if (report_timer < REPORT_CYCLES-1) report_timer<=report_timer+1'b1;
             case(state)
                 IDLE: begin

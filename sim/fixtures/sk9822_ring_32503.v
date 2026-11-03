@@ -1,10 +1,10 @@
-// Sipeed 6+1 Mic Array: twelve SK9822 LEDs, clock/data on the verified FPC.
-// Frame: 32 zero start bits, LED_COUNT x {111,global[4:0],B,G,R},
-// then 32 one end bits, all MSB first. Default global brightness is 8/31;
-// RGB is capped at 127 by level/2. Center input: cyan (0,L/2,L/2).
-// Seven-channel average: green (0,L/2,0). These colors indicate the selected
-// audio source, not sound direction. Level and source are latched per frame.
-// 50 MHz / (2*50) = 500 kHz LED clock, refreshed every 20 ms by default.
+// Sipeed 6+1 麦克风阵列：12 颗 SK9822 LED，时钟和数据使用已验证的 FPC 引脚。
+// 帧格式：32 个全零起始位，随后为 LED_COUNT 组 {111,global[4:0],B,G,R}，
+// 最后为 32 个全一结束位，全部高位先发；默认全局亮度为 8/31；
+// RGB 由 level/2 限制到最大 127；中央输入为青色 (0,L/2,L/2)。
+// 七通道平均输入为绿色 (0,L/2,0)；这些颜色表示所选
+// 音源，而非声音方向；电平和音源按帧锁存。
+// LED 时钟为 50 MHz / (2*50) = 500 kHz，默认每 20 毫秒刷新一次。
 module sk9822_ring_baseline_32503 #(
     parameter integer HALF_PERIOD_CYCLES = 50,
     parameter integer REFRESH_CYCLES = 1000000,
@@ -61,7 +61,7 @@ module sk9822_ring_baseline_32503 #(
             end else if (half_count == HALF_PERIOD_CYCLES-1) begin
                 half_count <= {HALF_WIDTH{1'b0}};
                 if (!led_ck) begin
-                    // Data was set at the preceding falling clock edge.
+                    // 数据已在前一个时钟下降沿设置。
                     led_ck <= 1'b1;
                 end else begin
                     led_ck <= 1'b0;

@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 `ifndef TB_EXTERNAL_ENGINE_SV
 `define TB_EXTERNAL_ENGINE_SV
-// Integration proof of raw recording, source selection, real I2S, and control.
-// This deliberately does not replace the separate DSP numerical reference.
+// 验证原始录音、音源选择、真实 I2S 及控制的集成行为。
+// 此测试不替代独立的 DSP 数值参考验证。
 module tb_external_engine #(
     parameter integer TEST_RAM_BITS=8,
     parameter integer TEST_GRAIN_LOG2=6,
@@ -80,7 +80,7 @@ module tb_external_engine #(
         begin phase(pitch_encoder,up?2'b01:2'b10);phase(pitch_encoder,0);
             phase(pitch_encoder,up?2'b10:2'b01);phase(pitch_encoder,3);repeat(8)@(negedge clk);end
     endtask
-    // In-order variable-latency DDR app transaction model; includes partial BL8.
+    // 按序、可变延时的 DDR 应用端口事务模型，包含不完整的 BL8 块。
     reg memory_busy=0,job_write;reg[28:0]job_addr;reg[255:0]job_data;
     reg[7:0]latency=0;reg[255:0]memory[0:255];integer requests=0;
     assign req_ready=!memory_busy;
@@ -99,7 +99,7 @@ module tb_external_engine #(
         end
     end
 
-    // Physical microphone I2S words: central channel is lane 3/right slot.
+    // 物理麦克风 I2S 字：中央通道为第 3 路的右声道时隙。
     wire board_run=rst_n&&dut.run_n;
     reg[5:0]mic_position=0;integer mic_frame=0,mic_epoch=0,lane;
     reg[23:0]word_value;
@@ -136,9 +136,9 @@ module tb_external_engine #(
         frame_before=dut.frame_ce;fade_before=dut.fade_zero;amp_before=dut.amplifier_frame_ready;
         pa_before=PA_EN;run_before=dut.run_n;mode_before=dut.active_mode;
         alg_before=active_algorithm_mode;pitch_before=active_pitch_semitones;second_before=active_pitch_second;source_before=active_source;
-        // The first serialized frame after reset precedes the first frame_ce.
-        // Its PA expectation comes from the reset-muted serializer/amp state,
-        // not from the final live frame of the preceding reset epoch.
+        // 复位后的首个串行帧早于首次 frame_ce。
+        // 其功放期望状态由复位静音的串行器及功放状态决定，
+        // 而非由上一个复位周期最后一个实时帧决定。
         if(!board_run)begin saved_count=0;next_play_index=0;last_rx_cycle=0;expected_pa=1;end
         else begin
             if(dut.clip_record&&(rec_state==1||rec_state==4))saved_count=0;
@@ -184,7 +184,7 @@ module tb_external_engine #(
         check((^{HP_WS,HP_DIN,PA_EN})!==1'bx,"audio output pins known");
     end
 
-    // Serial DAC framing/dual-slot copying. Numerical DSP is tested elsewhere.
+    // 检查串行 DAC 帧格式及双时隙复制；DSP 数值由其他测试检查。
     reg[5:0]dac_position=0;reg[15:0]shift=0,right_word=0;
     always @(posedge HP_BCK or negedge board_run)begin
         if(!board_run)begin dac_position=0;shift=0;right_word=0;end
@@ -254,7 +254,7 @@ module tb_external_engine #(
         turn(0,1);wait_frames(5);check(gain_index==11,"fine gain selected while paused");assert_paused(bookmark);
         panel_key(3,0);wait_state(7,700);wait_frames(70);
         check(play_samples>bookmark && play_input_checks==play_samples,"resume advances exact original cursor");
-        // Preserve all stream history through effect and one-semitone changes.
+        // 切换音效或调整一个半音时保留全部流历史。
         prior_write_address=dut.core.algorithm.write_address;bookmark=play_samples;
         panel_key(1,0);await_config(2,1);
         check(rec_state==7 && play_samples>bookmark && record_valid,"effect switches and automatically keeps playing");
@@ -279,14 +279,14 @@ module tb_external_engine #(
             turn(1,0);await_config(3,3);check(active_pitch_second==0&&rec_state==7,"first independent semitone continues replay");
             panel_key(1,0);await_config(0,0);check(rec_state==7,"four-mode cycle restores ordinary original pitch state");
         end
-        // Gain never initiates a fade/restart or pauses the cursor.
+        // 增益调整不得触发淡出、重启或暂停游标。
         bookmark=play_samples;turn(0,1);wait_frames(40);
         check(gain_index==12 && rec_state==7 && play_samples>bookmark,"fine gain is continuous during replay");
         check(dut.underflow==0 && dut.overflow==0 && !dut.core.algorithm.fault,"enhanced stream no FIFO/core fault");
         wait_state(4,24000);wait_frames(350);
         check(play_samples==clip_length && play_input_checks==clip_length,"pause/config replay delivers every sample exactly once");
         check(PA_EN===1 && nonzero_frames>100,"finished enhanced replay drains and mutes");
-        // Paused and explicit from-head replay are distinct commands.
+        // 暂停后的继续与显式从头重播是不同命令。
         panel_key(3,0);wait_state(7,15000);while(play_samples<100)wait_frames(1);
         panel_key(3,0);wait_state(11,700);bookmark=play_samples;
         panel_key(3,1);wait_state(6,700);check(play_samples==0 && record_valid,"long replay starts again at zero");

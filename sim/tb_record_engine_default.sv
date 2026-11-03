@@ -1,10 +1,10 @@
-// Production parameters: focused full harmony+4 replay through the real 8192 window.
-// Small-parameter suite separately covers all three effects and controls.
+// 使用正式参数：重点验证真实 8192 窗口下完整的和声加 4 半音回放。
+// 小参数测试组另行覆盖全部三种音效及控制。
 `timescale 1ns/1ps
 `ifndef TB_RECORD_ENGINE_DEFAULT_SV
 `define TB_RECORD_ENGINE_DEFAULT_SV
-// Integration proof of raw recording, source selection, real I2S, and control.
-// This deliberately does not replace the separate DSP numerical reference.
+// 验证原始录音、音源选择、真实 I2S 及控制的集成行为。
+// 此测试不替代独立的 DSP 数值参考验证。
 module tb_record_engine_default #(
     parameter integer TEST_RAM_BITS=14,
     parameter integer TEST_GRAIN_LOG2=13
@@ -56,7 +56,7 @@ module tb_record_engine_default #(
             repeat(12)@(negedge clk);end
     endtask
 
-    // In-order variable-latency DDR app transaction model; includes partial BL8.
+    // 按序、可变延时的 DDR 应用端口事务模型，包含不完整的 BL8 块。
     reg memory_busy=0,job_write;reg[28:0]job_addr;reg[255:0]job_data;
     reg[7:0]latency=0;reg[255:0]memory[0:31];integer requests=0;
     assign req_ready=!memory_busy;
@@ -75,7 +75,7 @@ module tb_record_engine_default #(
         end
     end
 
-    // Physical microphone I2S words: central channel is lane 3/right slot.
+    // 物理麦克风 I2S 字：中央通道为第 3 路的右声道时隙。
     wire board_run=rst_n&&dut.run_n;
     reg[5:0]mic_position=0;integer mic_frame=0,mic_epoch=0,lane;
     reg[23:0]word_value;
@@ -112,8 +112,8 @@ module tb_record_engine_default #(
         frame_before=dut.frame_ce;fade_before=dut.fade_zero;amp_before=dut.amplifier_frame_ready;
         pa_before=PA_EN;run_before=dut.run_n;mode_before=dut.active_mode;
         alg_before=active_algorithm_mode;pitch_before=active_pitch_semitones;source_before=active_source;
-        // Reset also starts a fresh frame-checking epoch: the first zero TX
-        // frame appears before its first frame_ce, while the PA is reset-muted.
+        // 复位同时开启新的帧检查周期：首个全零发送
+        // 帧在首次 frame_ce 之前出现，此时功放处于复位静音状态。
         if(!board_run)begin saved_count=0;next_play_index=0;last_rx_cycle=0;expected_pa=1;end
         else begin
             if(dut.clip_record&&(rec_state==1||rec_state==4))saved_count=0;
@@ -157,7 +157,7 @@ module tb_record_engine_default #(
         check((^{HP_WS,HP_DIN,PA_EN})!==1'bx,"audio output pins known");
     end
 
-    // Serial DAC framing/dual-slot copying. Numerical DSP is tested elsewhere.
+    // 检查串行 DAC 帧格式及双时隙复制；DSP 数值由其他测试检查。
     reg[5:0]dac_position=0;reg[15:0]shift=0,right_word=0;
     always @(posedge HP_BCK or negedge board_run)begin
         if(!board_run)begin dac_position=0;shift=0;right_word=0;end

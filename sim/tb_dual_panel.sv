@@ -56,7 +56,7 @@ module tb_dual_panel;
         pitch_sw=1;tick(12);check(pitch==5 && pitch_second==0 && voice==1,"long pitch resets selected second voice without toggling");
         pitch_press(12);check(voice==0 && pitch==5 && pitch_second==0,"short press returns selection to first voice");
         pitch_press(60);check(voice==0 && pitch==0 && pitch_second==0,"long pitch resets selected first voice without toggling");
-        // All 25 semitones and both saturating endpoints work independently.
+        // 全部 25 个半音及两个饱和端点均独立生效。
         for(n=1;n<=12;n=n+1)begin turn(1,1);check($signed(pitch)==n && pitch_second==0,"voice one increments by one");end
         turn(1,1);check(pitch==12,"voice one upper endpoint");
         for(n=11;n>=-12;n=n-1)begin turn(1,-1);check($signed(pitch)==n && pitch_second==0,"voice one decrements by one");end
@@ -74,19 +74,19 @@ module tb_dual_panel;
         pitch_press(12);check(source==1 && voice==0 && pitch== -12 && pitch_second== -12,"voice selection also works in record source");
         turn(1,1);check(pitch== -11 && pitch_second== -12,"record source edits selected voice independently");
         pitch_press(60);check(pitch==0 && pitch_second== -12 && voice==0,"record source long press resets selected voice");
-        // A record-source chord cannot become a voice short/long command.
+        // 录放源中的组合操作不得转变为声部短按或长按命令。
         previous_entries=tone_entries;
         gain_sw=0;pitch_sw=0;tick(70);gain_sw=1;tick(12);pitch_sw=1;tick(12);
         check(source==1 && live==0 && voice==0 && pitch==0 && pitch_second== -12 && tone_entries==previous_entries,"record chord swallows pitch long and both releases");
         key(0,12);gain_press();turn(1,1);pitch_press(12);
         check(source==0 && live==1 && voice==1 && pitch==1 && pitch_second== -12,"prepare live dual diagnostic collision");
-        // Even if the pitch shaft was held past its long threshold first, a
-        // later common diagnostic chord has priority over the old long press.
+        // 即使变调旋钮轴先被按住并超过长按阈值，随后
+        // 共同按下的诊断组合仍优先于先前的长按。
         pitch_sw=0;tick(65);gain_sw=0;tick(65);
         gain_sw=1;tick(12);check(live==1 && voice==1 && pitch_second== -12,"diagnostic first release cannot reset selected pitch");
         pitch_sw=1;tick(12);check(live==2 && voice==1 && pitch==1 && pitch_second== -12 && tone_entries==previous_entries+1,"diagnostic chord takes priority over pitch long press");
         gain_press();check(live==0 && voice==1 && pitch_second== -12,"diagnostic exit returns safe mute and preserves dual state");
-        // A short common chord never changes the selected voice or its pitch.
+        // 短时共同按下不得改变选定声部及其音高。
         gain_sw=0;pitch_sw=0;tick(15);pitch_sw=1;tick(12);gain_sw=1;tick(12);
         check(live==0 && voice==1 && pitch==1 && pitch_second== -12,"short diagnostic chord cannot switch voice");
         turn(0,1);check(gain==11 && pitch==1 && pitch_second== -12,"gain knob remains independent in dual effect");

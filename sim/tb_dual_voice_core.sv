@@ -81,7 +81,7 @@ module tb_dual_voice_core;
      @(negedge clk);valid=0;
      gap=32+(random_state[4:0]);
      if((n%101)==0)begin gap=gap+2048;holds=holds+1;end
-     // Busy public controls must not change an already accepted output job.
+     // 外部控制频繁变化不得改变已接收的输出任务。
      mode=3-m;pitch=-p;pitch2=-q;changed=changed+1;
      repeat(gap-2)@(negedge clk);
    end

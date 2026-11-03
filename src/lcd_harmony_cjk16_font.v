@@ -1,4 +1,4 @@
-// Separate 256-slot true16px OFL Noto subset; no 24px downsampling.
+// 独立的 256 槽原生 16 像素 OFL Noto 子集，不由 24 像素字形降采样。
 module lcd_harmony_cjk16_font(input wire clk,input wire [7:0] glyph,
     input wire [3:0] row,input wire [4:0] column,output wire pixel);
     (* rom_style="block", syn_romstyle="block_rom" *) reg [15:0] rows[0:4095];

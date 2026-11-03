@@ -1,2 +1,0 @@
-PASS HARMONY_LCD checks=3681309 signed_pitch_pairs=625 gain21 editor_markers=2 snapshot_cases=25 snapshot_latency=164 exact_pixels=261120 native_pages=2 pixel_period_ns=120 setup_ns=60 fixed_footer_no_test_tone
-./sim/tb_harmony_lcd.sv:295: $finish called at 98317900000 (1ps)

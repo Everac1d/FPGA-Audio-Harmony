@@ -92,7 +92,7 @@ module tb_clip_pause;
    if(state!=1||committed||active||paused)$fatal(1,"empty session started");
    record_clip(257,-1000);if(!full)$fatal(1,"full flag missing");
    command(1);
-   // Pause even before initial read responses arrive; no stale transaction is lost.
+   // 即使首次读响应尚未到达也可暂停，不得丢失任何旧事务。
    if(state!=5)$fatal(1,"expected prefetch");pause_and_resume();
    while(state==5)step();
    if(state!=6)$fatal(1,"expected preroll");sample(0);pause_and_resume();
@@ -100,8 +100,8 @@ module tb_clip_pause;
    consumed=0;
    while(state==7)begin
      if((consumed%13)==0)pause_and_resume();
-     // Parameter switching uses this hold: it must freeze the exact raw lane,
-     // including lane15 and final-sample boundaries, while prefetch may finish.
+     // 参数切换使用此保持信号：它必须冻结准确的原始通道，
+     // 包括第 15 通道及末样本边界；预取可以继续完成。
      if((consumed%7)==0)begin
        @(negedge clk);hold_play=1;saved_pos=pos;saved_lane=dut.lane;
        for(j=0;j<5;j=j+1)begin
@@ -116,8 +116,8 @@ module tb_clip_pause;
    sample(0);pause_and_resume();while(state==8)sample(0);
    if(state!=9)$fatal(1,"expected drain");pause_and_resume();wait_ready_with_ticks();
    if(!committed||pos!=257)$fatal(1,"natural end metadata");
-   // Resume and forced restart are different commands. A restart waits for an
-   // old read response, then begins at exact sample0 with one partial last block.
+   // 继续与强制重新开始是不同命令；重新开始须等待
+   // 旧读响应返回，再从准确的第 0 个样本开始，并保留一个末尾不完整块。
    command(1);while(state!=7)sample(0);consumed=0;
    repeat(33)check_sample(-1000);
    pause_and_resume();
@@ -126,7 +126,7 @@ module tb_clip_pause;
    while(state!=7)begin sample(0);guard_count=guard_count+1;if(guard_count>30)$fatal(1,"restart timeout");end
    consumed=0;while(state==7)check_sample(-1000);
    if(consumed!=257)$fatal(1,"restart omitted raw data");wait_ready_with_ticks();
-   // Pause command on the same edge as sample_tick must not consume a lane.
+   // 暂停命令与 sample_tick 位于同一边沿时不得消耗样本通道。
    command(1);while(state!=7)sample(0);consumed=0;
    repeat(15)check_sample(-1000);saved_pos=pos;saved_lane=dut.lane;
    @(negedge clk);tick=1;play=1;step();@(negedge clk);tick=0;play=0;
@@ -136,8 +136,8 @@ module tb_clip_pause;
    record_clip(19,700);command(1);while(state!=7)sample(0);command(1);
    if(!paused)$fatal(1,"short clip pause missing");command(0);wait_ready();
    if(!committed||len!=19)$fatal(1,"record button stop erased clip");
-   // Pending commands must survive a long old response, and source-abort
-   // must cancel them. No queued action may occur later in the live source.
+   // 即使旧响应延迟很长，待处理命令仍须保留；而音源中止
+   // 必须取消这些命令；之后进入实时音源时不得执行排队动作。
    record_clip(65,2000);
    stop_with_read_inflight();command(0);
    if(!dut.record_pending || state!=4)$fatal(1,"record command dropped while read in flight");

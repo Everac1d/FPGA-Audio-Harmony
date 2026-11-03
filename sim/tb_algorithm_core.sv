@@ -42,12 +42,12 @@ module tb_algorithm_core;
         end
         repeat(40) @(negedge clk);
         if(head!=tail) $fatal(1,"missing core output");
-        // Reset cancels a RAM transaction halfway through its pipeline.
+        // 在 RAM 事务流水线中途复位以取消该事务。
         checking=0;valid=1;@(negedge clk);valid=0;
         repeat(6) @(negedge clk);rst_n=0;
         repeat(2) @(negedge clk);rst_n=1;
         repeat(24) begin @(negedge clk);if(out_valid) $fatal(1,"stale valid after reset");end
-        // Documented out-of-contract burst: fault mutes until a reset.
+        // 测试已说明的不符合接口约定的突发输入：故障后保持静音直至复位。
         mode=0;pcm=12345;valid=1;@(negedge clk);valid=1;@(negedge clk);valid=0;
         repeat(25) begin @(negedge clk);if(out_valid && out!=0) $fatal(1,"busy input not muted");end
         if(!dut.algorithm.fault) $fatal(1,"missing busy fault");

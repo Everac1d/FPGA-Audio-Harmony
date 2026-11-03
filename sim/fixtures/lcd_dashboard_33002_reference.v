@@ -1,10 +1,10 @@
-// 480x272 Chinese direct-scan UI, RGB666, all registers on clk_50m.
-// Latency FIVE clk cycles: geometry -> formatted row -> token -> ROM -> color.
-// A Chinese glyph occupies two 12px half-cells; Latin/digits occupy one.
-// Every text row uses a 24px-high cell_index, including both operation hints.
+// 480×272 中文直接扫描界面，使用 RGB666，全部寄存器由 clk_50m 驱动。
+// 延迟为五个时钟周期：几何定位→格式化行→字符标记→ROM→颜色。
+// 一个汉字占两个 12 像素半单元，拉丁字母或数字占一个。
+// 每个文字行均使用 24 像素高的 cell_index，包含两行操作提示。
 module lcd_dashboard_33002_reference #(
-    // Fine panel gain is in tenths: 10..30 = 1.0..3.0. Default retains
-    // the legacy H0/H2/H4/H5/H6 interface for independent baseline tests.
+    // 面板精细增益以十分之一为单位：10～30 对应 1.0～3.0 倍；默认保留
+    // 旧版 H0/H2/H4/H5/H6 接口，以进行独立基线测试。
     parameter integer FINE_GAIN=0
 )(
     input wire clk,
@@ -26,7 +26,7 @@ module lcd_dashboard_33002_reference #(
         WHITE={6'd61,6'd62,6'd63},CYAN={6'd15,6'd61,6'd61},
         GREEN={6'd24,6'd60,6'd38},RED={6'd63,6'd28,6'd24},
         AMBER={6'd63,6'd50,6'd20},TRACK={6'd10,6'd17,6'd24};
-    // Only help text rotates; commit its page at the active-frame start.
+    // 仅帮助文字轮换；在有效显示帧开始时提交其页面。
     reg [27:0] help_count=0;
     reg [1:0] help_next=0,help_page=0;
     reg frame_seen=0;
@@ -222,8 +222,8 @@ module lcd_dashboard_33002_reference #(
             endcase
         end
     endfunction
-    // Format each cell at a CONSTANT elaboration index. This removes all
-    // index offsets and wide string shifts from the pixel-address path.
+    // 每个单元使用展开时常量索引格式化，从像素地址路径中移除所有
+    // 索引偏移和宽字符串移位。
     wire [332:0] display_row0,display_row1,display_row2,display_row3;
     wire [332:0] display_row4,display_row5,display_row6;
     genvar cell_number;
@@ -288,7 +288,7 @@ module lcd_dashboard_33002_reference #(
         6:row_word=display_row6;default:row_word=0;
         endcase end
     endfunction
-    // Verification and character decoding use the same formatted rows.
+    // 验证和字符解码使用相同的格式化行。
     function [8:0] line_token;
         input integer line,index;
         begin

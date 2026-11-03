@@ -1,2 +1,0 @@
-PASS LCD dashboard external: 7620 assertions, 7 full actual RTL previews, signed_pitch25 gain21 combinations525 legacy_gain5 state12 paused_resume fixed2pages_4rows all_states_footer_invariant font24px footer16px no_timer five_clock_pipeline
-sim/tb_lcd_dashboard.sv:153: $finish called at 91392971000 (1ps)

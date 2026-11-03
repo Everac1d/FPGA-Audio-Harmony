@@ -1,5 +1,5 @@
-// Display-only selection from committed audio states in the 50 MHz domain.
-// Mask bits are RGB; sound-level scaling remains in sk9822_ring.
+// 在50MHz时钟域内根据已提交音频状态选择颜色，仅用于显示。
+// 掩码位序为RGB；音量到亮度的缩放仍由sk9822_ring完成。
 module audio_ring_palette(
     input wire active_source,
     input wire [1:0] active_algorithm_mode,
@@ -16,10 +16,10 @@ module audio_ring_palette(
         else if(!active_source && active_mode==2'd2)color_mask_rgb=3'b001;
         else begin
             case(active_algorithm_mode)
-                2'd1:color_mask_rgb=3'b101; // pitch: magenta
-                2'd2:color_mask_rgb=3'b110; // harmony: yellow
-                2'd3:color_mask_rgb=3'b010; // two independent shifted voices: green
-                default:color_mask_rgb=3'b011; // original: baseline cyan
+                2'd1:color_mask_rgb=3'b101; // 变调：品红色
+                2'd2:color_mask_rgb=3'b110; // 和声：黄色
+                2'd3:color_mask_rgb=3'b010; // 两个独立变调声部：绿色
+                default:color_mask_rgb=3'b011; // 原声：基线青色
             endcase
         end
     end

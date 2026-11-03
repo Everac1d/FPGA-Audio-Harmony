@@ -1,3 +1,0 @@
-MEASURE LCD_BOOT_DIAGNOSTICS boots=3 diagnostic_pixels=130560 normal_nonzero=492787 colors=ff
-PASS LCD_BOOT_DIAGNOSTICS checks=3812240 legal_keys_only normal_bars_restore sync_controls backlight50ms no_DDR_start audio_defaults ring_cyan
-sim/tb_lcd_boot_diagnostics.sv:148: $finish called at 90032832000 (1ps)

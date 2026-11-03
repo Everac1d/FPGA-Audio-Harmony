@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Compare the fixed production setting cycle-for-cycle with the accepted
-// meter, then exercise the new signed runtime margin independently.
+// 将固定正式设置与已验收的
+// 电平表逐周期比较，再独立测试新增的运行时有符号余量。
 module tb_ring_calibration;
     reg clk=0;always #10 clk=~clk;
     reg rst_n=0,pcm_valid=0;reg signed [15:0] pcm=0;
@@ -135,7 +135,7 @@ module tb_ring_calibration;
     endtask
     integer b,m,i,j,mag,held_mean;integer baselines[0:5];integer margins[0:8];
     initial begin
-        // Accepted production parameters, including valid gaps and real 512x128 calibration.
+        // 使用已验收的正式参数，包含有效信号间隙和实际的 512×128 校准。
         clocks(5);@(negedge clk);prod_rst_n=1;prod_pcm=128;
         for(i=0;i<65536;i=i+1)begin
             @(negedge clk);prod_valid=1;clocks(1);
@@ -149,7 +149,7 @@ module tb_ring_calibration;
         margins[0]=-4096;margins[1]=-512;margins[2]=-64;margins[3]=-1;margins[4]=0;margins[5]=1;margins[6]=24;margins[7]=255;margins[8]=4095;
         for(b=0;b<6;b=b+1)begin
             calibrate(baselines[b]==32768 ? -32768 : baselines[b]);
-            // Every representable signed margin; no audio sample is inserted by a setting change.
+            // 遍历所有可表示的有符号余量；更改设置不得插入音频样本。
             for(m=-4096;m<=4095;m=m+1)begin set_margin(m);swept_margins=swept_margins+1;end
             for(j=0;j<9;j=j+1)begin
                 set_margin(margins[j]);
@@ -164,7 +164,7 @@ module tb_ring_calibration;
         serial_frame(127);
         for(i=0;i<40;i=i+1)checked_window(0);
         check(live_level==0,"full-scale release ends dark");serial_frame(0);
-        // Gate+31 yields level1 but RGB0; gate+32 yields the first RGB1.
+        // 门限加 31 时电平为 1 但 RGB 为 0；门限加 32 时首次得到 RGB 为 1。
         checked_window(183);check(live_level==1 && (live_level>>1)==0,"expected RGB quantization below visible boundary");serial_frame(0);
         checked_window(184);check(live_level==2 && (live_level>>1)==1,"first visible step at captured gate+32");serial_frame(1);
         set_margin(-64);checked_window(96);check(live_floor==64 && live_level==2,"negative margin does not unsigned-wrap");serial_frame(1);
@@ -173,7 +173,7 @@ module tb_ring_calibration;
         held_mean=live_mean;
         @(negedge clk);pcm_valid=0;
         for(i=0;i<37;i=i+1)begin pcm=i*911;clocks(1);check(live_mean==held_mean,"invalid PCM changes do not enter mean");end
-        // Back-to-back windows and irregular gaps retain the accepted timing.
+        // 连续窗口和不规则间隙均保持已验收的时序。
         calibrate(128);
         @(negedge clk);pcm_valid=1;
         for(i=0;i<512;i=i+1)begin pcm=(i[0]?-1:1)*(i*61);clocks(1);@(negedge clk);end

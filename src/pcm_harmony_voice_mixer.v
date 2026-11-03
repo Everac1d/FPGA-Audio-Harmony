@@ -1,7 +1,7 @@
-// mode0: exact current dry; mode1: wet; mode2: (aligned dry+wet)/2.
-// Signed 17-bit sum, division toward zero, then Q15 startup envelope.
-// mode3 is fixed aligned dry with the same startup envelope. Saturation and symmetric rounding avoid sign wrapping.
-// One input per clock; output latency 2 clock edges.
+// 模式 0：当前原声逐位直通；模式 1：效果声；模式 2：（对齐原声＋效果声）／2。
+// 使用有符号 17 位求和，除法向零截断，随后应用 Q15 启动包络。
+// 模式 3 为固定延迟对齐的原声，并应用相同启动包络；通过饱和处理和对称舍入避免符号回绕。
+// 每个时钟输入一个样本；输出延迟为两个时钟沿。
 module pcm_harmony_voice_mixer (
     input wire clk,rst_n,in_valid,
     input wire [1:0] mode,

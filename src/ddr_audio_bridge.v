@@ -1,8 +1,8 @@
-// One-outstanding-transaction mailbox between the 50 MHz audio domain and
-// the DDR3 IP user domain. Multi-bit mailbox data stays fixed until its
-// synchronized toggle has been acknowledged; it is never sampled per bit.
-// Physical DDR3 x32, BL8, user width 256: app address advances by 8 per beat.
-// This is an app-interface test/bridge, not a DDR PHY implementation.
+// 50MHz音频域与DDR3 IP用户域之间的邮箱，
+// 同一时刻仅允许一笔未完成事务；多位邮箱数据保持不变，直到
+// 同步后的翻转标志得到确认，不对数据逐位采样。
+// 物理DDR3为x32、BL8、用户位宽256：应用地址每拍递增8。
+// 本模块用于应用接口测试与桥接，不实现DDR物理层。
 module ddr_audio_bridge #(
     parameter integer TIMEOUT_CYCLES = 25000000,
     parameter integer BOOT_TIMEOUT_CYCLES = 250000000
@@ -10,12 +10,12 @@ module ddr_audio_bridge #(
     input wire clk, rst_n,
     output wire ready,
     output reg error,
-    // clk-domain diagnostics. State is a coherent, periodically handshaken UI
-    // snapshot; error_code latches the first fault until global reset.
+    // clk域诊断：状态为周期握手获取的一致用户接口
+    // 快照；error_code锁存首个故障，直到全局复位。
     output wire [3:0] debug_state,
     output reg [3:0] error_code,
-    // First self-test mismatch, stable until global reset. In clk domain:
-    // {index[3:0], address[28:0], expected[255:0], actual[255:0]}.
+    // 首个自检不匹配信息，保持稳定直至全局复位；位于clk域，格式为：
+    // 字段：{index[3:0], address[28:0], expected[255:0], actual[255:0]}。
     output reg [544:0] failure_snapshot,
     input wire req_valid, req_write,
     input wire [28:0] req_addr,
@@ -49,8 +49,8 @@ module ddr_audio_bridge #(
     reg [28:0] a_addr;
     reg [255:0] a_data;
     reg u_ack_toggle, u_ready, u_error;
-    // Stable from the same UI edge that raises u_error until global reset.
-    // The synchronized u_error qualifies the bundled-data capture in clk.
+    // 从置位u_error的同一用户接口时钟边沿起保持稳定，直至全局复位。
+    // 同步后的u_error用于限定clk域中成组数据的捕获时机。
     reg [3:0] u_error_code;
     reg [544:0] u_failure_snapshot;
     reg failure_captured;
@@ -60,9 +60,9 @@ module ddr_audio_bridge #(
     (* ASYNC_REG="TRUE", syn_preserve=1 *) reg request_meta,request_sync;
     reg ever_ready;
     reg [31:0] boot_watchdog, audio_watchdog;
-    // Diagnostic mailbox is independent of audio requests so boot/self-test
-    // state remains observable even before ready. Data is held until the next
-    // request, after clk has consumed the acknowledged snapshot.
+    // 诊断邮箱独立于音频请求，因此即使尚未就绪，启动与自检
+    // 状态仍可观察；数据持续保持，直到clk域读取已确认快照后
+    // 发出下一次请求。
     reg diagnostic_request, diagnostic_ack;
     reg [3:0] diagnostic_mailbox, diagnostic_snapshot;
     (* ASYNC_REG="TRUE", syn_preserve=1 *) reg diagnostic_request_meta,diagnostic_request_sync;
@@ -102,9 +102,9 @@ module ddr_audio_bridge #(
             error_meta<=u_error;error_sync<=error_meta;
         end
     end
-    // u_failure_snapshot and u_error are written on the same UI edge. The
-    // two-stage error synchronizer qualifies this bundled-data capture; the
-    // source payload then remains fixed in FAULT until global reset.
+    // u_failure_snapshot与u_error在同一用户接口时钟边沿写入；
+    // 两级错误同步器限定成组数据的捕获时机，随后源端
+    // 数据在FAULT状态保持不变，直至全局复位。
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n) begin failure_snapshot<=0;failure_captured<=0;end
         else if(!audio_reset_sync) begin failure_snapshot<=0;failure_captured<=0;end
@@ -127,11 +127,11 @@ module ddr_audio_bridge #(
             else if(!error) begin
                 if(boot_watchdog<BOOT_TIMEOUT_CYCLES-1) boot_watchdog<=boot_watchdog+1'b1;
             end
-            // Loss of the controller/user clock/reset cannot silently restart
-            // the self-test under an already valid recording.
-            // Error precedence retains the UI's specific cause when readiness
-            // drops simultaneously. u_error_code is a stable mailbox, sampled
-            // only after its same-edge valid flag has crossed two flip-flops.
+            // 控制器或用户时钟丢失、复位变化时，不得在已有有效录音的情况下
+            // 悄然重新启动自检。
+            // 就绪状态同时下降时，按错误优先级保留用户接口的具体原因；
+            // u_error_code为稳定邮箱，仅在同沿有效标志
+            // 通过两级触发器同步后采样。
             if(!error) begin
                 if(error_sync) begin error<=1;error_code<=u_error_code;end
                 else if(ever_ready && !ready_sync) begin error<=1;error_code<=4'd2;end
@@ -165,9 +165,9 @@ module ddr_audio_bridge #(
     reg [28:0] job_addr;
     reg [255:0] job_data;
     reg [31:0] ui_watchdog;
-    // Sixteen locations span approximately 3.93 MB and use distinct low
-    // offsets. Write every pattern before reading any back, detecting aliases
-    // between these locations as well as data/address errors at these points.
+    // 十六个地址点跨越约3.93MB，并使用不同的低位
+    // 偏移；先写完所有模式再回读，以检测这些地址之间的别名，
+    // 以及各测试点的数据错误与地址错误。
     function [28:0] test_address;
         input [3:0] index;
         begin test_address={9'd0,index,16'd0}+{22'd0,index,3'd0};end
@@ -183,14 +183,14 @@ module ddr_audio_bridge #(
     wire issue_write=(state==TEST_WRITE || state==USER_WRITE);
     wire issue_read=(state==TEST_READ_CMD || state==USER_READ_CMD);
     wire app_enabled=ui_reset_sync && ui_rst_n && calib_done && !u_error;
-    // Match the Gowin reference user's write transaction: only launch when
-    // both command and write-data interfaces are ready, in the same UI beat.
-    // This compatibility candidate does not infer physical DDR correctness.
+    // 与Gowin参考用户接口的写事务一致：仅当命令与写数据接口
+    // 同时就绪时，才在同一用户接口时钟拍发起事务。
+    // 此兼容性候选实现不能证明物理DDR工作正确。
     wire joint_write=app_enabled && issue_write && cmd_ready && wr_data_rdy;
     assign cmd=issue_write ? 3'b000 : 3'b001;
-    // This native IP uses an enable strobe, not a valid held during full.
-    // Its delayed internal full flags can still accept extra enables just
-    // after external ready falls, so gate both read and write commands.
+    // 此原生IP使用使能脉冲，而非在满状态期间持续保持的有效信号。
+    // 内部满标志存在延迟，在外部就绪信号刚下降后仍可能接收额外使能，
+    // 因此读命令与写命令均需进行门控。
     assign cmd_en=joint_write || (app_enabled && issue_read && cmd_ready && !cmd_sent);
     assign addr=job_addr;
     assign wdata=job_data;

@@ -1,5 +1,5 @@
-// Diagnostic clock only: 50 MHz / 16 / 64 = 48.828125 kHz.
-// All internal logic runs on clk. No generated clock is used internally.
+// 仅用于诊断的时钟：50MHz / 16 / 64 = 48.828125kHz。
+// 所有内部逻辑均由clk驱动，内部不使用派生时钟。
 module audio_test_clock (
     input wire clk,
     input wire rst_n,
@@ -14,8 +14,8 @@ module audio_test_clock (
     assign bclk = divider[3];
     assign mic_ws = position[5];
     assign fall_ce = (divider == 4'd15);
-    // Four 50 MHz cycles (80 ns) after the external BCLK rising edge.
-    // This allows the two input synchronizer registers to settle.
+    // 位于外部BCLK上升沿之后四个50MHz周期处，即80纳秒之后。
+    // 由此为两级输入同步寄存器留出稳定时间。
     assign rx_sample_ce = (divider == 4'd11);
     assign bit_pos = position;
     always @(posedge clk or negedge rst_n) begin

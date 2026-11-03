@@ -1,2 +1,0 @@
-PASS CORE: independent_vectors=122870 resets=45 Q20 all25pitches clamp invalidmode livecontrols_ignored multiwrap gap32_to1024 valid17 reset_pending busy_mute_recover
-sim/tb_algorithm_core.sv:59: $finish called at 136783640000 (1ps)

@@ -1,15 +1,15 @@
 //
-//Written by GowinSynthesis
-//Tool Version: V1.9.12.04 (64-bit)(89079)
-//Device: GW5AST-138
-//Device Version: B
-//Part Number: GW5AST-LV138PG484AC1/I0
-//Device-Package: GW5AST-138B-PBGA484A
-//Sun Oct 25 11:10:07 2026
+//由 GowinSynthesis 生成
+//工具版本： V1.9.12.04 (64-bit)(89079)
+//器件： GW5AST-138
+//器件版本： B
+//器件完整型号： GW5AST-LV138PG484AC1/I0
+//器件与封装： GW5AST-138B-PBGA484A
+//生成时间：2026 年 10 月 25 日 11:10:07
 
-//Source file index table:
-//file0 "\D:/Gowin/Gowin_V1.9.12.04_x64/IDE/ipcore/DDR3/data/ddr3_1_4code_hs/ddr3_1_4code_hs.v"
-//file1 "\D:/Gowin/Gowin_V1.9.12.04_x64/IDE/ipcore/DDR3/data/ddr3_1_4code_hs/DDR3_TOP.v"
+//源文件索引表：
+//源文件 file0 "\D:/Gowin/Gowin_V1.9.12.04_x64/IDE/ipcore/DDR3/data/ddr3_1_4code_hs/ddr3_1_4code_hs.v"
+//源文件 file1 "\D:/Gowin/Gowin_V1.9.12.04_x64/IDE/ipcore/DDR3/data/ddr3_1_4code_hs/DDR3_TOP.v"
 `timescale 100 ps/100 ps
 `pragma protect begin_protected
 `pragma protect version="2.4"
@@ -32638,4 +32638,4 @@ wire GND;
     .GSRI(VCC) 
 );
 assign rd_data_end = rd_data_valid;
-endmodule /* Record_DDR3_Core */
+endmodule /* 模块结束：Record_DDR3_Core */

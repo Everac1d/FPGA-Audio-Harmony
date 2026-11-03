@@ -3,8 +3,8 @@ import argparse,os,subprocess,hashlib,json,ctypes,time,re
 ROOT=Path(__file__).parent.parent
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest().upper()
 def complete_program(p):
-    # This Windows Icarus build can exit zero after truncating the VVP file.
-    # Validate the complete filename-table footer before running any test.
+    # 此 Windows Icarus 版本可能在 VVP 文件被截断后仍返回零退出码。
+    # 运行任何测试前，先验证文件名表尾部完整。
     if not p.is_file():return False
     m=re.search(rb'\n:file_names (\d+);\r?\n(.*)\Z',p.read_bytes(),re.S)
     if not m:return False

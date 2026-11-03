@@ -68,8 +68,8 @@ module tb_lcd_snapshot;
             else ratio=0;
             expected_pixels=ratio>432?432:ratio;
             pending_latency=0;
-            // Disturb every source field while the restoring divider is busy.
-            // A premature frame pulse must neither publish nor replace the job.
+            // 在恢复余数除法器忙碌时扰动全部源字段。
+            // 过早到达的帧脉冲不得发布或替换当前任务。
             for(j=0;j<140;j=j+1)begin
                 @(negedge clk);
                 random_state={random_state[30:0],random_state[31]^random_state[21]^random_state[1]^random_state[0]};

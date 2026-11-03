@@ -1,12 +1,12 @@
-// Candidate 4.3-inch RGB timing; exact panel datasheet remains to be verified.
-// Pixel clock is an OUTPUT ONLY. Every internal register uses the 50 MHz clk.
-// Data/DE/HS/VS change at its falling edge, 60 ns before the rising sample edge.
+// 候选 4.3 英寸 RGB 时序；具体面板的数据手册仍待核实。
+// 像素时钟仅作为输出；所有内部寄存器均使用 50 MHz 的 clk 时钟。
+// 数据及 DE/HS/VS 在像素时钟下降沿变化，比上升采样沿提前 60 纳秒。
 module lcd_rgb_timing #(
     parameter integer PIXEL_DIV=6,
     parameter integer H_SYNC=41,H_BACK=2,H_ACTIVE=480,H_FRONT=2,
     parameter integer V_SYNC=10,V_BACK=2,V_ACTIVE=272,V_FRONT=2,
     parameter HS_ACTIVE=1'b0,VS_ACTIVE=1'b0,
-    // Leave off until panel LED ratings and Dock current are confirmed.
+    // 确认面板 LED 额定值与 Dock 供电电流之前保持关闭。
     parameter integer BACKLIGHT_ENABLE=0,
     parameter integer BACKLIGHT_DELAY=2500000,
     parameter integer TEST_PATTERN=0
@@ -32,7 +32,7 @@ module lcd_rgb_timing #(
     assign frame_start=(phase==0 && h_count==0 && v_count==0 && rst_n);
     reg [17:0] pattern;
     always @* begin
-        // W Y C G M R B K; asymmetric border identifies orientation.
+        // 白、黄、青、绿、品红、红、蓝、黑；非对称边框用于识别方向。
         case(x/60)
         0:pattern=18'h3ffff;1:pattern={6'd63,6'd63,6'd0};
         2:pattern={6'd0,6'd63,6'd63};3:pattern={6'd0,6'd63,6'd0};

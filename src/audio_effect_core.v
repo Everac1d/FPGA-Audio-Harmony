@@ -1,8 +1,8 @@
-// Member-2 replacement for member-1's 20261019 interface stub.
-// No board gain, UI, UART, PA or FIFO control here.
-// DYNAMIC_CONFIG=0 retains reset-latched legacy parameters. With the external
-// playback UI, DYNAMIC_CONFIG=1 captures parameters once per accepted sample;
-// history/phase are preserved across a quiet parameter handover or pause.
+// 成员2提供的实现，用于替换成员1于20261019提供的接口桩。
+// 此处不处理板级增益、界面、串口、功放或FIFO控制。
+// DYNAMIC_CONFIG=0保留复位时锁存的原有参数；使用外接
+// 回放界面时，DYNAMIC_CONFIG=1在每次接收样本时捕获一次参数；
+// 静音参数切换或暂停期间保留历史数据与相位。
 module audio_effect_core #(
     parameter integer RAM_ADDR_BITS=14,
     parameter integer GRAIN_LOG2=13,
@@ -29,10 +29,10 @@ module audio_effect_core #(
         .pcm_out(first_out),.out_valid(first_valid)
     );
     generate if(DUAL_VOICE_ENABLE!=0)begin: dual_voice
-        // The second voice sees every input, also outside mode3. Both histories
-        // and arithmetic pipelines therefore share sample positions and holds.
-        // Two crossfade read heads inside one algorithm still make ONE voice;
-        // this independent algorithm supplies the second pitch ratio/phase.
+        // 第二声部在mode3以外也接收每个输入，因此两组历史数据
+        // 与运算流水线共享相同的采样位置和保持状态。
+        // 单个算法内部的两个交叉淡化读头仍只构成一个声部；
+        // 此独立算法提供第二组变调比率与相位。
         wire signed [15:0] second_out;
         wire second_valid;
         reg job_dual,dual_configured,configured_dual;

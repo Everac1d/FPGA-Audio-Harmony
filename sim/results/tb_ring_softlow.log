@@ -1,2 +1,0 @@
-PASS RING_SOFTLOW checks=3553917 frames=2051 decoded_bits=918848 legacy_high_bits=689024 meter_cycles=7985 calibrations=6 all256x8_masks atomic_midframe reset min_half monotonic fixed_minus2000_gate610
-sim/tb_ring_softlow.sv:115: $finish called at 18499740000 (1ps)

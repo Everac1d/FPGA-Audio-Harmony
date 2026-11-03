@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 `ifndef TB_RECORD_ENGINE_SV
 `define TB_RECORD_ENGINE_SV
-// Integration proof of raw recording, source selection, real I2S, and control.
-// This deliberately does not replace the separate DSP numerical reference.
+// 验证原始录音、音源选择、真实 I2S 及控制的集成行为。
+// 此测试不替代独立的 DSP 数值参考验证。
 module tb_record_engine #(
     parameter integer TEST_RAM_BITS=8,
     parameter integer TEST_GRAIN_LOG2=6
@@ -54,7 +54,7 @@ module tb_record_engine #(
             repeat(12)@(negedge clk);end
     endtask
 
-    // In-order variable-latency DDR app transaction model; includes partial BL8.
+    // 按序、可变延时的 DDR 应用端口事务模型，包含不完整的 BL8 块。
     reg memory_busy=0,job_write;reg[28:0]job_addr;reg[255:0]job_data;
     reg[7:0]latency=0;reg[255:0]memory[0:31];integer requests=0;
     assign req_ready=!memory_busy;
@@ -73,7 +73,7 @@ module tb_record_engine #(
         end
     end
 
-    // Physical microphone I2S words: central channel is lane 3/right slot.
+    // 物理麦克风 I2S 字：中央通道为第 3 路的右声道时隙。
     wire board_run=rst_n&&dut.run_n;
     reg[5:0]mic_position=0;integer mic_frame=0,mic_epoch=0,lane;
     reg[23:0]word_value;
@@ -110,9 +110,9 @@ module tb_record_engine #(
         frame_before=dut.frame_ce;fade_before=dut.fade_zero;amp_before=dut.amplifier_frame_ready;
         pa_before=PA_EN;run_before=dut.run_n;mode_before=dut.active_mode;
         alg_before=active_algorithm_mode;pitch_before=active_pitch_semitones;source_before=active_source;
-        // The first serialized frame after reset precedes the first frame_ce.
-        // Its PA expectation comes from the reset-muted serializer/amp state,
-        // not from the final live frame of the preceding reset epoch.
+        // 复位后的首个串行帧早于首次 frame_ce。
+        // 其功放期望状态由复位静音的串行器及功放状态决定，
+        // 而非由上一个复位周期最后一个实时帧决定。
         if(!board_run)begin saved_count=0;next_play_index=0;last_rx_cycle=0;expected_pa=1;end
         else begin
             if(dut.clip_record&&(rec_state==1||rec_state==4))saved_count=0;
@@ -156,7 +156,7 @@ module tb_record_engine #(
         check((^{HP_WS,HP_DIN,PA_EN})!==1'bx,"audio output pins known");
     end
 
-    // Serial DAC framing/dual-slot copying. Numerical DSP is tested elsewhere.
+    // 检查串行 DAC 帧格式及双时隙复制；DSP 数值由其他测试检查。
     reg[5:0]dac_position=0;reg[15:0]shift=0,right_word=0;
     always @(posedge HP_BCK or negedge board_run)begin
         if(!board_run)begin dac_position=0;shift=0;right_word=0;end
@@ -197,8 +197,8 @@ module tb_record_engine #(
         check(!active_source&&dut.active_mode==0&&gain_index==0&&!record_valid,"engine reset defaults");
         chord(1);wait_frames(8);check(active_source&&dut.active_mode==0,"long chord selects record source muted");
         solo(0,0);wait_state(2,10);
-        // Parameter changes during recording must neither stop capture nor
-        // process the stored raw signal. Return to original/zero for replay 1.
+        // 录音期间修改参数既不得停止采集，也不得
+        // 处理已存原始信号；首次回放前恢复原声和零半音。
         for(n=1;n<=3;n=n+1)begin
             solo(0,1);wait_frames(8);
             check(rec_state==2&&!record_valid&&active_algorithm_mode==(n%3),"effect changes keep raw recording running");
@@ -222,7 +222,7 @@ module tb_record_engine #(
         for(i=0;i<5;i=i+1)begin solo(1,1);wait_frames(8);check(active_pitch_semitones==expected_pitch[i],"integrated seven-semitone cycle commit");end
         replay(0);
         solo(1,1);wait_frames(8);check(active_pitch_semitones==0,"semitone cycle returns zero");
-        // An explicit stop during playback retains the same saved raw clip.
+        // 回放期间显式停止应保留原来保存的同一段原始录音。
         chord(0);wait_state(7,15000);while(play_samples<10)wait_frames(1);
         chord(0);wait_state(4,700);wait_frames(300);
         check(record_valid&&record_samples==clip_length&&play_samples<clip_length,"manual playback stop keeps recording");

@@ -1,2 +1,0 @@
-PASS EXTERNAL_ENGINE grain=6 dual=1 checks=33720493 clip=2601 raw_inputs=3235 DAC=11413 nonzero=4632 safe_commits=11 pause_resume no_skip config_continue fine_gain independent_voice_selection second_pitch_commit
-./sim/tb_external_engine.sv:299: $finish called at 233738600000 (1ps)
